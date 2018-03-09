@@ -41,7 +41,7 @@ namespace Project_Genesis_Source
             //this opens up a the new page in another form instead of updating the same form into that page
             //needs to be changed so it updates the form instead of showing another form
             new CreateInvoicePage().Show();
-            this.Hide();
+            this.Close();
         }
 
         // this one leads back to itself so theres no code for it
@@ -53,13 +53,13 @@ namespace Project_Genesis_Source
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             new AddCustomerPage().Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             new AddVehicle().Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
