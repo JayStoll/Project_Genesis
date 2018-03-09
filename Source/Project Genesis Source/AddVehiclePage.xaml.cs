@@ -23,5 +23,33 @@ namespace Project_Genesis_Source
         {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            new MainWindow().Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            new CreateInvoicePage().Show();
+            this.Hide();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            new AddCustomerPage().Show();
+            this.Hide();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            //itself
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            //add part
+        }
     }
 }

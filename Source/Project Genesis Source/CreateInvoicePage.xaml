@@ -98,7 +98,7 @@
                     </LinearGradientBrush>
                 </Button.Foreground>
             </Button>
-            <Button x:Name="button1" Content="Create Invoice" HorizontalAlignment="Left" Height="32.157" Margin="10,200.503,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+            <Button x:Name="button1" Content="Create Invoice" HorizontalAlignment="Left" Height="32.157" Margin="10,200.503,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="button1_Click">
                 <Button.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -106,7 +106,7 @@
                     </LinearGradientBrush>
                 </Button.Foreground>
             </Button>
-            <Button Content="Add Customer" HorizontalAlignment="Left" Height="32.157" Margin="10,237.74,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+            <Button Content="Add Customer" HorizontalAlignment="Left" Height="32.157" Margin="10,237.74,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="Button_Click_2">
                 <Button.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -114,7 +114,7 @@
                     </LinearGradientBrush>
                 </Button.Foreground>
             </Button>
-            <Button Content="Add Vehicle" HorizontalAlignment="Left" Height="32.158" Margin="10,274.976,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+            <Button Content="Add Vehicle" HorizontalAlignment="Left" Height="32.158" Margin="10,274.976,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="Button_Click_3">
                 <Button.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -122,7 +122,7 @@
                     </LinearGradientBrush>
                 </Button.Foreground>
             </Button>
-            <Button Content="Add Part" HorizontalAlignment="Left" Height="32.157" Margin="10,312.213,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+            <Button Content="Add Part" HorizontalAlignment="Left" Height="32.157" Margin="10,312.213,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="Button_Click_4">
                 <Button.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -130,7 +130,7 @@
                     </LinearGradientBrush>
                 </Button.Foreground>
             </Button>
-            <Button Content="Manage Clients" HorizontalAlignment="Left" Height="32.157" Margin="10,349.45,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+            <Button Content="Manage Clients" HorizontalAlignment="Left" Height="32.157" Margin="10,349.45,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="Button_Click_5">
                 <Button.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
