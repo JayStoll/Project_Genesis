@@ -39,15 +39,13 @@ namespace Project_Genesis_Source
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            //the same page
+            //the same page itself
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             new AddCustomerPage().Show();
             this.Close();
-
-
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
