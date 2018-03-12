@@ -39,7 +39,7 @@ namespace Project_Genesis_Source
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            //itself
+            //the same page itself
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -52,6 +52,16 @@ namespace Project_Genesis_Source
         {
             new AddVehicle().Show();
             this.Close();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            //add part
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            //manage client
         }
     }
 }
