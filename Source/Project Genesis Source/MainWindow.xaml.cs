@@ -17,7 +17,7 @@
  * Reason: Errors everywhere, also please give the button click functions names dont just leave it default
  * 
  */
-
+ 
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +43,5 @@ namespace Project_Genesis_Source
         public MainWindow() {
             InitializeComponent();
         }
-
-        
     }
 }

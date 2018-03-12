@@ -103,6 +103,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\DatabaseConnection.cs" />
+    <Compile Include="Classes\PythonConnection.cs" />
     <Compile Include="CreateInvoicePage.xaml.cs">
       <DependentUpon>CreateInvoicePage.xaml</DependentUpon>
     </Compile>
