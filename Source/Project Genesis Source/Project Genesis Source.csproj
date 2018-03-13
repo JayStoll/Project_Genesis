@@ -73,6 +73,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AddVehicle2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="AddVehiclePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -88,6 +92,9 @@
     <Compile Include="AddCustomerPage.xaml.cs">
       <DependentUpon>AddCustomerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddVehicle2.xaml.cs">
+      <DependentUpon>AddVehicle2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddVehiclePage.xaml.cs">
       <DependentUpon>AddVehiclePage.xaml</DependentUpon>
     </Compile>
@@ -95,6 +102,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\DatabaseConnection.cs" />
+    <Compile Include="Classes\PythonConnection.cs" />
     <Compile Include="CreateInvoicePage.xaml.cs">
       <DependentUpon>CreateInvoicePage.xaml</DependentUpon>
     </Compile>
@@ -169,8 +178,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Windows\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
