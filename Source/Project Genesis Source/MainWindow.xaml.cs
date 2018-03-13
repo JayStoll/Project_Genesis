@@ -43,5 +43,12 @@ namespace Project_Genesis_Source
         public MainWindow() {
             InitializeComponent();
         }
+
+        private void customerAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddCustomerPage addCustomerPage = new AddCustomerPage();
+            addCustomerPage.Show();
+            this.Close();
+        }
     }
 }

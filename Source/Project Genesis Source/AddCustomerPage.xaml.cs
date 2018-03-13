@@ -23,5 +23,12 @@ namespace Project_Genesis_Source
         {
             InitializeComponent();
         }
+
+        private void homeTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

@@ -109,7 +109,7 @@
                 </LinearGradientBrush>
             </Button.Foreground> (Description: The objkect 'Button' already has achild and cannot add 'Button'. 'Button' can accept only one child) -->
         </Button>
-        <Button Content="Add Customer" HorizontalAlignment="Left" Height="32.157" Margin="10,237.74,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+        <Button x:Name="customerAdd" Content="Add Customer" HorizontalAlignment="Left" Height="32.157" Margin="10,237.74,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="customerAdd_Click">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
