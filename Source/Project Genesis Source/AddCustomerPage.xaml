@@ -27,7 +27,7 @@
                 </Label.Foreground>
             </Label>
             <Image HorizontalAlignment="Left" Height="109" Margin="22,10,0,0" VerticalAlignment="Top" Width="102" Source="icon.png" Stretch="Fill"/>
-            <Button x:Name="button" Content="Home" HorizontalAlignment="Left" Height="32.157" Margin="10,163.266,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+            <Button x:Name="homeTab" Content="Home" HorizontalAlignment="Left" Height="32.157" Margin="10,163.266,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="homeTab_Click">
                 <Button.Foreground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
