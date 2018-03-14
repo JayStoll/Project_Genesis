@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 
 namespace Project_Genesis_Source
 {
+
+    // initial code by: AJ Santillan 
     /// <summary>
     /// Interaction logic for AddVehicle.xaml
     /// </summary>
@@ -23,33 +25,29 @@ namespace Project_Genesis_Source
         {
             InitializeComponent();
         }
+        
+        //connects each pages together on a button click
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void homeTab_Click(object sender, RoutedEventArgs e)
         {
-            new MainWindow().Show();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Hide();
+
+        }
+
+        private void createInv_Click(object sender, RoutedEventArgs e)
+        {
+            CreateInvoicePage createInvoicePage = new CreateInvoicePage();
+            createInvoicePage.Show();
             this.Close();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void customerAdd_Click(object sender, RoutedEventArgs e)
         {
-            new CreateInvoicePage().Show();
+            AddCustomerPage addCustomerPage = new AddCustomerPage();
+            addCustomerPage.Show();
             this.Close();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            new AddCustomerPage().Show();
-            this.Close();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            //itself
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            //add part
         }
     }
 }

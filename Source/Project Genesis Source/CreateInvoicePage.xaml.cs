@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 
 namespace Project_Genesis_Source
 {
+
+    // initial code by: AJ Santillan 
     /// <summary>
     /// Interaction logic for CreateInvoicePage.xaml
     /// </summary>
@@ -24,44 +26,27 @@ namespace Project_Genesis_Source
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        //connects each pages together on a button click
+
+        private void homeTab_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-
-        //Connects straight away to the main page
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            new MainWindow().Show();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void customerAdd_Click(object sender, RoutedEventArgs e)
         {
-            //the same page itself
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            new AddCustomerPage().Show();
+            AddCustomerPage addCustomer = new AddCustomerPage();
+            addCustomer.Show();
             this.Close();
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
+        private void addVehicle_Click(object sender, RoutedEventArgs e)
         {
-            new AddVehicle().Show();
+            AddVehicle addVehicle = new AddVehicle();
+            addVehicle.Show();
             this.Close();
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            //add part
-        }
-
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            //manage client
         }
     }
 }

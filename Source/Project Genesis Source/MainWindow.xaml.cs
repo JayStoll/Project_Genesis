@@ -35,6 +35,8 @@ using System.Windows.Shapes;
 
 namespace Project_Genesis_Source
 {
+
+    // initial code by: AJ Santillan 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -44,11 +46,30 @@ namespace Project_Genesis_Source
             InitializeComponent();
         }
 
+        //connects each pages together on a button click
+
         private void customerAdd_Click(object sender, RoutedEventArgs e)
         {
             AddCustomerPage addCustomerPage = new AddCustomerPage();
             addCustomerPage.Show();
             this.Close();
         }
+
+        private void invoiceTab_Click(object sender, RoutedEventArgs e)
+        {
+            CreateInvoicePage createInvoicePage = new CreateInvoicePage();
+            createInvoicePage.Show();
+            this.Close();
+        }
+
+        private void vehicleAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddVehicle addVehicle = new AddVehicle();
+            addVehicle.Show();
+            this.Close();
+        }
+
+        //three more pages to come 
+        //expected complete update monday
     }
 }
