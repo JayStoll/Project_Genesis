@@ -2,13 +2,29 @@
 # Date March 13 2018
 # Reason Gets the information from the file and gives it to the rest of the script
 
-# TODO think of the possibility of creating multiple files and using those as an array instead of just one large file
+# TODO Figure out how to read from single file
 
-fileName = 'test.txt'  # TODO change this to the actual file we will be reading from
+ClientInfo = 'clientInfo.txt'
+LabourInfo = 'labourInfo.txt'
 
-with open(fileName) as f:
+# Get the client information
+with open(ClientInfo) as f:
     lines = f.readlines()
-
-words = []
+firstClientPageSort = []
+clientName = []
+totalClientInfo = []
 for s in lines:
-    words += s.split()
+    firstClientPageSort += s.split(".")
+# Used to get just the first and last name of the client
+for t in firstClientPageSort:
+    clientName += t.split()
+for l in lines:
+    totalClientInfo += l.split(".")
+
+
+# Get labour information
+with open(LabourInfo) as f:
+    lines = f.readlines()
+labourInformation = []
+for s in lines:
+    labourInformation += s.split('*')
