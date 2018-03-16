@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_Genesis_Source.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,9 @@ namespace Project_Genesis_Source
     /// </summary>
     public partial class AddCustomerPage : Window
     {
+        //DatabaseConnection class variable
+        DatabaseConnection dataConnect = new DatabaseConnection();
+
         public AddCustomerPage()
         {
             InitializeComponent();
@@ -29,6 +33,26 @@ namespace Project_Genesis_Source
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
+        }
+
+        private void Add_Customer_Click(object sender, RoutedEventArgs e)
+        {
+            //setup strings
+            string cusFName = (FnameTxt.Text);
+            string cusLName = (LnameTxt.Text);
+            string cusAddress = (AddressTxt.Text);
+            string cusPhone = (PhoneNumTxt.Text);
+            string cusEmail = (EmailTxt.Text);
+
+            //check if Email is null
+            if (cusEmail is null)
+            {
+                dataConnect.AddNewClient(cusFName, cusLName, cusAddress, cusPhone);
+            }
+            else
+            {
+                dataConnect.AddNewClient(cusFName, cusLName, cusAddress, cusPhone, cusEmail);
+            }
         }
     }
 }

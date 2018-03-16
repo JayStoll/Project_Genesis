@@ -87,13 +87,13 @@
             <Label Content="Last Name" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="10,212.183,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
             <Label Content="Address" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="10,255.947,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
             <Label Content="Phone Number" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="10,300.104,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,168.391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontSize="20" FontFamily="Palatino Linotype"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,212.183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontFamily="Palatino Linotype" FontSize="20"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,255.947,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontFamily="Palatino Linotype" FontSize="20"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,300.104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontFamily="Palatino Linotype" FontSize="20"/>
+            <TextBox x:Name="FnameTxt" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,168.391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontSize="20" FontFamily="Palatino Linotype"/>
+            <TextBox x:Name="LnameTxt" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,212.183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontFamily="Palatino Linotype" FontSize="20"/>
+            <TextBox x:Name="AddressTxt" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,255.947,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontFamily="Palatino Linotype" FontSize="20"/>
+            <TextBox x:Name="PhoneNumTxt" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,300.104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontFamily="Palatino Linotype" FontSize="20"/>
             <Label Content="E-mail Address" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="10,343.764,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,343.764,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontFamily="Palatino Linotype" FontSize="20"/>
-            <Button Content="Add Customer" Grid.Column="1" HorizontalAlignment="Left" Height="49" Margin="247.529,400,0,0" VerticalAlignment="Top" Width="241" FontFamily="Lithos Pro Regular" FontSize="20"/>
+            <TextBox x:Name="EmailTxt" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,343.764,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontFamily="Palatino Linotype" FontSize="20"/>
+            <Button Content="Add Customer" Grid.Column="1" HorizontalAlignment="Left" Height="49" Margin="247.529,400,0,0" VerticalAlignment="Top" Width="241" FontFamily="Lithos Pro Regular" FontSize="20" Click="Add_Customer_Click"/>
         </Grid>
 
     </Grid>
