@@ -14,26 +14,21 @@ using System.Windows.Shapes;
 
 namespace Project_Genesis_Source
 {
-
-    // initial code by: AJ Santillan 
     /// <summary>
-    /// Interaction logic for AddVehicle.xaml
+    /// Interaction logic for ManageClients.xaml
     /// </summary>
-    public partial class AddVehicle : Window
+    public partial class ManageClients : Window
     {
-        public AddVehicle()
+        public ManageClients()
         {
             InitializeComponent();
         }
-        
-        //connects each pages together on a button click
 
         private void homeTab_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
-
         }
 
         private void createInv_Click(object sender, RoutedEventArgs e)
@@ -50,6 +45,13 @@ namespace Project_Genesis_Source
             this.Close();
         }
 
+        private void vehicleAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddVehicle addVehicle = new AddVehicle();
+            addVehicle.Show();
+            this.Close();
+        }
+
         private void addPart_Click(object sender, RoutedEventArgs e)
         {
             AddPart addPart = new AddPart();
@@ -57,20 +59,11 @@ namespace Project_Genesis_Source
             this.Close();
         }
 
-        private void clientManage_Click(object sender, RoutedEventArgs e)
-        {
-            ManageClients manageClients = new ManageClients();
-            manageClients.Show();
-            this.Close();
-
-        }
-
         private void backupTab_Click(object sender, RoutedEventArgs e)
         {
             BnApage backup = new BnApage();
             backup.Show();
             this.Close();
-
         }
     }
 }

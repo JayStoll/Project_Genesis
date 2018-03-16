@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Genesis_Source"
         mc:Ignorable="d"
-        Title="CAJN Software">
+        Title="CAJN Software" Width="949">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -101,7 +101,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button x:Name="invoiceTab" Content="Create Invoice" HorizontalAlignment="Left" Height="32.157" Margin="10,200.503,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="invoiceTab_Click">
+        <Button x:Name="createInv" Content="Create Invoice" HorizontalAlignment="Left" Height="32.157" Margin="10,200.503,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="createInv_Click">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -131,7 +131,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button Content="Add Part" HorizontalAlignment="Left" Height="32.157" Margin="10,312.213,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+        <Button x:Name="addPart" Content="Add Part" HorizontalAlignment="Left" Height="32.157" Margin="10,312.213,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="addPart_Click">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -139,7 +139,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button Content="Manage Clients" HorizontalAlignment="Left" Height="32.157" Margin="10,349.45,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+        <Button x:Name="clientManage" Content="Manage Clients" HorizontalAlignment="Left" Height="32.157" Margin="10,349.45,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="clientManage_Click">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -147,7 +147,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button Content="Backup &amp; Archive" HorizontalAlignment="Left" Height="32.157" Margin="10,386.687,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+        <Button x:Name="backupTab" Content="Backup &amp; Archive" HorizontalAlignment="Left" Height="32.157" Margin="10,386.687,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="backupTab_Click">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>

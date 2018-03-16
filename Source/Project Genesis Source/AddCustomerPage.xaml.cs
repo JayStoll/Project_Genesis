@@ -48,5 +48,27 @@ namespace Project_Genesis_Source
             addVehicle.Show();
             this.Close();
         }
+
+        private void addPart_Click(object sender, RoutedEventArgs e)
+        {
+            AddPart addPart = new AddPart();
+            addPart.Show();
+            this.Close();
+        }
+
+        private void clientManage_Click(object sender, RoutedEventArgs e)
+        {
+            ManageClients manageClients = new ManageClients();
+            manageClients.Show();
+            this.Close();
+        }
+
+        private void backupTab_Click(object sender, RoutedEventArgs e)
+        {
+            BnApage backup = new BnApage();
+            backup.Show();
+            this.Close();
+        }
+
     }
 }

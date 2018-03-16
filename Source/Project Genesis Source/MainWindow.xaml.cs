@@ -54,18 +54,39 @@ namespace Project_Genesis_Source
             addCustomerPage.Show();
             this.Close();
         }
-
-        private void invoiceTab_Click(object sender, RoutedEventArgs e)
-        {
-            CreateInvoicePage createInvoicePage = new CreateInvoicePage();
-            createInvoicePage.Show();
-            this.Close();
-        }
-
+        
         private void vehicleAdd_Click(object sender, RoutedEventArgs e)
         {
             AddVehicle addVehicle = new AddVehicle();
             addVehicle.Show();
+            this.Close();
+        }
+
+        private void addPart_Click(object sender, RoutedEventArgs e)
+        {
+            AddPart addPart = new AddPart();
+            addPart.Show();
+            this.Close();
+        }
+
+        private void clientManage_Click(object sender, RoutedEventArgs e)
+        {
+            ManageClients manageClients = new ManageClients();
+            manageClients.Show();
+            this.Close();
+        }
+
+        private void backupTab_Click(object sender, RoutedEventArgs e)
+        {
+            BnApage backup = new BnApage();
+            backup.Show();
+            this.Close();
+        }
+
+        private void createInv_Click(object sender, RoutedEventArgs e)
+        {
+            CreateInvoicePage createInvoicePage = new CreateInvoicePage();
+            createInvoicePage.Show();
             this.Close();
         }
 

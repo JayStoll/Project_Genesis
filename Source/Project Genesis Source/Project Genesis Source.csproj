@@ -93,11 +93,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddVehicle2.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="AddPart.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddVehiclePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BnApage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -112,8 +116,8 @@
     <Compile Include="AddCustomerPage.xaml.cs">
       <DependentUpon>AddCustomerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddVehicle2.xaml.cs">
-      <DependentUpon>AddVehicle2.xaml</DependentUpon>
+    <Compile Include="AddPart.xaml.cs">
+      <DependentUpon>AddPart.xaml</DependentUpon>
     </Compile>
     <Compile Include="AddVehiclePage.xaml.cs">
       <DependentUpon>AddVehiclePage.xaml</DependentUpon>
@@ -121,6 +125,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BnApage.xaml.cs">
+      <DependentUpon>BnApage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\PythonConnection.cs" />
@@ -136,8 +143,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManageClients.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManageClients.xaml.cs">
+      <DependentUpon>ManageClients.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

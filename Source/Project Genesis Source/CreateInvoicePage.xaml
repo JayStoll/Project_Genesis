@@ -58,6 +58,11 @@
         <Storyboard x:Key="OpenCreateInvoicePage"/>
     </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="163*"/>
+            <RowDefinition Height="255*"/>
+            <RowDefinition Height="51*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -67,7 +72,7 @@
                 <GradientStop Color="#FFCCD9EA" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Grid Width="860" Height="470" Margin="1,0,1,-1">
+        <Grid Width="860" Margin="0,0,1,0" Grid.RowSpan="3" Height="469" VerticalAlignment="Top" HorizontalAlignment="Right">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF759ED3" Offset="1"/>
@@ -87,39 +92,41 @@
                 </Label.Foreground>
             </Label>
             <Image HorizontalAlignment="Left" Height="109" Margin="22,10,0,0" VerticalAlignment="Top" Width="102" Source="icon.png" Stretch="Fill"/>
-            <Label Content="First Name" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="10,168.391,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-            <Label Content="Last Name" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="10,212.183,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-            <Label Content="Address" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="10,255.947,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-            <Label Content="Phone Number" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="10,300.104,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-            <Label Content="Type" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="10,426.34,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-            <Label Content="Serial Number" Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="10,383.184,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,168.391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontSize="20" FontFamily="Palatino Linotype"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,212.183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontFamily="Palatino Linotype" FontSize="20"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,255.947,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontFamily="Palatino Linotype" FontSize="20"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,300.104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontFamily="Palatino Linotype" FontSize="20"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,426.34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241"/>
-            <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="33.66" Margin="247.529,383.184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontSize="20"/>
-            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="73.607" Margin="540.529,320.814,0,0" TextWrapping="Wrap" Text="Button is here only because I'm still figuring out how to do the scroll thing in here" VerticalAlignment="Top" Width="124"/>
-            <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="30.391" Margin="10,126,0,0" Stroke="Black" VerticalAlignment="Top" Width="478.529" RadiusY="12.029" RadiusX="12.029">
-                <Rectangle.Fill>
-                    <RadialGradientBrush>
-                        <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="#FF2D99D6"/>
-                    </RadialGradientBrush>
-                </Rectangle.Fill>
-            </Rectangle>
-            <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="31.391" Margin="10,340.764,0,0" Stroke="Black" VerticalAlignment="Top" Width="478.529" RadiusY="12.029" RadiusX="12.029">
-                <Rectangle.Fill>
-                    <RadialGradientBrush>
-                        <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="#FF2D99D6"/>
-                    </RadialGradientBrush>
-                </Rectangle.Fill>
-            </Rectangle>
-            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="56" Margin="493.529,113.05,0,0" TextWrapping="Wrap" Text="These are just rounded rectangles space fillers for the -search bars-" VerticalAlignment="Top" Width="126"/>
+            <ScrollViewer Grid.Column="1" HorizontalAlignment="Left" Height="255" Margin="0,163,0,0" VerticalAlignment="Top" Width="678">
+                <SelectiveScrollingGrid HorizontalAlignment="Left" Height="485" VerticalAlignment="Top" Width="668">
+                    <Label Content="First Name" HorizontalAlignment="Left" Height="33.66" Margin="10,71.391,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+                    <Label Content="Last Name" HorizontalAlignment="Left" Height="33.66" Margin="10,115.183,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+                    <Label Content="Address" HorizontalAlignment="Left" Height="33.66" Margin="10,158.947,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+                    <Label Content="Phone Number" HorizontalAlignment="Left" Height="33.66" Margin="10,203.104,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+                    <Label Content="Type" HorizontalAlignment="Left" Height="33.66" Margin="10,354.34,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+                    <Label Content="Serial Number" HorizontalAlignment="Left" Height="33.66" Margin="10,311.184,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+                    <TextBox HorizontalAlignment="Left" Height="33.66" Margin="247.529,71.391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370.471" FontSize="20" FontFamily="Palatino Linotype"/>
+                    <TextBox HorizontalAlignment="Left" Height="33.66" Margin="247.529,115.183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370.471" FontFamily="Palatino Linotype" FontSize="20"/>
+                    <TextBox HorizontalAlignment="Left" Height="33.66" Margin="247.529,158.947,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370.471" FontFamily="Palatino Linotype" FontSize="20"/>
+                    <TextBox HorizontalAlignment="Left" Height="33.66" Margin="247.529,203.104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370.471" FontFamily="Palatino Linotype" FontSize="20"/>
+                    <TextBox HorizontalAlignment="Left" Height="33.66" Margin="247.529,354.34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370.471"/>
+                    <TextBox HorizontalAlignment="Left" Height="33.66" Margin="247.529,311.184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370.471" FontSize="20"/>
+                    <Rectangle HorizontalAlignment="Left" Height="30.391" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="530" RadiusY="12.029" RadiusX="12.029">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="1"/>
+                                <GradientStop Color="#FF65C5FB"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle HorizontalAlignment="Left" Height="31.391" Margin="10,265.764,0,0" Stroke="Black" VerticalAlignment="Top" Width="530" RadiusY="12.029" RadiusX="12.029">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="1"/>
+                                <GradientStop Color="#FF65C5FB"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Content="Create" HorizontalAlignment="Left" Height="60" Margin="493,409,0,0" VerticalAlignment="Top" Width="125" FontFamily="Lithos Pro Regular" FontSize="20"/>
+                </SelectiveScrollingGrid>
+            </ScrollViewer>
         </Grid>
-        <Button Content="Create" HorizontalAlignment="Left" Height="60" Margin="703,399,0,0" VerticalAlignment="Top" Width="125" FontFamily="Lithos Pro Regular" FontSize="20"/>
-        <Button x:Name="homeTab" Content="Home" HorizontalAlignment="Left" Height="32.157" Margin="10,163.266,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="homeTab_Click">
+        <Button x:Name="homeTab" Content="Home" HorizontalAlignment="Left" Height="32.157" Margin="10,0.266,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="homeTab_Click" Grid.Row="1">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -127,7 +134,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button Content="Create Invoice" HorizontalAlignment="Left" Height="32.157" Margin="10,200.503,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+        <Button Content="Create Invoice" HorizontalAlignment="Left" Height="32.157" Margin="10,37.503,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Grid.Row="1">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -135,7 +142,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button x:Name="customerAdd" Content="Add Customer" HorizontalAlignment="Left" Height="32.157" Margin="10,237.74,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="customerAdd_Click">
+        <Button x:Name="customerAdd" Content="Add Customer" HorizontalAlignment="Left" Height="32.157" Margin="10,74.74,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="customerAdd_Click" Grid.Row="1">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -143,7 +150,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button x:Name="addVehicle" Content="Add Vehicle" HorizontalAlignment="Left" Height="32.158" Margin="10,274.976,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="addVehicle_Click">
+        <Button x:Name="addVehicle" Content="Add Vehicle" HorizontalAlignment="Left" Height="32.158" Margin="10,111.976,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="addVehicle_Click" Grid.Row="1">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -151,7 +158,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button Content="Add Part" HorizontalAlignment="Left" Height="32.157" Margin="10,312.213,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+        <Button x:Name="addPart" Content="Add Part" HorizontalAlignment="Left" Height="32.157" Margin="10,149.213,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="addPart_Click" Grid.Row="1">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -159,7 +166,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button Content="Manage Clients" HorizontalAlignment="Left" Height="32.157" Margin="10,349.45,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+        <Button x:Name="clientManage" Content="Manage Clients" HorizontalAlignment="Left" Height="32.157" Margin="10,186.45,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="clientManage_Click" Grid.Row="1">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -167,7 +174,7 @@
                 </LinearGradientBrush>
             </Button.Foreground>
         </Button>
-        <Button Content="Backup &amp; Archive" HorizontalAlignment="Left" Height="32.157" Margin="10,386.687,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
+        <Button x:Name="backupTab" Content="Backup &amp; Archive" HorizontalAlignment="Left" Height="32.157" Margin="10,223.687,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="backupTab_Click" Grid.Row="1" Grid.RowSpan="2">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
