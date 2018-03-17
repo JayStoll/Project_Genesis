@@ -40,8 +40,7 @@ namespace Project_Genesis_Source.Classes{
 
             using (conn = new SqlConnection(connString))
             {
-                try
-                {
+                try {
                     conn.Open();
                     command = new SqlCommand(insertData, conn);
                     command.Parameters.AddWithValue(@"Cus_FName", firstName);
@@ -49,11 +48,13 @@ namespace Project_Genesis_Source.Classes{
                     command.Parameters.AddWithValue(@"Cus_Address", mailingAddress);
                     command.Parameters.AddWithValue(@"Cus_Phone", mailingAddress);
                     command.Parameters.AddWithValue(@"Cus_Email", emailValue);
+                    MessageBox.Show("Added new client");
                 }
-                catch (Exception ex)
-                {
-                    conn.Close();
+                catch (Exception ex) {
                     MessageBox.Show(ex.Message);
+                }
+                finally {
+                    conn.Close();
                 }
             }         
         }
