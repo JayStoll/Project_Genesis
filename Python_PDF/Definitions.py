@@ -2,9 +2,11 @@
 # Date March 13 2018
 # Reason Creates the functions that will be used to print to the page
 
-from GetFileInfo import firstClientPageSort, totalClientInfo, labourInformation
+from GetFileInfo import firstClientPageSort, labourInformation, hoursWorked, rate, tax
+from GetFileInfo import partInformation, qtyAmount, rate1, tax1
+from calculations import labourAmount, subtotal
 
-taxRate = '5'  # TODO get this from a file and not hard coded
+taxRate = 0.05  # TODO get this from a file and not hard coded
 
 # Used to align the words on the page
 leftAlign = 34
@@ -14,9 +16,6 @@ QTYAlign = leftAlign + 200
 rateAlign = leftAlign + 300
 taxAlign = leftAlign + 375
 amountAlign = leftAlign + 450
-
-clientArr = [0, 670, 655, 640, 625, 610, 595]
-labourInfoArr = [535, 520, 505, 490, 475, 460, 445, 430, 415, 400]  # TODO expand this array with more numbers
 
 
 def ChangeFont(num, c):
@@ -55,8 +54,10 @@ def ClientAddress(c):
     ChangeFont(2, c)
     c.drawString(leftAlign, 685, firstClientPageSort[0])  # client first and last name
     i = 1
-    while i < len(totalClientInfo):
-        c.drawString(leftAlign, clientArr[i], totalClientInfo[i])
+    ca = 670
+    while i < len(firstClientPageSort):
+        c.drawString(leftAlign, ca, firstClientPageSort[i])
+        ca -= 15
         i += 1
 
 
@@ -79,30 +80,54 @@ def TitleBar(c):
     c.drawString(amountAlign, 575, "AMOUNT")
 
 
-# TODO fill the information from a single file
 def FillLabourTime(c):
     ChangeFont(1, c)
     c.drawString(leftAlign, 550, "Labour")
     ChangeFont(2, c)
     i = 0
+    align = 535
+    partAlign = 0
     while i < len(labourInformation):
-        c.drawString(leftAlign, labourInfoArr[i], labourInformation[i])
+        if labourInformation[i] == '':
+            pass
+        else:
+            c.drawString(leftAlign, align, labourInformation[i])
+        align -= 15
+        partAlign = align
         i += 1
+    c.drawString(QTYAlign, 550, str(hoursWorked))
+    c.drawString(rateAlign, 550, str(rate))
+    c.drawString(taxAlign, 550, tax)
+    c.drawString(amountAlign, 550, str(labourAmount))
+    # Fill the part information
+    ChangeFont(1, c)
+    c.drawString(leftAlign, align, "Parts")
+    ChangeFont(2, c)
+    index = 0
+    while index < len(partInformation):
+        partAlign -= 15
+        c.drawString(leftAlign, partAlign, partInformation[index])
+        index += 1
+    c.drawString(QTYAlign, align, str(qtyAmount))
+    c.drawString(rateAlign, align, str(rate1))
+    c.drawString(taxAlign, align, tax1)
+    c.drawString(amountAlign, align, str(qtyAmount * rate1))  # TODO just get the price of the parts and print them out
 
 
 def totalsLable(c):
     ChangeFont(1, c)
     c.drawString(QTYAlign + 43, 100, "SUBTOTAL")
-    c.drawString(QTYAlign + 43, 85, "GST/HST @ " + taxRate + "%")
+    c.drawString(QTYAlign + 43, 85, "GST/HST @ " + str(taxRate * 100) + "%")
     c.drawString(QTYAlign + 43, 70, "TOTAL")
     c.drawString(QTYAlign + 43, 55, "BALANCE DUE")
     ChangeFont(2, c)
 
 
-# TODO get the totals instead of hard coding them
 def printTotals(c):
-    c.drawString(amountAlign, 100, "1,350.56")
-    c.drawString(amountAlign, 85, "67.53")
-    c.drawString(amountAlign, 70, "1,418.09")
+    c.drawString(amountAlign, 100, str(subtotal))
+    taxAmount = taxRate * subtotal
+    c.drawString(amountAlign, 85, str("%.2f" % taxAmount))
+    total = taxAmount + subtotal
+    c.drawString(amountAlign, 70, str("%.2f" % total))
     ChangeFont(3, c)
-    c.drawString(amountAlign, 55, "1,418.09")
+    c.drawString(amountAlign, 55, str("%.2f" % total))
