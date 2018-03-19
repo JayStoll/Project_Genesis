@@ -3,10 +3,10 @@
 # Reason Creates the functions that will be used to print to the page
 
 from GetFileInfo import firstClientPageSort, labourInformation, hoursWorked, rate, tax
-from GetFileInfo import partInformation, qtyAmount, rate1, tax1
+from GetFileInfo import partInformation, qtyAmount, rate1, tax1, invoiceInformation, taxPercent
 from calculations import labourAmount, subtotal
 
-taxRate = 0.05  # TODO get this from a file and not hard coded
+taxRate = taxPercent
 
 # Used to align the words on the page
 leftAlign = 34
@@ -32,6 +32,7 @@ def PrintPDF(c):
     darwinAddress(c)
     ClientAddress(c)
     ClientInvoiceInfo(c)
+    FillInvoiceInformation(c)
     TitleBar(c)
     FillLabourTime(c)
     totalsLable(c)
@@ -70,7 +71,12 @@ def ClientInvoiceInfo(c):
     ChangeFont(2, c)
 
 
-# def FillInvoiceInformation(c):
+def FillInvoiceInformation(c):
+    c.drawString(taxAlign + 75, 700, invoiceInformation[0])
+    c.drawString(taxAlign + 75, 685, invoiceInformation[1])
+    c.drawString(taxAlign + 75, 670, invoiceInformation[2])
+    c.drawString(taxAlign + 75, 655, invoiceInformation[3])
+
 
 def TitleBar(c):
     c.drawString(leftAlign, 575, "ACTIVITY")
@@ -96,9 +102,9 @@ def FillLabourTime(c):
         partAlign = align
         i += 1
     c.drawString(QTYAlign, 550, str(hoursWorked))
-    c.drawString(rateAlign, 550, str(rate))
+    c.drawString(rateAlign, 550, str("%.2f" % rate))
     c.drawString(taxAlign, 550, tax)
-    c.drawString(amountAlign, 550, str(labourAmount))
+    c.drawString(amountAlign, 550, str("%.2f" % labourAmount))
     # Fill the part information
     ChangeFont(1, c)
     c.drawString(leftAlign, align, "Parts")
@@ -111,7 +117,7 @@ def FillLabourTime(c):
     c.drawString(QTYAlign, align, str(qtyAmount))
     c.drawString(rateAlign, align, str(rate1))
     c.drawString(taxAlign, align, tax1)
-    c.drawString(amountAlign, align, str(qtyAmount * rate1))  # TODO just get the price of the parts and print them out
+    c.drawString(amountAlign, align, str(rate1))  # The rate is already calcualted in the C# application
 
 
 def totalsLable(c):
