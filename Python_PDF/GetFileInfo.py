@@ -4,6 +4,7 @@
 # from curses.ascii import isdigit
 
 ClientInfo = 'clientInfo.txt'
+invoiceInfo = 'invoiceInfo.txt'
 LabourInfo = 'labourInfo.txt'
 partInfo = 'partInfo.txt'
 
@@ -18,6 +19,26 @@ for s in lines:
 # Used to get just the first and last name of the client
 for t in firstClientPageSort:
     clientName += t.split()
+
+
+# Get the invoice information
+with open(invoiceInfo) as f:
+    lines = f.readlines()
+invoiceInformation = []
+for s in lines:
+    invoiceInformation += s.split('\n')
+j = 0
+taxPercent = 0.0
+while j < len(invoiceInformation):
+    if invoiceInformation[j] == '':
+        invoiceInformation.remove('')
+    try:
+        val1 = float(invoiceInformation[j])
+    except ValueError:
+        pass
+    else:
+        taxPercent = val1
+    j += 1
 
 
 # Get labour information
