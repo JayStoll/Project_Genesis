@@ -39,6 +39,7 @@ namespace Project_Genesis_Source
             this.Close();
         }
 
+        //add customer button click event
         private void Add_Customer_Click(object sender, RoutedEventArgs e)
         {
             //setup strings
@@ -59,6 +60,8 @@ namespace Project_Genesis_Source
             }
         }
 
+
+        //tabs
         private void createInv_Click(object sender, RoutedEventArgs e)
         {
             CreateInvoicePage createInvoicePage = new CreateInvoicePage();
