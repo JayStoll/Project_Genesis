@@ -83,7 +83,7 @@
                     </LinearGradientBrush>
                 </Button.Foreground>
             </Button>
-            <ScrollViewer Grid.Column="1" HorizontalAlignment="Left" Height="255.578" Margin="0,163.266,0,0" VerticalAlignment="Top" Width="678">
+            <ScrollViewer Grid.Column="1" HorizontalAlignment="Left" Height="296" Margin="0,163,0,0" VerticalAlignment="Top" Width="678">
                 <SelectiveScrollingGrid HorizontalAlignment="Left" Height="448" VerticalAlignment="Top" Width="657">
                     <Label Content="Name" HorizontalAlignment="Left" Height="33.66" Margin="3.851,0,0,410.949" VerticalAlignment="Bottom" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
                     <TextBox HorizontalAlignment="Left" Height="33.66" Margin="241.38,3.391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontSize="20" FontFamily="Palatino Linotype"/>
@@ -96,7 +96,7 @@
                     <Label Content="Notes" HorizontalAlignment="Left" Height="33.66" Margin="3.851,158.06,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
                     <TextBox Margin="241.38,158.06,45.62,107.156" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Width="370"/>
                     <Label Content="Vehicle" HorizontalAlignment="Left" Height="33.66" Margin="3.851,345.844,0,-41.504" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                    <TextBox HorizontalAlignment="Left" Height="33.66" Margin="241.38,345.844,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontSize="20" FontFamily="Palatino Linotype"/>
+                    <TextBox x:Name="PartVehicleTxt" HorizontalAlignment="Left" Height="33.66" Margin="241.38,345.844,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontSize="20" FontFamily="Palatino Linotype"/>
                     <Button Content="Add Part" HorizontalAlignment="Left" Height="51" Margin="370.38,387,0,0" VerticalAlignment="Top" Width="241" FontFamily="Lithos Pro Regular" FontSize="20"/>
                 </SelectiveScrollingGrid>
             </ScrollViewer>
