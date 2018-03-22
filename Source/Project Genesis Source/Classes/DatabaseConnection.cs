@@ -49,6 +49,7 @@ namespace Project_Genesis_Source.Classes{
                     command.Parameters.AddWithValue(@"Cus_Address", mailingAddress);
                     command.Parameters.AddWithValue(@"Cus_Phone", mailingAddress);
                     command.Parameters.AddWithValue(@"Cus_Email", emailValue);
+                    command.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
@@ -87,6 +88,7 @@ namespace Project_Genesis_Source.Classes{
                     command.Parameters.AddWithValue(@"Cus_Address", mailingAddress);
                     command.Parameters.AddWithValue(@"Cus_Phone", phoneNumber);
                     command.Parameters.AddWithValue(@"Cus_Email", email);
+                    command.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
@@ -110,11 +112,11 @@ namespace Project_Genesis_Source.Classes{
         /// <param name="vehicleMake">Optional</param>
         /// <param name="modelNumber">Optional</param>
         /// <param name="vehicleNotes">Optional</param>
-        public void AddNewVehicle(int cusID, string serialNumber, string vehicleType, string vehicleMake, string modelNumber, string vehicleNotes,
+        public void AddNewVehicle(string serialNumber, string vehicleType, string vehicleMake, string modelNumber, string vehicleNotes,
             string ownerFName, string ownerLName) {
             // send the information to the database
             
-            //TODO CHANGE TO INT
+            
             //select query to get Cus_ID
             string selectCusID = @"SELECT Cus_ID FROM Customer WHERE Cus_FName = " + ownerFName + "AND Cus_LName = " + ownerLName;
 
@@ -128,12 +130,13 @@ namespace Project_Genesis_Source.Classes{
                 {
                     conn.Open();
                     command = new SqlCommand(insertVehicleData, conn);
-                    command.Parameters.AddWithValue(@"Cus_ID", selectCusID);
                     command.Parameters.AddWithValue(@"Vehicle_SerialNum", serialNumber);
                     command.Parameters.AddWithValue(@"Vehicle_Type", vehicleType);
                     command.Parameters.AddWithValue(@"Vehicle_Make", vehicleMake);
                     command.Parameters.AddWithValue(@"Vehicle_Num", modelNumber);
                     command.Parameters.AddWithValue(@"Vehicle_Notes", vehicleNotes);
+                    command.ExecuteNonQuery();
+
                     
                 }
                 catch (Exception ex)
@@ -161,6 +164,14 @@ namespace Project_Genesis_Source.Classes{
         {
             // send the information to the database
 
+            //TODO finish select statement to get correct vehicle id for VEHICLE_PART
+            //select query to get Vehicle_ID for Vehicle_Part
+            //string selectVehicleID = @"SELECT Vehicle_ID FROM Vehicle WHERE ownerFname = " + ownerFnamefromtext + " AND ownerLname = " ownerLnamefromtext;
+
+            //TODO finish select statement to get correct part id for Vehicle_Part
+            //select query to get Part_ID for Vehicle_Part
+            //string selectPartID = @"SELECT Part_ID FROM Part WHERE 
+
             //insert query to send to PART
             string insertPartData = @"INSERT INTO Part(Part_Name, Part_SerialNum, Part_PartNum, Part_Price, Part_Desc)
                                 VALUES(@Part_Name, @Part_SerialNum, @Part_PartNum, @Part_Price, @Part_Desc)";
@@ -182,8 +193,7 @@ namespace Project_Genesis_Source.Classes{
                     command.Parameters.AddWithValue(@"Part_PartNum", partNumber);
                     command.Parameters.AddWithValue(@"Part_Price", partPrice);
                     command.Parameters.AddWithValue(@"Part_Desc", partDescription);
-
-                    conn.Close();
+                    command.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
@@ -207,14 +217,14 @@ namespace Project_Genesis_Source.Classes{
                     command = new SqlCommand(insertVehiclePartData, conn);
                     command.Parameters.AddWithValue(@"Vehicle_ID", vehicleID);
                     command.Parameters.AddWithValue(@"Part_ID", partId);
-
-                    conn.Close();
-
                 }
                 catch (Exception ex)
                 {
-                    conn.Close();
                     MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
                 }
             }
 
@@ -240,7 +250,5 @@ namespace Project_Genesis_Source.Classes{
         }
 
 
-
-        //
     }
 }

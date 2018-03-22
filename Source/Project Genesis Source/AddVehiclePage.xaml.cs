@@ -83,16 +83,12 @@ namespace Project_Genesis_Source
             string vehicleMake = (vehicleMakeTxt.Text);
             string vehicleModelNum = (vehicleModelNumTxt.Text);
             string vehicleNotes = (vehicleNotesTxt.Text);
+            //fill these with split name from ownerTxt
             string ownerFName = null, ownerLName = null;
-            //TODO get these variables set to customer id and split the string out of ownerTxt to fill the strings.
-            
-            int cus_ID = 0;
-
-            
 
             DatabaseConnection dataConnect = new DatabaseConnection();
 
-            dataConnect.AddNewVehicle(cus_ID, vehicleSerialNum, vehicleType, vehicleMake, vehicleModelNum, vehicleNotes, ownerFName, ownerLName);
+            dataConnect.AddNewVehicle(vehicleSerialNum, vehicleType, vehicleMake, vehicleModelNum, vehicleNotes, ownerFName, ownerLName);
 
             
 
