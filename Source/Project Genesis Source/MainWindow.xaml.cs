@@ -90,6 +90,50 @@ namespace Project_Genesis_Source
             this.Close();
         }
 
+        private void createInv1_Click(object sender, RoutedEventArgs e)
+        {
+            CreateInvoicePage createInvoicePage = new CreateInvoicePage();
+            createInvoicePage.Show();
+            this.Close();
+        }
+
+        //mainPage tabs
+
+        private void addCust1_Click(object sender, RoutedEventArgs e)
+        {
+            AddCustomerPage addCustomerPage = new AddCustomerPage();
+            addCustomerPage.Show();
+            this.Close();
+        }
+
+        private void addVehicle1_Click(object sender, RoutedEventArgs e)
+        {
+            AddVehicle addVehicle = new AddVehicle();
+            addVehicle.Show();
+            this.Close();
+        }
+
+        private void addPart1_Click(object sender, RoutedEventArgs e)
+        {
+            AddPart addPart = new AddPart();
+            addPart.Show();
+            this.Close();
+        }
+
+        private void manageClient1_Click(object sender, RoutedEventArgs e)
+        {
+            ManageClients manageClients = new ManageClients();
+            manageClients.Show();
+            this.Close();
+        }
+
+        private void backup1_Click(object sender, RoutedEventArgs e)
+        {
+            BnApage backup = new BnApage();
+            backup.Show();
+            this.Close();
+        }
+
         //three more pages to come 
         //expected complete update monday
     }

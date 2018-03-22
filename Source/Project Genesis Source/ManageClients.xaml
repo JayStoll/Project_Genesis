@@ -5,123 +5,95 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Genesis_Source"
         mc:Ignorable="d"
-        Title="ManageClients" Height="500" Width="870">
+        Title="ManageClients" Height="573" Width="990">
     <Grid>
-        <Grid HorizontalAlignment="Right" Width="862" Height="469" VerticalAlignment="Top">
+        <Grid>
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF759ED3" Offset="1"/>
-                    <GradientStop Color="#FFCCD9EA"/>
+                    <GradientStop Color="#FF98C7F7"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF5795D3" Offset="0.51"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="23*"/>
-                <ColumnDefinition Width="98*"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label Content="Manage Clients" Grid.Column="1" HorizontalAlignment="Left" Height="86" Margin="10,33,0,0" VerticalAlignment="Top" Width="668" FontFamily="Century Gothic" FontSize="48" TextOptions.TextHintingMode="Fixed" Background="{x:Null}" FontWeight="Bold">
-                <Label.Foreground>
+            <Label Content="Manage Clients   " Margin="196.661,10,117.339,0" FontFamily="HarvestItal" FontSize="65" TextOptions.TextHintingMode="Fixed" Background="{x:Null}" FontWeight="Bold" Foreground="#FF0C1249" Height="131.509" VerticalAlignment="Top"/>
+            <Image Margin="22,20,0,0" Source="icon.png" Stretch="Fill" Height="127" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"/>
+            <Button x:Name="homeTab" Content="Home" Margin="22,164.687,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="homeTab_Click" FontFamily="PenultimateLightItal" FontSize="18" Foreground="#FF0C1249" Height="40" HorizontalAlignment="Left" Width="130" VerticalAlignment="Top"/>
+            <Button x:Name="createInv" Content="Create Invoice" Margin="22,209.687,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="createInv_Click" FontFamily="PenultimateLightItal" FontSize="18" Foreground="#FF0C1249" Height="40" HorizontalAlignment="Left" Width="130" VerticalAlignment="Top"/>
+            <Button x:Name="customerAdd" Content="Add Customer" Margin="22,254.687,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="customerAdd_Click" FontFamily="PenultimateLightItal" FontSize="18" Foreground="#FF0C1249" Height="40" HorizontalAlignment="Left" Width="130" VerticalAlignment="Top"/>
+            <Button x:Name="vehicleAdd" Content="Add Vehicle" Margin="22,299.687,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="vehicleAdd_Click" FontFamily="PenultimateLightItal" FontSize="18" Foreground="#FF0C1249" Height="40" HorizontalAlignment="Left" Width="130" VerticalAlignment="Top"/>
+            <Button x:Name="addPart" Content="Add Part" Margin="22,344.687,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="addPart_Click" FontFamily="PenultimateLightItal" FontSize="18" Foreground="#FF0C1249" Height="40" HorizontalAlignment="Left" Width="130" VerticalAlignment="Top"/>
+            <Button Content="Manage Clients" Margin="22,389.687,0,0" Background="{x:Null}" FontWeight="Bold" FontFamily="PenultimateLightItal" FontSize="18" Foreground="#FF0C1249" Height="40" HorizontalAlignment="Left" Width="130" VerticalAlignment="Top">
+                <Button.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="#FF0047FF" Offset="1"/>
+                        <GradientStop Color="#FF1397F1" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
                     </LinearGradientBrush>
-                </Label.Foreground>
-            </Label>
-            <Image HorizontalAlignment="Left" Height="109" Margin="22,10,0,0" VerticalAlignment="Top" Width="102" Source="icon.png" Stretch="Fill"/>
-            <Button x:Name="homeTab" Content="Home" HorizontalAlignment="Left" Height="32.157" Margin="10,163.266,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="homeTab_Click">
-                <Button.Foreground>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="#FF0047FF" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Foreground>
+                </Button.BorderBrush>
             </Button>
-            <Button x:Name="createInv" Content="Create Invoice" HorizontalAlignment="Left" Height="32.157" Margin="10,200.503,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="createInv_Click">
-                <Button.Foreground>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="#FF0047FF" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Foreground>
-            </Button>
-            <Button x:Name="customerAdd" Content="Add Customer" HorizontalAlignment="Left" Height="32.157" Margin="10,237.74,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="customerAdd_Click">
-                <Button.Foreground>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="#FF0047FF" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Foreground>
-            </Button>
-            <Button x:Name="vehicleAdd" Content="Add Vehicle" HorizontalAlignment="Left" Height="32.158" Margin="10,274.976,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="vehicleAdd_Click">
-                <Button.Foreground>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="#FF0047FF" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Foreground>
-            </Button>
-            <Button x:Name="addPart" Content="Add Part" HorizontalAlignment="Left" Height="32.157" Margin="10,312.213,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="addPart_Click">
-                <Button.Foreground>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="#FF0047FF" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Foreground>
-            </Button>
-            <Button Content="Manage Clients" HorizontalAlignment="Left" Height="32.157" Margin="10,349.45,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold">
-                <Button.Foreground>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="#FF0047FF" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Foreground>
-            </Button>
-            <Button x:Name="backupTab" Content="Backup &amp; Archive" HorizontalAlignment="Left" Height="32.157" Margin="10,386.687,0,0" VerticalAlignment="Top" Width="129.066" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="backupTab_Click">
-                <Button.Foreground>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="0"/>
-                        <GradientStop Color="#FF0047FF" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Foreground>
-            </Button>
-            <Border BorderBrush="#FF95AFD4" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="255.578" Margin="10,163.266,0,0" VerticalAlignment="Top" Width="171.149">
-                <Border.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="#FF98C7F7"/>
-                        <GradientStop Color="White" Offset="0.996"/>
-                        <GradientStop Color="#FF0E1317" Offset="1"/>
-                        <GradientStop Color="#FF5795D3" Offset="0.381"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-                <TextBox HorizontalAlignment="Left" Height="34.66" Margin="-1,44,-1,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171.149" FontSize="20" FontFamily="Palatino Linotype"/>
-            </Border>
-            <Border BorderBrush="#FF95AFD4" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="255.844" Margin="186.149,163.266,0,0" VerticalAlignment="Top" Width="198">
-                <Border.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="#FF98C7F7"/>
-                        <GradientStop Color="White" Offset="0.996"/>
-                        <GradientStop Color="#FF0E1317" Offset="1"/>
-                        <GradientStop Color="#FF5795D3" Offset="0.381"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-            </Border>
-            <Border BorderBrush="#FF95AFD4" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="255.578" Margin="389.149,163.266,0,0" VerticalAlignment="Top" Width="288.851">
-                <Border.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="#FF98C7F7"/>
-                        <GradientStop Color="White" Offset="0.996"/>
-                        <GradientStop Color="#FF0E1317" Offset="1"/>
-                        <GradientStop Color="#FF5795D3" Offset="0.381"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-                <ScrollBar Margin="261.851,38.822,9,9" Style="{DynamicResource SimpleScrollBar}" Width="Auto"/>
-            </Border>
-            <Label Content="Name" HorizontalAlignment="Left" Height="33.66" Margin="10,0,0,270.912" VerticalAlignment="Bottom" Width="171.149" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Grid.Column="1" Background="#FF95AFD4"/>
-            <Label Content="Vehicle" HorizontalAlignment="Left" Height="33.66" Margin="186.149,0,0,270.912" VerticalAlignment="Bottom" Width="198" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Grid.Column="1" Background="#FF95AFD4"/>
-            <Label Content="Invoice" HorizontalAlignment="Left" Height="33.66" Margin="389.149,0,0,270.912" VerticalAlignment="Bottom" Width="288.851" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Grid.Column="1" Background="#FF95AFD4"/>
-            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="108" Margin="413.149,33,0,0" TextWrapping="Wrap" Text="Page is not completely finished as of March 15 2018" VerticalAlignment="Top" Width="264.851"/>
+            <Button x:Name="backupTab" Content="Backup/&#xD;&#xA;Archive" Margin="22,434.687,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="backupTab_Click" FontFamily="PenultimateLightItal" FontSize="18" Foreground="#FF0C1249" Height="50" HorizontalAlignment="Left" Width="130" VerticalAlignment="Top"/>
+            <Grid Margin="196.661,164.687,0,0" Height="320" VerticalAlignment="Top" HorizontalAlignment="Left" Width="720.339">
+                <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="10.661,10,0,10" HorizontalAlignment="Left" Width="179.492">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF0E1317"/>
+                            <GradientStop Color="#FF98C7F7" Offset="1"/>
+                            <GradientStop Color="White" Offset="0.004"/>
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="#FF5795D3" Offset="0.619"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <ListView Margin="9,60.491,9,9">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Border>
+                <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="195.153,10,0,10" HorizontalAlignment="Left" Width="218.853">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF0E1317"/>
+                            <GradientStop Color="#FF98C7F7" Offset="1"/>
+                            <GradientStop Color="White" Offset="0.004"/>
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="#FF5795D3" Offset="0.619"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <ListView Margin="9,36.491,9,9">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Border>
+                <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="419.006,10,0,10" HorizontalAlignment="Left" Width="294.333">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF0E1317"/>
+                            <GradientStop Color="#FF98C7F7" Offset="1"/>
+                            <GradientStop Color="White" Offset="0.004"/>
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="#FF5795D3" Offset="0.619"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <ListView Margin="9,37.491,9,9">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Border>
+                <Label Content="Name" Margin="10.661,10,530.186,0" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="24.898" VerticalAlignment="Top"/>
+                <Label Content="Vehicle" Margin="195.153,10,306.333,0" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="24.898" VerticalAlignment="Top"/>
+                <Label Content="Invoice" Margin="419.006,10,0,0" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="24.898" VerticalAlignment="Top" HorizontalAlignment="Left" Width="294.333"/>
+                <TextBox HorizontalAlignment="Left" Height="29.219" Margin="23,39.898,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" FontFamily="Palatino Linotype" FontSize="20"/>
+            </Grid>
         </Grid>
 
     </Grid>
