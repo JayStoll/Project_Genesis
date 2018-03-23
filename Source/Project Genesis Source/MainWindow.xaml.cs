@@ -134,6 +134,13 @@ namespace Project_Genesis_Source
             this.Close();
         }
 
+        private void autoComplete_Click(object sender, RoutedEventArgs e)
+        {
+            AutoComplete autoComplete = new AutoComplete();
+            autoComplete.Show();
+            this.Close();
+        }
+
         //three more pages to come 
         //expected complete update monday
     }

@@ -36,14 +36,15 @@
             <Label Content="First Name" Height="33.66" Margin="196.661,168.391,584.339,0" VerticalAlignment="Top" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
             <Label Content="Last Name" Height="33.66" Margin="196.661,212.183,584.339,0" VerticalAlignment="Top" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
             <Label Content="Address" Height="33.66" Margin="196.661,255.947,584.339,0" VerticalAlignment="Top" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-            <Label Content="Phone Number" Height="33.66" Margin="196.661,300.104,584.339,0" VerticalAlignment="Top" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-            <TextBox Height="33.66" Margin="434.19,168.391,306.81,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontFamily="Palatino Linotype"/>
-            <TextBox Height="33.66" Margin="434.19,212.183,306.81,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20"/>
-            <TextBox Height="33.66" Margin="434.19,255.947,306.81,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20"/>
-            <TextBox Height="33.66" Margin="434.19,300.104,306.81,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20"/>
-            <Label Content="E-mail Address" Height="33.66" Margin="196.661,343.764,584.339,0" VerticalAlignment="Top" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-            <TextBox Height="33.66" Margin="434.19,343.764,306.81,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20"/>
-            <Button Content="Add Customer" Height="49" Margin="0,400,306.81,0" VerticalAlignment="Top" FontFamily="Lithos Pro Regular" FontSize="20" HorizontalAlignment="Right" Width="241"/>
+            <Label Content="Phone Number" Height="33.66" Margin="196.661,343.764,584.339,0" VerticalAlignment="Top" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+            <TextBox Height="33.66" Margin="434.19,168.391,56.81,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" FontFamily="Palatino Linotype"/>
+            <TextBox Height="33.66" Margin="434.19,212.183,56.81,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20"/>
+            <TextBox Height="33.66" Margin="434.19,255.947,56.81,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20"/>
+            <TextBox Height="33.66" Margin="434.19,300.104,56.81,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20"/>
+            <TextBox Height="33.66" Margin="434.19,343.764,56.81,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20"/>
+            <Button Content="Add Customer" Height="49" Margin="0,435.687,56.81,0" VerticalAlignment="Top" FontFamily="Lithos Pro Regular" FontSize="20" HorizontalAlignment="Right" Width="241"/>
+            <Label Content="E-mail Address" Height="33.66" Margin="196.661,382.424,584.339,0" VerticalAlignment="Top" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+            <TextBox Height="33.66" Margin="434.19,382.424,56.81,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20"/>
         </Grid>
 
     </Grid>

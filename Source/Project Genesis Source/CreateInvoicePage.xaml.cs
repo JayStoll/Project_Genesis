@@ -71,5 +71,10 @@ namespace Project_Genesis_Source
             this.Close();
 
         }
+
+        private void SearchBar1_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }

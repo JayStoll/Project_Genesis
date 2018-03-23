@@ -153,5 +153,7 @@
             </Button.BorderBrush>
         </Button>
         <Label Content="CAJN " Grid.Column="1" Margin="10,34.003,107.779,428.997" Foreground="#FF0C1249" FontSize="72" FontFamily="Splash"/>
+        <Button x:Name="autoComplete" Content="AutoCompletePage" Grid.Column="2" Margin="0,0,10,10" Click="autoComplete_Click" HorizontalAlignment="Right" Width="168" Height="38" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Column="2" Margin="0,0,10,10" TextWrapping="Wrap" Text="TestPage &lt;notincluded&gt;" HorizontalAlignment="Right" Width="147" Height="15" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

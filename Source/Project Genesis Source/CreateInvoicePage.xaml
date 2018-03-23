@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="CreateInvoicePage" Height="573" Width="990">
     <Window.Resources>
+
+
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
@@ -57,6 +59,7 @@
         <Storyboard x:Key="OnClick1"/>
         <Storyboard x:Key="OpenCreateInvoicePage"/>
     </Window.Resources>
+ 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -97,7 +100,7 @@
                         <TextBox Height="33.66" Margin="247.529,203.104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" HorizontalAlignment="Left" Width="370.471"/>
                         <TextBox Height="33.66" Margin="247.529,354.34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471"/>
                         <TextBox Height="33.66" Margin="247.529,311.184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" HorizontalAlignment="Left" Width="370.471"/>
-                        <Rectangle Margin="10,10,0,0" RadiusY="12.029" RadiusX="12.029" Stroke="Black" Height="30.391" VerticalAlignment="Top" HorizontalAlignment="Left" Width="608">
+                        <Rectangle Margin="10,10,0,0" RadiusY="12.029" RadiusX="12.029" Stroke="Black" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="608">
                             <Rectangle.Fill>
                                 <RadialGradientBrush>
                                     <GradientStop Color="#FFF0F0F0" Offset="1"/>
@@ -106,7 +109,7 @@
                             </Rectangle.Fill>
                         </Rectangle>
                         <Button Content="Create" Margin="493,529.713,0,0" FontFamily="Lithos Pro Regular" FontSize="20" HorizontalAlignment="Left" Width="125" Height="60" VerticalAlignment="Top"/>
-                        <Rectangle HorizontalAlignment="Left" Height="30.391" Margin="10,259,0,0" VerticalAlignment="Top" Width="608" RadiusY="12.029" RadiusX="12.029" Stroke="Black">
+                        <Rectangle HorizontalAlignment="Left" Height="40" Margin="10,259,0,0" VerticalAlignment="Top" Width="608" RadiusY="12.029" RadiusX="12.029" Stroke="Black">
                             <Rectangle.Fill>
                                 <RadialGradientBrush>
                                     <GradientStop Color="#FFF0F0F0" Offset="1"/>
@@ -116,6 +119,13 @@
                         </Rectangle>
                         <Label Content="Labour" HorizontalAlignment="Left" Height="33.66" Margin="10,393,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
                         <TextBox HorizontalAlignment="Left" Height="131.713" Margin="247.529,393,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontSize="20" FontFamily="Palatino Linotype"/>
+                        <TextBox x:Name="SearchBar1" Margin="22.529,13,0,0" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="584.471"
+                                 
+                                 />
+
+                        
+                        
+                     <TextBox x:Name="SearchBar2" Margin="22.529,262.34,0,0" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="584.471"/>
                     </SelectiveScrollingGrid>
                 </Grid>
             </ScrollViewer>
@@ -145,5 +155,8 @@
         <Button x:Name="clientManage" Content="Manage Clients" HorizontalAlignment="Left" Height="40" Margin="20,387.691,0,0" VerticalAlignment="Top" Width="130" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="clientManage_Click" FontSize="18" FontFamily="PenultimateLightItal" Foreground="#FF0C1249"/>
         <Button x:Name="backupTab" Content="Backup/&#xD;&#xA;Archive" HorizontalAlignment="Left" Height="50" Margin="20,432.691,0,0" VerticalAlignment="Top" Width="130" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="backupTab_Click" FontSize="18" FontFamily="PenultimateLightItal" Foreground="#FF0C1249"/>
 
+      
     </Grid>
 </Window>
+    
+    

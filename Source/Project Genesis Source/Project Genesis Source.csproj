@@ -89,6 +89,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel.cs" />
     <Page Include="AddCustomerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddVehiclePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AutoComplete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,6 +131,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AutoComplete.xaml.cs">
+      <DependentUpon>AutoComplete.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BnApage.xaml.cs">
       <DependentUpon>BnApage.xaml</DependentUpon>
     </Compile>
@@ -134,6 +142,8 @@
     <Compile Include="CreateInvoicePage.xaml.cs">
       <DependentUpon>CreateInvoicePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DropdownData.cs" />
+    <Compile Include="Dropdowns.cs" />
     <Compile Include="GenesisDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -156,6 +166,7 @@
     <Compile Include="ManageClients.xaml.cs">
       <DependentUpon>ManageClients.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ObserverCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
