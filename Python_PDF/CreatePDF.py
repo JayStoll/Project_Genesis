@@ -5,10 +5,12 @@
 # reportlab needed in-order to run this script
 
 import datetime
+import time
+
 from reportlab.pdfgen import canvas
 from Definitions import PrintPDF
 from GetFileInfo import clientName
-import time
+
 
 c = canvas.Canvas(clientName[0] + clientName[1] + datetime.datetime.today().strftime('%d-%m-%Y') + ".pdf")
 

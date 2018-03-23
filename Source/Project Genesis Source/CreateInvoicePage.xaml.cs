@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_Genesis_Source.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -70,6 +71,15 @@ namespace Project_Genesis_Source
             backup.Show();
             this.Close();
 
+        }
+
+        private void CreateInvoiceButton_Click(object sender, RoutedEventArgs e) {
+            PythonConnection pc = new PythonConnection();
+            pc.CreateClientInfoFile();
+            pc.CreateInvoiceInfoFile();
+            pc.CreateLabourInforFile();
+            pc.CreatePartInfoFile();
+            pc.CreatePDF();
         }
     }
 }

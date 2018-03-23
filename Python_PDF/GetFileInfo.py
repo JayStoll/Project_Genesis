@@ -3,6 +3,9 @@
 # Reason Gets the information from the file and gives it to the rest of the script
 # from curses.ascii import isdigit
 
+
+# TODO clean this script up
+
 ClientInfo = 'clientInfo.txt'
 invoiceInfo = 'invoiceInfo.txt'
 LabourInfo = 'labourInfo.txt'
@@ -28,7 +31,7 @@ invoiceInformation = []
 for s in lines:
     invoiceInformation += s.split('\n')
 j = 0
-taxPercent = 0.0
+taxPercent = 0
 while j < len(invoiceInformation):
     if invoiceInformation[j] == '':
         invoiceInformation.remove('')
