@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_Genesis_Source.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -70,6 +71,27 @@ namespace Project_Genesis_Source
             BnApage backup = new BnApage();
             backup.Show();
             this.Close();
+
+        }
+
+        //add vehicle button click event
+        private void Add_Vehicle_Click(object sender, RoutedEventArgs e)
+        {
+            //intialize variables
+            string vehicleSerialNum = (serialNumTxt.Text);
+            string vehicleType = (vehicleTypeTxt.Text);
+            string vehicleMake = (vehicleMakeTxt.Text);
+            string vehicleModelNum = (vehicleModelNumTxt.Text);
+            string vehicleNotes = (vehicleNotesTxt.Text);
+            //fill these with split name from ownerTxt
+            string ownerFName = null, ownerLName = null;
+
+            DatabaseConnection dataConnect = new DatabaseConnection();
+
+            dataConnect.AddNewVehicle(vehicleSerialNum, vehicleType, vehicleMake, vehicleModelNum, vehicleNotes, ownerFName, ownerLName);
+
+            
+
 
         }
     }
