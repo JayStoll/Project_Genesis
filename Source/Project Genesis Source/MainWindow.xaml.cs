@@ -50,98 +50,59 @@ namespace Project_Genesis_Source
 
         private void customerAdd_Click(object sender, RoutedEventArgs e)
         {
-            AddCustomerPage addCustomerPage = new AddCustomerPage();
-            addCustomerPage.Show();
-            this.Close();
+
+
+            Main.Content = new AddCustomer1();
+
         }
         
         private void vehicleAdd_Click(object sender, RoutedEventArgs e)
         {
-            AddVehicle addVehicle = new AddVehicle();
-            addVehicle.Show();
-            this.Close();
+
+
+            Main.Content = new AddVehicle1();
+
         }
 
         private void addPart_Click(object sender, RoutedEventArgs e)
         {
-            AddPart addPart = new AddPart();
-            addPart.Show();
-            this.Close();
+
+            Main.Content = new AddPart1();
+
         }
 
         private void clientManage_Click(object sender, RoutedEventArgs e)
         {
-            ManageClients manageClients = new ManageClients();
-            manageClients.Show();
-            this.Close();
+
+
+            Main.Content = new ManageClients1();
         }
 
         private void backupTab_Click(object sender, RoutedEventArgs e)
         {
-            BnApage backup = new BnApage();
-            backup.Show();
-            this.Close();
+
+            Main.Content = new Backup1();
+
         }
 
         private void createInv_Click(object sender, RoutedEventArgs e)
         {
-            CreateInvoicePage createInvoicePage = new CreateInvoicePage();
-            createInvoicePage.Show();
-            this.Close();
+    
+
+            Main.Content = new CreateInvoice1();
         }
 
         private void createInv1_Click(object sender, RoutedEventArgs e)
         {
-            CreateInvoicePage createInvoicePage = new CreateInvoicePage();
-            createInvoicePage.Show();
-            this.Close();
+   
+
+            Main.Content = new CreateInvoice1();
+
         }
 
-        //mainPage tabs
-
-        private void addCust1_Click(object sender, RoutedEventArgs e)
+        private void home1_Click(object sender, RoutedEventArgs e)
         {
-            AddCustomerPage addCustomerPage = new AddCustomerPage();
-            addCustomerPage.Show();
-            this.Close();
+            Main.Content = new Home1();
         }
-
-        private void addVehicle1_Click(object sender, RoutedEventArgs e)
-        {
-            AddVehicle addVehicle = new AddVehicle();
-            addVehicle.Show();
-            this.Close();
-        }
-
-        private void addPart1_Click(object sender, RoutedEventArgs e)
-        {
-            AddPart addPart = new AddPart();
-            addPart.Show();
-            this.Close();
-        }
-
-        private void manageClient1_Click(object sender, RoutedEventArgs e)
-        {
-            ManageClients manageClients = new ManageClients();
-            manageClients.Show();
-            this.Close();
-        }
-
-        private void backup1_Click(object sender, RoutedEventArgs e)
-        {
-            BnApage backup = new BnApage();
-            backup.Show();
-            this.Close();
-        }
-
-        private void autoComplete_Click(object sender, RoutedEventArgs e)
-        {
-            AutoComplete autoComplete = new AutoComplete();
-            autoComplete.Show();
-            this.Close();
-        }
-
-        //three more pages to come 
-        //expected complete update monday
     }
 }
