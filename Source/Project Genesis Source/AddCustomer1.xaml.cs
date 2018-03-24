@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_Genesis_Source.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,30 @@ namespace Project_Genesis_Source
         public AddCustomer1()
         {
             InitializeComponent();
+        }
+
+        private void Add_Customer_Click(object sender, RoutedEventArgs e)
+        {
+            //initialize strings from textboxes
+            string fName = fNametxt.Text;
+            string lName = lNameTxt.Text;
+            string address = addressTxt.Text;
+            string boxNum = boxNumtxt.Text;
+            string phoneNum = phoneNumTxt.Text;
+            string email = emailTxt.Text;
+            string postalCode = postalCodeTxt.Text;
+
+            //initialize database connection variable
+            DatabaseConnection dataConnect = new DatabaseConnection();
+
+            if (email == null)
+            {
+                dataConnect.AddNewClient(fName, lName, address, phoneNum, boxNum, postalCode);
+            }
+            else
+            {
+                dataConnect.AddNewClient(fName, lName, address, phoneNum, email, boxNum, postalCode);
+            }
         }
     }
 }

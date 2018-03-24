@@ -24,5 +24,10 @@ namespace Project_Genesis_Source
         {
             InitializeComponent();
         }
+
+        private void AddPartButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

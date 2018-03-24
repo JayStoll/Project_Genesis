@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace Project_Genesis_Source
 {
     /// <summary>
@@ -25,15 +28,43 @@ namespace Project_Genesis_Source
             InitializeComponent();
         }
 
-        private void SearchBar1_TextChanged(object sender, TextChangedEventArgs e)
+        private void CustomerSearchTextInput(object sender, TextCompositionEventArgs e)
         {
+            //initialize command & connection
+            SqlCommand command = new SqlCommand();
+            string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GenesisDB.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection conn = new SqlConnection();
 
-        }
+            string nameToSearch = SearchBar1.Text;
 
-        private void SearchBar1_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-            
+            //setup query
+            string selectFNameforAutoFill = @"SELECT * From Customer WHERE Cus_FName = " + nameToSearch;
 
+            //setup command with select string
+            command = new SqlCommand(selectFNameforAutoFill, conn);
+            SqlDataReader dataRead = command.ExecuteReader();
+
+            using (conn = new SqlConnection(connString))
+            {
+                conn.Open();
+
+                while (dataRead.Read())
+                {
+                    //get correct data and change textbox
+                    string fName = (string)dataRead["Cus_FName"].ToString();
+                    CusFNameTxt.Text = fName;
+
+                    string lName = (string)dataRead["Cus_LName"].ToString();
+                    CusLnameTxt.Text = lName;
+
+                    string address = (string)dataRead["Cus_Address"].ToString();
+                    CusAddressTxt.Text = address;
+
+                    string phoneNum = (string)dataRead["Cus_Phone"].ToString();
+                    CusPhoneTxt.Text = phoneNum;
+
+                }
+            }
         }
     }
 }
