@@ -27,11 +27,12 @@ namespace Project_Genesis_Source.Classes
         public void CreatePDF() {
             string fileName = @"C:\Users\Owner\Documents\Project_Genesis\Python_PDF\CreatePDF.py";
 
-            Process p = new Process();
-            p.StartInfo = new ProcessStartInfo(@"C:\Users\Owner\AppData\Local\Programs\Python\Python36-32\python.exe", fileName) { 
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
+            Process p = new Process {
+                StartInfo = new ProcessStartInfo(@"C:\Users\Owner\AppData\Local\Programs\Python\Python36-32\python.exe", fileName) {
+                    RedirectStandardOutput = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                }
             };
             p.Start();
 
