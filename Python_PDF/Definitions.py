@@ -76,8 +76,8 @@ def ClientInvoiceInfo(c):
 def FillInvoiceInformation(c):
     c.drawString(taxAlign + 75, 700, invoiceInformation[0])
     c.drawString(taxAlign + 75, 685, datetime.datetime.today().strftime('%d-%m-%Y'))
-    c.drawString(taxAlign + 75, 670, invoiceInformation[1])  # TODO look at making this calculated automatically
-    c.drawString(taxAlign + 75, 655, invoiceInformation[2])
+    c.drawString(taxAlign + 75, 670, invoiceInformation[1])
+    c.drawString(taxAlign + 75, 655, "Due on receipt")
 
 
 def TitleBar(c):

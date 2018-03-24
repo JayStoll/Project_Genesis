@@ -75,6 +75,7 @@ namespace Project_Genesis_Source
 
         private void CreateInvoiceButton_Click(object sender, RoutedEventArgs e) {
             PythonConnection pc = new PythonConnection();
+            // TODO - give these some arguments that will be taken from the search bars
             pc.CreateClientInfoFile();
             pc.CreateInvoiceInfoFile();
             pc.CreateLabourInforFile();

@@ -11,6 +11,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Project_Genesis_Source.Classes {
     public class PythonConnection {
@@ -36,7 +37,7 @@ namespace Project_Genesis_Source.Classes {
             tw.WriteLine("635"); // TODO Get the information from the database
             //tw.WriteLine("12-10-2017");
             tw.WriteLine("01-11-2017");
-            tw.WriteLine("Due on receipt");
+            //tw.WriteLine("Due on receipt");
             tw.Write("0.05");
             tw.Close();
         }
@@ -45,7 +46,9 @@ namespace Project_Genesis_Source.Classes {
         public void CreateLabourInforFile() {
             //File.Create(labourFileInfo);
             tw = new StreamWriter(labourFileInfo);
-            tw.WriteLine("Remove fuel tank to clean out"); // TODO Get the information from the database
+            // TODO Get the information from the database
+            // TODO add the vehcicle that he worked on 
+            tw.WriteLine("Remove fuel tank to clean out"); // store this information in an array broken up by a period? then printed from an array
             tw.WriteLine("Install new fuel line");
             tw.WriteLine("Repair air leak at air filters");
             tw.WriteLine("and install new air filters");
@@ -70,7 +73,7 @@ namespace Project_Genesis_Source.Classes {
         /// Create a PDF file
         /// </summary>
         public void CreatePDF() {
-            string fileName = @"C:\Users\Owner\Documents\Project_Genesis\Python_PDF\CreatePDF.py";
+            string fileName = @"python\CreatePDF.py";
 
             Process p = new Process();
             p.StartInfo = new ProcessStartInfo(@"C:\Users\Owner\AppData\Local\Programs\Python\Python36-32\python.exe", fileName) {
@@ -82,6 +85,15 @@ namespace Project_Genesis_Source.Classes {
 
             string output = p.StandardOutput.ReadToEnd();
             p.WaitForExit();
+
+            // prints if the PDF was created or not
+            MessageBox.Show(output);
+
+            // used to delete the files as to not clutter the file with extra documents
+            File.Delete(clientFileInfo);
+            File.Delete(invoiceFileInfo);
+            File.Delete(labourFileInfo);
+            File.Delete(partFileInfo);
             // Debug purposes only
             Console.WriteLine(output);
             Console.ReadLine();
