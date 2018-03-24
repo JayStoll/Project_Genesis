@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: Jayden Stoll
+ * Date: March 12 2018
+ * Reason: Allow Connection to the python script and allow the creating of PDF files
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -19,7 +25,7 @@ namespace Project_Genesis_Source.Classes
         /// Create a PDF file
         /// </summary>
         public void CreatePDF() {
-            string fileName = @"C:\Users\Owner\Documents\Project_Genesis\Python_PDF\CreateNewPDF.py";
+            string fileName = @"C:\Users\Owner\Documents\Project_Genesis\Python_PDF\CreatePDF.py";
 
             Process p = new Process();
             p.StartInfo = new ProcessStartInfo(@"C:\Users\Owner\AppData\Local\Programs\Python\Python36-32\python.exe", fileName) { 
@@ -33,7 +39,6 @@ namespace Project_Genesis_Source.Classes
             p.WaitForExit();
             // Debug purposes only
             Console.WriteLine(output);
-
             Console.ReadLine();
         } 
     }
