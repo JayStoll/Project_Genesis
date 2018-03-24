@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Data;
 using System.Windows;
+using System.IO;
 
 namespace Project_Genesis_Source.Classes{
 
@@ -31,11 +32,11 @@ namespace Project_Genesis_Source.Classes{
         /// <param name="postalCode"></param>
         /// <param name="phoneNumber"></param>
         public void AddNewClient(string firstName, string lastName, string mailingAddress, string phoneNumber) {
-            // send the information to CUSTOMER - setting the email field to null
+            // send the information to Customer - setting the email field to null
             string emailValue = null;
 
-            //insert query to send to db
-            string insertData = @"INSERT INTO CUSTOMER(Cus_FName, Cus_LName, Cus_Address, Cus_Phone, Cus_Email)
+            //insert query to send to Customer
+            string insertData = @"INSERT INTO Customer(Cus_FName, Cus_LName, Cus_Address, Cus_Phone, Cus_Email)
                                 VALUES(@Cus_FName, @Cus_LName, @Cus_Address, @Cus_Phone, @Cus_Email)";
 
             using (conn = new SqlConnection(connString))
@@ -48,9 +49,10 @@ namespace Project_Genesis_Source.Classes{
                     command.Parameters.AddWithValue(@"Cus_Address", mailingAddress);
                     command.Parameters.AddWithValue(@"Cus_Phone", mailingAddress);
                     command.Parameters.AddWithValue(@"Cus_Email", emailValue);
-                    MessageBox.Show("Added new client");
+                    command.ExecuteNonQuery();
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
                     MessageBox.Show(ex.Message);
                 }
                 finally {
@@ -69,10 +71,10 @@ namespace Project_Genesis_Source.Classes{
         /// <param name="email"></param>
         
         public void AddNewClient(string firstName, string lastName, string mailingAddress, string phoneNumber, string email) {
-            // send the information to CUSTOMER with email
+            // send the information to Customer with email
          
-            //insert query to send to db
-            string insertData = @"INSERT INTO CUSTOMER(Cus_FName, Cus_LName, Cus_Address, Cus_Phone, Cus_Email)
+            //insert query to send to cCustomer
+            string insertData = @"INSERT INTO Customer(Cus_FName, Cus_LName, Cus_Address, Cus_Phone, Cus_Email)
                                 VALUES(@Cus_FName, @Cus_LName, @Cus_Address, @Cus_Phone, @Cus_Email)";
 
             using (conn = new SqlConnection(connString))
@@ -86,12 +88,15 @@ namespace Project_Genesis_Source.Classes{
                     command.Parameters.AddWithValue(@"Cus_Address", mailingAddress);
                     command.Parameters.AddWithValue(@"Cus_Phone", phoneNumber);
                     command.Parameters.AddWithValue(@"Cus_Email", email);
-                    conn.Close();
+                    command.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
-                    conn.Close();
                     MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
                 }
             }
         }
@@ -107,11 +112,16 @@ namespace Project_Genesis_Source.Classes{
         /// <param name="vehicleMake">Optional</param>
         /// <param name="modelNumber">Optional</param>
         /// <param name="vehicleNotes">Optional</param>
-        public void AddNewVehicle(int cusID, string serialNumber, string vehicleType, string vehicleMake, string modelNumber, string vehicleNotes) {
+        public void AddNewVehicle(string serialNumber, string vehicleType, string vehicleMake, string modelNumber, string vehicleNotes,
+            string ownerFName, string ownerLName) {
             // send the information to the database
             
+            
+            //select query to get Cus_ID
+            string selectCusID = @"SELECT Cus_ID FROM Customer WHERE Cus_FName = " + ownerFName + "AND Cus_LName = " + ownerLName;
+
             //insert query to send to VEHICLE
-            string insertData = @"INSERT INTO VEHICLE(Cus_ID, Vehicle_SerialNum, Vehicle_Type, Vehicle_Make, Vehicle_Num, Vehicle_Notes)
+            string insertVehicleData = @"INSERT INTO Vehicle(Cus_ID, Vehicle_SerialNum, Vehicle_Type, Vehicle_Make, Vehicle_Num, Vehicle_Notes)
                                 VALUES(@Cus_ID, @Vehicle_SerialNum, @Vehicle_Type, @Vehicle_Make, @Vehicle_Num, @Vehicle_Notes)";
 
             using (conn = new SqlConnection(connString))
@@ -119,23 +129,28 @@ namespace Project_Genesis_Source.Classes{
                 try
                 {
                     conn.Open();
-                    command = new SqlCommand(insertData, conn);
-                    command.Parameters.AddWithValue(@"Cus_ID", cusID);
+                    command = new SqlCommand(insertVehicleData, conn);
                     command.Parameters.AddWithValue(@"Vehicle_SerialNum", serialNumber);
                     command.Parameters.AddWithValue(@"Vehicle_Type", vehicleType);
                     command.Parameters.AddWithValue(@"Vehicle_Make", vehicleMake);
                     command.Parameters.AddWithValue(@"Vehicle_Num", modelNumber);
                     command.Parameters.AddWithValue(@"Vehicle_Notes", vehicleNotes);
-                    conn.Close();
+                    command.ExecuteNonQuery();
+
+                    
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
+                finally
+                {
+                    conn.Close();
+                }
             }
-
         }
 
+    
         /// <summary>
         /// Add a new part to the database
         /// </summary>
@@ -145,19 +160,27 @@ namespace Project_Genesis_Source.Classes{
         /// <param name="partNumber">Optional</param>
         /// <param name="partPrice"></param>
         /// <param name="partDescription">Optional</param>
-        public void AddNewPart(int vehicleID, int partId, string partName, string serialNumber, string partNumber, string partPrice, string partDescription) {
+        public void AddNewPart(int partId, string partName, string serialNumber, string partNumber, string partPrice, string partDescription)
+        {
             // send the information to the database
-            
+
+            //TODO finish select statement to get correct vehicle id for VEHICLE_PART
+            //select query to get Vehicle_ID for Vehicle_Part
+            //string selectVehicleID = @"SELECT Vehicle_ID FROM Vehicle WHERE ownerFname = " + ownerFnamefromtext + " AND ownerLname = " ownerLnamefromtext;
+
+            //TODO finish select statement to get correct part id for Vehicle_Part
+            //select query to get Part_ID for Vehicle_Part
+            //string selectPartID = @"SELECT Part_ID FROM Part WHERE 
+
             //insert query to send to PART
-            string insertPartData = @"INSERT INTO PART(Part_Name, Part_SerialNum, Part_PartNum, Part_Price, Part_Desc)
+            string insertPartData = @"INSERT INTO Part(Part_Name, Part_SerialNum, Part_PartNum, Part_Price, Part_Desc)
                                 VALUES(@Part_Name, @Part_SerialNum, @Part_PartNum, @Part_Price, @Part_Desc)";
 
             //insert query to send to VEHICLE_PART
-            string insertVehiclePartData = @"INSERT INTO VEHICLE_PART(Vehicle_ID, Part_ID)
+            string insertVehiclePartData = @"INSERT INTO Vehicle_Part(Vehicle_ID, Part_ID)
                                                 VALUES (@Vehicle_ID, @Part_ID)";
 
-
-            //send values to CUSTOMER and catch error
+            //send values to Part and catch error
             using (conn = new SqlConnection(connString))
             {
                 try
@@ -170,17 +193,21 @@ namespace Project_Genesis_Source.Classes{
                     command.Parameters.AddWithValue(@"Part_PartNum", partNumber);
                     command.Parameters.AddWithValue(@"Part_Price", partPrice);
                     command.Parameters.AddWithValue(@"Part_Desc", partDescription);
-
-                    conn.Close();
+                    command.ExecuteNonQuery();
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
                     conn.Close();
-                    MessageBox.Show(ex.Message);                   
                 }
             }
 
             //send values to VEHICLE_PART and catch error
+            //placeholder for vehicleID until a query is made
+            string vehicleID = null;
             using (conn = new SqlConnection(connString))
             {
                 try
@@ -190,16 +217,22 @@ namespace Project_Genesis_Source.Classes{
                     command = new SqlCommand(insertVehiclePartData, conn);
                     command.Parameters.AddWithValue(@"Vehicle_ID", vehicleID);
                     command.Parameters.AddWithValue(@"Part_ID", partId);
-
-                    conn.Close();
-
-                }catch (Exception ex)
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
                 {
                     conn.Close();
-                    MessageBox.Show(ex.Message);
                 }
             }
 
+        }
+
+        private static string GetInsertCommand(string insertVehiclePartData)
+        {
+            return insertVehiclePartData;
         }
 
 
@@ -215,5 +248,7 @@ namespace Project_Genesis_Source.Classes{
             // add the invoice information to the database
             // TODO - Fix this function to use the proper information
         }
+
+
     }
 }
