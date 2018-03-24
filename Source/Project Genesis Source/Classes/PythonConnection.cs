@@ -34,11 +34,12 @@ namespace Project_Genesis_Source.Classes {
         public void CreateInvoiceInfoFile() {
             //File.Create(invoiceFileInfo);
             tw = new StreamWriter(invoiceFileInfo);
-            tw.WriteLine("635"); // TODO Get the information from the database
-            //tw.WriteLine("12-10-2017");
-            tw.WriteLine("01-11-2017");
-            //tw.WriteLine("Due on receipt");
-            tw.Write("0.05");
+            // TODO Get the information from the database
+            tw.WriteLine("635");                                    // invoice number                                  
+            //tw.WriteLine("12-10-2017");                           // this is autotmatically created in the python script
+            tw.WriteLine("01-11-2017");                             // due date of the invoice
+            //tw.WriteLine("Due on receipt");                       // this is created automatically in the python script
+            tw.Write("0.05");                                       // tax rate (0.05 = 5% - converted in the python script)
             tw.Close();
         }
 
@@ -48,13 +49,13 @@ namespace Project_Genesis_Source.Classes {
             tw = new StreamWriter(labourFileInfo);
             // TODO Get the information from the database
             // TODO add the vehcicle that he worked on 
-            tw.WriteLine("Remove fuel tank to clean out"); // store this information in an array broken up by a period? then printed from an array
+            tw.WriteLine("Remove fuel tank to clean out");          // store this information in an array - broken up by a period? - then printed from an array - work done
             tw.WriteLine("Install new fuel line");
             tw.WriteLine("Repair air leak at air filters");
             tw.WriteLine("and install new air filters");
-            tw.WriteLine("17");
-            tw.WriteLine("75.00");
-            tw.Write("G");
+            tw.WriteLine("17");                                     // hours worked
+            tw.WriteLine("75.00");                                  // rate
+            tw.Write("G");                                          // tax type 
             tw.Close();
         }
 
@@ -62,10 +63,11 @@ namespace Project_Genesis_Source.Classes {
         public void CreatePartInfoFile() {
             //File.Create(partFileInfo);
             tw = new StreamWriter(partFileInfo);
-            tw.WriteLine("NAPA: Filters and fuel line"); // TODO Get the information from the database
-            tw.WriteLine("1");
-            tw.WriteLine("75.56");
-            tw.Write("G"); 
+            // TODO Get the information from the database
+            tw.WriteLine("NAPA: Filters and fuel line");            // parts used
+            tw.WriteLine("1");                                      // amount of parts used - not entered by the user
+            tw.WriteLine("75.56");                                  // the total price of all the parts
+            tw.Write("G");                                          // tax type
             tw.Close();
         }
 
