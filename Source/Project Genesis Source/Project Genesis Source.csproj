@@ -98,46 +98,52 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Customer.cs">
-      <DependentUpon>ERD1.tt</DependentUpon>
+    <Compile Include="AddCustomer1.xaml.cs">
+      <DependentUpon>AddCustomer1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ERD1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ERD1.tt</DependentUpon>
+    <Compile Include="AddPart1.xaml.cs">
+      <DependentUpon>AddPart1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Invoice.cs">
-      <DependentUpon>ERD1.tt</DependentUpon>
+    <Compile Include="AddVehicle1.xaml.cs">
+      <DependentUpon>AddVehicle1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Invoice_Item.cs">
-      <DependentUpon>ERD1.tt</DependentUpon>
+    <Compile Include="Backup1.xaml.cs">
+      <DependentUpon>Backup1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Part.cs">
-      <DependentUpon>ERD1.tt</DependentUpon>
+    <Compile Include="CreateInvoice1.xaml.cs">
+      <DependentUpon>CreateInvoice1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vehicle.cs">
-      <DependentUpon>ERD1.tt</DependentUpon>
+    <Compile Include="Home1.xaml.cs">
+      <DependentUpon>Home1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vehicle_Part.cs">
-      <DependentUpon>ERD1.tt</DependentUpon>
+    <Compile Include="ManageClients1.xaml.cs">
+      <DependentUpon>ManageClients1.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddCustomerPage.xaml">
+    <Page Include="AddCustomer1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddPart.xaml">
+    <Page Include="AddPart1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddVehiclePage.xaml">
+    <Page Include="AddVehicle1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BnApage.xaml">
+    <Page Include="AutoComplete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CreateInvoicePage.xaml">
+    <Page Include="Backup1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateInvoice1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Home1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,27 +151,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AddCustomerPage.xaml.cs">
-      <DependentUpon>AddCustomerPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AddPart.xaml.cs">
-      <DependentUpon>AddPart.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AddVehiclePage.xaml.cs">
-      <DependentUpon>AddVehiclePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BnApage.xaml.cs">
-      <DependentUpon>BnApage.xaml</DependentUpon>
+    <Compile Include="AutoComplete.xaml.cs">
+      <DependentUpon>AutoComplete.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\PythonConnection.cs" />
-    <Compile Include="CreateInvoicePage.xaml.cs">
-      <DependentUpon>CreateInvoicePage.xaml</DependentUpon>
-    </Compile>
+    <!-- this is where the text file stuff is supposed to go -->
     <Compile Include="ERD1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -185,7 +180,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ManageClients.xaml">
+    <Page Include="ManageClients1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -195,9 +190,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ManageClients.xaml.cs">
-      <DependentUpon>ManageClients.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
