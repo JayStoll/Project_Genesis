@@ -88,14 +88,15 @@ namespace Project_Genesis_Source.Classes {
             string output = p.StandardOutput.ReadToEnd();
             p.WaitForExit();
 
-            // prints if the PDF was created or not
-            MessageBox.Show(output);
-
             // used to delete the files as to not clutter the file with extra documents
             File.Delete(clientFileInfo);
             File.Delete(invoiceFileInfo);
             File.Delete(labourFileInfo);
             File.Delete(partFileInfo);
+            // prints if the PDF was created or not
+            MessageBox.Show(output);
+
+            
             // Debug purposes only
             Console.WriteLine(output);
             Console.ReadLine();
