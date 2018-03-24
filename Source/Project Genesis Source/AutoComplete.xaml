@@ -1,0 +1,13 @@
+﻿<Window x:Class="Project_Genesis_Source.AutoComplete"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Genesis_Source"
+        mc:Ignorable="d"
+        Title="AutoComplete" Height="637.581" Width="671.274">
+    <Grid>
+
+
+    </Grid>
+</Window>
