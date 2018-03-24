@@ -1,1 +1,0 @@
-All File names are final and must be named like this and formated the same as in the texr documents and then the script will be able to create a PDF out of it
