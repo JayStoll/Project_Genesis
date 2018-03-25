@@ -267,7 +267,7 @@ namespace Project_Genesis_Source.Classes{
                                                 VALUES (@Part_ID, @Vehicle_ID)";
             //select IDs from respective tables
             string selectVehicleInformation = @"SELECT Vehicle_ID FROM Vehicle Where Vehicle_ID = " + vehicle_Id;
-            string selectPartInformation = @"SELECT Part_ID FROM Part Where"
+            string selectPartInformation = @"SELECT Part_ID FROM Part Where";
 
         }
 

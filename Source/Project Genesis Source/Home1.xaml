@@ -6,10 +6,10 @@
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="Home1" Width="700">
+      Title="Home1" Width="700" Height="500">
 
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="140" Margin="0,0.647,0,0" VerticalAlignment="Top" Width="230" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
+        <Rectangle HorizontalAlignment="Left" Height="140" Margin="0,97.647,0,0" VerticalAlignment="Top" Width="230" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
             <Rectangle.Stroke>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF3387CD" Offset="0"/>
@@ -17,7 +17,7 @@
                 </LinearGradientBrush>
             </Rectangle.Stroke>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="140" Margin="235.331,0.647,0,0" VerticalAlignment="Top" Width="230" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
+        <Rectangle HorizontalAlignment="Left" Height="140" Margin="235.331,97.647,0,0" VerticalAlignment="Top" Width="230" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
             <Rectangle.Stroke>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF3387CD" Offset="0"/>
@@ -25,7 +25,7 @@
                 </LinearGradientBrush>
             </Rectangle.Stroke>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="140" Margin="470.504,0.647,-0.504,0" VerticalAlignment="Top" Width="230" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
+        <Rectangle HorizontalAlignment="Left" Height="140" Margin="470.504,97.647,-0.504,0" VerticalAlignment="Top" Width="230" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
             <Rectangle.Stroke>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF3387CD" Offset="0"/>
@@ -33,7 +33,7 @@
                 </LinearGradientBrush>
             </Rectangle.Stroke>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="140" Margin="0,157.681,0,0" VerticalAlignment="Top" Width="230" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
+        <Rectangle HorizontalAlignment="Left" Height="140" Margin="0,254.681,0,0" VerticalAlignment="Top" Width="230" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
             <Rectangle.Stroke>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF3387CD" Offset="0"/>
@@ -41,7 +41,7 @@
                 </LinearGradientBrush>
             </Rectangle.Stroke>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="140" Margin="235.331,157.681,0,0" VerticalAlignment="Top" Width="230" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
+        <Rectangle HorizontalAlignment="Left" Height="140" Margin="235.331,254.681,0,0" VerticalAlignment="Top" Width="230" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
             <Rectangle.Stroke>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF3387CD" Offset="0"/>
@@ -49,7 +49,7 @@
                 </LinearGradientBrush>
             </Rectangle.Stroke>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="140" Margin="470.504,157.681,-0.504,0" VerticalAlignment="Top" Width="230" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
+        <Rectangle HorizontalAlignment="Left" Height="140" Margin="470.504,254.681,-0.504,0" VerticalAlignment="Top" Width="230" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
             <Rectangle.Stroke>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF3387CD" Offset="0"/>
@@ -61,12 +61,12 @@
 
 
 
-        <Button x:Name="createInvB" Content="Create&#xD;&#xA;Invoice" Margin="0,0.647,470,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="140" VerticalAlignment="Top"/>
-        <Button x:Name="addCustomerB" Content="Add-&#xD;&#xA;Customer" Margin="235.331,0.647,234.669,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="140" VerticalAlignment="Top"/>
-        <Button x:Name="addPartB" Content="Add-&#xD;&#xA;Parts" Margin="0,157.681,470,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="140" VerticalAlignment="Top"/>
-        <Button x:Name="ManageClientsB" Content="Manage&#xD;&#xA;Clients" Margin="235.331,157.681,234.669,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="140" VerticalAlignment="Top"/>
-        <Button x:Name="backupB" Content="Backup/&#xD;&#xA;Archive" Margin="470.504,157.681,-0.504,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="140" VerticalAlignment="Top"/>
-        <Button x:Name="addVehicleB" Content="Add-&#xD;&#xA;Vehicle" Margin="470.504,0.647,-0.504,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="140" VerticalAlignment="Top"/>
+        <Button x:Name="createInvB" Content="Create&#xD;&#xA;Invoice" Margin="0,97.647,470,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="140" VerticalAlignment="Top"/>
+        <Button x:Name="addCustomerB" Content="Add-&#xD;&#xA;Customer" Margin="235.331,97.647,234.669,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="140" VerticalAlignment="Top"/>
+        <Button x:Name="addPartB" Content="Add-&#xD;&#xA;Parts" Margin="0,254.681,470,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="140" VerticalAlignment="Top"/>
+        <Button x:Name="ManageClientsB" Content="Manage&#xD;&#xA;Clients" Margin="235.331,254.681,234.669,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="140" VerticalAlignment="Top"/>
+        <Button x:Name="backupB" Content="Backup/&#xD;&#xA;Archive" Margin="470.504,254.681,-0.504,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="140" VerticalAlignment="Top"/>
+        <Button x:Name="addVehicleB" Content="Add-&#xD;&#xA;Vehicle" Margin="470.504,97.647,-0.504,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="36" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="140" VerticalAlignment="Top"/>
 
 
 
