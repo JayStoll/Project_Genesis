@@ -160,7 +160,6 @@
     </Compile>
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\PythonConnection.cs" />
-    <!-- this is where the text file stuff is supposed to go -->
     <Compile Include="ERD1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
