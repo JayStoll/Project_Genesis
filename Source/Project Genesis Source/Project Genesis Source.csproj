@@ -98,7 +98,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-<<<<<<< HEAD
     <Compile Include="AddCustomer1.xaml.cs">
       <DependentUpon>AddCustomer1.xaml</DependentUpon>
     </Compile>
@@ -125,32 +124,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddPart1.xaml">
-=======
-    <Compile Include="Customer.cs">
-      <DependentUpon>ERD1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ERD1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ERD1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Invoice.cs">
-      <DependentUpon>ERD1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Invoice_Item.cs">
-      <DependentUpon>ERD1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Part.cs">
-      <DependentUpon>ERD1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Vehicle.cs">
-      <DependentUpon>ERD1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Vehicle_Part.cs">
-      <DependentUpon>ERD1.tt</DependentUpon>
-    </Compile>
-    <Page Include="AddCustomerPage.xaml">
->>>>>>> master
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,11 +160,7 @@
     </Compile>
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\PythonConnection.cs" />
-<<<<<<< HEAD
-=======
-    <Compile Include="CreateInvoicePage.xaml.cs">
-      <DependentUpon>CreateInvoicePage.xaml</DependentUpon>
-    </Compile>
+    <!-- this is where the text file stuff is supposed to go -->
     <Compile Include="ERD1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -202,7 +171,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ERD1.edmx</DependentUpon>
     </Compile>
->>>>>>> master
     <Compile Include="GenesisDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

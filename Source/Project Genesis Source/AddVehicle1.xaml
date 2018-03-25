@@ -11,15 +11,15 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,6.233,0" >
             <SelectiveScrollingGrid Height="513" Width="693.767">
                 <Label Content="Serial Number" HorizontalAlignment="Left" Margin="25.851,9.391,0,0" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Height="33.66" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Margin="263.38,9.391,0,0" TextWrapping="Wrap" Width="370" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top"/>
+                <TextBox x:Name="serialNumTxt" HorizontalAlignment="Left" Margin="263.38,9.391,0,0" TextWrapping="Wrap" Width="370" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top"/>
                 <Label Content="Make" HorizontalAlignment="Left" Margin="25.851,86.711,0,0" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Height="33.66" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Margin="263.38,86.711,0,0" TextWrapping="Wrap" Width="370" FontFamily="Palatino Linotype" FontSize="20" Height="33.66" VerticalAlignment="Top"/>
+                <TextBox x:Name="makeTxt" HorizontalAlignment="Left" Margin="263.38,86.711,0,0" TextWrapping="Wrap" Width="370" FontFamily="Palatino Linotype" FontSize="20" Height="33.66" VerticalAlignment="Top"/>
                 <Label Content="Type" HorizontalAlignment="Left" Margin="25.851,48.051,0,0" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Height="33.66" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Margin="263.38,48.051,0,0" TextWrapping="Wrap" Width="370" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top"/>
+                <TextBox x:Name="typeTxt" HorizontalAlignment="Left" Margin="263.38,48.051,0,0" TextWrapping="Wrap" Width="370" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top"/>
                 <Label Content="Vehicle Number" HorizontalAlignment="Left" Margin="25.851,127.391,0,0" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Height="33.66" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Margin="263.38,127.391,0,0" TextWrapping="Wrap" Width="370" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Margin="263.38,302.764,0,0" TextWrapping="Wrap" Width="370" FontFamily="Palatino Linotype" FontSize="20" Height="33.66" VerticalAlignment="Top"/>
-                <Button Content="Add Vehicle" HorizontalAlignment="Right" Margin="0,389,60.387,0" Width="241" FontFamily="Lithos Pro Regular" FontSize="20" Height="49" VerticalAlignment="Top" Background="{x:Null}">
+                <TextBox x:Name="modelNumTxt" HorizontalAlignment="Left" Margin="263.38,127.391,0,0" TextWrapping="Wrap" Width="370" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top"/>
+                <TextBox x:Name="ownerFNameTxt" HorizontalAlignment="Left" Margin="263.38,302.764,0,0" TextWrapping="Wrap" Width="370" FontFamily="Palatino Linotype" FontSize="20" Height="33.66" VerticalAlignment="Top"/>
+                <Button x:Name="addVehicleButton" Content="Add Vehicle" HorizontalAlignment="Right" Margin="0,389,60.387,0" Width="241" FontFamily="Lithos Pro Regular" FontSize="20" Height="49" VerticalAlignment="Top" Background="{x:Null}" Click="AddVehicleButton_Click">
                     <Button.BorderBrush>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FF1397F1" Offset="0"/>
@@ -28,9 +28,9 @@
                     </Button.BorderBrush>
                 </Button>
                 <Label Content="Notes" HorizontalAlignment="Left" Margin="25.851,166.051,0,0" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Height="33.66" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Margin="263.38,166.051,0,0" TextWrapping="Wrap" Width="370" FontSize="20" FontFamily="Palatino Linotype" Height="131.713" VerticalAlignment="Top"/>
+                <TextBox x:Name="notesTxt" HorizontalAlignment="Left" Margin="263.38,166.051,0,0" TextWrapping="Wrap" Width="370" FontSize="20" FontFamily="Palatino Linotype" Height="131.713" VerticalAlignment="Top"/>
                 <Label Content="Owner First Name" HorizontalAlignment="Left" Margin="25.851,302.764,0,0" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Height="33.66" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Margin="263.38,341.424,0,0" TextWrapping="Wrap" Width="370" FontFamily="Palatino Linotype" FontSize="20" Height="33.66" VerticalAlignment="Top"/>
+                <TextBox x:Name="ownerLNameTxt" HorizontalAlignment="Left" Margin="263.38,341.424,0,0" TextWrapping="Wrap" Width="370" FontFamily="Palatino Linotype" FontSize="20" Height="33.66" VerticalAlignment="Top"/>
                 <Label Content="Owner Last Name" HorizontalAlignment="Left" Margin="25.851,341.424,0,0" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Height="33.66" VerticalAlignment="Top"/>
             </SelectiveScrollingGrid>
         </ScrollViewer>

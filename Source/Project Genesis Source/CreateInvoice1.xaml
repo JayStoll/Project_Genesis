@@ -24,10 +24,10 @@
                 <Label Content="Phone Number" HorizontalAlignment="Left" Height="33.66" Margin="24.995,208.104,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
                 <Label Content="Type" HorizontalAlignment="Left" Height="33.66" Margin="24.995,359.34,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
                 <Label Content="Serial Number" HorizontalAlignment="Left" Height="33.66" Margin="24.995,316.184,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <TextBox Margin="262.524,76.391,0,0" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471"/>
-                <TextBox Height="33.66" Margin="262.524,120.183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" HorizontalAlignment="Left" Width="370.471"/>
-                <TextBox Height="33.66" Margin="262.524,163.947,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" HorizontalAlignment="Left" Width="370.471"/>
-                <TextBox Height="33.66" Margin="262.524,208.104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" HorizontalAlignment="Left" Width="370.471"/>
+                <TextBox x:Name="CusFNameTxt" Margin="262.524,76.391,0,0" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471"/>
+                <TextBox x:Name="CusLnameTxt" Height="33.66" Margin="262.524,120.183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" HorizontalAlignment="Left" Width="370.471"/>
+                <TextBox x:Name="CusAddressTxt" Height="33.66" Margin="262.524,163.947,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" HorizontalAlignment="Left" Width="370.471"/>
+                <TextBox x:Name="CusPhoneTxt" Height="33.66" Margin="262.524,208.104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" HorizontalAlignment="Left" Width="370.471"/>
                 <TextBox Height="33.66" Margin="262.524,359.34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype" FontSize="20"/>
                 <TextBox Height="33.66" Margin="262.524,316.184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype"/>
                 <Rectangle Margin="24.995,15,0,0" RadiusY="12.029" RadiusX="12.029" Stroke="Black" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="608">
@@ -56,7 +56,7 @@
                 </Rectangle>
                 <Label Content="Labour" HorizontalAlignment="Left" Height="33.66" Margin="24.995,398,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
                 <TextBox HorizontalAlignment="Left" Height="131.713" Margin="262.524,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontSize="20" FontFamily="Palatino Linotype"/>
-                <TextBox x:Name="SearchBar1" Margin="37.524,18,0,0" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="584.471" AutoWordSelection="True" TextChanged="SearchBar1_TextChanged_1"
+                <TextBox x:Name="SearchBar1" Margin="37.524,18,0,0" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="584.471" AutoWordSelection="True" TextInput="CustomerSearchTextInput"
                                  
                                  />
 
