@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_Genesis_Source.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,26 @@ namespace Project_Genesis_Source
         public ManageClients1()
         {
             InitializeComponent();
+
+            DatabaseConnection dataConnect = new DatabaseConnection();
+
+            string[] fnames = { };
+            //populate customerOutputBox with Customer names
+            //for (int i=0; i<10; i++)
+            {
+
+                //for(int i=0; i < 5; i++)
+                {
+                   // fnames[i] = dataConnect.retrieveFNames();
+                }
+                //TODO get correct string arrays into the items
+                //nameOutputBox.Items.Add(fnames[0] + "\n");
+
+            }
+          
         }
+
+
+
     }
 }

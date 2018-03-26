@@ -55,6 +55,7 @@ namespace Project_Genesis_Source.Classes{
                     command.Parameters.AddWithValue(@"Cus_PostalCode", postalCode);
           
                     command.ExecuteNonQuery();
+                    MessageBox.Show(firstName +" "+ lastName + " has been added");
                 }
                 catch (Exception ex)
                 {
@@ -96,10 +97,11 @@ namespace Project_Genesis_Source.Classes{
                     command.Parameters.AddWithValue(@"Cus_BoxNum", boxNum);
                     command.Parameters.AddWithValue(@"Cus_PostalCode", postalCode);
                     command.ExecuteNonQuery();
+                    MessageBox.Show(firstName + " " + lastName + " has been added");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message + ": Error Occured");
                 }
                 finally
                 {
@@ -198,6 +200,7 @@ namespace Project_Genesis_Source.Classes{
                     command.Parameters.AddWithValue(@"Vehicle_Num", modelNumber);
                     command.Parameters.AddWithValue(@"Vehicle_Notes", vehicleNotes);
                     command.ExecuteNonQuery();
+                    
 
 
                 }
@@ -258,16 +261,17 @@ namespace Project_Genesis_Source.Classes{
             }
         }
 
+        //TODO 
         public void AddVehiclePart(int partId, int vehicle_Id)
         {
             //send information to Vehicle_Part
             
             //insert query
-            string insertVehiclePartData = @"INSERT INTO Vehicle_Part(Part_ID, Vehicle_ID) 
-                                                VALUES (@Part_ID, @Vehicle_ID)";
+            //string insertVehiclePartData = @"INSERT INTO Vehicle_Part(Part_ID, Vehicle_ID) 
+            //                                    VALUES (@Part_ID, @Vehicle_ID)";
             //select IDs from respective tables
-            string selectVehicleInformation = @"SELECT Vehicle_ID FROM Vehicle Where Vehicle_ID = " + vehicle_Id;
-            string selectPartInformation = @"SELECT Part_ID FROM Part Where"
+            //string selectVehicleInformation = @"SELECT Vehicle_ID FROM Vehicle Where Vehicle_ID = " + vehicle_Id;
+            //string selectPartInformation = @"SELECT Part_ID FROM Part Where"
 
         }
 
@@ -280,11 +284,50 @@ namespace Project_Genesis_Source.Classes{
         /// <param name="labourTime"></param>
         /// <param name="labourRate"></param>
         /// <param name="taxRate"></param>
-        public void AddNewInvoice(int labourTime, int labourRate, int taxRate) {
+        public void AddNewInvoice(int labourTime, int labourRate, int taxRate)
+        {
             // add the invoice information to the database
             // TODO - Fix this function to use the proper information
         }
 
+
+        ///<summary>
+        ///Retrieve information for manage client
+        /// </summary>
+        public string retrieveFNames()
+        {
+            //select query to retrieve first name
+            string selectFName = @"SELECT Cus_FName FROM Customer";
+
+            string fnames = " ";
+
+            using (conn = new SqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    command = new SqlCommand(selectFName, conn);
+
+                    
+                    while (command.ExecuteScalar().ToString() != null)
+                    { 
+                        fnames = command.ExecuteScalar().ToString();
+                        return fnames;
+
+                    }
+                    
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            return fnames;
+            
+        }
 
     }
 }
