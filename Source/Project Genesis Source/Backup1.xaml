@@ -1,0 +1,48 @@
+﻿<Page x:Class="Project_Genesis_Source.Backup1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Project_Genesis_Source"
+      mc:Ignorable="d" 
+      d:DesignHeight="300"
+      Title="Backup1" Width="720.667">
+
+    <Grid>
+        <Button x:Name="backupInv" Content="Backup Invoices" Height="67.102" Margin="-0.445,21.691,0,0" VerticalAlignment="Top" FontFamily="PenultimateLightItal" FontSize="24" Background="{x:Null}" Foreground="#FF0C1249" HorizontalAlignment="Left" Width="213.76">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1397F1" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="backupData" Content="Backup Data" Height="67.102" Margin="-0.445,120.156,0,0" VerticalAlignment="Top" FontFamily="PenultimateLightItal" FontSize="24" Background="{x:Null}" Foreground="#FF0C1249" HorizontalAlignment="Left" Width="213.76">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1397F1" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="cancelBackup" Content="Cancel" Height="67.102" Margin="-0.445,220.786,0,0" VerticalAlignment="Top" FontFamily="PenultimateLightItal" FontSize="24" Background="{x:Null}" Foreground="#FF0C1249" HorizontalAlignment="Left" Width="213.76" IsEnabled="False">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1397F1" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <Grid Margin="218.086,0,0,0" Height="300" VerticalAlignment="Top">
+            <Label Content="Archived Invoices" Height="54.691" Margin="16,23.691,10,0" VerticalAlignment="Top" FontFamily="Splash" FontSize="48" Background="{x:Null}" Foreground="#FF0C1249"/>
+            <ListView Margin="16,83.382,10,10" FontFamily="Palatino Linotype" FontSize="20">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+
+    </Grid>
+</Page>
