@@ -5,10 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
-      Title="CreateInvoice1" Width="700" Height="515">
+      Title="CreateInvoice1" Width="660" Height="500">
 
     <Grid>
-        <ScrollViewer Margin="0,1,7,0" VerticalScrollBarVisibility="Auto" Height="481" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <ScrollViewer Margin="-0.78,1,7.013,0" VerticalScrollBarVisibility="Hidden" Height="500" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
             <ScrollViewer.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -17,19 +17,20 @@
                     <TranslateTransform X="1.995"/>
                 </TransformGroup>
             </ScrollViewer.RenderTransform>
-            <SelectiveScrollingGrid Height="1043.624" Width="668">
+            <SelectiveScrollingGrid Height="1011" Width="660">
                 <Label Content="First Name" Margin="24.995,76.391,442.005,0" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Height="33.66" VerticalAlignment="Top"/>
                 <Label Content="Last Name" HorizontalAlignment="Left" Height="33.66" Margin="24.995,120.183,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
                 <Label Content="Address" HorizontalAlignment="Left" Height="33.66" Margin="24.995,163.947,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
                 <Label Content="Phone Number" HorizontalAlignment="Left" Height="33.66" Margin="24.995,208.104,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
                 <Label Content="Type" HorizontalAlignment="Left" Height="33.66" Margin="24.995,359.34,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
                 <Label Content="Serial Number" HorizontalAlignment="Left" Height="33.66" Margin="24.995,316.184,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <TextBox x:Name="CusFNameTxt" Margin="262.524,76.391,0,0" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471"/>
-                <TextBox x:Name="CusLnameTxt" Height="33.66" Margin="262.524,120.183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" HorizontalAlignment="Left" Width="370.471"/>
-                <TextBox x:Name="CusAddressTxt" Height="33.66" Margin="262.524,163.947,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" HorizontalAlignment="Left" Width="370.471"/>
-                <TextBox x:Name="CusPhoneTxt" Height="33.66" Margin="262.524,208.104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" HorizontalAlignment="Left" Width="370.471"/>
-                <TextBox Height="33.66" Margin="262.524,359.34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype" FontSize="20"/>
-                <TextBox Height="33.66" Margin="262.524,316.184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype"/>
+                <TextBox x:Name="CusFNameTxt" Margin="262.524,76.391,0,0" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471" IsEnabled="False"/>
+                <TextBox x:Name="CusLnameTxt" Height="33.66" Margin="262.524,120.183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" HorizontalAlignment="Left" Width="370.471" IsEnabled="False"/>
+                <TextBox x:Name="CusAddressTxt" Height="33.66" Margin="262.524,163.947,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" HorizontalAlignment="Left" Width="370.471" IsEnabled="False"/>
+                <TextBox x:Name="CusPhoneTxt" Height="33.66" Margin="262.524,208.104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" HorizontalAlignment="Left" Width="370.471" IsEnabled="False"/>
+                <TextBox Height="33.66" Margin="262.524,316.184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype" IsEnabled="False"/>
+                <TextBox Height="33.66" Margin="262.524,359.34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False"/>
+                <TextBox Height="33.66" Margin="262.053,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False"/>
                 <Rectangle Margin="24.995,15,0,0" RadiusY="12.029" RadiusX="12.029" Stroke="Black" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="608">
                     <Rectangle.Fill>
                         <RadialGradientBrush>
@@ -54,32 +55,23 @@
                         </RadialGradientBrush>
                     </Rectangle.Fill>
                 </Rectangle>
-                <Label Content="Labour" HorizontalAlignment="Left" Height="33.66" Margin="24.995,398,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <TextBox HorizontalAlignment="Left" Height="131.713" Margin="262.524,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontSize="20" FontFamily="Palatino Linotype"/>
-                <TextBox x:Name="SearchBar1" Margin="37.524,18,0,0" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="584.471" AutoWordSelection="True" TextInput="CustomerSearchTextInput"
-                                 
-                                 />
-
-
-
-                <TextBox x:Name="SearchBar2" Margin="37.524,267.34,0,0" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="584.471"/>
-                <Label Content="Parts" HorizontalAlignment="Left" Height="33.66" Margin="24.995,544.713,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <TextBox Height="33.66" Margin="262.524,544.713,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype" FontSize="20"/>
-                <Label Content="Quantity" HorizontalAlignment="Left" Height="33.66" Margin="24.995,588.373,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <Label Content="Rate" HorizontalAlignment="Left" Height="33.66" Margin="24.995,632.033,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <Label Content="Tax" HorizontalAlignment="Left" Height="33.66" Margin="24.995,675.693,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <TextBox Height="33.66" Margin="262.524,588.373,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype" FontSize="20"/>
-                <TextBox Height="33.66" Margin="262.524,632.033,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype" FontSize="20"/>
-                <TextBox Height="33.66" Margin="262.524,675.693,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype" FontSize="20"/>
-                <Label Content="GST / HST" HorizontalAlignment="Left" Height="33.66" Margin="24.995,719.353,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <TextBox Height="33.66" Margin="262.524,719.353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype" FontSize="20"/>
-                <Calendar HorizontalAlignment="Left" Height="174.45" Margin="438.529,763.013,0,0" VerticalAlignment="Top" Width="193.995"/>
-                <Label Content="Date" HorizontalAlignment="Left" Height="33.66" Margin="24.995,764.456,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <TextBox Height="33.66" Margin="262.524,764.456,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171.476" FontFamily="Palatino Linotype" FontSize="20"/>
-                <Label Content="Due Date" HorizontalAlignment="Left" Height="33.66" Margin="24.995,808.116,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <TextBox Height="33.66" Margin="262.053,808.116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171.476" FontFamily="Palatino Linotype" FontSize="20"/>
+                <Label Content="Parts" HorizontalAlignment="Left" Height="33.66" Margin="24.524,403,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+                <Label Content="Rate" HorizontalAlignment="Left" Height="33.66" Margin="24.995,623.048,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+                <Label Content="Tax" HorizontalAlignment="Left" Height="33.66" Margin="24.995,665.043,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+                <Label Content="GST / HST" HorizontalAlignment="Left" Height="33.66" Margin="24.995,707.038,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+                <Calendar HorizontalAlignment="Left" Height="174.45" Margin="439,753.688,0,0" VerticalAlignment="Top" Width="193.995"/>
+                <Label Content="Due Date" HorizontalAlignment="Left" Height="33.66" Margin="24.995,753.688,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+                <Label Content="Labour" HorizontalAlignment="Left" Height="33.66" Margin="24.995,483,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+                <TextBox HorizontalAlignment="Left" Height="131.713" Margin="262.995,483,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontSize="20" FontFamily="Palatino Linotype"/>
+                <TextBox Height="33.66" Margin="262.524,623.048,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype" FontSize="20"/>
+                <TextBox Height="33.66" Margin="262.524,665.043,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype" FontSize="20"/>
+                <TextBox Height="10" Margin="24.524,454.66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="608.471" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5"/>
+                <TextBox Height="33.66" Margin="262.053,707.038,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype" FontSize="20"/>
+                <TextBox Height="33.66" Margin="262.995,753.688,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171.476" FontFamily="Palatino Linotype" FontSize="20"/>
             </SelectiveScrollingGrid>
         </ScrollViewer>
+        <ComboBox HorizontalAlignment="Left" Height="32" Margin="37,19,0,0" VerticalAlignment="Top" Width="584" FontSize="20"/>
+        <ComboBox HorizontalAlignment="Left" Height="32" Margin="37,269,0,0" VerticalAlignment="Top" Width="584" FontSize="20"/>
 
     </Grid>
 </Page>
