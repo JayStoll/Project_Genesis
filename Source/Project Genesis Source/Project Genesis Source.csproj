@@ -255,6 +255,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>GenesisDB.mdf</DependentUpon>
     </Content>
+    <Resource Include="OriginalLogo.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

@@ -55,13 +55,6 @@
                         </RadialGradientBrush>
                     </Rectangle.Fill>
                 </Rectangle>
-                <TextBox x:Name="SearchBar1" Margin="37.524,18,0,0" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="584.471" AutoWordSelection="True" TextInput="CustomerSearchTextInput" Text="Search Customers"
-                                 
-                                 />
-
-
-
-                <TextBox x:Name="SearchBar2" Margin="37.524,267.34,0,0" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Height="33.66" VerticalAlignment="Top" HorizontalAlignment="Left" Width="584.471" Text="Search Vehicles"/>
                 <Label Content="Parts" HorizontalAlignment="Left" Height="33.66" Margin="24.524,403,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
                 <Label Content="Rate" HorizontalAlignment="Left" Height="33.66" Margin="24.995,623.048,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
                 <Label Content="Tax" HorizontalAlignment="Left" Height="33.66" Margin="24.995,665.043,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
@@ -77,6 +70,8 @@
                 <TextBox Height="33.66" Margin="262.995,753.688,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171.476" FontFamily="Palatino Linotype" FontSize="20"/>
             </SelectiveScrollingGrid>
         </ScrollViewer>
+        <ComboBox HorizontalAlignment="Left" Height="32" Margin="37,19,0,0" VerticalAlignment="Top" Width="584" FontSize="20"/>
+        <ComboBox HorizontalAlignment="Left" Height="32" Margin="37,269,0,0" VerticalAlignment="Top" Width="584" FontSize="20"/>
 
     </Grid>
 </Page>

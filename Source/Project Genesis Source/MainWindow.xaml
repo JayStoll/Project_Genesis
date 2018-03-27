@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Genesis_Source"
         mc:Ignorable="d"
-        Title="CAJN Software" Width="1200" Height="725" Icon="icon.png" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen" Topmost="True">
+        Title="CAJN Software" Width="1300" Height="725" Icon="icon.png" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen" Topmost="True">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -74,31 +74,19 @@
             <GradientStop Color="#FF0047FF"/>
         </LinearGradientBrush>
     </Window.Background>
-    <Grid>
+    <Grid Background="#FF84CDFF">
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="White" Offset="1"/>
-                <GradientStop Color="#FF98C7F7"/>
-                <GradientStop Color="#FF5795D3" Offset="0.5"/>
-            </LinearGradientBrush>
-        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
 
-        <Rectangle Fill="#FF9D9DCB" Margin="0,-1,0,0" Height="180" VerticalAlignment="Top"/>
-
-        <Rectangle Fill="#FF9999AE" Margin="265,179,0,0" Opacity="0.5"/>
-
         <Image Height="120" Margin="15,10,0,0" VerticalAlignment="Top" Source="icon.png" Stretch="Fill" HorizontalAlignment="Left" Width="100"/>
-        <Button x:Name="home1" Content="Home" Margin="10,179,0,0" Background="{x:Null}" Foreground="#FF0C1249" FontSize="36" FontFamily="PenultimateLightItal" FontWeight="Bold" Height="60" VerticalAlignment="Top" BorderBrush="{x:Null}" HorizontalAlignment="Left" Width="250" Click="home1_Click"/>
+        <Button x:Name="home1" Content="Home" Margin="10,179,0,0" Background="{x:Null}" Foreground="#FF0C1249" FontSize="36" FontFamily="Lithos Pro Regular" Height="60" VerticalAlignment="Top" BorderBrush="{x:Null}" HorizontalAlignment="Left" Width="300" Click="home1_Click"/>
 
-        <Button x:Name="createInv" Content="Create Invoice" Margin="10,244,0,0" BorderBrush="{x:Null}" Click="createInv_Click" Background="{x:Null}" Foreground="#FF0C1249" FontSize="36" FontFamily="PenultimateLightItal" FontWeight="Bold" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250">
+        <Button x:Name="createInv" Content="Create Invoice" Margin="10,244,0,0" BorderBrush="{x:Null}" Click="createInv_Click" Background="{x:Null}" Foreground="#FF0C1249" FontSize="36" FontFamily="Lithos Pro Regular" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300">
             <!--   <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -107,28 +95,17 @@
             </Button.Foreground> (Description: The objkect 'Button' already has achild and cannot add 'Button'. 'Button' can accept only one child) -->
 
         </Button>
-        <Button x:Name="customerAdd" Content="Add Customer" Margin="10,309,0,0" BorderBrush="{x:Null}" Click="customerAdd_Click" Background="{x:Null}" Foreground="#FF0C1249" FontSize="36" FontFamily="PenultimateLightItal" FontWeight="Bold" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"/>
-        <Button x:Name="vehicleAdd" Content="Add Vehicle" Margin="10,374,0,0" BorderBrush="{x:Null}" Click="vehicleAdd_Click" Background="{x:Null}" Foreground="#FF0C1249" FontSize="36" FontFamily="PenultimateLightItal" FontWeight="Bold" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"/>
-        <Button x:Name="addPart" Content="Add Part" Margin="10,439,0,0" BorderBrush="{x:Null}" Click="addPart_Click" Background="{x:Null}" Foreground="#FF0C1249" FontSize="36" FontFamily="PenultimateLightItal" FontWeight="Bold" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"/>
-        <Button x:Name="clientManage" Content="Manage Clients" Margin="10,504,0,0" BorderBrush="{x:Null}" Click="clientManage_Click" Background="{x:Null}" Foreground="#FF0C1249" FontSize="36" FontFamily="PenultimateLightItal" FontWeight="Bold" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"/>
-        <Button x:Name="backupTab" Content="Backup/&#xA;Archive" Margin="10,569,0,0" BorderBrush="{x:Null}" Click="backupTab_Click" Background="{x:Null}" Foreground="#FF0C1249" FontSize="36" FontFamily="PenultimateLightItal" FontWeight="Bold" Height="90" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250"/>
-        <Label Content="CAJN " Margin="115,10,648.779,601" Foreground="#FF0C1249" FontSize="72" FontFamily="Splash"/>
-        <Label Content="voice 2018 " Margin="115,32.917,612.201,548.083" FontFamily="HarvestItal" FontSize="65" TextOptions.TextHintingMode="Fixed" Background="{x:Null}" FontWeight="Bold" Foreground="#FF0C1249" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="-0.273"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="-1.495"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <Frame x:Name="Main" Margin="265,179,10,0" NavigationUIVisibility="Hidden" Foreground="{x:Null}" Cursor="Hand" Height="505" VerticalAlignment="Top" ClipToBounds="True" SnapsToDevicePixels="True">
+        <Button x:Name="customerAdd" Content="Add Customer" Margin="10,309,0,0" BorderBrush="{x:Null}" Click="customerAdd_Click" Background="{x:Null}" Foreground="#FF0C1249" FontSize="36" FontFamily="Lithos Pro Regular" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300"/>
+        <Button x:Name="vehicleAdd" Content="Add Vehicle" Margin="10,374,0,0" BorderBrush="{x:Null}" Click="vehicleAdd_Click" Background="{x:Null}" Foreground="#FF0C1249" FontSize="36" FontFamily="Lithos Pro Regular" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300"/>
+        <Button x:Name="addPart" Content="Add Part" Margin="10,439,0,0" BorderBrush="{x:Null}" Click="addPart_Click" Background="{x:Null}" Foreground="#FF0C1249" FontSize="36" FontFamily="Lithos Pro Regular" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300"/>
+        <Button x:Name="clientManage" Content="Manage Clients" Margin="10,504,0,0" BorderBrush="{x:Null}" Click="clientManage_Click" Background="{x:Null}" Foreground="#FF0C1249" FontSize="36" FontFamily="Lithos Pro Regular" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300"/>
+        <Button x:Name="backupTab" Content="Backup/&#xA;Archive" Margin="10,569,0,0" BorderBrush="{x:Null}" Click="backupTab_Click" Background="{x:Null}" Foreground="#FF0C1249" FontSize="36" FontFamily="Lithos Pro Regular" Height="90" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300"/>
+        <Label Content="CAJN " Margin="141,47,622.779,0" Foreground="#FF0C1249" FontSize="72" FontFamily="Splash" Height="83" VerticalAlignment="Top"/>
+        <Frame x:Name="Main" Margin="315,179,10,0" NavigationUIVisibility="Hidden" Foreground="{x:Null}" Cursor="Hand" Height="505" VerticalAlignment="Top" ClipToBounds="True" SnapsToDevicePixels="True">
             <Frame.Content>
-                <Label Content="Welcome to your Personalized &#xD;&#xA;Invoice Generating Software&#xD;&#xA;Brought to you by CAJN Software&#xD;&#xA;Batteries not included..." Height="505" VerticalAlignment="Top" FontFamily="HarvestItal" FontSize="50" Margin="0,0,120,0"/>
+                <Grid/>
             </Frame.Content>
         </Frame>
-        <Path Data="M498,53 C981,54 1047,1 861,78 860.63993,78.149059 834.68458,146.86279 672.00006,75.999993 509,4.9997566 529.00001,125.00029 733.00008,94.000139 937.00015,62.99999 570.59805,263.75815 739.00008,86.0001 811.00011,9.9999227 485,32.999872 775.0001,54.99979 1065.0002,76.999707 1035.0002,0.99990661 804.00011,58.99972 573.00003,116.99953 924.00032,-69.999865 774.00021,66.999694" Fill="#FF0E0E47" Margin="498,15.634,87.125,0" Stretch="Fill" Height="144.748" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
