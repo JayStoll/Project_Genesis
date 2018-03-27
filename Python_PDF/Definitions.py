@@ -5,7 +5,7 @@
 import datetime
 
 from GetFileInfo import firstClientPageSort, labourInformation, hoursWorked, rate, tax
-from GetFileInfo import partInformation, qtyAmount, rate1, tax1, invoiceInformation, taxPercent
+from GetFileInfo import partInformation, qtyAmount, rate1, tax1, invoiceInformation, taxPercent, vehicle
 from calculations import labourAmount, subtotal
 
 taxRate = taxPercent
@@ -113,6 +113,10 @@ def FillLabourTime(c):
         partAlign -= 15
         c.drawString(leftAlign, partAlign, partInformation[index])
         index += 1
+    partAlign -= 45
+    ChangeFont(1, c)
+    c.drawString(leftAlign, partAlign, vehicle)
+    ChangeFont(2, c)
     c.drawString(QTYAlign, align, str(qtyAmount))
     c.drawString(rateAlign, align, str(rate1))
     c.drawString(taxAlign, align, tax1)
