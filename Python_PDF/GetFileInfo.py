@@ -95,7 +95,9 @@ try:
     qtyAmount = 0
     rate1 = 0
     tax1 = ''
+    vehicle = ''
     firstNum = True
+    isVehicle = False
     while i < len(partInformation):
         if partInformation[i] == '':
             partInformation.remove('')
@@ -118,6 +120,11 @@ try:
                 rate1 = val
                 partInformation.remove(partInformation[i])
                 partInformation.remove('')
+                isVehicle = True
+        if isVehicle is True:
+            vehicle = partInformation[i]
+            partInformation.remove(partInformation[i])
+            partInformation.remove('')
         if partInformation[i] == partInformation[-1]:
             tax1 = partInformation[i]
             partInformation.remove(partInformation[-1])
