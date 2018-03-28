@@ -30,6 +30,5 @@ namespace Project_Genesis_Source
         public virtual DbSet<Invoice_Item> Invoice_Item { get; set; }
         public virtual DbSet<Part> Parts { get; set; }
         public virtual DbSet<Vehicle> Vehicles { get; set; }
-        public virtual DbSet<Vehicle_Part> Vehicle_Part { get; set; }
     }
 }

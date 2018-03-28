@@ -152,8 +152,9 @@ namespace Project_Genesis_Source.Classes{
                     command.Parameters.AddWithValue(@"Vehicle_Num", modelNumber);
                     command.Parameters.AddWithValue(@"Vehicle_Notes", vehicleNotes);
                     command.ExecuteNonQuery();
+                    MessageBox.Show(vehicleType + " " + vehicleMake + " " + serialNumber + " has been added");
 
-                    
+
                 }
                 catch (Exception ex)
                 {

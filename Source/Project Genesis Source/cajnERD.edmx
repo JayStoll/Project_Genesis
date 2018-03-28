@@ -60,14 +60,6 @@
           <Property Name="Vehicle_Num" Type="varchar" MaxLength="50" />
           <Property Name="Vehicle_Notes" Type="varchar" MaxLength="200" />
         </EntityType>
-        <EntityType Name="Vehicle_Part">
-          <Key>
-            <PropertyRef Name="VehiclePart_ID" />
-          </Key>
-          <Property Name="VehiclePart_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Vehicle_ID" Type="int" Nullable="false" />
-          <Property Name="Part_ID" Type="int" Nullable="false" />
-        </EntityType>
         <Association Name="FK_Invoice_Item_ToTable">
           <End Role="Part" Type="Self.Part" Multiplicity="1" />
           <End Role="Invoice_Item" Type="Self.Invoice_Item" Multiplicity="*" />
@@ -116,37 +108,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Vehicle_Part_ToTable">
-          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="1" />
-          <End Role="Vehicle_Part" Type="Self.Vehicle_Part" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Vehicle">
-              <PropertyRef Name="Vehicle_ID" />
-            </Principal>
-            <Dependent Role="Vehicle_Part">
-              <PropertyRef Name="Vehicle_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Vehicle_Part_ToTable_1">
-          <End Role="Part" Type="Self.Part" Multiplicity="1" />
-          <End Role="Vehicle_Part" Type="Self.Vehicle_Part" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Part">
-              <PropertyRef Name="Part_ID" />
-            </Principal>
-            <Dependent Role="Vehicle_Part">
-              <PropertyRef Name="Part_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="GenesisDBModelStoreContainer">
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Invoice_Item" EntityType="Self.Invoice_Item" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Part" EntityType="Self.Part" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vehicle" EntityType="Self.Vehicle" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Vehicle_Part" EntityType="Self.Vehicle_Part" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Invoice_Item_ToTable" Association="Self.FK_Invoice_Item_ToTable">
             <End Role="Part" EntitySet="Part" />
             <End Role="Invoice_Item" EntitySet="Invoice_Item" />
@@ -163,15 +130,7 @@
             <End Role="Vehicle" EntitySet="Vehicle" />
             <End Role="Invoice" EntitySet="Invoice" />
           </AssociationSet>
-          <AssociationSet Name="FK_Vehicle_Part_ToTable" Association="Self.FK_Vehicle_Part_ToTable">
-            <End Role="Vehicle" EntitySet="Vehicle" />
-            <End Role="Vehicle_Part" EntitySet="Vehicle_Part" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Vehicle_Part_ToTable_1" Association="Self.FK_Vehicle_Part_ToTable_1">
-            <End Role="Part" EntitySet="Part" />
-            <End Role="Vehicle_Part" EntitySet="Vehicle_Part" />
-          </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
@@ -226,7 +185,6 @@
           <Property Name="Part_Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Part_Desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Invoice_Item" Relationship="Self.FK_Invoice_Item_ToTable" FromRole="Part" ToRole="Invoice_Item" />
-          <NavigationProperty Name="Vehicle_Part" Relationship="Self.FK_Vehicle_Part_ToTable_1" FromRole="Part" ToRole="Vehicle_Part" />
         </EntityType>
         <EntityType Name="Vehicle">
           <Key>
@@ -240,17 +198,6 @@
           <Property Name="Vehicle_Num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Vehicle_Notes" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Invoices" Relationship="Self.FK_Invoice_ToTable_2" FromRole="Vehicle" ToRole="Invoice" />
-          <NavigationProperty Name="Vehicle_Part" Relationship="Self.FK_Vehicle_Part_ToTable" FromRole="Vehicle" ToRole="Vehicle_Part" />
-        </EntityType>
-        <EntityType Name="Vehicle_Part">
-          <Key>
-            <PropertyRef Name="VehiclePart_ID" />
-          </Key>
-          <Property Name="VehiclePart_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Vehicle_ID" Type="Int32" Nullable="false" />
-          <Property Name="Part_ID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Part" Relationship="Self.FK_Vehicle_Part_ToTable_1" FromRole="Vehicle_Part" ToRole="Part" />
-          <NavigationProperty Name="Vehicle" Relationship="Self.FK_Vehicle_Part_ToTable" FromRole="Vehicle_Part" ToRole="Vehicle" />
         </EntityType>
         <Association Name="FK_Invoice_ToTable_1">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
@@ -300,37 +247,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Vehicle_Part_ToTable_1">
-          <End Role="Part" Type="Self.Part" Multiplicity="1" />
-          <End Role="Vehicle_Part" Type="Self.Vehicle_Part" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Part">
-              <PropertyRef Name="Part_ID" />
-            </Principal>
-            <Dependent Role="Vehicle_Part">
-              <PropertyRef Name="Part_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Vehicle_Part_ToTable">
-          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="1" />
-          <End Role="Vehicle_Part" Type="Self.Vehicle_Part" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Vehicle">
-              <PropertyRef Name="Vehicle_ID" />
-            </Principal>
-            <Dependent Role="Vehicle_Part">
-              <PropertyRef Name="Vehicle_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="GenesisDBEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="Invoices" EntityType="Self.Invoice" />
           <EntitySet Name="Invoice_Item" EntityType="Self.Invoice_Item" />
           <EntitySet Name="Parts" EntityType="Self.Part" />
           <EntitySet Name="Vehicles" EntityType="Self.Vehicle" />
-          <EntitySet Name="Vehicle_Part" EntityType="Self.Vehicle_Part" />
           <AssociationSet Name="FK_Invoice_ToTable_1" Association="Self.FK_Invoice_ToTable_1">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Invoice" EntitySet="Invoices" />
@@ -347,15 +269,7 @@
             <End Role="Part" EntitySet="Parts" />
             <End Role="Invoice_Item" EntitySet="Invoice_Item" />
           </AssociationSet>
-          <AssociationSet Name="FK_Vehicle_Part_ToTable_1" Association="Self.FK_Vehicle_Part_ToTable_1">
-            <End Role="Part" EntitySet="Parts" />
-            <End Role="Vehicle_Part" EntitySet="Vehicle_Part" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Vehicle_Part_ToTable" Association="Self.FK_Vehicle_Part_ToTable">
-            <End Role="Vehicle" EntitySet="Vehicles" />
-            <End Role="Vehicle_Part" EntitySet="Vehicle_Part" />
-          </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -419,15 +333,6 @@
                 <ScalarProperty Name="Vehicle_Make" ColumnName="Vehicle_Make" />
                 <ScalarProperty Name="Vehicle_Num" ColumnName="Vehicle_Num" />
                 <ScalarProperty Name="Vehicle_Notes" ColumnName="Vehicle_Notes" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Vehicle_Part">
-            <EntityTypeMapping TypeName="GenesisDBModel.Vehicle_Part">
-              <MappingFragment StoreEntitySet="Vehicle_Part">
-                <ScalarProperty Name="VehiclePart_ID" ColumnName="VehiclePart_ID" />
-                <ScalarProperty Name="Vehicle_ID" ColumnName="Vehicle_ID" />
-                <ScalarProperty Name="Part_ID" ColumnName="Part_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

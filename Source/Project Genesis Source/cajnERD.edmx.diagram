@@ -6,18 +6,15 @@
     <edmx:Diagrams>
       <Diagram DiagramId="a7915b4d1ef242b59e854bfc52e274c9" Name="Diagram1">
         <EntityTypeShape EntityType="GenesisDBModel.Customer" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="GenesisDBModel.Invoice" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="GenesisDBModel.Invoice" Width="1.5" PointX="4.625" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="GenesisDBModel.Invoice_Item" Width="1.5" PointX="8" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="GenesisDBModel.Part" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="GenesisDBModel.Vehicle" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="GenesisDBModel.Vehicle_Part" Width="1.5" PointX="11.875" PointY="2.75" IsExpanded="true" />
         <AssociationConnector Association="GenesisDBModel.FK_Invoice_ToTable_1" ManuallyRouted="false" />
         <AssociationConnector Association="GenesisDBModel.FK_Invoice_Item_ToTable_1" ManuallyRouted="false" />
         <AssociationConnector Association="GenesisDBModel.FK_Invoice_ToTable_2" ManuallyRouted="false" />
         <AssociationConnector Association="GenesisDBModel.FK_Invoice_Item_ToTable" ManuallyRouted="false" />
-        <AssociationConnector Association="GenesisDBModel.FK_Vehicle_Part_ToTable_1" ManuallyRouted="false" />
-        <AssociationConnector Association="GenesisDBModel.FK_Vehicle_Part_ToTable" ManuallyRouted="false" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
