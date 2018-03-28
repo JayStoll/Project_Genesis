@@ -16,7 +16,7 @@ namespace Project_Genesis_Source.Classes{
     public class DatabaseConnection {
 
         //initailize 
-        string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GenesisDB.mdf;Integrated Security=True;Connect Timeout=30";
+        public string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GenesisDB.mdf;Integrated Security=True;Connect Timeout=30";
         SqlDataAdapter dataAdapater;
         System.Data.DataTable table;
         SqlCommandBuilder commandBuilder;
