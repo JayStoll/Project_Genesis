@@ -2,8 +2,10 @@
 # Date March 13 2018
 # Reason Creates the functions that will be used to print to the page
 
+import datetime
+
 from GetFileInfo import firstClientPageSort, labourInformation, hoursWorked, rate, tax
-from GetFileInfo import partInformation, qtyAmount, rate1, tax1, invoiceInformation, taxPercent
+from GetFileInfo import partInformation, qtyAmount, rate1, tax1, invoiceInformation, taxPercent, vehicle
 from calculations import labourAmount, subtotal
 
 taxRate = taxPercent
@@ -73,9 +75,9 @@ def ClientInvoiceInfo(c):
 
 def FillInvoiceInformation(c):
     c.drawString(taxAlign + 75, 700, invoiceInformation[0])
-    c.drawString(taxAlign + 75, 685, invoiceInformation[1])
-    c.drawString(taxAlign + 75, 670, invoiceInformation[2])
-    c.drawString(taxAlign + 75, 655, invoiceInformation[3])
+    c.drawString(taxAlign + 75, 685, datetime.datetime.today().strftime('%d-%m-%Y'))
+    c.drawString(taxAlign + 75, 670, invoiceInformation[1])
+    c.drawString(taxAlign + 75, 655, "Due on receipt")
 
 
 def TitleBar(c):
@@ -94,10 +96,7 @@ def FillLabourTime(c):
     align = 535
     partAlign = 0
     while i < len(labourInformation):
-        if labourInformation[i] == '':
-            pass
-        else:
-            c.drawString(leftAlign, align, labourInformation[i])
+        c.drawString(leftAlign, align, labourInformation[i])
         align -= 15
         partAlign = align
         i += 1
@@ -114,10 +113,14 @@ def FillLabourTime(c):
         partAlign -= 15
         c.drawString(leftAlign, partAlign, partInformation[index])
         index += 1
+    partAlign -= 45
+    ChangeFont(1, c)
+    c.drawString(leftAlign, partAlign, vehicle)
+    ChangeFont(2, c)
     c.drawString(QTYAlign, align, str(qtyAmount))
     c.drawString(rateAlign, align, str(rate1))
     c.drawString(taxAlign, align, tax1)
-    c.drawString(amountAlign, align, str(rate1))  # The rate is already calcualted in the C# application
+    c.drawString(amountAlign, align, str(rate1))  # The rate is already calculated in the C# application
 
 
 def totalsLable(c):

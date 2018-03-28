@@ -193,7 +193,16 @@
     </Compile>
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\PythonConnection.cs" />
-    <!-- this is where the text file stuff is supposed to go -->
+    <Compile Include="ERD1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERD1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ERD1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ERD1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="GenesisDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -278,6 +287,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>GenesisDB.mdf</DependentUpon>
     </Content>
+    <Resource Include="OriginalLogo.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

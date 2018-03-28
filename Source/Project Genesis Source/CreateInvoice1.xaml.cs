@@ -66,5 +66,13 @@ namespace Project_Genesis_Source
                 }
             }
         }
+
+        private void CreateInvoice_Click(object sender, RoutedEventArgs e) {
+            // get the information from the text boxes
+                // send that information to the correct method in the PythonConnection class
+            // when all the functions were called
+                // create a new PDF file
+                // store the PDF in the database - maybe?
+        }
     }
 }

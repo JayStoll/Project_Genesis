@@ -75,7 +75,6 @@ namespace Project_Genesis_Source.Classes{
         /// <param name="mailingAddress">Includes Postal Code</param>
         /// <param name="phoneNumber"></param>
         /// <param name="email"></param>
-        
         public void AddNewClient(string firstName, string lastName, string mailingAddress, string phoneNumber, string email, string boxNum, string postalCode) {
             // send the information to Customer with email
          
@@ -270,9 +269,9 @@ namespace Project_Genesis_Source.Classes{
             //string insertVehiclePartData = @"INSERT INTO Vehicle_Part(Part_ID, Vehicle_ID) 
             //                                    VALUES (@Part_ID, @Vehicle_ID)";
             //select IDs from respective tables
+
             //string selectVehicleInformation = @"SELECT Vehicle_ID FROM Vehicle Where Vehicle_ID = " + vehicle_Id;
             //string selectPartInformation = @"SELECT Part_ID FROM Part Where"
-
         }
 
 

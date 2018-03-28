@@ -4,35 +4,30 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Project_Genesis_Source"
-      mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-      Title="AddPart1" Width="700" Height="511">
+      mc:Ignorable="d"
+      Title="AddPart1" Width="900" Height="499">
 
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <SelectiveScrollingGrid HorizontalAlignment="Left" Height="511" VerticalAlignment="Top" Width="700">
-                <Label Content="Name" HorizontalAlignment="Left" Height="33.66" Margin="10.521,3.391,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <TextBox x:Name="nameTxt" HorizontalAlignment="Left" Height="33.66" Margin="248.05,3.391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontSize="20" FontFamily="Palatino Linotype"/>
-                <Label Content="Part Number" HorizontalAlignment="Left" Height="33.66" Margin="10.521,80.711,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <TextBox x:Name="partNumTxt" HorizontalAlignment="Left" Height="33.66" Margin="248.05,80.711,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontFamily="Palatino Linotype" FontSize="20"/>
-                <Label Content="Serial Number" HorizontalAlignment="Left" Height="33.66" Margin="10.521,42.051,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <TextBox x:Name="serialNumTxt" HorizontalAlignment="Left" Height="33.66" Margin="248.05,42.051,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontSize="20" FontFamily="Palatino Linotype"/>
-                <Label Content="Price" HorizontalAlignment="Left" Height="33.66" Margin="10.521,119.4,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <TextBox HorizontalAlignment="Left" Height="33.66" Margin="248.05,119.4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontSize="20" FontFamily="Palatino Linotype"/>
-                <Label Content="Notes" HorizontalAlignment="Left" Height="33.66" Margin="10.521,158.06,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <TextBox x:Name="notesTxt" Margin="248.05,158.06,0,0" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Width="370" Height="182.784" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <Label Content="Vehicle" HorizontalAlignment="Left" Height="33.66" Margin="10.521,345.844,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
-                <TextBox x:Name="ownerVehicleTxt" HorizontalAlignment="Left" Height="33.66" Margin="248.05,345.844,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" FontSize="20" FontFamily="Palatino Linotype"/>
-                <Button x:Name="addPartButton" Content="Add Part" HorizontalAlignment="Left" Height="51" Margin="377.05,387,0,0" VerticalAlignment="Top" Width="241" FontFamily="Lithos Pro Regular" FontSize="20" Background="{x:Null}" Click="AddPartButton_Click">
-                    <Button.BorderBrush>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF1397F1" Offset="0"/>
-                            <GradientStop Color="White" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.BorderBrush>
-                </Button>
-            </SelectiveScrollingGrid>
-        </ScrollViewer>
-
+        <Label Content="Name" HorizontalAlignment="Left" Height="33.66" Margin="10.521,20,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+        <TextBox x:Name="nameTxt" HorizontalAlignment="Left" Height="33.66" Margin="248.05,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="20" FontFamily="Palatino Linotype"/>
+        <Label Content="Part Number" HorizontalAlignment="Left" Height="33.66" Margin="10.521,105.317,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+        <TextBox x:Name="serialNumTxt" HorizontalAlignment="Left" Height="33.66" Margin="248.05,63.322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="20" FontFamily="Palatino Linotype"/>
+        <TextBox x:Name="partNumTxt" HorizontalAlignment="Left" Height="33.66" Margin="248.05,105.317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontFamily="Palatino Linotype" FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Height="33.66" Margin="248.05,148.888,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="20" FontFamily="Palatino Linotype"/>
+        <Label Content="Serial Number" HorizontalAlignment="Left" Height="33.66" Margin="10,63.322,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Price" HorizontalAlignment="Left" Height="33.66" Margin="10.521,148.888,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Notes" HorizontalAlignment="Left" Height="33.66" Margin="10.521,236.213,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+        <TextBox x:Name="ownerVehicleTxt" HorizontalAlignment="Left" Height="33.66" Margin="248.05,190.883,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="20" FontFamily="Palatino Linotype"/>
+        <TextBox x:Name="notesTxt" Margin="248.05,236.213,0,0" TextWrapping="Wrap" FontSize="20" FontFamily="Palatino Linotype" Width="446" Height="182.784" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label Content="Vehicle" HorizontalAlignment="Left" Height="33.66" Margin="10.521,190.883,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="addPartButton" Content="Add Part" HorizontalAlignment="Left" Height="51" Margin="453.05,438,0,0" VerticalAlignment="Top" Width="241" FontFamily="Lithos Pro Regular" FontSize="20" Background="{x:Null}" Click="AddPartButton_Click">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1397F1" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="398.997" Margin="711.333,20,0,0" TextWrapping="Wrap" Text="NotificationBox" VerticalAlignment="Top" Width="178.667"/>
     </Grid>
 </Page>
