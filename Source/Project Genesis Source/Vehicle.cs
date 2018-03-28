@@ -18,7 +18,6 @@ namespace Project_Genesis_Source
         public Vehicle()
         {
             this.Invoices = new HashSet<Invoice>();
-            this.Vehicle_Part = new HashSet<Vehicle_Part>();
         }
     
         public int Vehicle_ID { get; set; }
@@ -31,7 +30,5 @@ namespace Project_Genesis_Source
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoices { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Vehicle_Part> Vehicle_Part { get; set; }
     }
 }

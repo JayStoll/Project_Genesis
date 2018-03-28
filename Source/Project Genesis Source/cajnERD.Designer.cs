@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\kooli\Documents\GitHub\Project_Genesis\Source\Project Genesis Source\cajnERD.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\ConnerS\Desktop\School\College CIT\Year two\System Analysis\Project Genesis\Project_Genesis\Source\Project Genesis Source\cajnERD.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -149,9 +149,6 @@
     <Compile Include="Vehicle.cs">
       <DependentUpon>cajnERD.tt</DependentUpon>
     </Compile>
-    <Compile Include="Vehicle_Part.cs">
-      <DependentUpon>cajnERD.tt</DependentUpon>
-    </Compile>
     <Page Include="AddCustomer1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
