@@ -17,10 +17,10 @@ namespace Project_Genesis_Source.Classes{
 
         //initailize 
         public string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GenesisDB.mdf;Integrated Security=True;Connect Timeout=30";
-        SqlDataAdapter dataAdapater;
-        System.Data.DataTable table;
-        SqlCommandBuilder commandBuilder;
-        SqlConnection conn;
+        // SqlDataAdapter dataAdapater;
+        // System.Data.DataTable table;
+        // SqlCommandBuilder commandBuilder;
+        public SqlConnection conn;
         SqlCommand command;
 
         

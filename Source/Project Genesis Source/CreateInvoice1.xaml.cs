@@ -26,20 +26,41 @@ namespace Project_Genesis_Source
     public partial class CreateInvoice1 : Page
     {
 
-        SqlDataAdapter customerAdapter;
+        // SqlDataAdapter customerAdapter;
+        SqlCommand customerAdapter;
         DatabaseConnection dc = new DatabaseConnection();
 
         public CreateInvoice1()
         {
             InitializeComponent();
+
+            GetClientInfo();
         }
 
         private void GetClientInfo() {
-            string sqlString = @"SELECT Cus_FName, Cus_LName from Customer";
+            var conn = dc.conn;
 
-            customerAdapter = new SqlDataAdapter(sqlString, dc.connString);
-            GenesisDBDataSet set = new GenesisDBDataSet();
-            customerAdapter.Fill(set, "Customer");
+            using (conn = new SqlConnection(dc.connString)) {
+                try {
+                    string sqlString = "SELECT Cus_FName from Customer";
+
+                    customerAdapter = new SqlCommand(sqlString, conn);
+                    conn.Open();
+                    SqlDataReader test = customerAdapter.ExecuteReader();
+                    while (test.Read()) {
+                        //MessageBox.Show(test["Cus_FName"].ToString());
+                        //GenesisDBDataSet set = new GenesisDBDataSet();
+                        //customerAdapter.Fill(set, "Customer");
+                        //Client.DisplayMemberPath = "CustomerName";
+                        //Client.DataContext = test["Cus_FName"];
+                        Client.Items.Add(test["Cus_FName"]);
+                    }
+                } catch (Exception ex) {
+                    MessageBox.Show(ex.ToString());
+                }
+                
+            }
+            conn.Close();
         }
 
         private void CreateInvoice_Click(object sender, RoutedEventArgs e) {
