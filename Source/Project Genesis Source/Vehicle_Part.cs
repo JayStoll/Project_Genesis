@@ -14,19 +14,11 @@ namespace Project_Genesis_Source
     
     public partial class Vehicle_Part
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Vehicle_Part()
-        {
-            this.Vehicles = new HashSet<Vehicle>();
-        }
-    
         public int VehiclePart_ID { get; set; }
         public int Vehicle_ID { get; set; }
         public int Part_ID { get; set; }
     
         public virtual Part Part { get; set; }
         public virtual Vehicle Vehicle { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Vehicle> Vehicles { get; set; }
     }
 }

@@ -9,63 +9,65 @@
       Title="ManageClients1" Width="700" Height="500">
 
     <Grid>
-        <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="10.661,10,0,20" HorizontalAlignment="Left" Width="179.492">
-            <Border.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF0E1317"/>
-                    <GradientStop Color="#FF98C7F7" Offset="1"/>
-                    <GradientStop Color="White" Offset="0.004"/>
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5795D3" Offset="0.619"/>
-                </LinearGradientBrush>
-            </Border.Background>
-            <ListView Margin="9,69.491,9,9" FontFamily="Palatino Linotype" FontSize="20">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </Border>
-        <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="195.153,10,0,20" HorizontalAlignment="Left" Width="218.853">
-            <Border.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF0E1317"/>
-                    <GradientStop Color="#FF98C7F7" Offset="1"/>
-                    <GradientStop Color="White" Offset="0.004"/>
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5795D3" Offset="0.619"/>
-                </LinearGradientBrush>
-            </Border.Background>
-            <ListView Margin="9,36.491,9,9" FontFamily="Palatino Linotype" FontSize="20">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </Border>
-        <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="419.006,10,0,20" HorizontalAlignment="Left" Width="270.994">
-            <Border.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF0E1317"/>
-                    <GradientStop Color="#FF98C7F7" Offset="1"/>
-                    <GradientStop Color="White" Offset="0.004"/>
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF5795D3" Offset="0.619"/>
-                </LinearGradientBrush>
-            </Border.Background>
-            <ListView Margin="9,37.491,9,9" FontFamily="Palatino Linotype" FontSize="20">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-        </Border>
-        <Label Content="Name" Margin="10.661,10,509.847,0" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="24.898" VerticalAlignment="Top"/>
-        <Label Content="Vehicle" Margin="195.153,10,285.994,0" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="24.898" VerticalAlignment="Top"/>
-        <Label Content="Invoice" Margin="419.006,10,0,0" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="24.898" VerticalAlignment="Top" HorizontalAlignment="Left" Width="270.994"/>
-        <ComboBox HorizontalAlignment="Left" Height="30" Margin="22,49.117,0,0" VerticalAlignment="Top" Width="158"/>
+        <Grid Height="300" VerticalAlignment="Top" HorizontalAlignment="Left" Width="700">
+            <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="10.661,10,0,10" HorizontalAlignment="Left" Width="179.492">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0E1317"/>
+                        <GradientStop Color="#FF98C7F7" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.004"/>
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF5795D3" Offset="0.619"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <ListView x:Name="nameOutputBox" Margin="9,60.491,9,9" FontFamily="Palatino Linotype" FontSize="20">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Border>
+            <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="195.153,10,0,10" HorizontalAlignment="Left" Width="218.853">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0E1317"/>
+                        <GradientStop Color="#FF98C7F7" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.004"/>
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF5795D3" Offset="0.619"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <ListView x:Name="vehicleOutputBox" Margin="9,36.491,9,9" FontFamily="Palatino Linotype" FontSize="20">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Border>
+            <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="419.006,10,0,10" HorizontalAlignment="Left" Width="270.994">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF0E1317"/>
+                        <GradientStop Color="#FF98C7F7" Offset="1"/>
+                        <GradientStop Color="White" Offset="0.004"/>
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF5795D3" Offset="0.619"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <ListView x:Name="invoiceOutputBox" Margin="9,37.491,9,9" FontFamily="Palatino Linotype" FontSize="20">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Border>
+            <Label x:Name="customerOutPut" Content="Name" Margin="10.661,10,509.847,0" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="24.898" VerticalAlignment="Top"/>
+            <Label x:Name="vehicleOutputLabel" Content="Vehicle" Margin="195.153,10,285.994,0" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="24.898" VerticalAlignment="Top"/>
+            <Label x:Name="invoiceOutputLabel" Content="Invoice" Margin="419.006,10,0,0" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="24.898" VerticalAlignment="Top" HorizontalAlignment="Left" Width="270.994"/>
+            <TextBox x:Name="manageSearchBox" HorizontalAlignment="Left" Height="29.219" Margin="23,39.898,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" FontFamily="Palatino Linotype" FontSize="20"/>
+        </Grid>
     </Grid>
 </Page>
