@@ -27,6 +27,31 @@ namespace Project_Genesis_Source
 
         private void createInvB_Click(object sender, RoutedEventArgs e)
         {
+            
+        }
+
+        private void addCustomerB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void addVehicleB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void addPartB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ManageClientsB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void backupB_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

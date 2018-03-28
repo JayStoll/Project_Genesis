@@ -66,5 +66,18 @@ namespace Project_Genesis_Source
                 }
             }
         }
+
+        //Client DropDowns
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+
+        }
+
+        //Vehicle DropDown
+        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

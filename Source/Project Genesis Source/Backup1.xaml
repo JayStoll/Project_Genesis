@@ -5,10 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
-      Title="Backup1" Width="720.667" Height="416.667">
+      Title="Backup1" Width="1432" Height="781">
 
     <Grid>
-        <Button x:Name="backupInv" Content="Backup" Margin="4.326,84.358,502.581,0" FontFamily="PenultimateLightItal" FontSize="24" Background="{x:Null}" Foreground="#FF0C1249" Height="67.102" VerticalAlignment="Top">
+        <Button x:Name="backupInv" Content="Backup" Margin="4.326,84.358,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" Height="143.716" VerticalAlignment="Top">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1397F1" Offset="0"/>
@@ -16,7 +16,7 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="backupData" Content="Recover" Margin="4.326,182.823,502.581,0" FontFamily="PenultimateLightItal" FontSize="24" Background="{x:Null}" Foreground="#FF0C1249" Height="67.102" VerticalAlignment="Top">
+        <Button x:Name="backupData" Content="Recover" Margin="4.326,295.247,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" Height="143.716" VerticalAlignment="Top">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1397F1" Offset="0"/>
@@ -24,7 +24,7 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="cancelBackup" Content="Cancel" Margin="10,339.565,0,0" FontFamily="PenultimateLightItal" FontSize="24" Background="{x:Null}" Foreground="#FF0C1249" HorizontalAlignment="Left" Width="213.76" IsEnabled="False" Height="67.102" VerticalAlignment="Top">
+        <Button x:Name="cancelBackup" Content="Cancel" Margin="8.982,630.951,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" IsEnabled="False" Height="143.716" VerticalAlignment="Top">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1397F1" Offset="0"/>
@@ -32,8 +32,8 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Grid HorizontalAlignment="Right" Width="502.581">
-            <Label Content="Archived Invoices" Height="54.691" Margin="16,23.691,10,0" VerticalAlignment="Top" FontFamily="Splash" FontSize="48" Background="{x:Null}" Foreground="#FF0C1249"/>
+        <Grid HorizontalAlignment="Right" Width="663.581">
+            <Label Content="Archived Invoices" Height="75" Margin="16,3.382,10,0" VerticalAlignment="Top" FontFamily="Splash" FontSize="50" Background="{x:Null}" Foreground="#FF0C1249"/>
             <ListView Margin="16,83.382,10,10" FontFamily="Palatino Linotype" FontSize="20">
                 <ListView.View>
                     <GridView>
