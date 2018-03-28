@@ -12,17 +12,18 @@ using System.IO;
 namespace Project_Genesis_Source.Classes{
 
     // TODO - Fill in the information into the functions
-    // TODO - Change the return types to return the proper information
+    /// <summary>
+    /// Connect and create querys to the database
+    /// </summary>
     public class DatabaseConnection {
 
         //initailize 
         public string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GenesisDB.mdf;Integrated Security=True;Connect Timeout=30";
-        SqlDataAdapter dataAdapater;
-        System.Data.DataTable table;
-        SqlCommandBuilder commandBuilder;
+        // SqlDataAdapter dataAdapater;
+        // System.Data.DataTable table;
+        // SqlCommandBuilder commandBuilder;
         SqlConnection conn;
         SqlCommand command;
-
         
         /// <summary>
         /// Add a new client to the database
@@ -294,12 +295,13 @@ namespace Project_Genesis_Source.Classes{
         ///<summary>
         ///Retrieve information for manage client
         /// </summary>
-        public string[] retrieveFNames()
+        public string[] RetrieveFNames()
         {
             //select query to retrieve first name
             string selectFName = @"SELECT Cus_FName FROM Customer";
 
-            string[] fnames= {};
+            // string[] fnames = { };
+            List<string> fNames = new List<string>();
 
             using (conn = new SqlConnection(connString))
             {
@@ -308,18 +310,16 @@ namespace Project_Genesis_Source.Classes{
                     conn.Open();
 
                     command = new SqlCommand(selectFName, conn);
-
-                    
-                    while (command.ExecuteScalar().ToString() != null)
-                    {
+                    // error - will infinitly loop
+                    while (command.ExecuteScalar().ToString() != null) {
                         int i = 0;
-                        fnames[i] = command.ExecuteScalar().ToString();
+                        // fnames[i] = command.ExecuteScalar().ToString();
+                        fNames.Insert(i, command.ExecuteScalar().ToString());
+                        Console.WriteLine(command.ExecuteScalar().ToString()); // debug
                         i++;
-                        return fnames;
-
+                        if (fNames.ToArray().Length >= i) break;
+                        // return fNames.ToArray();
                     }
-                    
-
                 }
                 catch (Exception ex)
                 {
@@ -327,7 +327,7 @@ namespace Project_Genesis_Source.Classes{
                 }
             }
 
-            return fnames;
+            return fNames.ToArray();
             
         }
 

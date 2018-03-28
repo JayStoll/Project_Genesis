@@ -21,16 +21,16 @@ namespace Project_Genesis_Source
     /// </summary>
     public partial class ManageClients1 : Page
     {
+        DatabaseConnection dataConnect = new DatabaseConnection();
+
         public ManageClients1()
         {
             InitializeComponent();
 
-            DatabaseConnection dataConnect = new DatabaseConnection();
-
-            string[] fnames = dataConnect.retrieveFNames();
-
+            string[] fnames = dataConnect.RetrieveFNames();
+            // List<string> fnames = dataConnect.RetrieveFNames();
             //populate customerOutputBox with Customer names
-
+            //dataConnect.RetrieveFNames().CopyTo(fnames, 0);
             if (fnames.Length == 0)
             {
                 MessageBox.Show("No first names to populate with");

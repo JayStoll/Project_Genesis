@@ -190,7 +190,7 @@
     </Compile>
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\PythonConnection.cs" />
-    <Compile Include="ERD1.Context.cs">
+    <!-- <Compile Include="ERD1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ERD1.Context.tt</DependentUpon>
@@ -199,7 +199,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ERD1.edmx</DependentUpon>
-    </Compile>
+    </Compile> -->
     <Compile Include="GenesisDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
