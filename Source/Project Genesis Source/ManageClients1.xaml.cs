@@ -27,18 +27,20 @@ namespace Project_Genesis_Source
 
             DatabaseConnection dataConnect = new DatabaseConnection();
 
-            string[] fnames = { };
+            string[] fnames = dataConnect.retrieveFNames();
+
             //populate customerOutputBox with Customer names
-            //for (int i=0; i<10; i++)
+
+            if (fnames.Length == 0)
             {
-
-                //for(int i=0; i < 5; i++)
+                MessageBox.Show("No first names to populate with");
+            }
+            else
+            {
+                for (int i = 0; i < fnames.Length; i++)
                 {
-                   // fnames[i] = dataConnect.retrieveFNames();
+                    nameOutputBox.Items.Add(fnames[i] + "\n");
                 }
-                //TODO get correct string arrays into the items
-                //nameOutputBox.Items.Add(fnames[0] + "\n");
-
             }
           
         }

@@ -110,14 +110,47 @@
     <Compile Include="Backup1.xaml.cs">
       <DependentUpon>Backup1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="cajnERD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cajnERD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cajnERD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cajnERD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cajnERD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cajnERD.edmx</DependentUpon>
+    </Compile>
     <Compile Include="CreateInvoice1.xaml.cs">
       <DependentUpon>CreateInvoice1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>cajnERD.tt</DependentUpon>
     </Compile>
     <Compile Include="Home1.xaml.cs">
       <DependentUpon>Home1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Invoice.cs">
+      <DependentUpon>cajnERD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice_Item.cs">
+      <DependentUpon>cajnERD.tt</DependentUpon>
+    </Compile>
     <Compile Include="ManageClients1.xaml.cs">
       <DependentUpon>ManageClients1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Part.cs">
+      <DependentUpon>cajnERD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle.cs">
+      <DependentUpon>cajnERD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle_Part.cs">
+      <DependentUpon>cajnERD.tt</DependentUpon>
     </Compile>
     <Page Include="AddCustomer1.xaml">
       <SubType>Designer</SubType>
@@ -161,16 +194,6 @@
     <Compile Include="Classes\DatabaseConnection.cs" />
     <Compile Include="Classes\PythonConnection.cs" />
     <!-- this is where the text file stuff is supposed to go -->
-    <Compile Include="ERD1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ERD1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ERD1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ERD1.edmx</DependentUpon>
-    </Compile>
     <Compile Include="GenesisDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -207,12 +230,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="ERD1.edmx">
+    <EntityDeploy Include="cajnERD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ERD1.Designer.cs</LastGenOutput>
+      <LastGenOutput>cajnERD.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ERD1.edmx.diagram">
-      <DependentUpon>ERD1.edmx</DependentUpon>
+    <None Include="cajnERD.edmx.diagram">
+      <DependentUpon>cajnERD.edmx</DependentUpon>
     </None>
     <None Include="GenesisDBDataSet.xsc">
       <DependentUpon>GenesisDBDataSet.xsd</DependentUpon>
@@ -238,15 +261,15 @@
     <Resource Include="icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ERD1.Context.tt">
+    <Content Include="cajnERD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ERD1.Context.cs</LastGenOutput>
-      <DependentUpon>ERD1.edmx</DependentUpon>
+      <DependentUpon>cajnERD.edmx</DependentUpon>
+      <LastGenOutput>cajnERD.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ERD1.tt">
+    <Content Include="cajnERD.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ERD1.edmx</DependentUpon>
-      <LastGenOutput>ERD1.cs</LastGenOutput>
+      <DependentUpon>cajnERD.edmx</DependentUpon>
+      <LastGenOutput>cajnERD.cs</LastGenOutput>
     </Content>
     <Content Include="GenesisDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

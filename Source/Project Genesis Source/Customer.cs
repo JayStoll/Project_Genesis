@@ -18,7 +18,6 @@ namespace Project_Genesis_Source
         public Customer()
         {
             this.Invoices = new HashSet<Invoice>();
-            this.Vehicles = new HashSet<Vehicle>();
         }
     
         public int Cus_ID { get; set; }
@@ -27,10 +26,10 @@ namespace Project_Genesis_Source
         public string Cus_Address { get; set; }
         public string Cus_Phone { get; set; }
         public string Cus_Email { get; set; }
+        public string Cus_BoxNum { get; set; }
+        public string Cus_PostalCode { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoices { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Vehicle> Vehicles { get; set; }
     }
 }

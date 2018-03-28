@@ -128,7 +128,7 @@ namespace Project_Genesis_Source.Classes{
             //initalize select query command
             SqlCommand selectCommand = new SqlCommand();
             //select query to get Cus_ID
-            string selectCusID = @"SELECT Cus_ID FROM Customer WHERE Cus_FName = " + ownerFName + "AND Cus_LName = " + ownerLName;
+            string selectCusID = @"SELECT Cus_ID FROM Customer WHERE Cus_FName = '" + ownerFName + "' AND Cus_LName = '" + ownerLName + "'";
 
             //insert query to send to VEHICLE
             string insertVehicleData = @"INSERT INTO Vehicle(Cus_ID, Vehicle_SerialNum, Vehicle_Type, Vehicle_Make, Vehicle_Num, Vehicle_Notes)
@@ -143,7 +143,7 @@ namespace Project_Genesis_Source.Classes{
                     selectCommand = new SqlCommand(selectCusID, conn);
 
                     //store result of select query
-                    int Cus_ID = selectCommand.ExecuteNonQuery();
+                    int Cus_ID = Convert.ToInt32(selectCommand.ExecuteScalar());
 
                     command.Parameters.AddWithValue(@"Cus_ID", Cus_ID);
                     command.Parameters.AddWithValue(@"Vehicle_SerialNum", serialNumber);
@@ -176,7 +176,7 @@ namespace Project_Genesis_Source.Classes{
             //initalize select query command
             SqlCommand selectCommand = new SqlCommand();
             //select query to get Cus_ID
-            string selectCusID = @"SELECT Cus_ID FROM Customer WHERE Cus_FName = " + ownerFName + "AND Cus_LName = " + ownerLName;
+            string selectCusID = @"SELECT Cus_ID FROM Customer WHERE Cus_FName = '" + ownerFName + "' AND Cus_LName = '" + ownerLName +"'";
 
             //insert query to send to VEHICLE
             string insertVehicleData = @"INSERT INTO Vehicle(Cus_ID, Vehicle_SerialNum, Vehicle_Type, Vehicle_Make, Vehicle_Num, Vehicle_Notes)
@@ -191,7 +191,7 @@ namespace Project_Genesis_Source.Classes{
                     selectCommand = new SqlCommand(selectCusID, conn);
 
                     //store result of select query
-                    int Cus_ID = selectCommand.ExecuteNonQuery();
+                    int Cus_ID = Convert.ToInt32(selectCommand.ExecuteScalar());
 
                     command.Parameters.AddWithValue(@"Cus_ID", Cus_ID);
                     command.Parameters.AddWithValue(@"Vehicle_SerialNum", serialNumber);
@@ -294,12 +294,12 @@ namespace Project_Genesis_Source.Classes{
         ///<summary>
         ///Retrieve information for manage client
         /// </summary>
-        public string retrieveFNames()
+        public string[] retrieveFNames()
         {
             //select query to retrieve first name
             string selectFName = @"SELECT Cus_FName FROM Customer";
 
-            string fnames = " ";
+            string[] fnames= {};
 
             using (conn = new SqlConnection(connString))
             {
@@ -311,8 +311,10 @@ namespace Project_Genesis_Source.Classes{
 
                     
                     while (command.ExecuteScalar().ToString() != null)
-                    { 
-                        fnames = command.ExecuteScalar().ToString();
+                    {
+                        int i = 0;
+                        fnames[i] = command.ExecuteScalar().ToString();
+                        i++;
                         return fnames;
 
                     }
