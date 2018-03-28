@@ -32,14 +32,14 @@ namespace Project_Genesis_Source
         public CreateInvoice1()
         {
             InitializeComponent();
-
         }
 
-        private void GetData() {
+        private void GetClientInfo() {
             string sqlString = @"SELECT Cus_FName, Cus_LName from Customer";
 
             customerAdapter = new SqlDataAdapter(sqlString, dc.connString);
-            
+            GenesisDBDataSet set = new GenesisDBDataSet();
+            customerAdapter.Fill(set, "Customer");
         }
 
         private void CreateInvoice_Click(object sender, RoutedEventArgs e) {

@@ -69,8 +69,8 @@
                 <TextBox Height="10" Margin="24.524,454.66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="608.471" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5"/>
                 <TextBox Height="33.66" Margin="262.053,707.038,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="370.471" FontFamily="Palatino Linotype" FontSize="20"/>
                 <TextBox Height="33.66" Margin="262.995,753.688,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="171.476" FontFamily="Palatino Linotype" FontSize="20"/>
-                <ComboBox HorizontalAlignment="Left" Margin="39,17,0,0" VerticalAlignment="Top" Width="583" Height="38"/>
-                <ComboBox HorizontalAlignment="Left" Height="32" Margin="37,269,0,0" VerticalAlignment="Top" Width="584" FontSize="20"/>
+                <ComboBox Name="Client" HorizontalAlignment="Left" Margin="39,17,0,0" VerticalAlignment="Top" Width="583" Height="38"/>
+                <ComboBox Name="Vehcile" HorizontalAlignment="Left" Height="32" Margin="37,269,0,0" VerticalAlignment="Top" Width="584" FontSize="20"/>
             </SelectiveScrollingGrid>
         </ScrollViewer>
     </Grid>
