@@ -13,10 +13,10 @@ namespace Project_Genesis_Source
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class GenesisDBEntities : DbContext
+    public partial class GenesisDBEntities2 : DbContext
     {
-        public GenesisDBEntities()
-            : base("name=GenesisDBEntities")
+        public GenesisDBEntities2()
+            : base("name=GenesisDBEntities2")
         {
         }
     
@@ -24,12 +24,12 @@ namespace Project_Genesis_Source
         {
             throw new UnintentionalCodeFirstException();
         }
-    /*
+    
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Invoice_Item> Invoice_Item { get; set; }
         public virtual DbSet<Part> Parts { get; set; }
         public virtual DbSet<Vehicle> Vehicles { get; set; }
-        public virtual DbSet<Vehicle_Part> Vehicle_Part { get; set; }*/
+        public virtual DbSet<Vehicle_Part> Vehicle_Part { get; set; }
     }
 }
