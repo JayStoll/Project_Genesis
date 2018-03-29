@@ -79,5 +79,83 @@ namespace Project_Genesis_Source
         {
 
         }
+
+
+        //AJ Santillan March 28, 2018
+        //Watermarks
+
+
+        //First Search Bar for Searching Client Names
+        //This one dont work at the moment Needs fixing
+        private void SearchBar1_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(SearchBar1.Text))
+            {
+                SearchBar1.Visibility = System.Windows.Visibility.Collapsed;
+                SearchBar1Watermark.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
+        private void SearchBar1Watermark_GotFocus(object sender, RoutedEventArgs e)
+        {
+            SearchBar1Watermark.Visibility = System.Windows.Visibility.Collapsed;
+            SearchBar1.Visibility = System.Windows.Visibility.Visible;
+            SearchBar1.Focus();
+        }
+
+
+
+        //watermark on type
+        private void typeTxt_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(typeTxt.Text))
+            {
+                typeTxt.Visibility = System.Windows.Visibility.Collapsed;
+                typeTxtWatermark.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
+        private void typeTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
+        {
+            typeTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
+            typeTxt.Visibility = System.Windows.Visibility.Visible;
+            typeTxt.Focus();
+        }
+
+
+        //watermark for rate
+        private void rateTxt_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(rateTxt.Text))
+            {
+                rateTxt.Visibility = System.Windows.Visibility.Collapsed;
+                rateTxtWatermark.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
+        private void rateTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
+        {
+            rateTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
+            rateTxt.Visibility = System.Windows.Visibility.Visible;
+            rateTxt.Focus();
+        }
+
+
+        //watermark for GST TAX
+        private void gstTxt_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(gstTxt.Text))
+            {
+                gstTxt.Visibility = System.Windows.Visibility.Collapsed;
+                gstTxtWatermark.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
+        private void gstTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
+        {
+            gstTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
+            gstTxt.Visibility = System.Windows.Visibility.Visible;
+            gstTxt.Focus();
+        }
     }
 }

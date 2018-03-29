@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:Project_Genesis_Source"
         mc:Ignorable="d"
         Title="AboutUs" Height="900" Width="1100" WindowStartupLocation="CenterScreen" Icon="icon.png" Topmost="True">
-    <Grid>
-        
+    <Grid Background="#FF7A2B2B">
+        <Image Height="498" VerticalAlignment="Top" Source="icon.png" Opacity="0.5" Margin="10,10,690.5,0"/>
+        <Image Height="498" Margin="420,10,10,0" VerticalAlignment="Top" Source="12.png"/>
+        <TextBlock Height="97.5" Margin="29.5,540,31,0" TextWrapping="Wrap" Text="CAJN SOFTWARE" VerticalAlignment="Top" FontSize="80" FontFamily="Ethnocentric"/>
+        <TextBlock Margin="29.5,642.5,31,10" TextWrapping="Wrap" FontSize="38" FontFamily="Wide Latin"><Run Text="Conner - &#x9;Back-End / Database"/><LineBreak/><Run Text="AJ - &#x9;&#x9;Front-End / UI"/><LineBreak/><Run Text="Jayden - &#x9;Back-End General"/><LineBreak/><Run Text="Neil - &#x9;Back-End / Database"/></TextBlock>
     </Grid>
 </Window>

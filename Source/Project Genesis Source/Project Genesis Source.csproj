@@ -245,6 +245,7 @@
     <Resource Include="icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="12.png" />
     <Content Include="ERD1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ERD1.Context.cs</LastGenOutput>

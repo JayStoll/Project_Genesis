@@ -5,24 +5,45 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
-      Title="AddCustomer1" Width="1432" Height="780">
+      Title="AddCustomer1" Width="1432" Height="772.5">
 
     <Grid>
-        <Label Content="First Name" Margin="0,-0.287,1167,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300"/>
-        <TextBox x:Name="fNametxt" Margin="336,-0.287,10,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top"/>
-        <Label Content="Last Name" Margin="0,89.713,1167,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300"/>
-        <TextBox x:Name="lNameTxt" Margin="336,89.713,10,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="1121"/>
-        <Label Content="Address" Margin="0,179.713,1167,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300"/>
-        <TextBox x:Name="addressTxt" Margin="336,179.713,10,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="1121"/>
-        <Label Content="Phone Number" Margin="0,269.713,1167,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300"/>
-        <TextBox x:Name="phoneNumTxt" Margin="336,269.713,10,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="1121"/>
-        <Label Content="Postal Code" Margin="0,359.713,1167,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300"/>
-        <TextBox x:Name="postalCodeTxt" Margin="336,359.713,10,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="1121"/>
-        <Label Content="E-mail Address" Margin="0,449.713,1167,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300"/>
-        <TextBox x:Name="emailTxt" Margin="336,449.713,10,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="1121"/>
-        <TextBox x:Name="boxNumtxt" Margin="336,539.713,10,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="1121"/>
-        <Label Content="Box#" Margin="0,539.713,1167,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300"/>
-        <Button Content="Add Customer" Margin="0,639.713,10,0" FontFamily="Lithos Pro Regular" FontSize="35" HorizontalAlignment="Right" Width="300" Background="{x:Null}" Height="60" VerticalAlignment="Top" Click="Add_Customer_Click" RenderTransformOrigin="0.637,0.7">
+        <Label Content="First Name" Margin="10,9.713,1122,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300"/>
+        <TextBox x:Name="fNametxt" LostFocus="fNametxt_LostFocus" Margin="310,9.713,343.471,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" Width="778.529"/>
+        <TextBox x:Name="fNametxtWatermark" GotFocus="fNametxtWatermark_GotFocus" Text="ex: John" Margin="310,9.713,343.471,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" Opacity="0.5" Width="778.529"/>
+
+
+        <Label Content="Last Name" Margin="10,99.713,1122,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300"/>
+        <TextBox x:Name="lNameTxt" LostFocus="lNameTxt_LostFocus" Margin="310,99.713,343.471,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="778.529"/>
+        <TextBox x:Name="lNameTxtWatermark" GotFocus="lNameTxtWatermark_GotFocus" Text="ex: Doe" Margin="310,99.713,343.471,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Opacity="0.5" Width="778.529"/>
+
+
+        <Label Content="Address" Margin="10,189.713,1122,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300"/>
+        <TextBox x:Name="addressTxt" LostFocus="addressTxt_LostFocus" Margin="310,189.713,343.471,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="150" VerticalAlignment="Top" Width="778.529"/>
+        <TextBox x:Name="addressTxtWatermark" GotFocus="addressTxtWatermark_GotFocus" Text="City | Street | Province | Country" Margin="310,189.713,343.471,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="150" VerticalAlignment="Top" Opacity="0.5" Width="778.529"/>
+
+
+        <Label Content="Phone Number" Margin="10,352.213,1122,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300"/>
+        <TextBox x:Name="phoneNumTxt" LostFocus="phoneNumTxt_LostFocus" Margin="310,352.213,343.471,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="778.529"/>
+        <TextBox x:Name="phoneNumTxtWatermark" GotFocus="phoneNumTxtWatermark_GotFocus" Text="###-###-####" Margin="310,352.213,343.471,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="778.529" Opacity="0.5"/>
+
+
+        <Label Content="Postal Code" Margin="10,439.713,1122,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300"/>
+        <TextBox x:Name="postalCodeTxt" LostFocus="postalCodeTxt_LostFocus" Margin="310,439.713,343.471,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="778.529"/>
+        <TextBox x:Name="postalCodeTxtWatermark" GotFocus="postalCodeTxtWatermark_GotFocus" Text="ex: A1B-2C3" Margin="310,439.713,343.471,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="778.529" Opacity="0.5"/>
+
+
+        <Label Content="E-mail Address" Margin="10,527.213,1122,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300"/>
+        <TextBox x:Name="emailTxt" LostFocus="emailTxt_LostFocus" Margin="310,527.213,343.471,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="778.529"/>
+        <TextBox x:Name="emailTxtWatermark" GotFocus="emailTxtWatermark_GotFocus" Text="JohnDoe@email.com" Margin="310,527.213,343.471,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="778.529" Opacity="0.5"/>
+        
+
+        <Label Content="Box#" Margin="10,614.713,1122,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300"/>
+        <TextBox x:Name="boxNumtxt" LostFocus="boxNumtxt_LostFocus" Margin="310,614.713,343.471,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="778.529"/>
+        <TextBox x:Name="boxNumtxtWatermark" GotFocus="boxNumtxtWatermark_GotFocus" Text="ex: 123" Margin="310,614.713,343.471,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Width="778.529" Opacity="0.5"/>
+
+
+        <Button Content="Add Customer" Margin="0,704.713,343.471,0" FontFamily="Lithos Pro Regular" FontSize="35" HorizontalAlignment="Right" Width="300" Background="{x:Null}" Height="60" VerticalAlignment="Top" Click="Add_Customer_Click" RenderTransformOrigin="0.637,0.7">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1397F1" Offset="0"/>
@@ -30,5 +51,6 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
+        <TextBlock Height="617.5" Margin="1093.529,10,10,0" TextWrapping="Wrap" Text="  Customers Added" VerticalAlignment="Top" FontSize="36"/>
     </Grid>
 </Page>
