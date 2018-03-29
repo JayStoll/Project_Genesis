@@ -22,7 +22,7 @@ namespace Project_Genesis_Source.Classes{
         // SqlDataAdapter dataAdapater;
         // System.Data.DataTable table;
         // SqlCommandBuilder commandBuilder;
-        SqlConnection conn;
+        public SqlConnection conn;
         SqlCommand command;
         
         /// <summary>

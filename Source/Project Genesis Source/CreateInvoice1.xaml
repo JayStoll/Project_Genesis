@@ -35,8 +35,8 @@
                         </RadialGradientBrush>
                     </Rectangle.Fill>
                 </Rectangle>
-                <ComboBox x:Name="SearchBar1" LostFocus="SearchBar1_LostFocus" Height="75" Margin="24.524,21.391,25.562,0" VerticalAlignment="Top" FontSize="35" SelectionChanged="ComboBox_SelectionChanged"/>
-                <ComboBox x:Name="SearchBar1Watermark" GotFocus="SearchBar1Watermark_GotFocus" Text="Search Client Name..." Height="75" Margin="24.524,21.391,25.562,0" VerticalAlignment="Top" FontSize="35" SelectionChanged="ComboBox_SelectionChanged" Opacity="0.5"/>
+                <ComboBox x:Name="VehicleDropDown" Height="75" Margin="24.524,21.391,25.562,0" VerticalAlignment="Top" FontSize="35" SelectionChanged="ComboBox_SelectionChanged"/>
+                <ComboBox x:Name="ClientDropDown" Text="Search Client Name..." Height="75" Margin="24.524,21.391,25.562,0" VerticalAlignment="Top" FontSize="35" SelectionChanged="ComboBox_SelectionChanged" Opacity="0.5"/>
 
 
                 <Label Content="First Name" Margin="24.524,120,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300"/>
