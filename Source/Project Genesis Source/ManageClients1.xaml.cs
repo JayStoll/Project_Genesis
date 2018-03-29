@@ -39,7 +39,7 @@ namespace Project_Genesis_Source
             {
                 for (int i = 0; i < fnames.Length; i++)
                 {
-                    nameOutputBox.Items.Add(fnames[i] + "\n");
+                    // nameOutputBox.Items.Add(fnames[i] + "\n");
                 }
             }
           
