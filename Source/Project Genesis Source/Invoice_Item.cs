@@ -19,6 +19,5 @@ namespace Project_Genesis_Source
         public int Inv_ID { get; set; }
     
         public virtual Invoice Invoice { get; set; }
-        // public virtual Part Part { get; set; }
     }
 }
