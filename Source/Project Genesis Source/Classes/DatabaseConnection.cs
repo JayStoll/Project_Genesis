@@ -248,12 +248,12 @@ namespace Project_Genesis_Source.Classes{
                     command.Parameters.AddWithValue(@"Part_Price", partPrice);
                     command.Parameters.AddWithValue(@"Part_Desc", partDescription);
                     command.ExecuteNonQuery();
-
+                    MessageBox.Show("Part added");
                     
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message + ": Error occured while trying to add part");
                 }
                 finally
                 {

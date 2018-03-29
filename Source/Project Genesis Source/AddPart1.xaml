@@ -13,7 +13,7 @@
         <Label Content="Part Number" HorizontalAlignment="Left" Height="33.66" Margin="10.521,105.317,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
         <TextBox x:Name="serialNumTxt" HorizontalAlignment="Left" Height="33.66" Margin="248.05,63.322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="20" FontFamily="Palatino Linotype"/>
         <TextBox x:Name="partNumTxt" HorizontalAlignment="Left" Height="33.66" Margin="248.05,105.317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontFamily="Palatino Linotype" FontSize="20"/>
-        <TextBox HorizontalAlignment="Left" Height="33.66" Margin="248.05,148.888,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="20" FontFamily="Palatino Linotype"/>
+        <TextBox x:Name="priceTxt" HorizontalAlignment="Left" Height="33.66" Margin="248.05,148.888,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="446" FontSize="20" FontFamily="Palatino Linotype"/>
         <Label Content="Serial Number" HorizontalAlignment="Left" Height="33.66" Margin="10,63.322,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
         <Label Content="Price" HorizontalAlignment="Left" Height="33.66" Margin="10.521,148.888,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
         <Label Content="Notes" HorizontalAlignment="Left" Height="33.66" Margin="10.521,236.213,0,0" VerticalAlignment="Top" Width="201" FontFamily="Lithos Pro Regular" FontSize="18" FontWeight="Bold"/>
