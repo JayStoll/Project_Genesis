@@ -18,20 +18,17 @@ using System.Windows.Shapes;
 
 
 
-namespace Project_Genesis_Source
-{
+namespace Project_Genesis_Source {
     /// <summary>
     /// Interaction logic for CreateInvoice1.xaml
     /// </summary>
-    public partial class CreateInvoice1 : Page
-    {
+    public partial class CreateInvoice1 : Page {
 
         // SqlDataAdapter customerAdapter;
         SqlCommand customerAdapter;
         DatabaseConnection dc = new DatabaseConnection();
 
-        public CreateInvoice1()
-        {
+        public CreateInvoice1() {
             InitializeComponent();
 
             GetClientInfo();
@@ -42,45 +39,39 @@ namespace Project_Genesis_Source
 
             using (conn = new SqlConnection(dc.connString)) {
                 try {
-                    string sqlString = "SELECT Cus_FName from Customer";
+                    string sqlString = "SELECT Cus_FName, Cus_LName from Customer";
 
                     customerAdapter = new SqlCommand(sqlString, conn);
                     conn.Open();
                     SqlDataReader test = customerAdapter.ExecuteReader();
-                    while (test.Read()) {
-                        //MessageBox.Show(test["Cus_FName"].ToString());
-                        //GenesisDBDataSet set = new GenesisDBDataSet();
-                        //customerAdapter.Fill(set, "Customer");
-                        //Client.DisplayMemberPath = "CustomerName";
-                        //Client.DataContext = test["Cus_FName"];
-                        Client.Items.Add(test["Cus_FName"]);
-                    }
-                } catch (Exception ex) {
+                    while (test.Read()) 
+                        ClientDropDown.Items.Add(test["Cus_FName"] + " " + test["Cus_LName"]);
+                }
+                catch (Exception ex) {
                     MessageBox.Show(ex.ToString());
                 }
-                
+
             }
             conn.Close();
         }
 
         private void CreateInvoice_Click(object sender, RoutedEventArgs e) {
             // get the information from the text boxes
-                // send that information to the correct method in the PythonConnection class
+            // send that information to the correct method in the PythonConnection class
             // when all the functions were called
-                // create a new PDF file
-                // store the PDF in the database - maybe?
+            // create a new PDF file
+            // store the PDF in the database - maybe?
         }
 
         //Client DropDowns
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            string[] names = ClientDropDown.SelectedItem.ToString().Split(null);
+            CusFNameTxt.Text = names[0];
+            CusLnameTxt.Text = names[1];
         }
 
         //Vehicle DropDown
-        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
+        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e) {
 
         }
 
@@ -88,39 +79,33 @@ namespace Project_Genesis_Source
         //AJ Santillan March 28, 2018
         //Watermarks
 
-
+/*
         //First Search Bar for Searching Client Names
         //This one dont work at the moment Needs fixing
-        private void SearchBar1_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(SearchBar1.Text))
-            {
+        private void SearchBar1_LostFocus(object sender, RoutedEventArgs e) {
+            if (string.IsNullOrEmpty(SearchBar1.Text)) {
                 SearchBar1.Visibility = System.Windows.Visibility.Collapsed;
                 SearchBar1Watermark.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
-        private void SearchBar1Watermark_GotFocus(object sender, RoutedEventArgs e)
-        {
+        private void SearchBar1Watermark_GotFocus(object sender, RoutedEventArgs e) {
             SearchBar1Watermark.Visibility = System.Windows.Visibility.Collapsed;
             SearchBar1.Visibility = System.Windows.Visibility.Visible;
             SearchBar1.Focus();
-        }
+        }*/
 
 
 
         //watermark on type
-        private void typeTxt_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(typeTxt.Text))
-            {
+        private void typeTxt_LostFocus(object sender, RoutedEventArgs e) {
+            if (string.IsNullOrEmpty(typeTxt.Text)) {
                 typeTxt.Visibility = System.Windows.Visibility.Collapsed;
                 typeTxtWatermark.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
-        private void typeTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
-        {
+        private void typeTxtWatermark_GotFocus(object sender, RoutedEventArgs e) {
             typeTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
             typeTxt.Visibility = System.Windows.Visibility.Visible;
             typeTxt.Focus();
@@ -128,17 +113,14 @@ namespace Project_Genesis_Source
 
 
         //watermark for rate
-        private void rateTxt_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(rateTxt.Text))
-            {
+        private void rateTxt_LostFocus(object sender, RoutedEventArgs e) {
+            if (string.IsNullOrEmpty(rateTxt.Text)) {
                 rateTxt.Visibility = System.Windows.Visibility.Collapsed;
                 rateTxtWatermark.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
-        private void rateTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
-        {
+        private void rateTxtWatermark_GotFocus(object sender, RoutedEventArgs e) {
             rateTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
             rateTxt.Visibility = System.Windows.Visibility.Visible;
             rateTxt.Focus();
@@ -146,17 +128,14 @@ namespace Project_Genesis_Source
 
 
         //watermark for GST TAX
-        private void gstTxt_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(gstTxt.Text))
-            {
+        private void gstTxt_LostFocus(object sender, RoutedEventArgs e) {
+            if (string.IsNullOrEmpty(gstTxt.Text)) {
                 gstTxt.Visibility = System.Windows.Visibility.Collapsed;
                 gstTxtWatermark.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
-        private void gstTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
-        {
+        private void gstTxtWatermark_GotFocus(object sender, RoutedEventArgs e) {
             gstTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
             gstTxt.Visibility = System.Windows.Visibility.Visible;
             gstTxt.Focus();
