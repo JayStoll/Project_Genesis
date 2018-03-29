@@ -26,7 +26,7 @@ namespace Project_Genesis_Source.Classes {
         public void CreateClientInfoFile() {
             //File.Create(clientFileInfo);
             tw = new StreamWriter(clientFileInfo);
-            tw.Write("Kerry Eitzen.Spring Coulee Pullets Ltd.c/o Kerry Eitzen.Box 282.Linden AB T0M 1J0."); // TODO Get the information from the database
+            tw.Write("Kerry Eitzen.Spring Coulee Pullets Ltd.c/o Kerry Eitzen.Box 282.Linden AB T0M 1J0.");
             tw.Close();
         }
         
@@ -67,6 +67,7 @@ namespace Project_Genesis_Source.Classes {
             tw.WriteLine("NAPA: Filters and fuel line");            // parts used
             tw.WriteLine("1");                                      // amount of parts used - not entered by the user
             tw.WriteLine("75.56");                                  // the total price of all the parts
+            tw.WriteLine("Small loader");                           // the type of vehicle it is
             tw.Write("G");                                          // tax type
             tw.Close();
         }

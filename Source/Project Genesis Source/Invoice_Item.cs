@@ -14,19 +14,11 @@ namespace Project_Genesis_Source
     
     public partial class Invoice_Item
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Invoice_Item()
-        {
-            this.Invoices = new HashSet<Invoice>();
-        }
-    
         public int InvItem_ID { get; set; }
         public int Part_ID { get; set; }
         public int Inv_ID { get; set; }
     
         public virtual Invoice Invoice { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Invoice> Invoices { get; set; }
         public virtual Part Part { get; set; }
     }
 }
