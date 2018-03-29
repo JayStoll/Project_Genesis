@@ -74,17 +74,17 @@
 
                 <Label Content="Type" HorizontalAlignment="Left" Height="75" Margin="24.524,952,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
                 <TextBox x:Name="typeTxt" LostFocus="typeTxt_LostFocus" Height="75" Margin="407.853,957,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Width="978.009"/>
-                <TextBox x:Name="typeTxtWatermark" GotFocus="typeTxtWatermark_GotFocus" Text="ex: Truck" Height="75" Margin="407.853,957,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Width="978.009" Opacity="0.5"/>
+                <TextBox x:Name="typeTxtWatermark" GotFocus="typeTxtWatermark_GotFocus" Text="ex: Truck" Height="75" Margin="407.853,957,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Width="978.009" Opacity="0.5" IsTabStop="False"/>
 
 
                 <Label Content="Rate" HorizontalAlignment="Left" Height="75" Margin="24.524,1047,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
                 <TextBox x:Name="rateTxt" LostFocus="rateTxt_LostFocus" Height="75" Margin="407.853,1047,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Width="978.009"/>
-                <TextBox x:Name="rateTxtWatermark" GotFocus="rateTxtWatermark_GotFocus" Text="ex: 18%" Height="75" Margin="407.853,1047,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Width="978.009" Opacity="0.5"/>
+                <TextBox x:Name="rateTxtWatermark" GotFocus="rateTxtWatermark_GotFocus" Text="ex: 18%" Height="75" Margin="407.853,1047,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Width="978.009" Opacity="0.5" IsTabStop="False"/>
 
 
                 <Label Content="GST / HST" HorizontalAlignment="Left" Height="75" Margin="24.523,1137,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
                 <TextBox x:Name="gstTxt" LostFocus="gstTxt_LostFocus" Height="75" Margin="407.852,1137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="978.01" FontFamily="Palatino Linotype" FontSize="35"/>
-                <TextBox x:Name="gstTxtWatermark" GotFocus="gstTxtWatermark_GotFocus" Text="ex: $##.##" Height="75" Margin="407.852,1137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="978.01" FontFamily="Palatino Linotype" FontSize="35" Opacity="0.5"/>
+                <TextBox x:Name="gstTxtWatermark" GotFocus="gstTxtWatermark_GotFocus" Text="ex: $##.##" Height="75" Margin="407.852,1137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="978.01" FontFamily="Palatino Linotype" FontSize="35" Opacity="0.5" IsTabStop="False"/>
 
 
                 <TextBox Height="10" Margin="23.47,492,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False"/>
