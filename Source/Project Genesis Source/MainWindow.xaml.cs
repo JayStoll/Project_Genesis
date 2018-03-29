@@ -102,7 +102,46 @@ namespace Project_Genesis_Source
 
         private void home1_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new Home1();
+            MainWindow main1 = new MainWindow();
+            main1.Show();
+            this.Close();
+        }
+
+        private void createInvB_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new CreateInvoice1();
+        }
+
+        private void addCustomerB_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new AddCustomer1();
+        }
+
+        private void addVehicleB_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new AddVehicle1();
+        }
+
+        private void addPartB_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new AddPart1();
+        }
+
+        private void ManageClientsB_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new ManageClients1();
+        }
+
+        private void backupB_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Backup1();
+        }
+
+        private void aboutUs_Click(object sender, RoutedEventArgs e)
+        {
+            AboutUs AU= new AboutUs();
+            AU.Show();
+
         }
     }
 }

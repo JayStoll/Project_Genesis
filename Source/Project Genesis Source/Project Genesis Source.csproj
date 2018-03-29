@@ -98,6 +98,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AboutUs.xaml.cs">
+      <DependentUpon>AboutUs.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddCustomer1.xaml.cs">
       <DependentUpon>AddCustomer1.xaml</DependentUpon>
     </Compile>
@@ -143,12 +146,10 @@
     <Compile Include="ManageClients1.xaml.cs">
       <DependentUpon>ManageClients1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Part.cs">
-      <DependentUpon>cajnERD.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Vehicle.cs">
-      <DependentUpon>cajnERD.tt</DependentUpon>
-    </Compile>
+    <Page Include="AboutUs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddCustomer1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -267,6 +268,7 @@
     <Resource Include="icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="12.png" />
     <Content Include="cajnERD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>cajnERD.edmx</DependentUpon>
