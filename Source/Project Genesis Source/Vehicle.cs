@@ -18,23 +18,17 @@ namespace Project_Genesis_Source
         public Vehicle()
         {
             this.Invoices = new HashSet<Invoice>();
-            this.Vehicle_Part = new HashSet<Vehicle_Part>();
         }
     
         public int Vehicle_ID { get; set; }
         public int Cus_ID { get; set; }
-        public int VehiclePart_ID { get; set; }
         public string Vehicle_SerialNum { get; set; }
         public string Vehicle_Type { get; set; }
         public string Vehicle_Make { get; set; }
         public string Vehicle_Num { get; set; }
         public string Vehicle_Notes { get; set; }
     
-        public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoices { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Vehicle_Part> Vehicle_Part { get; set; }
-        public virtual Vehicle_Part Vehicle_Part1 { get; set; }
     }
 }

@@ -1,0 +1,1 @@
+this file must be in the folder where the exe is (ex/ Source/Project Genesis Source/bin/Debug)

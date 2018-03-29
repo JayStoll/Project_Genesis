@@ -21,7 +21,6 @@ namespace Project_Genesis_Source
         }
     
         public int Inv_ID { get; set; }
-        public int InvItem_ID { get; set; }
         public int Cus_ID { get; set; }
         public int Vehicle_ID { get; set; }
         public decimal Inv_LabourTime { get; set; }
@@ -31,7 +30,6 @@ namespace Project_Genesis_Source
         public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice_Item> Invoice_Item { get; set; }
-        public virtual Invoice_Item Invoice_Item1 { get; set; }
         public virtual Vehicle Vehicle { get; set; }
     }
 }

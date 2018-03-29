@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_Genesis_Source.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,21 @@ namespace Project_Genesis_Source
 
         private void AddPartButton_Click(object sender, RoutedEventArgs e)
         {
+            string partName = nameTxt.Text;
+            string partSerialNum = serialNumTxt.Text;
+            string partNum = partNumTxt.Text;
+            string partPrice = priceTxt.Text;
+            string partNotes = notesTxt.Text;
 
+            //DO we still need this without the relation to Vehicle_Part???
+            string partVehicleOwn = ownerVehicleTxt.Text;
+            
+
+            //initialize dataconnection variable
+            DatabaseConnection dataConnect = new DatabaseConnection();
+
+            dataConnect.AddNewPart(partName, partSerialNum, partNum, partPrice, partNotes);
+            
         }
 
         //AJ Santillan March 28, 2018

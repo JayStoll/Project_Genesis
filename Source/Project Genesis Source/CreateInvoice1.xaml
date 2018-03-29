@@ -1,9 +1,10 @@
-﻿<Page x:Class="Project_Genesis_Source.CreateInvoice1"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Project_Genesis_Source"
+      xmlns:GenesisDBDataSetTableAdapters="clr-namespace:Project_Genesis_Source.GenesisDBDataSetTableAdapters" x:Class="Project_Genesis_Source.CreateInvoice1"
       mc:Ignorable="d"
       Title="CreateInvoice1" Width="1432" Height="780">
 
@@ -100,6 +101,5 @@
                 <TextBox Height="10" Margin="23.47,920,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False"/>
             </SelectiveScrollingGrid>
         </ScrollViewer>
-
     </Grid>
 </Page>
