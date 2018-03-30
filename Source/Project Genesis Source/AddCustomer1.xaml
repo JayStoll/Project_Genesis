@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
+<<<<<<< HEAD
 
       Title="AddCustomer1" Width="1000" Height="500"
     <ScrollViewer HorizontalAlignment="Left" Margin="10,10,0,10" Width="990" VerticalScrollBarVisibility="Hidden">
@@ -16,6 +17,13 @@
 
             
             
+=======
+      Title="AddCustomer1" Width="1112.5" Height="558">
+    <ScrollViewer HorizontalAlignment="Left" Height="538" Margin="10,10,0,0" VerticalAlignment="Top" Width="1092.5" VerticalScrollBarVisibility="Auto">
+        <Grid Height="772.5" Width="1112.5">
+
+
+>>>>>>> c5218e778ba105ebc38721adf767b0f4d15f0988
             <Label Content="First Name" Margin="10,9.713,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300" HorizontalAlignment="Left"/>
             <TextBox x:Name="fNametxt" LostFocus="fNametxt_LostFocus" Margin="322.5,9.713,250,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" IsTabStop="False"/>
             <TextBox x:Name="fNametxtWatermark" GotFocus="fNametxtWatermark_GotFocus" Text="ex: John" Margin="322.5,9.713,250,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" Opacity="0.5" IsTabStop="False"/>
