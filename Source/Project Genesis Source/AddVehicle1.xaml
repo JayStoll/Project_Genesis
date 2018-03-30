@@ -5,15 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
-<<<<<<< HEAD
-      Title="AddVehicle1" Width="1000" Height="500">
-    <ScrollViewer Margin="10" VerticalScrollBarVisibility="Hidden">
-        <Grid Height="780" Width="980">
-=======
       Title="AddVehicle1" Width="1112.5" Height="558">
     <ScrollViewer HorizontalAlignment="Left" Height="538" Margin="10,10,0,0" VerticalAlignment="Top" Width="1092.5" VerticalScrollBarVisibility="Auto">
         <Grid Height="780" Width="1112.5">
->>>>>>> ad8cb9c083c272c4d71a0da71bcfc858b9061e58
             <Label Content="Serial Number" HorizontalAlignment="Left" Margin="10,10,0,0" Width="330" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top"/>
             <TextBox x:Name="serialNumTxt" LostFocus="serialNumTxt_LostFocus" Margin="349.029,10,213.971,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" Width="417" IsTabStop="False"/>
             <TextBox x:Name="serialNumTxtWatermark" GotFocus="serialNumTxtWatermark_GotFocus" Text="###-###-###" Margin="349.029,10,213.971,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" Opacity="0.5" Width="417"/>
