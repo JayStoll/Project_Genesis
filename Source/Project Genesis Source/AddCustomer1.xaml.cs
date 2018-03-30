@@ -40,14 +40,9 @@ namespace Project_Genesis_Source
             //initialize database connection variable
             DatabaseConnection dataConnect = new DatabaseConnection();
 
-            if (email == null)
-            {
-                dataConnect.AddNewClient(fName, lName, address, phoneNum, boxNum, postalCode);
-            }
-            else
-            {
-                dataConnect.AddNewClient(fName, lName, address, phoneNum, email, boxNum, postalCode);
-            }
+            //TODO find way to catch errors in the button press if necessary
+            dataConnect.AddNewClient(fName, lName, address, phoneNum, email, boxNum, postalCode);
+            
         }
 
 

@@ -40,14 +40,10 @@ namespace Project_Genesis_Source
             string ownerFName = ownerFNameTxt.Text;
             string ownerLName = ownerLNameTxt.Text;
 
-            if (notes == null)
-            {
-                dataConnect.AddNewVehicle(serialNum, type, make, modelNumber, ownerFName, ownerLName);
-            }
-            else
-            {
-                dataConnect.AddNewVehicle(serialNum, type, make, modelNumber, notes, ownerFName, ownerLName);
-            }
+            //TODO Error checking
+            //send information to database connection
+            dataConnect.AddNewVehicle(serialNum, type, make, modelNumber, notes, ownerFName, ownerLName);
+            
 
         }
 

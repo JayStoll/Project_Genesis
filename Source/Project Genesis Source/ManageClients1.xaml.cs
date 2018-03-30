@@ -39,7 +39,7 @@ namespace Project_Genesis_Source
             }
             else
             {
-                for (int i =0; i>5; i++)
+                for (int i =0; i<2; i++)
                 {
                     nameOutputBox.Items.Add(storedFullName + "\n");
                 }
