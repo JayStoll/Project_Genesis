@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
       Title="AddVehicle1" Width="1112.5" Height="558">
-    <ScrollViewer HorizontalAlignment="Left" Height="538" Margin="10,10,0,0" VerticalAlignment="Top" Width="1092.5" VerticalScrollBarVisibility="Hidden">
+    <ScrollViewer HorizontalAlignment="Left" Height="538" Margin="10,10,0,0" VerticalAlignment="Top" Width="1092.5" VerticalScrollBarVisibility="Auto">
         <Grid Height="780" Width="1112.5">
             <Label Content="Serial Number" HorizontalAlignment="Left" Margin="10,10,0,0" Width="330" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top"/>
             <TextBox x:Name="serialNumTxt" LostFocus="serialNumTxt_LostFocus" Margin="345,10,308.471,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" Width="778.529"/>

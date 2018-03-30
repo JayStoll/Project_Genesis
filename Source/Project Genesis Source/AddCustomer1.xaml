@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
       Title="AddCustomer1" Width="1112.5" Height="558">
-    <ScrollViewer HorizontalAlignment="Left" Height="538" Margin="10,10,0,0" VerticalAlignment="Top" Width="1092.5" VerticalScrollBarVisibility="Hidden">
+    <ScrollViewer HorizontalAlignment="Left" Height="538" Margin="10,10,0,0" VerticalAlignment="Top" Width="1092.5" VerticalScrollBarVisibility="Auto">
         <Grid Height="772.5" Width="1112.5">
             <Label Content="First Name" Margin="10,9.713,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300" HorizontalAlignment="Left"/>
             <TextBox x:Name="fNametxt" LostFocus="fNametxt_LostFocus" Margin="322.5,9.713,330.971,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top"/>
