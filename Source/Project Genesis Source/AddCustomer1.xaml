@@ -5,15 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
-<<<<<<< HEAD
-      Title="AddCustomer1" Width="1000" Height="500">
+
+      Title="AddCustomer1" Width="1000" Height="500"
     <ScrollViewer HorizontalAlignment="Left" Margin="10,10,0,10" Width="990" VerticalScrollBarVisibility="Hidden">
-        <Grid Height="772.5" Width="990">
-=======
-      Title="AddCustomer1" Width="1112.5" Height="558">
+    <Grid Height="772.5" Width="990">
+
+
     <ScrollViewer HorizontalAlignment="Left" Height="538" Margin="10,10,0,0" VerticalAlignment="Top" Width="1092.5" VerticalScrollBarVisibility="Auto">
         <Grid Height="772.5" Width="1112.5">
->>>>>>> ad8cb9c083c272c4d71a0da71bcfc858b9061e58
+
             
             
             <Label Content="First Name" Margin="10,9.713,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300" HorizontalAlignment="Left"/>
