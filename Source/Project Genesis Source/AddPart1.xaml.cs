@@ -33,15 +33,61 @@ namespace Project_Genesis_Source
             string partNum = partNumTxt.Text;
             string partPrice = priceTxt.Text;
             string partNotes = notesTxt.Text;
+            
 
             //DO we still need this without the relation to Vehicle_Part???
             string partVehicleOwn = ownerVehicleTxt.Text;
-            
+
+            showText();
 
             //initialize dataconnection variable
             DatabaseConnection dataConnect = new DatabaseConnection();
 
+            if (nameTxt.Text.Trim() == string.Empty)
+            {
+                checkForMissingFeild(partName, partSerialNum, partNum, partPrice);
+            }
+
             dataConnect.AddNewPart(partName, partSerialNum, partNum, partPrice, partNotes);
+            ClearText();
+
+        }
+
+        private void ClearText()
+        {
+
+            nameTxt.Text = "";
+            serialNumTxt.Text = "";
+            partNumTxt.Text = "";
+            priceTxt.Text = "";
+            notesTxt.Text = "";
+            ownerVehicleTxt.Text = "";
+
+        }
+
+        //for testing and debugging
+        private void showText()
+        {
+            MessageBox.Show(nameTxt.Text);
+            MessageBox.Show(serialNumTxt.Text);
+            MessageBox.Show(partNumTxt.Text);
+            MessageBox.Show(priceTxt.Text);
+
+        }
+
+        private void checkForMissingFeild(string partName, string partSerialNum, string partNum, string partPrice)
+        {
+            int i = 0;
+            //initialize text feilds into an array
+            string[] textFeilds = { partName, partSerialNum, partNum, partPrice };
+
+            foreach (string element in textFeilds)
+            {
+                if (textFeilds[i] == "")
+                {
+                    MessageBox.Show(textFeilds[i] + ": Feild is missing");
+                }
+            }
             
         }
 

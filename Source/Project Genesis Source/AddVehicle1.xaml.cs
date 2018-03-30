@@ -40,17 +40,27 @@ namespace Project_Genesis_Source
             string ownerFName = ownerFNameTxt.Text;
             string ownerLName = ownerLNameTxt.Text;
 
-            if (notes == null)
-            {
-                dataConnect.AddNewVehicle(serialNum, type, make, modelNumber, ownerFName, ownerLName);
-            }
-            else
-            {
-                dataConnect.AddNewVehicle(serialNum, type, make, modelNumber, notes, ownerFName, ownerLName);
-            }
+            //TODO Error checking
+            //send information to database connection
+            dataConnect.AddNewVehicle(serialNum, type, make, modelNumber, notes, ownerFName, ownerLName);
+            ClearText();
+            
 
         }
 
+        private void ClearText()
+        {
+
+            //clear all text boxes
+            serialNumTxt.Text = "";
+            typeTxt.Text = "";
+            makeTxt.Text = "";
+            modelNumTxt.Text = "";
+            notesTxt.Text = "";
+            ownerFNameTxt.Text = "";
+            ownerLNameTxt.Text = "";
+
+        }
         //AJ Santillan  March 28, 2018
         //Watermarks Codes
 
