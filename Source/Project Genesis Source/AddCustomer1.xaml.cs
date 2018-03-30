@@ -42,8 +42,28 @@ namespace Project_Genesis_Source
 
             //TODO find way to catch errors in the button press if necessary
             dataConnect.AddNewClient(fName, lName, address, phoneNum, email, boxNum, postalCode);
+            ClearTextBox();
+
+            
             
         }
+
+        //Clear Text boxes function
+        private void ClearTextBox()
+        {
+
+            //clear all text boxes
+            fNametxt.Text ="";
+            lNameTxt.Text = "";
+            addressTxt.Text = "";
+            boxNumtxt.Text = "";
+            phoneNumTxt.Text = "";
+            emailTxt.Text = "";
+            postalCodeTxt.Text = "";
+
+        }
+
+
 
 
         //AJ Santillan March 28, 2018

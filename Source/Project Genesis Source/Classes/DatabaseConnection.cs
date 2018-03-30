@@ -276,11 +276,13 @@ namespace Project_Genesis_Source.Classes{
                     lNameCommand = new SqlCommand(selectLName, conn);
 
                     storedFName = command.ExecuteScalar().ToString();
+                    MessageBox.Show(storedFName);
                     storedLName = command.ExecuteScalar().ToString();
+                    MessageBox.Show(storedLName);
 
                     //concats stored names together, returns stored full name
                     string storedFullName = storedFName + " " + storedLName;
-
+                    MessageBox.Show(storedFullName);
                     return storedFullName;
                 }
                 catch (Exception ex)
