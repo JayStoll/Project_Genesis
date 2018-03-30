@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
       Title="AddCustomer1" Width="1112.5" Height="558">
-    <ScrollViewer HorizontalAlignment="Left" Height="538" Margin="10,10,0,0" VerticalAlignment="Top" Width="1092.5" VerticalScrollBarVisibility="Auto">
+    <ScrollViewer HorizontalAlignment="Left" Height="538" Margin="10,10,0,0" VerticalAlignment="Top" Width="1092.5" CanContentScroll="True">
         <Grid Height="772.5" Width="1112.5">
 
 
@@ -53,7 +53,6 @@
                     </LinearGradientBrush>
                 </Button.BorderBrush>
             </Button>
-            <TextBlock Height="522.213" Margin="740,0,0,0" TextWrapping="Wrap" Text=" Customers Added" VerticalAlignment="Top" FontSize="30" Width="250"/>
         </Grid>
     </ScrollViewer>
 </Page>
