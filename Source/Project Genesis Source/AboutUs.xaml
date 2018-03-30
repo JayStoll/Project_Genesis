@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Genesis_Source"
         mc:Ignorable="d"
-        Title="AboutUs" Height="900" Width="1100" WindowStartupLocation="CenterScreen" Icon="icon.png" Topmost="True">
-    <Grid Background="#FF7A2B2B">
-        <Image Height="498" VerticalAlignment="Top" Source="icon.png" Opacity="0.5" Margin="10,10,690.5,0"/>
-        <Image Height="498" Margin="420,10,10,0" VerticalAlignment="Top" Source="12.png"/>
-        <TextBlock Height="97.5" Margin="29.5,540,31,0" TextWrapping="Wrap" Text="CAJN SOFTWARE" VerticalAlignment="Top" FontSize="80" FontFamily="Ethnocentric"/>
-        <TextBlock Margin="29.5,642.5,31,10" TextWrapping="Wrap" FontSize="38" FontFamily="Wide Latin"><Run Text="Conner - &#x9;Back-End / Database"/><LineBreak/><Run Text="AJ - &#x9;&#x9;Front-End / UI"/><LineBreak/><Run Text="Jayden - &#x9;Back-End General"/><LineBreak/><Run Text="Neil - &#x9;Back-End / Database"/></TextBlock>
+        Title="AboutUs" Height="500" Width="1000" WindowStartupLocation="CenterScreen" Icon="icon.png" Topmost="True">
+    <Grid Background="#FF588199">
+        <Image Margin="529.5,10,10,103" Source="12.png"/>
+        <TextBlock Margin="10,388,83,0" TextWrapping="Wrap" FontSize="70" FontFamily="Ethnocentric" Text="CAJN SOFTWARE"/>
+        <TextBlock Margin="10,19,462.5,144.5" TextWrapping="Wrap" FontSize="30" FontFamily="Wide Latin"><Run Foreground="#FF360000" Text="Conner"/><Run Text=" - &#x9;Back-End "/><LineBreak/><Run Text="&#x9;&#x9;/Database"/><LineBreak/><Run Foreground="#FF00044D" Text="AJ"/><Run Text=" - &#x9;&#x9;Front-End"/><LineBreak/><Run Text="&#x9;&#x9;/UI"/><LineBreak/><Run Foreground="White" Text="Jayden "/><Run Text="- &#x9;Back-End"/><LineBreak/><Run Text="&#x9;&#x9;General"/><LineBreak/><Run Text="Neil - &#x9;Back-End"/><LineBreak/><Run Text="&#x9;&#x9;/Database"/></TextBlock>
+        <Image Source="icon.png" Margin="896,366,0,0"/>
     </Grid>
 </Window>

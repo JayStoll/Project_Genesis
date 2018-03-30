@@ -175,7 +175,7 @@ namespace Project_Genesis_Source
         private void boxNumtxtWatermark_GotFocus(object sender, RoutedEventArgs e)
         {
             boxNumtxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
-            boxNumtxtWatermark.Visibility = System.Windows.Visibility.Visible;
+            boxNumtxt.Visibility = System.Windows.Visibility.Visible;
             boxNumtxt.Focus();
         }
     }
