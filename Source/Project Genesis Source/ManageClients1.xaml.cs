@@ -27,6 +27,33 @@ namespace Project_Genesis_Source
         {
             InitializeComponent();
 
+            //Setup DB connect, error catch, then populate nameOutputBox with the first 5 names
+            //TODO populate with all names
+            DatabaseConnection dataConnect = new DatabaseConnection();
+
+            string storedFullName = dataConnect.RetrieveName();
+
+            if (storedFullName == "0")
+            {
+                MessageBox.Show("No Name Retreived, can not add");
+            }
+            else
+            {
+                for (int i =0; i>5; i++)
+                {
+                    nameOutputBox.Items.Add(storedFullName + "\n");
+                }
+            }
+
+
+
+
+
+
+
+
+
+            /*
             string[] fnames = dataConnect.RetrieveFNames();
             // List<string> fnames = dataConnect.RetrieveFNames();
             //populate customerOutputBox with Customer names
@@ -42,6 +69,7 @@ namespace Project_Genesis_Source
                     nameOutputBox.Items.Add(fnames[i] + "\n");
                 }
             }
+            */ 
           
         }
 

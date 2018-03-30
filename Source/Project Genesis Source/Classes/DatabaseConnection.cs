@@ -292,6 +292,7 @@ namespace Project_Genesis_Source.Classes{
         }
 
 
+        /*
         ///<summary>
         ///Retrieve information for manage client
         /// </summary>
@@ -330,6 +331,58 @@ namespace Project_Genesis_Source.Classes{
             return fNames.ToArray();
             
         }
+        */
+
+
+        public string RetrieveName()
+        {
+            //select query to get FName 
+            string selectFName = @"SELECT Cus_FName FROM Customer";
+
+            //select query to get LName
+            string selectLName = @"SELECT Cus_LName FROM Customer";
+
+            //command variable for LName
+            SqlCommand lNameCommand;
+            SqlCommand fNameCommand;
+
+            //store results of selects
+            string storedFName;
+            string storedLName;
+            string errorReturn = "0";
+
+            //connects to database, selects fname and lname and stores it. then returns the stored names concated together
+            using (conn = new SqlConnection(connString))
+            {
+                //open connection, retrieves & stores FName & LName, Concats them into storedFullName and  returns, then closes connection
+                try
+                {
+                    conn.Open();
+
+                    fNameCommand = new SqlCommand(selectFName, conn);
+                    lNameCommand = new SqlCommand(selectLName, conn);
+
+                    storedFName = command.ExecuteScalar().ToString();
+                    storedLName = command.ExecuteScalar().ToString();
+
+                    //concats stored names together, returns stored full name
+                    string storedFullName = storedFName + " " + storedLName;
+
+                    return storedFullName;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex + ": Error occured while selecting first name");
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                return errorReturn;
+            }
+        }
+
+  
 
     }
 }
