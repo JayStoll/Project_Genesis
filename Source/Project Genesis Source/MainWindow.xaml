@@ -101,9 +101,9 @@
         <Button x:Name="clientManage" Content="Manage Clients" Margin="10,555.04,0,0" BorderBrush="{x:Null}" Click="clientManage_Click" Background="{x:Null}" Foreground="#FF0C1249" FontSize="40" FontFamily="Lithos Pro Regular" Height="70" VerticalAlignment="Top" HorizontalAlignment="Left" Width="330" IsTabStop="False" Cursor="Hand"/>
         <Button x:Name="backupTab" Content="Backup/&#xA;Archive" Margin="10,630.04,0,0" BorderBrush="{x:Null}" Click="backupTab_Click" Background="{x:Null}" Foreground="#FF0C1249" FontSize="40" FontFamily="Lithos Pro Regular" Height="90" VerticalAlignment="Top" HorizontalAlignment="Left" Width="330" IsTabStop="False" Cursor="Hand"/>
         <Label Content="CAJNvoice -2018- " Margin="160,16.04,10,0" Foreground="#FF0C1249" FontSize="120" FontFamily="Splash" Height="164" VerticalAlignment="Top"/>
-        <Frame x:Name="Main" Margin="350,179,10,0" NavigationUIVisibility="Hidden" Foreground="{x:Null}" Cursor="Hand" Height="781" VerticalAlignment="Top" ClipToBounds="True" SnapsToDevicePixels="True" IsTabStop="False">
+        <Frame x:Name="Main" Margin="350,179,10,0" NavigationUIVisibility="Hidden" Foreground="{x:Null}" Cursor="Hand" Height="558" VerticalAlignment="Top" ClipToBounds="True" SnapsToDevicePixels="True" IsTabStop="False">
             <Frame.Content>
-                <Grid Height="780" Margin="10,0.5,0,0.5">
+                <Grid Margin="10,0.5,0,0">
                     <Button x:Name="createInvB" Content="Create&#xA;Invoice" Margin="0,303.776,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="203.905" VerticalAlignment="Top" HorizontalAlignment="Left" Width="344.735" FontSize="40" Click="createInvB_Click" IsTabStop="False" Cursor="Hand"/>
                     <Rectangle HorizontalAlignment="Left" Height="203.905" Margin="3.469,303.776,0,0" VerticalAlignment="Top" Width="344.734" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
                         <Rectangle.Stroke>

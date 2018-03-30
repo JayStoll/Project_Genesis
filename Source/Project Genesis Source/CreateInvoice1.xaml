@@ -6,10 +6,10 @@
       xmlns:local="clr-namespace:Project_Genesis_Source"
       xmlns:GenesisDBDataSetTableAdapters="clr-namespace:Project_Genesis_Source.GenesisDBDataSetTableAdapters" x:Class="Project_Genesis_Source.CreateInvoice1"
       mc:Ignorable="d"
-      Title="CreateInvoice1" Width="1432" Height="780">
+      Title="CreateInvoice1" Width="1112.5" Height="558">
 
     <Grid>
-        <ScrollViewer Margin="-0.123,1,6.356,12.5" VerticalScrollBarVisibility="Hidden" RenderTransformOrigin="0.5,0.5">
+        <ScrollViewer Margin="-0.108,1,6.341,6.5" VerticalScrollBarVisibility="Hidden" RenderTransformOrigin="0.5,0.5">
             <ScrollViewer.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -18,7 +18,7 @@
                     <TranslateTransform X="1.995"/>
                 </TransformGroup>
             </ScrollViewer.RenderTransform>
-            <SelectiveScrollingGrid Height="1312" Width="1411.424">
+            <SelectiveScrollingGrid Height="1312" Width="1106.267">
                 <Rectangle Margin="10,10,10,0" RadiusY="12.029" RadiusX="12.029" Stroke="Black" Height="95" VerticalAlignment="Top">
                     <Rectangle.Fill>
                         <RadialGradientBrush>
@@ -74,23 +74,23 @@
 
                 <Label Content="Type" HorizontalAlignment="Left" Height="75" Margin="24.524,952,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
                 <TextBox x:Name="typeTxt" LostFocus="typeTxt_LostFocus" Height="75" Margin="407.853,957,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Width="978.009"/>
-                <TextBox x:Name="typeTxtWatermark" GotFocus="typeTxtWatermark_GotFocus" Text="ex: Truck" Height="75" Margin="407.853,957,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Width="978.009" Opacity="0.5" IsTabStop="False"/>
+                <TextBox x:Name="typeTxtWatermark" GotFocus="typeTxtWatermark_GotFocus" Text="ex: Truck" Height="75" Margin="407.853,957,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Opacity="0.5" IsTabStop="False" HorizontalAlignment="Left" Width="672.852"/>
 
 
                 <Label Content="Rate" HorizontalAlignment="Left" Height="75" Margin="24.524,1047,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
                 <TextBox x:Name="rateTxt" LostFocus="rateTxt_LostFocus" Height="75" Margin="407.853,1047,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Width="978.009"/>
-                <TextBox x:Name="rateTxtWatermark" GotFocus="rateTxtWatermark_GotFocus" Text="ex: 18%" Height="75" Margin="407.853,1047,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Width="978.009" Opacity="0.5" IsTabStop="False"/>
+                <TextBox x:Name="rateTxtWatermark" GotFocus="rateTxtWatermark_GotFocus" Text="ex: 18%" Height="75" Margin="407.853,1047,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Opacity="0.5" IsTabStop="False" HorizontalAlignment="Left" Width="672.852"/>
 
 
                 <Label Content="GST / HST" HorizontalAlignment="Left" Height="75" Margin="24.523,1137,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-                <TextBox x:Name="gstTxt" LostFocus="gstTxt_LostFocus" Height="75" Margin="407.852,1137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="978.01" FontFamily="Palatino Linotype" FontSize="35"/>
-                <TextBox x:Name="gstTxtWatermark" GotFocus="gstTxtWatermark_GotFocus" Text="ex: $##.##" Height="75" Margin="407.852,1137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="978.01" FontFamily="Palatino Linotype" FontSize="35" Opacity="0.5" IsTabStop="False"/>
+                <TextBox x:Name="gstTxt" LostFocus="gstTxt_LostFocus" Height="75" Margin="407.852,1137,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35"/>
+                <TextBox x:Name="gstTxtWatermark" GotFocus="gstTxtWatermark_GotFocus" Text="ex: $##.##" Height="75" Margin="407.852,1137,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Opacity="0.5" IsTabStop="False"/>
 
 
                 <TextBox Height="10" Margin="23.47,492,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False"/>
 
 
-                <Button Content="Create Invoice" Margin="1085.862,1237,0,0" FontFamily="Lithos Pro Regular" FontSize="35" HorizontalAlignment="Left" Width="300" Height="60" VerticalAlignment="Top" Background="{x:Null}">
+                <Button Content="Create Invoice" Margin="780.705,1231,25.562,21" FontFamily="Lithos Pro Regular" FontSize="35" Background="{x:Null}">
                     <Button.BorderBrush>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black" Offset="0"/>
