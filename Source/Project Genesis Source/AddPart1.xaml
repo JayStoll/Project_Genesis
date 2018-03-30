@@ -6,9 +6,9 @@
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
 
-      Title="AddPart1" Width="1112.5" Height="558" ScrollViewer.VerticalScrollBarVisibility="Auto">
-    <ScrollViewer Height="538" Margin="10,10,10,0" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto">
-        <Grid Height="778" Width="1112.5">
+      Title="AddPart1" Width="1000" Height="500" ScrollViewer.VerticalScrollBarVisibility="Auto">
+    <ScrollViewer Margin="10" VerticalScrollBarVisibility="Auto">
+        <Grid Height="778" Width="970">
             <Label Content="Name" HorizontalAlignment="Left" Height="75" Margin="10.521,20,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
             <TextBox x:Name="nameTxt" LostFocus="nameTxt_LostFocus" Height="75" Margin="315.521,20,249.45,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" IsTabStop="False"/>
             <TextBox x:Name="nameTxtWatermark" GotFocus="nameTxtWatermark_GotFocus" Text="ex: John Doe" Height="75" Margin="315.521,20,249.45,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" Opacity="0.5"/>

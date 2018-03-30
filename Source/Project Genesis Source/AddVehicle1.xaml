@@ -5,9 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
-      Title="AddVehicle1" Width="1112.5" Height="558">
-    <ScrollViewer HorizontalAlignment="Left" Height="538" Margin="10,10,0,0" VerticalAlignment="Top" Width="1092.5" VerticalScrollBarVisibility="Auto">
-        <Grid Height="780" Width="1112.5">
+      Title="AddVehicle1" Width="1000" Height="500">
+    <ScrollViewer Margin="10" VerticalScrollBarVisibility="Visible">
+        <Grid Height="807.5" Width="982">
             <Label Content="Serial Number" HorizontalAlignment="Left" Margin="10,10,0,0" Width="330" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top"/>
             <TextBox x:Name="serialNumTxt" LostFocus="serialNumTxt_LostFocus" Margin="349.029,10,213.971,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" Width="417" IsTabStop="False"/>
             <TextBox x:Name="serialNumTxtWatermark" GotFocus="serialNumTxtWatermark_GotFocus" Text="###-###-###" Margin="349.029,10,213.971,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" Opacity="0.5" Width="417"/>
@@ -49,7 +49,7 @@
                     </LinearGradientBrush>
                 </Button.BorderBrush>
             </Button>
-            <TextBlock Height="435" Margin="0,10,10,0" TextWrapping="Wrap" Text="Vehicles Added" VerticalAlignment="Top" FontSize="26" HorizontalAlignment="Right" Width="198.971"/>
+            <TextBlock Margin="772.029,10,24.5,362.5" TextWrapping="Wrap" FontSize="35" Text="Vehicles Added"/>
         </Grid>
     </ScrollViewer>
 </Page>

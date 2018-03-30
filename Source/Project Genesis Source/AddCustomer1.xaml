@@ -5,25 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
-<<<<<<< HEAD
 
-      Title="AddCustomer1" Width="1000" Height="500"
-    <ScrollViewer HorizontalAlignment="Left" Margin="10,10,0,10" Width="990" VerticalScrollBarVisibility="Hidden">
-    <Grid Height="772.5" Width="990">
+      Title="AddCustomer1" Width="1000" Height="500">
 
 
-    <ScrollViewer HorizontalAlignment="Left" Height="538" Margin="10,10,0,0" VerticalAlignment="Top" Width="1092.5" VerticalScrollBarVisibility="Auto">
-        <Grid Height="772.5" Width="1112.5">
-
-            
-            
-=======
-      Title="AddCustomer1" Width="1112.5" Height="558">
-    <ScrollViewer HorizontalAlignment="Left" Height="538" Margin="10,10,0,0" VerticalAlignment="Top" Width="1092.5" VerticalScrollBarVisibility="Auto">
-        <Grid Height="772.5" Width="1112.5">
+    <ScrollViewer Height="480" Margin="10,10,10,0" VerticalAlignment="Top" VerticalScrollBarVisibility="Visible">
+        <Grid Height="777.75" Width="1000">
 
 
->>>>>>> c5218e778ba105ebc38721adf767b0f4d15f0988
+
             <Label Content="First Name" Margin="10,9.713,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300" HorizontalAlignment="Left"/>
             <TextBox x:Name="fNametxt" LostFocus="fNametxt_LostFocus" Margin="322.5,9.713,250,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" IsTabStop="False"/>
             <TextBox x:Name="fNametxtWatermark" GotFocus="fNametxtWatermark_GotFocus" Text="ex: John" Margin="322.5,9.713,250,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" Opacity="0.5" IsTabStop="False"/>
@@ -67,7 +57,7 @@
                     </LinearGradientBrush>
                 </Button.BorderBrush>
             </Button>
-            <TextBlock Height="522.213" Margin="740,0,0,0" TextWrapping="Wrap" Text=" Customers Added" VerticalAlignment="Top" FontSize="30" Width="250"/>
+            <TextBlock Height="427.213" Margin="755,0,41,0" TextWrapping="Wrap" Text="Customers Added" VerticalAlignment="Top" FontSize="30"/>
         </Grid>
     </ScrollViewer>
 </Page>
