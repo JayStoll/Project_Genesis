@@ -204,15 +204,15 @@ namespace Project_Genesis_Source.Classes{
             // TODO - Fix this function to use the proper information
         }
 
+        // TODO get this section of code working - also get it so it wont error 
 
-        /*
         ///<summary>
         ///Retrieve information for manage client
         /// </summary>
         public string[] RetrieveFNames()
         {
             //select query to retrieve first name
-            string selectFName = @"SELECT Cus_FName FROM Customer";
+            string selectFName = @"SELECT Cus_FName, Cus_LName FROM Customer";
 
             // string[] fnames = { };
             List<string> fNames = new List<string>();
@@ -224,29 +224,32 @@ namespace Project_Genesis_Source.Classes{
                     conn.Open();
 
                     command = new SqlCommand(selectFName, conn);
+                    SqlDataReader reader = command.ExecuteReader();
                     // error - will infinitly loop
-                    while (command.ExecuteScalar().ToString() != null) {
+                    while (reader.Read()) {
                         int i = 0;
                         // fnames[i] = command.ExecuteScalar().ToString();
-                        fNames.Insert(i, command.ExecuteScalar().ToString());
+                        fNames.Insert(i, reader["Cus_FName"].ToString() + " " + reader["Cus_LName"].ToString());
                         Console.WriteLine(command.ExecuteScalar().ToString()); // debug
-                        i++;
-                        if (fNames.ToArray().Length >= i) break;
+                        ++i;
                         // return fNames.ToArray();
                     }
+                    reader.Close();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                }
+                finally {
+                    conn.Close();
                 }
             }
 
             return fNames.ToArray();
             
         }
-        */
 
-
+        /*
         public string RetrieveName()
         {
             //select query to get FName 
@@ -296,7 +299,7 @@ namespace Project_Genesis_Source.Classes{
                 }
                 
             }
-        }
+        }*/
 
   
 
