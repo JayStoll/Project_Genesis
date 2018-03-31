@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Project_Genesis_Source {
+
     /// <summary>
     /// Interaction logic for ManageClients1.xaml
     /// </summary>
@@ -24,25 +25,9 @@ namespace Project_Genesis_Source {
         public ManageClients1() {
             InitializeComponent();
 
-            //Setup DB connect, error catch, then populate nameOutputBox with the first 5 names
-            //TODO populate with all names
-            /*
-            string storedFullName = dataConnect.RetrieveName();
-
-            if (storedFullName == "0")
-            {
-                MessageBox.Show("No Name Retreived, can not add");
-            }
-            else
-            {
-                for (int i =0; i<2; i++)
-                {
-                    nameOutputBox.Items.Add(storedFullName + "\n");
-                }
-            }*/
-
             // Debug to find what the error was
-            MessageBox.Show(dataConnect.RetrieveFNames().Length.ToString());
+            // MessageBox.Show(dataConnect.RetrieveFNames().Length.ToString());
+
             // Get the list of names
             string[] fnames = dataConnect.RetrieveFNames();
 
@@ -50,14 +35,12 @@ namespace Project_Genesis_Source {
                 MessageBox.Show("No first names to populate with");
             }
             else {
+                // print all the names in the array
                 for (int i = 0; i < fnames.Length; i++) {
                     nameOutputBox.Items.Add(fnames[i]);
                 }
             }
 
         }
-
-
-
     }
 }
