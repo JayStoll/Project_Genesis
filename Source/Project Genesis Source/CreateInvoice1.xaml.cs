@@ -35,26 +35,30 @@ namespace Project_Genesis_Source {
         }
 
         private void GetClientInfo() {
+            // create a variable that will store the connection string stuff
             var conn = dc.conn;
 
             using (conn = new SqlConnection(dc.connString)) {
                 try {
+                    // get the first and last name of the client from the database
                     string sqlString = "SELECT Cus_FName, Cus_LName FROM Customer";
 
                     customerAdapter = new SqlCommand(sqlString, conn);
                     conn.Open();
                     SqlDataReader fillComboBox = customerAdapter.ExecuteReader();
+                    // fill the combobox with all the queried information
                     while (fillComboBox.Read()) 
+                        // TODO - sort the information alphabetically
                         ClientDropDown.Items.Add(fillComboBox["Cus_FName"] + " " + fillComboBox["Cus_LName"]);
                     fillComboBox.Close();
                 }
                 catch (Exception ex) {
                     MessageBox.Show(ex.ToString());
                 }
-
+                finally {
+                    conn.Close();
+                }
             }
-            
-            conn.Close();
         }
 
         private void CreateInvoice_Click(object sender, RoutedEventArgs e) {
@@ -78,26 +82,10 @@ namespace Project_Genesis_Source {
         }
 
 
+
+
         //AJ Santillan March 28, 2018
         //Watermarks
-
-/*
-        //First Search Bar for Searching Client Names
-        //This one dont work at the moment Needs fixing
-        private void SearchBar1_LostFocus(object sender, RoutedEventArgs e) {
-            if (string.IsNullOrEmpty(SearchBar1.Text)) {
-                SearchBar1.Visibility = System.Windows.Visibility.Collapsed;
-                SearchBar1Watermark.Visibility = System.Windows.Visibility.Visible;
-            }
-        }
-
-        private void SearchBar1Watermark_GotFocus(object sender, RoutedEventArgs e) {
-            SearchBar1Watermark.Visibility = System.Windows.Visibility.Collapsed;
-            SearchBar1.Visibility = System.Windows.Visibility.Visible;
-            SearchBar1.Focus();
-        }*/
-
-
 
         //watermark on type
         private void typeTxt_LostFocus(object sender, RoutedEventArgs e) {
