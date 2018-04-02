@@ -23,9 +23,7 @@ namespace Project_Genesis_Source {
     /// Interaction logic for CreateInvoice1.xaml
     /// </summary>
     public partial class CreateInvoice1 : Page {
-
-        // SqlDataAdapter customerAdapter;
-        SqlCommand customerAdapter;
+        
         DatabaseConnection dc = new DatabaseConnection();
 
         public CreateInvoice1() {
@@ -43,7 +41,7 @@ namespace Project_Genesis_Source {
                     // get the first and last name of the client from the database
                     string sqlString = "SELECT Cus_FName, Cus_LName FROM Customer";
 
-                    customerAdapter = new SqlCommand(sqlString, conn);
+                    SqlCommand customerAdapter = new SqlCommand(sqlString, conn);
                     conn.Open();
                     SqlDataReader fillComboBox = customerAdapter.ExecuteReader();
                     // fill the combobox with all the queried information
@@ -71,9 +69,20 @@ namespace Project_Genesis_Source {
 
         //Client DropDowns
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            var conn = dc.conn;
             string[] names = ClientDropDown.SelectedItem.ToString().Split(null);
-            CusFNameTxt.Text = names[0];
-            CusLnameTxt.Text = names[1];
+            string getClientInfo = "SELECT * FROM Customer WHERE Cus_FName='" + names[0] + "' and Cus_LName='" + names[1] + "'";
+
+            using (conn = new SqlConnection(dc.connString)) {
+                try {
+                    SqlCommand getClientQuery = new SqlCommand(getClientInfo, conn);
+                    conn.Open();
+                    SqlDataReader fillInfo = getClientQuery.ExecuteReader();
+                    CusFNameTxt.Text = fillInfo["Cus_FName"].ToString();
+                } catch (Exception ex) {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
         }
 
         //Vehicle DropDown
