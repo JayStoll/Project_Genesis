@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Genesis_Source"
         mc:Ignorable="d"
-        Title="CAJN Software" Width="1477.5" Height="910" Icon="icon.png" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="CAJN Software" Width="1430" Height="750" Icon="icon.png" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -71,7 +71,7 @@
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="Black" Offset="1"/>
-            <GradientStop Color="#FF0047FF"/>
+            <GradientStop Color="White"/>
         </LinearGradientBrush>
     </Window.Background>
     <Grid Background="#FFC8E6FA">
@@ -86,7 +86,7 @@
         <Image Height="146.261" Margin="15,9.141,0,0" VerticalAlignment="Top" Source="icon.png" Stretch="Fill" HorizontalAlignment="Left" Width="140"/>
         <Button x:Name="home1" Content="Home" Margin="15,217.54,0,0" Background="#FF84CDFF" Foreground="#FF0C1249" FontSize="35" FontFamily="Lithos Pro Regular" Height="84.159" VerticalAlignment="Top" BorderBrush="#FF0C1249" HorizontalAlignment="Left" Width="330" Click="home1_Click" IsTabStop="False" Cursor="Hand" Padding="10,5,5,10" UseLayoutRounding="False" ScrollViewer.CanContentScroll="True" BorderThickness="10,1,1,10"/>
 
-        <Button x:Name="createInv" Content="Create Invoice" Margin="15,570.974,0,0" BorderBrush="#FF0C1249" Click="createInv_Click" Background="#FF84CDFF" Foreground="#FF0C1249" FontSize="35" FontFamily="Lithos Pro Regular" Height="84.159" VerticalAlignment="Top" HorizontalAlignment="Left" Width="330" IsTabStop="False" Cursor="Hand" ScrollViewer.CanContentScroll="True" Padding="10,5,5,10" UseLayoutRounding="False" BorderThickness="10,1,1,10">
+        <Button x:Name="createInv" Content="Create Invoice" Margin="15,570.974,0,0" BorderBrush="#FF0C1249" Click="createInv_Click" Background="#FF84CDFF" Foreground="#FF0C1249" FontSize="35" FontFamily="Lithos Pro Regular" Height="84.159" VerticalAlignment="Top" HorizontalAlignment="Left" Width="330" IsTabStop="False" Cursor="Hand" ScrollViewer.CanContentScroll="True" Padding="10,5,5,10" UseLayoutRounding="False" BorderThickness="10,1,1,10"
             <!--   <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -158,6 +158,7 @@
                             </LinearGradientBrush>
                         </Rectangle.Stroke>
                     </Rectangle>
+                    <Button x:Name="addVehicleB" Content="Add Vehicle" Margin="353.929,20.147,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="184.964" VerticalAlignment="Top" HorizontalAlignment="Left" Width="319.597" FontSize="36" Click="addVehicleB_Click" IsTabStop="False" Cursor="Hand"/>
 
 
 

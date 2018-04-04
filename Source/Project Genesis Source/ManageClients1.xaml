@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="ManageClients1" Width="1100" Height="630">
+      Title="ManageClients1" Width="1000" Height="500">
 
     <Grid>
         <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="10.661,10,0,10.099" HorizontalAlignment="Left" Width="234.162">
@@ -27,7 +27,7 @@
                 </ListView.View>
             </ListView>
         </Border>
-        <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="248.558,10.099,0,105.387" HorizontalAlignment="Left" Width="418.434">
+        <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="235,10,0,19.887" HorizontalAlignment="Left" Width="359.927">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0E1317"/>
@@ -45,7 +45,7 @@
                 </ListView.View>
             </ListView>
         </Border>
-        <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="672.831,27.448,0,105.486" HorizontalAlignment="Left" Width="418.169">
+        <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="600,10,0,20" HorizontalAlignment="Left" Width="387.815">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0E1317"/>

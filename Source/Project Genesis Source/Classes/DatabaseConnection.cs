@@ -22,52 +22,9 @@ namespace Project_Genesis_Source.Classes{
         // SqlDataAdapter dataAdapater;
         // System.Data.DataTable table;
         // SqlCommandBuilder commandBuilder;
-        SqlConnection conn;
+        public SqlConnection conn;
         SqlCommand command;
         
-        /// <summary>
-        /// Add a new client to the database
-        /// </summary>
-        /// <param name="firstName"></param>
-        /// <param name="lastName"></param>
-        /// <param name="mailingAddress"></param>
-        /// <param name="postalCode"></param>
-        /// <param name="phoneNumber"></param>
-        public void AddNewClient(string firstName, string lastName, string mailingAddress, string phoneNumber, string boxNum, string postalCode) {
-            // send the information to Customer - setting the email field to null
-            string emailValue = null;
-
-            //insert query to send to Customer
-            string insertData = @"INSERT INTO Customer(Cus_FName, Cus_LName, Cus_Address, Cus_Phone, Cus_Email, Cus_BoxNum, Cus_PostalCode)
-                                VALUES(@Cus_FName, @Cus_LName, @Cus_Address, @Cus_Phone, @Cus_Email, @Cus_BoxNum, @Cus_PostalCode)";
-
-            using (conn = new SqlConnection(connString))
-            {
-                try {
-                    conn.Open();
-
-                    command = new SqlCommand(insertData, conn);
-                    command.Parameters.AddWithValue(@"Cus_FName", firstName);
-                    command.Parameters.AddWithValue(@"Cus_LName", lastName);
-                    command.Parameters.AddWithValue(@"Cus_Address", mailingAddress);
-                    command.Parameters.AddWithValue(@"Cus_Phone", phoneNumber);
-                    command.Parameters.AddWithValue(@"Cus_Email", emailValue);
-                    command.Parameters.AddWithValue(@"Cus_BoxNum", boxNum);
-                    command.Parameters.AddWithValue(@"Cus_PostalCode", postalCode);
-          
-                    command.ExecuteNonQuery();
-                    MessageBox.Show(firstName +" "+ lastName + " has been added");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally {
-                    conn.Close();
-                }
-            }         
-        }
-
         /// <summary>
         /// Add a new client to the database
         /// </summary>
@@ -121,12 +78,15 @@ namespace Project_Genesis_Source.Classes{
         /// <param name="vehicleMake">Optional</param>
         /// <param name="modelNumber">Optional</param>
         /// <param name="vehicleNotes">Optional</param>
+
         public void AddNewVehicle(string serialNumber, string vehicleType, string vehicleMake, string modelNumber, string vehicleNotes,
-            string ownerFName, string ownerLName) {
-            // send the information to the database
+           string ownerFName, string ownerLName) {
+
+            // send vehicle information to Vehicle
 
             //initalize select query command
             SqlCommand selectCommand = new SqlCommand();
+
             //select query to get Cus_ID
             string selectCusID = @"SELECT Cus_ID FROM Customer WHERE Cus_FName = '" + ownerFName + "' AND Cus_LName = '" + ownerLName + "'";
 
@@ -158,7 +118,7 @@ namespace Project_Genesis_Source.Classes{
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message + ": Error occured while trying to add new vehicle");
                 }
                 finally
                 {
@@ -167,54 +127,7 @@ namespace Project_Genesis_Source.Classes{
             }
         }
 
-        //overload of AddNewVehicle to allow for null vehicle notes.
-        public void AddNewVehicle(string serialNumber, string vehicleType, string vehicleMake, string modelNumber, string ownerFName, string ownerLName)
-        {
-            // send the information to the database
-
-            //set notes to null
-            string vehicleNotes = null;
-            //initalize select query command
-            SqlCommand selectCommand = new SqlCommand();
-            //select query to get Cus_ID
-            string selectCusID = @"SELECT Cus_ID FROM Customer WHERE Cus_FName = '" + ownerFName + "' AND Cus_LName = '" + ownerLName +"'";
-
-            //insert query to send to VEHICLE
-            string insertVehicleData = @"INSERT INTO Vehicle(Cus_ID, Vehicle_SerialNum, Vehicle_Type, Vehicle_Make, Vehicle_Num, Vehicle_Notes)
-                                VALUES(@Cus_ID, @Vehicle_SerialNum, @Vehicle_Type, @Vehicle_Make, @Vehicle_Num, @Vehicle_Notes)";
-
-            using (conn = new SqlConnection(connString))
-            {
-                try
-                {
-                    conn.Open();
-                    command = new SqlCommand(insertVehicleData, conn);
-                    selectCommand = new SqlCommand(selectCusID, conn);
-
-                    //store result of select query
-                    int Cus_ID = Convert.ToInt32(selectCommand.ExecuteScalar());
-
-                    command.Parameters.AddWithValue(@"Cus_ID", Cus_ID);
-                    command.Parameters.AddWithValue(@"Vehicle_SerialNum", serialNumber);
-                    command.Parameters.AddWithValue(@"Vehicle_Type", vehicleType);
-                    command.Parameters.AddWithValue(@"Vehicle_Make", vehicleMake);
-                    command.Parameters.AddWithValue(@"Vehicle_Num", modelNumber);
-                    command.Parameters.AddWithValue(@"Vehicle_Notes", vehicleNotes);
-                    command.ExecuteNonQuery();
-                    
-
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
-            }
-        }
+      
 
 
         /// <summary>
@@ -262,7 +175,7 @@ namespace Project_Genesis_Source.Classes{
             }
         }
 
-        //TODO 
+        /*CURRENTLY NOT IN USE. keep here until we make a firm decision on whether we need vehicle part
         public void AddVehiclePart(int partId, int vehicle_Id)
         {
             //send information to Vehicle_Part
@@ -275,7 +188,7 @@ namespace Project_Genesis_Source.Classes{
             //string selectVehicleInformation = @"SELECT Vehicle_ID FROM Vehicle Where Vehicle_ID = " + vehicle_Id;
             //string selectPartInformation = @"SELECT Part_ID FROM Part Where"
         }
-
+        */
 
 
 
@@ -292,6 +205,7 @@ namespace Project_Genesis_Source.Classes{
         }
 
 
+        /*
         ///<summary>
         ///Retrieve information for manage client
         /// </summary>
@@ -330,6 +244,61 @@ namespace Project_Genesis_Source.Classes{
             return fNames.ToArray();
             
         }
+        */
+
+
+        public string RetrieveName()
+        {
+            //select query to get FName 
+            string selectFName = @"SELECT Cus_FName FROM Customer";
+
+            //select query to get LName
+            string selectLName = @"SELECT Cus_LName FROM Customer";
+
+            //command variable for LName
+            SqlCommand lNameCommand;
+            SqlCommand fNameCommand;
+            SqlConnection listconnect;
+            //store results of selects
+            string storedFName;
+            string storedLName;
+            string errorReturn = "0";
+
+            //connects to database, selects fname and lname and stores it. then returns the stored names concated together
+            using (listconnect = new SqlConnection(connString))
+            {
+                //open connection, retrieves & stores FName & LName, Concats them into storedFullName and  returns, then closes connection
+                try
+                {
+                    listconnect.Open();
+
+                    fNameCommand = new SqlCommand(selectFName, conn);
+                    lNameCommand = new SqlCommand(selectLName, conn);
+
+                    storedFName = command.ExecuteScalar().ToString();
+                    MessageBox.Show(storedFName);
+                    storedLName = command.ExecuteScalar().ToString();
+                    MessageBox.Show(storedLName);
+
+                    //concats stored names together, returns stored full name
+                    string storedFullName = storedFName + " " + storedLName;
+                    MessageBox.Show(storedFullName);
+                    return storedFullName;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex + ": Error occured while selecting first name");
+                    return errorReturn;
+                }
+                finally
+                {
+                    listconnect.Close();
+                }
+                
+            }
+        }
+
+  
 
     }
 }

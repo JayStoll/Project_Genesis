@@ -40,15 +40,30 @@ namespace Project_Genesis_Source
             //initialize database connection variable
             DatabaseConnection dataConnect = new DatabaseConnection();
 
-            if (email == null)
-            {
-                dataConnect.AddNewClient(fName, lName, address, phoneNum, boxNum, postalCode);
-            }
-            else
-            {
-                dataConnect.AddNewClient(fName, lName, address, phoneNum, email, boxNum, postalCode);
-            }
+            //TODO find way to catch errors in the button press if necessary
+            dataConnect.AddNewClient(fName, lName, address, phoneNum, email, boxNum, postalCode);
+            ClearTextBox();
+
+            
+            
         }
+
+        //Clear Text boxes function
+        private void ClearTextBox()
+        {
+
+            //clear all text boxes
+            fNametxt.Text ="";
+            lNameTxt.Text = "";
+            addressTxt.Text = "";
+            boxNumtxt.Text = "";
+            phoneNumTxt.Text = "";
+            emailTxt.Text = "";
+            postalCodeTxt.Text = "";
+
+        }
+
+
 
 
         //AJ Santillan March 28, 2018
@@ -175,7 +190,7 @@ namespace Project_Genesis_Source
         private void boxNumtxtWatermark_GotFocus(object sender, RoutedEventArgs e)
         {
             boxNumtxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
-            boxNumtxtWatermark.Visibility = System.Windows.Visibility.Visible;
+            boxNumtxt.Visibility = System.Windows.Visibility.Visible;
             boxNumtxt.Focus();
         }
     }
