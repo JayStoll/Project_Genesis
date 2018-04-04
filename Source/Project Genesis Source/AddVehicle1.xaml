@@ -29,8 +29,6 @@
 
 
             <Label Content="Make" HorizontalAlignment="Left" Margin="10,190,0,0" Width="330" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top"/>
-            <TextBox x:Name="makeTxt" LostFocus="makeTxt_LostFocus" Margin="345,190,38,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top"/>
-            <TextBox x:Name="makeTxtWatermark" GotFocus="makeTxtWatermark_GotFocus" Text="ex: Ford" Margin="345,190,38,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Opacity="0.5" IsTabStop="False"/>
 
 
             <Label Content="Vehicle Number" HorizontalAlignment="Left" Margin="10,280,0,0" Width="330" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top"/>
