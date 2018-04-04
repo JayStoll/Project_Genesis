@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
-      Title="Backup1" Width="1432" Height="781">
+      Title="Backup1" Width="1100" Height="630">
 
     <Grid>
         <Button x:Name="backupInv" Content="Backup" Margin="4.326,84.358,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" Height="143.716" VerticalAlignment="Top">
@@ -24,7 +24,7 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="cancelBackup" Content="Cancel" Margin="8.982,630.951,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" IsEnabled="False" Height="143.716" VerticalAlignment="Top">
+        <Button x:Name="cancelBackup" Content="Cancel" Margin="4.326,476.284,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" IsEnabled="False" Height="143.716" VerticalAlignment="Top">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1397F1" Offset="0"/>

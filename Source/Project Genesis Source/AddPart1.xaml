@@ -5,46 +5,48 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
-      Title="AddPart1" Width="1432" Height="781">
+      Title="AddPart1" Width="1100" Height="630">
 
-    <Grid>
-        <Label Content="Name" HorizontalAlignment="Left" Height="75" Margin="10.521,20,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-        <TextBox x:Name="nameTxt" LostFocus="nameTxt_LostFocus" Height="75" Margin="315.521,20,337.95,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype"/>
-        <TextBox x:Name="nameTxtWatermark" GotFocus="nameTxtWatermark_GotFocus" Text="ex: John Doe" Height="75" Margin="315.521,20,337.95,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" Opacity="0.5" IsTabStop="False"/>
+    <ScrollViewer HorizontalAlignment="Left" Height="730" Margin="10,10,0,0" VerticalAlignment="Top" Width="1080">
 
-
-        <Label Content="Serial Number" HorizontalAlignment="Left" Height="75" Margin="10.521,107.5,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-        <TextBox x:Name="serialNumTxt" LostFocus="serialNumTxt_LostFocus" Height="75" Margin="315.521,107.5,337.95,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype"/>
-        <TextBox x:Name="serialNumTxtWatermark" GotFocus="serialNumTxtWatermark_GotFocus" Text="###-###-###" Height="75" Margin="315.521,107.5,337.95,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" Opacity="0.5" IsTabStop="False"/>
+        <Grid Height="769.5" Width="1100">
+            <Label Content="Name" HorizontalAlignment="Left" Height="75" Margin="10.521,20,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
+            <TextBox x:Name="nameTxt" LostFocus="nameTxt_LostFocus" Height="75" Margin="315.521,20,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype"/>
+            <TextBox x:Name="nameTxtWatermark" GotFocus="nameTxtWatermark_GotFocus" Text="ex: John Doe" Height="75" Margin="315.521,20,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" Opacity="0.5" IsTabStop="False"/>
 
 
-        <Label Content="Part Number" HorizontalAlignment="Left" Height="75" Margin="10.521,195,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-        <TextBox x:Name="partNumTxt" LostFocus="partNumTxt_LostFocus" Height="75" Margin="315.521,195,337.95,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="36"/>
-        <TextBox x:Name="partNumTxtWatermark" GotFocus="partNumTxtWatermark_GotFocus" Text="###" Height="75" Margin="315.521,195,337.95,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="36" Opacity="0.5" IsTabStop="False"/>
+            <Label Content="Serial Number" HorizontalAlignment="Left" Height="75" Margin="10.521,107.5,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
+            <TextBox x:Name="serialNumTxt" LostFocus="serialNumTxt_LostFocus" Height="75" Margin="315.521,107.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype"/>
+            <TextBox x:Name="serialNumTxtWatermark" GotFocus="serialNumTxtWatermark_GotFocus" Text="###-###-###" Height="75" Margin="315.521,107.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" Opacity="0.5" IsTabStop="False"/>
 
 
-        <Label Content="Price" HorizontalAlignment="Left" Height="75" Margin="10.521,282.5,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-        <TextBox x:Name="priceTxt" LostFocus="priceTxt_LostFocus" Height="75" Margin="315.521,282.5,337.95,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype"/>
-        <TextBox x:Name="priceTextWatermark" GotFocus="priceTextWatermark_GotFocus" Text="ex: $100.00" Height="75" Margin="315.521,282.5,337.95,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" Opacity="0.5" IsTabStop="False"/>
+            <Label Content="Part Number" HorizontalAlignment="Left" Height="75" Margin="10.521,195,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
+            <TextBox x:Name="partNumTxt" LostFocus="partNumTxt_LostFocus" Height="75" Margin="315.521,195,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="36"/>
+            <TextBox x:Name="partNumTxtWatermark" GotFocus="partNumTxtWatermark_GotFocus" Text="###" Height="75" Margin="315.521,195,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="36" Opacity="0.5" IsTabStop="False"/>
 
 
-        <Label Content="Vehicle" HorizontalAlignment="Left" Height="75" Margin="10.521,370,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-        <TextBox x:Name="ownerVehicleTxt" LostFocus="ownerVehicleTxt_LostFocus" Height="75" Margin="315.521,370,337.95,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype"/>
-        <TextBox x:Name="ownerVehicleTxtWatermark" GotFocus="ownerVehicleTxtWatermark_GotFocus" Text="ex: Ford Truck" Height="75" Margin="315.521,370,337.95,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" Opacity="0.5" IsTabStop="False"/>
+            <Label Content="Price" HorizontalAlignment="Left" Height="75" Margin="10.521,282.5,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
+            <TextBox x:Name="priceTxt" LostFocus="priceTxt_LostFocus" Height="75" Margin="315.521,282.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype"/>
+            <TextBox x:Name="priceTextWatermark" GotFocus="priceTextWatermark_GotFocus" Text="ex: $100.00" Height="75" Margin="315.521,282.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" Opacity="0.5" IsTabStop="False"/>
 
 
-        <Label Content="Notes" HorizontalAlignment="Left" Height="75" Margin="10.521,457.5,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-        <TextBox x:Name="notesTxt" Margin="315.521,457.5,337.95,0" TextWrapping="Wrap" FontSize="36" FontFamily="Palatino Linotype" Height="225" VerticalAlignment="Top"/>
+            <Label Content="Vehicle" HorizontalAlignment="Left" Height="75" Margin="10.521,370,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
+            <TextBox x:Name="ownerVehicleTxt" LostFocus="ownerVehicleTxt_LostFocus" Height="75" Margin="315.521,370,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype"/>
+            <TextBox x:Name="ownerVehicleTxtWatermark" GotFocus="ownerVehicleTxtWatermark_GotFocus" Text="ex: Ford Truck" Height="75" Margin="315.521,370,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" Opacity="0.5" IsTabStop="False"/>
 
 
-        <Button x:Name="addPartButton" Content="Add Part" HorizontalAlignment="Left" Height="60" Margin="794.05,699.5,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" Background="{x:Null}" Click="AddPartButton_Click">
-            <Button.BorderBrush>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF1397F1" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.BorderBrush>
-        </Button>
-        <TextBlock Height="617.5" Margin="1099.05,20,10,0" TextWrapping="Wrap" Text="       Parts Added" VerticalAlignment="Top" FontSize="36"/>
-    </Grid>
+            <Label Content="Notes" HorizontalAlignment="Left" Height="75" Margin="10.521,457.5,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
+            <TextBox x:Name="notesTxt" Margin="315.521,457.5,52,0" TextWrapping="Wrap" FontSize="36" FontFamily="Palatino Linotype" Height="200" VerticalAlignment="Top"/>
+
+
+            <Button x:Name="addPartButton" Content="Add Part" HorizontalAlignment="Left" Height="60" Margin="621.627,699.5,0,0" VerticalAlignment="Top" Width="426.373" FontFamily="Lithos Pro Regular" FontSize="35" Background="{x:Null}" Click="AddPartButton_Click">
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1397F1" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+            </Button>
+        </Grid>
+    </ScrollViewer>
 </Page>
