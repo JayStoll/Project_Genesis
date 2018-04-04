@@ -24,7 +24,8 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button x:Name="cancelBackup" Content="Cancel" Margin="8.982,361.502,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" IsEnabled="False" Height="124.498" VerticalAlignment="Top">
+      
+        <Button x:Name="cancelBackup" Content="Cancel" Margin="4.326,476.284,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" IsEnabled="False" Height="143.716" VerticalAlignment="Top">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1397F1" Offset="0"/>
