@@ -6,9 +6,9 @@
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
 
-      Title="AddVehicle1" Width="1000" Height="500">
+      Title="AddVehicle1" Width="1000" Height="884.144">
 
-    <ScrollViewer Margin="10">
+    <ScrollViewer Margin="10,10,10,394">
 
         <Grid Height="810" Width="980">
             <Grid.ColumnDefinitions>
@@ -48,7 +48,7 @@
                     </LinearGradientBrush>
                 </Button.BorderBrush>
             </Button>
-            <ComboBox Height="75" Margin="345,370,38,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="clientname" Height="75" Margin="345,370,38,0" VerticalAlignment="Top"/>
         </Grid>
     </ScrollViewer>
 </Page>

@@ -72,7 +72,7 @@ namespace Project_Genesis_Source {
             var conn = dc.conn;
             string[] names = ClientDropDown.SelectedItem.ToString().Split(null);
             // MessageBox.Show(names[0] + " " + names[1]);
-            string getClientInfo = @"SELECT * FROM Customer WHERE Cus_FName = '" + names[0] + "' AND Cus_LName = '" + names[1] + "'";
+            string getClientInfo = @"SELECT * FROM Customer, Vehicle WHERE Cus_FName = '" + names[0] + "' AND Cus_LName = '" + names[1] + "'";
 
             using (conn = new SqlConnection(dc.connString)) {
                 try {
@@ -84,8 +84,10 @@ namespace Project_Genesis_Source {
                         CusLnameTxt.Text = fillInfo["Cus_LName"].ToString();
                         CusAddressTxt.Text = fillInfo["Cus_Address"].ToString();
                         CusPhoneTxt.Text = fillInfo["Cus_Phone"].ToString();
+
+                        vehicleInfo.Items.Add(fillInfo["Vehicle_Type"]);
                     }
-                    fillInfo.Close();
+                    fillInfo.Close();                    
                 } catch (Exception ex) {
                     MessageBox.Show(ex.ToString());
                 }
@@ -97,7 +99,28 @@ namespace Project_Genesis_Source {
 
         //Vehicle DropDown
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e) {
+            var conn = dc.conn;
+            string vehicle = vehicleInfo.SelectedItem.ToString();
+            // MessageBox.Show(vehicle);
+            string getVehicleInfo = @"SELECT * FROM  Vehicle WHERE Vehicle_Type = '" + vehicle + "'";
 
+            using (conn = new SqlConnection(dc.connString)) {
+                try {
+                    conn.Open();
+                    SqlCommand command = new SqlCommand(getVehicleInfo, conn);
+                    SqlDataReader fillInfo = command.ExecuteReader();
+                    while (fillInfo.Read()) {
+                        serialNum.Text = fillInfo["Vehicle_SerialNum"].ToString();
+                    }
+                    fillInfo.Close();
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally {
+                    conn.Close();
+                }
+            }
         }
 
 
@@ -105,21 +128,6 @@ namespace Project_Genesis_Source {
 
         //AJ Santillan March 28, 2018
         //Watermarks
-
-        //watermark on type
-        private void typeTxt_LostFocus(object sender, RoutedEventArgs e) {
-            if (string.IsNullOrEmpty(typeTxt.Text)) {
-                typeTxt.Visibility = System.Windows.Visibility.Collapsed;
-                typeTxtWatermark.Visibility = System.Windows.Visibility.Visible;
-            }
-        }
-
-        private void typeTxtWatermark_GotFocus(object sender, RoutedEventArgs e) {
-            typeTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
-            typeTxt.Visibility = System.Windows.Visibility.Visible;
-            typeTxt.Focus();
-        }
-
 
         //watermark for rate
         private void rateTxt_LostFocus(object sender, RoutedEventArgs e) {

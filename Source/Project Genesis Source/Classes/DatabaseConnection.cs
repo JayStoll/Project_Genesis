@@ -63,8 +63,6 @@ namespace Project_Genesis_Source.Classes {
             }
         }
 
-
-
         /// <summary>
         /// Add a new vehicle to the selected client and then to the database
         /// </summary>
@@ -119,9 +117,6 @@ namespace Project_Genesis_Source.Classes {
             }
         }
 
-
-
-
         /// <summary>
         /// Add a new part to the database
         /// </summary>
@@ -161,23 +156,6 @@ namespace Project_Genesis_Source.Classes {
                 }
             }
         }
-
-        /*CURRENTLY NOT IN USE. keep here until we make a firm decision on whether we need vehicle part
-        public void AddVehiclePart(int partId, int vehicle_Id)
-        {
-            //send information to Vehicle_Part
-            
-            //insert query
-            //string insertVehiclePartData = @"INSERT INTO Vehicle_Part(Part_ID, Vehicle_ID) 
-            //                                    VALUES (@Part_ID, @Vehicle_ID)";
-            //select IDs from respective tables
-
-            //string selectVehicleInformation = @"SELECT Vehicle_ID FROM Vehicle Where Vehicle_ID = " + vehicle_Id;
-            //string selectPartInformation = @"SELECT Part_ID FROM Part Where"
-        }
-        */
-
-
 
         /// <summary>
         /// Add invoice information to the database
@@ -226,60 +204,5 @@ namespace Project_Genesis_Source.Classes {
             return fNames.ToArray();
 
         }
-
-        /* TODO - delete this if not needed
-        public string RetrieveName()
-        {
-            //select query to get FName 
-            string selectFName = @"SELECT Cus_FName FROM Customer";
-
-            //select query to get LName
-            string selectLName = @"SELECT Cus_LName FROM Customer";
-
-            //command variable for LName
-            SqlCommand lNameCommand;
-            SqlCommand fNameCommand;
-            SqlConnection listconnect;
-            //store results of selects
-            string storedFName;
-            string storedLName;
-            string errorReturn = "0";
-
-            //connects to database, selects fname and lname and stores it. then returns the stored names concated together
-            using (listconnect = new SqlConnection(connString))
-            {
-                //open connection, retrieves & stores FName & LName, Concats them into storedFullName and  returns, then closes connection
-                try
-                {
-                    listconnect.Open();
-
-                    fNameCommand = new SqlCommand(selectFName, conn);
-                    lNameCommand = new SqlCommand(selectLName, conn);
-
-                    storedFName = command.ExecuteScalar().ToString();
-                    MessageBox.Show(storedFName);
-                    storedLName = command.ExecuteScalar().ToString();
-                    MessageBox.Show(storedLName);
-
-                    //concats stored names together, returns stored full name
-                    string storedFullName = storedFName + " " + storedLName;
-                    MessageBox.Show(storedFullName);
-                    return storedFullName;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex + ": Error occured while selecting first name");
-                    return errorReturn;
-                }
-                finally
-                {
-                    listconnect.Close();
-                }
-                
-            }
-        }*/
-
-
-
     }
 }

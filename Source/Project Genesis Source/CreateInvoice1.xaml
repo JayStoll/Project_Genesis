@@ -9,8 +9,8 @@
 
       Title="CreateInvoice1" Width="1000" Height="500">
 
-    <Grid>
-        <ScrollViewer Margin="2.151,1,4.082,-911.5" VerticalScrollBarVisibility="Visible" RenderTransformOrigin="0.5,0.5">
+    <Grid Margin="0,0,0,-261">
+        <ScrollViewer Margin="0,1,6,13" VerticalScrollBarVisibility="Visible" RenderTransformOrigin="0.5,0.5" CanContentScroll="True">
             <ScrollViewer.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -57,11 +57,11 @@
                 <TextBox x:Name="CusPhoneTxt" Height="75" Margin="407.853,390,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" IsEnabled="False"/>
 
 
-                <ComboBox Height="75" Margin="24.524,537.5,25.562,0" VerticalAlignment="Top" FontSize="35" SelectionChanged="ComboBox_SelectionChanged_1"/>
+                <ComboBox x:Name="vehicleInfo" Height="75" Margin="24.524,537.5,25.562,0" VerticalAlignment="Top" FontSize="35" SelectionChanged="ComboBox_SelectionChanged_1"/>
 
 
                 <Label Content="Serial Number" HorizontalAlignment="Left" Height="75" Margin="24.524,637,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-                <TextBox Height="75" Margin="407.853,637,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" IsEnabled="False"/>
+                <TextBox x:Name="serialNum" Height="75" Margin="407.853,637,25.562,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" IsEnabled="False"/>
 
 
                 <Label Content="Parts" HorizontalAlignment="Left" Height="75" Margin="24.524,727,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
