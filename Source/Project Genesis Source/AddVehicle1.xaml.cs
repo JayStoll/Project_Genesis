@@ -37,12 +37,12 @@ namespace Project_Genesis_Source
             string make = makeTxt.Text;
             string modelNumber = modelNumTxt.Text;
             string notes = notesTxt.Text;
-            string ownerFName = ownerFNameTxt.Text;
-            string ownerLName = ownerLNameTxt.Text;
+            //string ownerFName = ownerFNameTxt.Text;
+            //string ownerLName = ownerLNameTxt.Text;
 
             //TODO Error checking
             //send information to database connection
-            dataConnect.AddNewVehicle(serialNum, type, make, modelNumber, notes, ownerFName, ownerLName);
+            //dataConnect.AddNewVehicle(serialNum, type, make, modelNumber, notes, ownerFName, ownerLName);
             ClearText();
             
 
@@ -57,8 +57,8 @@ namespace Project_Genesis_Source
             makeTxt.Text = "";
             modelNumTxt.Text = "";
             notesTxt.Text = "";
-            ownerFNameTxt.Text = "";
-            ownerLNameTxt.Text = "";
+            //ownerFNameTxt.Text = "";
+            //ownerLNameTxt.Text = "";
 
         }
         //AJ Santillan  March 28, 2018
@@ -139,7 +139,7 @@ namespace Project_Genesis_Source
 
 
         //owners FIRSTNAME
-        private void ownerFNameTxt_LostFocus(object sender, RoutedEventArgs e)
+        /*private void ownerFNameTxt_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(ownerFNameTxt.Text))
             {
@@ -171,6 +171,6 @@ namespace Project_Genesis_Source
             ownerLNameTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
             ownerLNameTxt.Visibility = System.Windows.Visibility.Visible;
             ownerLNameTxt.Focus();
-        }
+        }*/
     }
 }
