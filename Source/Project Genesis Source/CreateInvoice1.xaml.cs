@@ -71,16 +71,26 @@ namespace Project_Genesis_Source {
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             var conn = dc.conn;
             string[] names = ClientDropDown.SelectedItem.ToString().Split(null);
-            string getClientInfo = "SELECT * FROM Customer WHERE Cus_FName='" + names[0] + "' and Cus_LName='" + names[1] + "'";
+            // MessageBox.Show(names[0] + " " + names[1]);
+            string getClientInfo = @"SELECT * FROM Customer WHERE Cus_FName = '" + names[0] + "' AND Cus_LName = '" + names[1] + "'";
 
             using (conn = new SqlConnection(dc.connString)) {
                 try {
-                    SqlCommand getClientQuery = new SqlCommand(getClientInfo, conn);
                     conn.Open();
+                    SqlCommand getClientQuery = new SqlCommand(getClientInfo, conn);
                     SqlDataReader fillInfo = getClientQuery.ExecuteReader();
-                    CusFNameTxt.Text = fillInfo["Cus_FName"].ToString();
+                    while (fillInfo.Read()) {
+                        CusFNameTxt.Text = fillInfo["Cus_FName"].ToString();
+                        CusLnameTxt.Text = fillInfo["Cus_LName"].ToString();
+                        CusAddressTxt.Text = fillInfo["Cus_Address"].ToString();
+                        CusPhoneTxt.Text = fillInfo["Cus_Phone"].ToString();
+                    }
+                    fillInfo.Close();
                 } catch (Exception ex) {
                     MessageBox.Show(ex.ToString());
+                }
+                finally {
+                    conn.Close();
                 }
             }
         }
