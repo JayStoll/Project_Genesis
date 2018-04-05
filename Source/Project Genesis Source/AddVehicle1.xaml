@@ -28,8 +28,6 @@
             <TextBox x:Name="typeTxtWatermark" GotFocus="typeTxtWatermark_GotFocus" Text="ex: Truck" Margin="345,100,38,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" Opacity="0.5" IsTabStop="False"/>
 
 
-
-
             <Label Content="Vehicle Number" HorizontalAlignment="Left" Margin="10,280,0,0" Width="330" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top"/>
             <TextBox x:Name="modelNumTxt" LostFocus="modelNumTxt_LostFocus" Margin="345,280,38,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top"/>
             <TextBox x:Name="modelNumTxtWatermark" GotFocus="modelNumTxtWatermark_GotFocus" Text="ex: 2018" Margin="345,280,38,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" Opacity="0.5" IsTabStop="False"/>

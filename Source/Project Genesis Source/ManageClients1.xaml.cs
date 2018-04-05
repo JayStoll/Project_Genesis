@@ -14,66 +14,33 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Project_Genesis_Source
-{
+namespace Project_Genesis_Source {
+
     /// <summary>
     /// Interaction logic for ManageClients1.xaml
     /// </summary>
-    public partial class ManageClients1 : Page
-    {
+    public partial class ManageClients1 : Page {
         DatabaseConnection dataConnect = new DatabaseConnection();
 
-        public ManageClients1()
-        {
+        public ManageClients1() {
             InitializeComponent();
 
-            //Setup DB connect, error catch, then populate nameOutputBox with the first 5 names
-            //TODO populate with all names
-            DatabaseConnection dataConnect = new DatabaseConnection();
+            // Debug to find what the error was
+            // MessageBox.Show(dataConnect.RetrieveFNames().Length.ToString());
 
-            string storedFullName = dataConnect.RetrieveName();
-
-            if (storedFullName == "0")
-            {
-                MessageBox.Show("No Name Retreived, can not add");
-            }
-            else
-            {
-                for (int i =0; i<2; i++)
-                {
-                    nameOutputBox.Items.Add(storedFullName + "\n");
-                }
-            }
-
-
-
-
-
-
-
-
-
-            /*
+            // Get the list of names
             string[] fnames = dataConnect.RetrieveFNames();
-            // List<string> fnames = dataConnect.RetrieveFNames();
-            //populate customerOutputBox with Customer names
-            //dataConnect.RetrieveFNames().CopyTo(fnames, 0);
-            if (fnames.Length == 0)
-            {
+
+            if (fnames.Length == 0) {
                 MessageBox.Show("No first names to populate with");
             }
-            else
-            {
-                for (int i = 0; i < fnames.Length; i++)
-                {
-                    nameOutputBox.Items.Add(fnames[i] + "\n");
+            else {
+                // print all the names in the array
+                for (int i = 0; i < fnames.Length; i++) {
+                    nameOutputBox.Items.Add(fnames[i]);
                 }
             }
-            */ 
-          
+
         }
-
-
-
     }
 }

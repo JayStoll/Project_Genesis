@@ -9,7 +9,7 @@ using System.Data;
 using System.Windows;
 using System.IO;
 
-namespace Project_Genesis_Source.Classes{
+namespace Project_Genesis_Source.Classes {
 
     // TODO - Fill in the information into the functions
     /// <summary>
@@ -24,7 +24,7 @@ namespace Project_Genesis_Source.Classes{
         // SqlCommandBuilder commandBuilder;
         public SqlConnection conn;
         SqlCommand command;
-        
+
         /// <summary>
         /// Add a new client to the database
         /// </summary>
@@ -35,15 +35,13 @@ namespace Project_Genesis_Source.Classes{
         /// <param name="email"></param>
         public void AddNewClient(string firstName, string lastName, string mailingAddress, string phoneNumber, string email, string boxNum, string postalCode) {
             // send the information to Customer with email
-         
+
             //insert query to send to cCustomer
             string insertData = @"INSERT INTO Customer(Cus_FName, Cus_LName, Cus_Address, Cus_Phone, Cus_Email, Cus_BoxNum, Cus_PostalCode)
                                 VALUES(@Cus_FName, @Cus_LName, @Cus_Address, @Cus_Phone, @Cus_Email, @Cus_BoxNum, @Cus_PostalCode)";
 
-            using (conn = new SqlConnection(connString))
-            {
-                try
-                {
+            using (conn = new SqlConnection(connString)) {
+                try {
                     conn.Open();
                     command = new SqlCommand(insertData, conn);
                     command.Parameters.AddWithValue(@"Cus_FName", firstName);
@@ -56,12 +54,10 @@ namespace Project_Genesis_Source.Classes{
                     command.ExecuteNonQuery();
                     MessageBox.Show(firstName + " " + lastName + " has been added");
                 }
-                catch (Exception ex)
-                {
+                catch (Exception ex) {
                     MessageBox.Show(ex.Message + ": Error Occured");
                 }
-                finally
-                {
+                finally {
                     conn.Close();
                 }
             }
@@ -94,10 +90,8 @@ namespace Project_Genesis_Source.Classes{
             string insertVehicleData = @"INSERT INTO Vehicle(Cus_ID, Vehicle_SerialNum, Vehicle_Type, Vehicle_Make, Vehicle_Num, Vehicle_Notes)
                                 VALUES(@Cus_ID, @Vehicle_SerialNum, @Vehicle_Type, @Vehicle_Make, @Vehicle_Num, @Vehicle_Notes)";
 
-            using (conn = new SqlConnection(connString))
-            {
-                try
-                {
+            using (conn = new SqlConnection(connString)) {
+                try {
                     conn.Open();
                     command = new SqlCommand(insertVehicleData, conn);
                     selectCommand = new SqlCommand(selectCusID, conn);
@@ -116,18 +110,16 @@ namespace Project_Genesis_Source.Classes{
 
 
                 }
-                catch (Exception ex)
-                {
+                catch (Exception ex) {
                     MessageBox.Show(ex.Message + ": Error occured while trying to add new vehicle");
                 }
-                finally
-                {
+                finally {
                     conn.Close();
                 }
             }
         }
 
-      
+
 
 
         /// <summary>
@@ -139,8 +131,7 @@ namespace Project_Genesis_Source.Classes{
         /// <param name="partNumber">Optional</param>
         /// <param name="partPrice"></param>
         /// <param name="partDescription">Optional</param>
-        public void AddNewPart(string partName, string serialNumber, string partNumber, string partPrice, string partDescription)
-        {
+        public void AddNewPart(string partName, string serialNumber, string partNumber, string partPrice, string partDescription) {
             // send the information to Part
 
             //insert query to send to PART
@@ -148,10 +139,8 @@ namespace Project_Genesis_Source.Classes{
                                 VALUES(@Part_Name, @Part_SerialNum, @Part_PartNum, @Part_Price, @Part_Desc)";
 
             //send values to Part and catch error
-            using (conn = new SqlConnection(connString))
-            {
-                try
-                {
+            using (conn = new SqlConnection(connString)) {
+                try {
                     conn.Open();
 
                     command = new SqlCommand(insertPartData, conn);
@@ -162,14 +151,12 @@ namespace Project_Genesis_Source.Classes{
                     command.Parameters.AddWithValue(@"Part_Desc", partDescription);
                     command.ExecuteNonQuery();
                     MessageBox.Show("Part added");
-                    
+
                 }
-                catch (Exception ex)
-                {
+                catch (Exception ex) {
                     MessageBox.Show(ex.Message + ": Error occured while trying to add part");
                 }
-                finally
-                {
+                finally {
                     conn.Close();
                 }
             }
@@ -198,55 +185,49 @@ namespace Project_Genesis_Source.Classes{
         /// <param name="labourTime"></param>
         /// <param name="labourRate"></param>
         /// <param name="taxRate"></param>
-        public void AddNewInvoice(int labourTime, int labourRate, int taxRate)
-        {
+        public void AddNewInvoice(int labourTime, int labourRate, int taxRate) {
             // add the invoice information to the database
             // TODO - Fix this function to use the proper information
         }
 
-
-        /*
         ///<summary>
         ///Retrieve information for manage client
         /// </summary>
-        public string[] RetrieveFNames()
-        {
-            //select query to retrieve first name
-            string selectFName = @"SELECT Cus_FName FROM Customer";
+        public string[] RetrieveFNames() {
+            //select query to retrieve first and ;ast name
+            string selectFName = @"SELECT Cus_FName, Cus_LName FROM Customer";
 
-            // string[] fnames = { };
+            // Creates a list that will hold all the information in the query
             List<string> fNames = new List<string>();
 
-            using (conn = new SqlConnection(connString))
-            {
-                try
-                {
+            using (conn = new SqlConnection(connString)) {
+                try {
                     conn.Open();
 
                     command = new SqlCommand(selectFName, conn);
-                    // error - will infinitly loop
-                    while (command.ExecuteScalar().ToString() != null) {
-                        int i = 0;
-                        // fnames[i] = command.ExecuteScalar().ToString();
-                        fNames.Insert(i, command.ExecuteScalar().ToString());
-                        Console.WriteLine(command.ExecuteScalar().ToString()); // debug
-                        i++;
-                        if (fNames.ToArray().Length >= i) break;
-                        // return fNames.ToArray();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    int i = 0;
+                    while (reader.Read()) {
+                        fNames.Insert(i, reader["Cus_FName"].ToString() + " " + reader["Cus_LName"].ToString());
+                        ++i;
                     }
+                    reader.Close();
                 }
-                catch (Exception ex)
-                {
+                catch (Exception ex) {
                     MessageBox.Show(ex.Message);
+                }
+                finally {
+                    conn.Close();
                 }
             }
 
+            // returns the list as an array
             return fNames.ToArray();
-            
+
         }
-        */
 
-
+        /*
         public string RetrieveName()
         {
             //select query to get FName 
@@ -296,9 +277,9 @@ namespace Project_Genesis_Source.Classes{
                 }
                 
             }
-        }
+        }*/
 
-  
+
 
     }
 }
