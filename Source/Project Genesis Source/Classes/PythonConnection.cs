@@ -23,9 +23,9 @@ namespace Project_Genesis_Source.Classes {
         string partFileInfo = @"partInfo.txt";
 
         // TODO give arguemtents
-        public void CreateClientInfoFile() {
+        public void CreateClientInfoFile(string clientFName, string clientLName, string company, string box, string address, string postalCode) {
             tw = new StreamWriter(clientFileInfo);
-            tw.Write("Kerry Eitzen.Spring Coulee Pullets Ltd.c/o Kerry Eitzen.Box 282.Linden AB T0M 1J0.");
+            tw.Write(clientFName, ".", clientLName, ".", /*company, ".",*/ box, ".", address, " ", postalCode);
             tw.Close();
         }
         

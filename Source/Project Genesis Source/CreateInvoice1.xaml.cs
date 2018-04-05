@@ -25,6 +25,7 @@ namespace Project_Genesis_Source {
     public partial class CreateInvoice1 : Page {
         
         DatabaseConnection dc = new DatabaseConnection();
+        PythonConnection pc = new PythonConnection();
 
         public CreateInvoice1() {
             InitializeComponent();
@@ -59,14 +60,17 @@ namespace Project_Genesis_Source {
             }
         }
 
-        private void CreateInvoice_Click(object sender, RoutedEventArgs e) {
+        private void CreateInvoice(object sender, RoutedEventArgs e) {
+            string[] names = ClientDropDown.SelectedItem.ToString().Split(null);
+            string[] clientInfo = dc.ConvertClientInfoToText(names[0], names[1]).ToString().Split(null);
+            MessageBox.Show(clientInfo[0], clientInfo[1] + "" + "Box 345" + clientInfo[2] + "T1K8A2");
+            //pc.CreateClientInfoFile(CusFNameTxt.ToString(), CusLnameTxt.ToString(), "", "Box 345", CusAddressTxt.ToString(), "T1K8A2");
             // get the information from the text boxes
             // send that information to the correct method in the PythonConnection class
             // when all the functions were called
             // create a new PDF file
             // store the PDF in the database - maybe?
         }
-
         //Client DropDowns
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             var conn = dc.conn;
@@ -122,10 +126,7 @@ namespace Project_Genesis_Source {
                 }
             }
         }
-
-
-
-
+        
         //AJ Santillan March 28, 2018
         //Watermarks
 
@@ -157,5 +158,7 @@ namespace Project_Genesis_Source {
             gstTxt.Visibility = System.Windows.Visibility.Visible;
             gstTxt.Focus();
         }
+
+        
     }
 }
