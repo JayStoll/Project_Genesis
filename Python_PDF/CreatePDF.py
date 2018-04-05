@@ -6,12 +6,18 @@
 
 import datetime
 import time
+import os
 
 from reportlab.pdfgen import canvas
 from Definitions import PrintPDF
 from GetFileInfo import clientName
 
-c = canvas.Canvas(clientName[0] + clientName[1] + datetime.datetime.today().strftime('%d-%m-%Y') + ".pdf")
+directory = "invoice/" + clientName[0] + " " + clientName[1] + "/"
+
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
+c = canvas.Canvas(directory + clientName[0] + clientName[1] + datetime.datetime.today().strftime('%d-%m-%Y') + ".pdf")
 
 PrintPDF(c)  # Print all the information to the PDF file
 c.showPage()
