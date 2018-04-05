@@ -10,7 +10,7 @@
 
     <ScrollViewer Margin="10">
 
-        <Grid Height="810" Width="980">
+        <Grid Height="885" Width="980">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>

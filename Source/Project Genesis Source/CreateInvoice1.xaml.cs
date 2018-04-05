@@ -100,18 +100,7 @@ namespace Project_Genesis_Source {
 
 
         //watermark on type
-        private void typeTxt_LostFocus(object sender, RoutedEventArgs e) {
-            if (string.IsNullOrEmpty(typeTxt.Text)) {
-                typeTxt.Visibility = System.Windows.Visibility.Collapsed;
-                typeTxtWatermark.Visibility = System.Windows.Visibility.Visible;
-            }
-        }
-
-        private void typeTxtWatermark_GotFocus(object sender, RoutedEventArgs e) {
-            typeTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
-            typeTxt.Visibility = System.Windows.Visibility.Visible;
-            typeTxt.Focus();
-        }
+  
 
 
         //watermark for rate
