@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Genesis_Source"
         mc:Ignorable="d"
-        Title="CAJN Software" Width="1430" Height="750" Icon="icon.png" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="CAJN Software" Width="1430" Height="900" Icon="icon.png" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -93,11 +93,11 @@
         <Button x:Name="clientManage" Content="Manage Clients" Margin="15,659.341,0,0" BorderBrush="#FF0C1249" Click="clientManage_Click" Background="#FF84CDFF" Foreground="#FF0C1249" FontSize="35" FontFamily="Lithos Pro Regular" Height="84.159" VerticalAlignment="Top" HorizontalAlignment="Left" Width="330" IsTabStop="False" Cursor="Hand" ScrollViewer.CanContentScroll="True" Padding="10,5,5,10" UseLayoutRounding="False" BorderThickness="10,1,1,10"/>
         <Button x:Name="backupTab" Content="Backup/&#xA;Archive" Margin="15,748.5,0,0" BorderBrush="#FF0C1249" Click="backupTab_Click" Background="#FF84CDFF" Foreground="#FF0C1249" FontSize="35" FontFamily="Lithos Pro Regular" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Width="330" IsTabStop="False" Cursor="Hand" ScrollViewer.CanContentScroll="True" Padding="10,5,5,10" UseLayoutRounding="False" BorderThickness="10,1,1,10"/>
         <Label Content="CAJNvoice -2018- " Margin="165,-22.338,345.5,0" Foreground="#FF0C1249" FontSize="120" FontFamily="HarvestItal" Height="212" VerticalAlignment="Top"/>
-        <Frame x:Name="Main" Margin="354.75,217.54,0,0" NavigationUIVisibility="Hidden" Foreground="{x:Null}" Cursor="Hand" ClipToBounds="True" SnapsToDevicePixels="True" IsTabStop="False" Height="630.96" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1104.75">
+        <Frame x:Name="Main" Margin="354.75,217.54,10,0" NavigationUIVisibility="Hidden" Foreground="{x:Null}" Cursor="Hand" ClipToBounds="True" SnapsToDevicePixels="True" IsTabStop="False" Height="550" VerticalAlignment="Top">
             <Frame.Content>
                 <Grid Margin="10,0.5,0,10">
-                    <Button x:Name="createInvB" Content="Create&#xA;Invoice" Margin="10,315.32,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="214.861" VerticalAlignment="Top" HorizontalAlignment="Left" Width="336.152" FontSize="40" Click="createInvB_Click" IsTabStop="False" Cursor="Hand"/>
-                    <Rectangle HorizontalAlignment="Left" Height="214.861" Margin="5.82,315.32,0,0" VerticalAlignment="Top" Width="343.715" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
+                    <Button x:Name="createInvB" Content="Create&#xA;Invoice" Margin="9.82,286.796,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="195.385" VerticalAlignment="Top" HorizontalAlignment="Left" Width="321.685" FontSize="40" Click="createInvB_Click" IsTabStop="False" Cursor="Hand"/>
+                    <Rectangle HorizontalAlignment="Left" Height="195.385" Margin="5.82,286.796,0,0" VerticalAlignment="Top" Width="328.923" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
                         <Rectangle.Stroke>
                             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                                 <GradientStop Color="#FF0C1249" Offset="1"/>
@@ -105,8 +105,8 @@
                             </LinearGradientBrush>
                         </Rectangle.Stroke>
                     </Rectangle>
-                    <Button x:Name="addCustomerB" Content="Add Customer" Margin="13.383,0.647,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="214.861" VerticalAlignment="Top" HorizontalAlignment="Left" Width="336.152" FontSize="40" Click="addCustomerB_Click" IsTabStop="False" Cursor="Hand"/>
-                    <Rectangle HorizontalAlignment="Left" Height="214.861" Margin="10.739,0.647,0,0" VerticalAlignment="Top" Width="343.714" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
+                    <Button x:Name="addCustomerB" Content="Add Customer" Margin="13.058,0.647,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="195.385" VerticalAlignment="Top" HorizontalAlignment="Left" Width="321.685" FontSize="40" Click="addCustomerB_Click" IsTabStop="False" Cursor="Hand"/>
+                    <Rectangle HorizontalAlignment="Left" Height="195.385" Margin="10.527,0.647,0,0" VerticalAlignment="Top" Width="328.922" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
                         <Rectangle.Stroke>
                             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                                 <GradientStop Color="#FF0C1249" Offset="1"/>
@@ -114,8 +114,8 @@
                             </LinearGradientBrush>
                         </Rectangle.Stroke>
                     </Rectangle>
-                    <Button x:Name="addPartB" Content="Add Parts" Margin="745.974,0.647,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="214.861" VerticalAlignment="Top" HorizontalAlignment="Left" Width="336.152" FontSize="40" Click="addPartB_Click" IsTabStop="False" Cursor="Hand"/>
-                    <Rectangle HorizontalAlignment="Left" Height="214.861" Margin="742.591,0.647,0,0" VerticalAlignment="Top" Width="343.715" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
+                    <Button x:Name="addPartB" Content="Add Parts" Margin="714.121,0.647,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="195.385" VerticalAlignment="Top" HorizontalAlignment="Left" Width="321.685" FontSize="40" Click="addPartB_Click" IsTabStop="False" Cursor="Hand"/>
+                    <Rectangle HorizontalAlignment="Left" Height="195.385" Margin="710.883,0.647,0,0" VerticalAlignment="Top" Width="328.923" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
                         <Rectangle.Stroke>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="#FF0C1249" Offset="1"/>
@@ -123,8 +123,8 @@
                             </LinearGradientBrush>
                         </Rectangle.Stroke>
                     </Rectangle>
-                    <Button x:Name="ManageClientsB" Content="Manage&#xA;Clients" Margin="375.127,315.32,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="214.861" VerticalAlignment="Top" HorizontalAlignment="Left" Width="336.154" FontSize="40" Click="ManageClientsB_Click" IsTabStop="False" Cursor="Hand"/>
-                    <Rectangle HorizontalAlignment="Left" Height="214.861" Margin="375.127,315.32,0,0" VerticalAlignment="Top" Width="343.715" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
+                    <Button x:Name="ManageClientsB" Content="Manage&#xA;Clients" Margin="359.233,286.796,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="195.385" VerticalAlignment="Top" HorizontalAlignment="Left" Width="321.688" FontSize="40" Click="ManageClientsB_Click" IsTabStop="False" Cursor="Hand"/>
+                    <Rectangle HorizontalAlignment="Left" Height="195.385" Margin="359.233,286.796,0,0" VerticalAlignment="Top" Width="328.923" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
                         <Rectangle.Stroke>
                             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                                 <GradientStop Color="#FF0C1249" Offset="1"/>
@@ -132,8 +132,8 @@
                             </LinearGradientBrush>
                         </Rectangle.Stroke>
                     </Rectangle>
-                    <Button x:Name="backupB" Content="Backup/&#xA;Archive" Margin="739.781,315.32,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="214.861" VerticalAlignment="Top" HorizontalAlignment="Left" Width="336.152" FontSize="40" Click="backupB_Click" IsTabStop="False" Cursor="Hand"/>
-                    <Rectangle HorizontalAlignment="Left" Height="214.861" Margin="742.008,315.32,0,0" VerticalAlignment="Top" Width="343.715" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
+                    <Button x:Name="backupB" Content="Backup/&#xA;Archive" Margin="708.194,286.796,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="195.385" VerticalAlignment="Top" HorizontalAlignment="Left" Width="321.685" FontSize="40" Click="backupB_Click" IsTabStop="False" Cursor="Hand"/>
+                    <Rectangle HorizontalAlignment="Left" Height="195.385" Margin="710.325,286.796,0,0" VerticalAlignment="Top" Width="328.923" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
                         <Rectangle.Stroke>
                             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                                 <GradientStop Color="#FF0C1249" Offset="1"/>
@@ -141,8 +141,8 @@
                             </LinearGradientBrush>
                         </Rectangle.Stroke>
                     </Rectangle>
-                    <Button x:Name="addVehicleB" Content="Add Vehicle" Margin="375.127,0.647,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="214.861" VerticalAlignment="Top" HorizontalAlignment="Left" Width="336.154" FontSize="40" Click="addVehicleB_Click" IsTabStop="False" Cursor="Hand"/>
-                    <Rectangle HorizontalAlignment="Left" Height="214.861" Margin="375.127,0.647,0,0" VerticalAlignment="Top" Width="343.715" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
+                    <Button x:Name="addVehicleB" Content="Add Vehicle" Margin="359.233,0.647,0,0" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Lithos Pro Regular" Foreground="#FF0C1249" Height="195.385" VerticalAlignment="Top" HorizontalAlignment="Left" Width="321.688" FontSize="40" Click="addVehicleB_Click" IsTabStop="False" Cursor="Hand"/>
+                    <Rectangle HorizontalAlignment="Left" Height="195.385" Margin="359.233,0.647,0,0" VerticalAlignment="Top" Width="328.923" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10">
                         <Rectangle.Stroke>
                             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                                 <GradientStop Color="#FF0C1249" Offset="1"/>
@@ -150,7 +150,7 @@
                             </LinearGradientBrush>
                         </Rectangle.Stroke>
                     </Rectangle>
-                    
+
 
 
 
