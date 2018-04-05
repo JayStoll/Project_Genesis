@@ -37,7 +37,7 @@ namespace Project_Genesis_Source {
             else {
                 // print all the names in the array
                 for (int i = 0; i < fnames.Length; i++) {
-                    nameOutputBox.Items.Add(fnames[i]);
+                    nameOutputBox.Items.Add(fnames[i]); 
                 }
             }
 
