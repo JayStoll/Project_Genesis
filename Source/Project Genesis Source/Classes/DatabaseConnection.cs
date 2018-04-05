@@ -227,7 +227,7 @@ namespace Project_Genesis_Source.Classes {
 
         }
 
-        /*
+        /* TODO - delete this if not needed
         public string RetrieveName()
         {
             //select query to get FName 

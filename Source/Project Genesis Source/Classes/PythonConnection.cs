@@ -24,7 +24,6 @@ namespace Project_Genesis_Source.Classes {
 
         // TODO give arguemtents
         public void CreateClientInfoFile() {
-            //File.Create(clientFileInfo);
             tw = new StreamWriter(clientFileInfo);
             tw.Write("Kerry Eitzen.Spring Coulee Pullets Ltd.c/o Kerry Eitzen.Box 282.Linden AB T0M 1J0.");
             tw.Close();
@@ -32,7 +31,6 @@ namespace Project_Genesis_Source.Classes {
         
         // TODO give arguemtents
         public void CreateInvoiceInfoFile() {
-            //File.Create(invoiceFileInfo);
             tw = new StreamWriter(invoiceFileInfo);
             // TODO Get the information from the database
             tw.WriteLine("635");                                    // invoice number                                  
@@ -45,7 +43,6 @@ namespace Project_Genesis_Source.Classes {
 
         // TODO give arguemtents
         public void CreateLabourInforFile() {
-            //File.Create(labourFileInfo);
             tw = new StreamWriter(labourFileInfo);
             // TODO Get the information from the database
             // TODO add the vehcicle that he worked on 
@@ -61,7 +58,6 @@ namespace Project_Genesis_Source.Classes {
 
         // TODO give arguemtents
         public void CreatePartInfoFile() {
-            //File.Create(partFileInfo);
             tw = new StreamWriter(partFileInfo);
             // TODO Get the information from the database
             tw.WriteLine("NAPA: Filters and fuel line");            // parts used
@@ -97,11 +93,6 @@ namespace Project_Genesis_Source.Classes {
             File.Delete(partFileInfo);
             // prints if the PDF was created or not
             MessageBox.Show(output);
-
-            
-            // Debug purposes only
-            Console.WriteLine(output);
-            Console.ReadLine();
         }
     }
 }
