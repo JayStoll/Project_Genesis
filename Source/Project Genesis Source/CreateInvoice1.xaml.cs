@@ -39,19 +39,21 @@ namespace Project_Genesis_Source {
 
             using (conn = new SqlConnection(dc.connString)) {
                 try {
-                    string sqlString = "SELECT Cus_FName, Cus_LName from Customer";
+                    string sqlString = "SELECT Cus_FName, Cus_LName FROM Customer";
 
                     customerAdapter = new SqlCommand(sqlString, conn);
                     conn.Open();
-                    SqlDataReader test = customerAdapter.ExecuteReader();
-                    while (test.Read()) 
-                        ClientDropDown.Items.Add(test["Cus_FName"] + " " + test["Cus_LName"]);
+                    SqlDataReader fillComboBox = customerAdapter.ExecuteReader();
+                    while (fillComboBox.Read()) 
+                        ClientDropDown.Items.Add(fillComboBox["Cus_FName"] + " " + fillComboBox["Cus_LName"]);
+                    fillComboBox.Close();
                 }
                 catch (Exception ex) {
                     MessageBox.Show(ex.ToString());
                 }
 
             }
+            
             conn.Close();
         }
 
