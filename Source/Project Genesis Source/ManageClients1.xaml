@@ -9,7 +9,7 @@
       Title="ManageClients1" Width="1000" Height="500">
 
     <Grid>
-        <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="10.661,10,0,20" HorizontalAlignment="Left" Width="217.745">
+        <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="10.661,10,0,10.099" HorizontalAlignment="Left" Width="234.162">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0E1317"/>
@@ -19,7 +19,7 @@
                     <GradientStop Color="#FF5795D3" Offset="0.619"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <ListView Name="nameOutputBox" Margin="9,110,9,9" FontFamily="Palatino Linotype" FontSize="20">
+            <ListView x:Name="nameOutputBox" Margin="9,105.151,9,9" FontFamily="Palatino Linotype" FontSize="20">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn/>
@@ -37,7 +37,7 @@
                     <GradientStop Color="#FF5795D3" Offset="0.619"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <ListView Margin="9,110,9,9" FontFamily="Palatino Linotype" FontSize="20">
+            <ListView Margin="9,103.514,9,9" FontFamily="Palatino Linotype" FontSize="20">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn/>
@@ -55,7 +55,7 @@
                     <GradientStop Color="#FF5795D3" Offset="0.619"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <ListView Margin="9,110,9,9" FontFamily="Palatino Linotype" FontSize="20">
+            <ListView Margin="9,86.066,9,9" FontFamily="Palatino Linotype" FontSize="20">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn/>
@@ -63,8 +63,10 @@
                 </ListView.View>
             </ListView>
         </Border>
-        <Label Content="Name" Margin="10.661,10,0,0" FontFamily="Lithos Pro Regular" FontSize="60" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Width="217.745"/>
-        <Label Content="Vehicle" Margin="235,10.113,0,0" FontFamily="Lithos Pro Regular" FontSize="60" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Width="358.302"/>
-        <Label Content="Invoice" Margin="600,10,0,0" FontFamily="Lithos Pro Regular" FontSize="60" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Width="386.167"/>
+        <Label Content="Name" Margin="10.661,10,0,0" FontFamily="Lithos Pro Regular" FontSize="36" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="67.763" VerticalAlignment="Top" HorizontalAlignment="Left" Width="234.162"/>
+        <Label Content="Vehicle" Margin="248.558,10.077,0,0" FontFamily="Lithos Pro Regular" FontSize="36" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="67.763" VerticalAlignment="Top" HorizontalAlignment="Left" Width="418.434"/>
+        <Label Content="Invoice" Margin="672.831,10,0,0" FontFamily="Lithos Pro Regular" FontSize="36" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="67.763" VerticalAlignment="Top" HorizontalAlignment="Left" Width="418.169"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Margin="249.823,537.113,0,7.387" Width="418" FontSize="35" Background="{x:Null}" BorderBrush="#FF0C1249" BorderThickness="10,1,1,10" FontFamily="Lithos Pro Regular"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="672.831,537.113,0,10.099" Width="418" FontSize="35" Background="{x:Null}" BorderBrush="#FF0C1249" BorderThickness="10,1,1,10" FontFamily="Lithos Pro Regular"/>
     </Grid>
 </Page>
