@@ -19,7 +19,7 @@
                     <GradientStop Color="#FF5795D3" Offset="0.619"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <ListView Margin="9,105.151,9,9" FontFamily="Palatino Linotype" FontSize="20">
+            <ListView x:Name="nameOutputBox" Margin="9,105.151,9,9" FontFamily="Palatino Linotype" FontSize="20">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn/>
