@@ -10,7 +10,7 @@
 
     <ScrollViewer Margin="10,10,10,15.287">
 
-        <Grid Height="792" Width="1100">
+        <Grid Height="792" Width="980">
             <Label Content="First Name" Margin="10,9.713,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300" HorizontalAlignment="Left"/>
             <TextBox x:Name="fNametxt" LostFocus="fNametxt_LostFocus" Margin="310,9.713,46,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top"/>
             <TextBox x:Name="fNametxtWatermark" GotFocus="fNametxtWatermark_GotFocus" Text="ex: John" Margin="310,9.713,46,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" Opacity="0.5" IsTabStop="False"/>

@@ -8,9 +8,9 @@
        
       Title="AddPart1" Width="1000" Height="500">
 
-    <ScrollViewer HorizontalAlignment="Left" Height="730" Margin="10,10,0,0" VerticalAlignment="Top" Width="1080">
+    <ScrollViewer Height="480" Margin="10,10,10,0" VerticalAlignment="Top">
 
-        <Grid Height="769.5" Width="1100">
+        <Grid Height="769.5" Width="980">
             <Label Content="Name" HorizontalAlignment="Left" Height="75" Margin="10.521,20,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
             <TextBox x:Name="nameTxt" LostFocus="nameTxt_LostFocus" Height="75" Margin="315.521,20,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype"/>
             <TextBox x:Name="nameTxtWatermark" GotFocus="nameTxtWatermark_GotFocus" Text="ex: John Doe" Height="75" Margin="315.521,20,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" Opacity="0.5" IsTabStop="False"/>
@@ -34,7 +34,7 @@
             <Label Content="Notes" HorizontalAlignment="Left" Height="75" Margin="10.521,457.5,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
             <TextBox x:Name="notesTxt" Margin="315.521,457.5,52,0" TextWrapping="Wrap" FontSize="36" FontFamily="Palatino Linotype" Height="200" VerticalAlignment="Top"/>
 
-            <Button x:Name="addPartButton" Content="Add Part" HorizontalAlignment="Left" Height="60" Margin="621.627,699.5,0,0" VerticalAlignment="Top" Width="426.373" FontFamily="Lithos Pro Regular" FontSize="35" Background="{x:Null}" Click="AddPartButton_Click">
+            <Button x:Name="addPartButton" Content="Add Part" Height="60" Margin="621.627,699.5,52,0" VerticalAlignment="Top" FontFamily="Lithos Pro Regular" FontSize="35" Background="{x:Null}" Click="AddPartButton_Click">
                 <Button.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF1397F1" Offset="0"/>
