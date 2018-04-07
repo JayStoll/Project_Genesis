@@ -204,35 +204,5 @@ namespace Project_Genesis_Source.Classes {
             return fNames.ToArray();
 
         }
-
-        public string[] ConvertClientInfoToText(string fName, string lName) {
-            List<string> information = new List<string>();
-            string clientQuery = @"SELECT * FROM Customer WHERE Cus_FName = '" + fName + "' AND Cus_LName = '" + lName + "'";
-
-            using (conn = new SqlConnection(connString)) {
-                try {
-                    conn.Open();
-
-                    command = new SqlCommand(clientQuery, conn);
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    int i = 0;
-                    while (reader.Read()) {
-                        information.Insert(i, reader["Cus_FName"].ToString() + " " + reader["Cus_LName"].ToString() + " " + reader["Cus_BoxNum"] +
-                            " " + reader["Cus_Address"] + " " + reader["Cus_PostalCode"]);
-                        ++i;
-                    }
-                    reader.Close();
-                }
-                catch (Exception ex) {
-                    MessageBox.Show(ex.Message);
-                }
-                finally {
-                    conn.Close();
-                }
-
-                return information.ToArray();
-            }
-        }
     }
 }

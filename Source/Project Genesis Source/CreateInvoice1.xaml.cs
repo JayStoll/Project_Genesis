@@ -61,9 +61,6 @@ namespace Project_Genesis_Source {
         }
 
         private void CreateInvoice(object sender, RoutedEventArgs e) {
-            string[] names = ClientDropDown.SelectedItem.ToString().Split(null);
-            string[] clientInfo = dc.ConvertClientInfoToText(names[0], names[1]).ToString().Split(null);
-            MessageBox.Show(clientInfo[0], clientInfo[1] + "" + "Box 345" + clientInfo[2] + "T1K8A2");
             //pc.CreateClientInfoFile(CusFNameTxt.ToString(), CusLnameTxt.ToString(), "", "Box 345", CusAddressTxt.ToString(), "T1K8A2");
             // get the information from the text boxes
             // send that information to the correct method in the PythonConnection class
@@ -76,10 +73,11 @@ namespace Project_Genesis_Source {
             // clears the combobox when a new client is selected
             vehicleInfo.Items.Clear();
             var conn = dc.conn;
+
+            // Gets the first and last name of the entered client - slpits at a space
             string[] names = ClientDropDown.SelectedItem.ToString().Split(null);
             // MessageBox.Show(names[0] + " " + names[1]);
-
-            // SQL query
+            
             string getClientInfo = @"SELECT Customer.*, Vehicle.* 
                                     FROM Customer, Vehicle 
                                     WHERE Cus_FName = '" + names[0] + "' AND Cus_LName = '" + names[1] + "' AND Vehicle.Cus_ID=Customer.Cus_ID";
@@ -114,8 +112,6 @@ namespace Project_Genesis_Source {
 
         //Vehicle DropDown
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e) {
-
-
             var conn = dc.conn;
             try {
                 string vehicle = vehicleInfo.SelectedItem.ToString();
