@@ -23,7 +23,7 @@ namespace Project_Genesis_Source {
     /// Interaction logic for CreateInvoice1.xaml
     /// </summary>
     public partial class CreateInvoice1 : Page {
-        
+
         DatabaseConnection dc = new DatabaseConnection();
         PythonConnection pc = new PythonConnection();
 
@@ -46,7 +46,7 @@ namespace Project_Genesis_Source {
                     conn.Open();
                     SqlDataReader fillComboBox = customerAdapter.ExecuteReader();
                     // fill the combobox with all the queried information
-                    while (fillComboBox.Read()) 
+                    while (fillComboBox.Read())
                         // TODO - sort the information alphabetically
                         ClientDropDown.Items.Add(fillComboBox["Cus_FName"] + " " + fillComboBox["Cus_LName"]);
                     fillComboBox.Close();
@@ -73,48 +73,33 @@ namespace Project_Genesis_Source {
         }
         //Client DropDowns
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            // clears the combobox when a new client is selected
+            vehicleInfo.Items.Clear();
             var conn = dc.conn;
             string[] names = ClientDropDown.SelectedItem.ToString().Split(null);
             // MessageBox.Show(names[0] + " " + names[1]);
-            string getClientInfo = @"SELECT * FROM Customer, Vehicle WHERE Cus_FName = '" + names[0] + "' AND Cus_LName = '" + names[1] + "'";
+
+            // SQL query
+            string getClientInfo = @"SELECT Customer.*, Vehicle.* 
+                                    FROM Customer, Vehicle 
+                                    WHERE Cus_FName = '" + names[0] + "' AND Cus_LName = '" + names[1] + "' AND Vehicle.Cus_ID=Customer.Cus_ID";
 
             using (conn = new SqlConnection(dc.connString)) {
                 try {
                     conn.Open();
+                    // gets the query and puts it in the database
                     SqlCommand getClientQuery = new SqlCommand(getClientInfo, conn);
+                    // executes and creates a reader based on the executed query
                     SqlDataReader fillInfo = getClientQuery.ExecuteReader();
+                    // fill out the text boxes based off the information
                     while (fillInfo.Read()) {
                         CusFNameTxt.Text = fillInfo["Cus_FName"].ToString();
                         CusLnameTxt.Text = fillInfo["Cus_LName"].ToString();
                         CusAddressTxt.Text = fillInfo["Cus_Address"].ToString();
                         CusPhoneTxt.Text = fillInfo["Cus_Phone"].ToString();
 
+                        // fill the second combobox with information from the vehicle table
                         vehicleInfo.Items.Add(fillInfo["Vehicle_Type"]);
-                    }
-                    fillInfo.Close();                    
-                } catch (Exception ex) {
-                    MessageBox.Show(ex.ToString());
-                }
-                finally {
-                    conn.Close();
-                }
-            }
-        }
-
-        //Vehicle DropDown
-        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e) {
-            var conn = dc.conn;
-            string vehicle = vehicleInfo.SelectedItem.ToString();
-            // MessageBox.Show(vehicle);
-            string getVehicleInfo = @"SELECT * FROM  Vehicle WHERE Vehicle_Type = '" + vehicle + "'";
-
-            using (conn = new SqlConnection(dc.connString)) {
-                try {
-                    conn.Open();
-                    SqlCommand command = new SqlCommand(getVehicleInfo, conn);
-                    SqlDataReader fillInfo = command.ExecuteReader();
-                    while (fillInfo.Read()) {
-                        serialNum.Text = fillInfo["Vehicle_SerialNum"].ToString();
                     }
                     fillInfo.Close();
                 }
@@ -126,7 +111,41 @@ namespace Project_Genesis_Source {
                 }
             }
         }
-        
+
+        //Vehicle DropDown
+        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e) {
+
+
+            var conn = dc.conn;
+            try {
+                string vehicle = vehicleInfo.SelectedItem.ToString();
+
+                // MessageBox.Show(vehicle);
+                string getVehicleInfo = @"SELECT * FROM  Vehicle WHERE Vehicle_Type = '" + vehicle + "'";
+
+                using (conn = new SqlConnection(dc.connString)) {
+                    try {
+                        conn.Open();
+                        SqlCommand command = new SqlCommand(getVehicleInfo, conn);
+                        SqlDataReader fillInfo = command.ExecuteReader();
+                        while (fillInfo.Read()) {
+                            serialNum.Text = fillInfo["Vehicle_SerialNum"].ToString();
+                        }
+                        fillInfo.Close();
+                    }
+                    catch (Exception ex) {
+                        MessageBox.Show(ex.ToString());
+                    }
+                    finally {
+                        conn.Close();
+                    }
+                }
+            }
+            catch (Exception ex) {
+                serialNum.Text = "";
+            }
+        }
+
         //AJ Santillan March 28, 2018
         //Watermarks
 
@@ -159,6 +178,6 @@ namespace Project_Genesis_Source {
             gstTxt.Focus();
         }
 
-        
+
     }
 }

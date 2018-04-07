@@ -69,12 +69,10 @@ namespace Project_Genesis_Source
             string modelNumber = modelNumTxt.Text;
             string notes = notesTxt.Text;
             string[] names = clientname.SelectedItem.ToString().Split(null);
-            string ownerFName = names[0];
-            string ownerLName = names[1];
 
             //TODO Error checking
             //send information to database connection
-            dataConnect.AddNewVehicle(serialNum, type, make, modelNumber, notes, ownerFName, ownerLName);
+            dataConnect.AddNewVehicle(serialNum, type, make, modelNumber, notes, names[0], names[1]);
             ClearText();
             
 
@@ -89,9 +87,6 @@ namespace Project_Genesis_Source
             makeTxt.Text = "";
             modelNumTxt.Text = "";
             notesTxt.Text = "";
-            //ownerFNameTxt.Text = "";
-            //ownerLNameTxt.Text = "";
-
         }
         //AJ Santillan  March 28, 2018
         //Watermarks Codes
