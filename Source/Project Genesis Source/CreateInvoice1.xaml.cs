@@ -63,7 +63,7 @@ namespace Project_Genesis_Source {
         //Client DropDowns
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             // clears the combobox when a new client is selected
-            vehicleInfo.Items.Clear();
+            VehicleDropDown.Items.Clear();
             var conn = dc.conn;
 
             // Gets the first and last name of the entered client - slpits at a space
@@ -89,7 +89,7 @@ namespace Project_Genesis_Source {
                         CusPhoneTxt.Text = fillInfo["Cus_Phone"].ToString();
 
                         // fill the second combobox with information from the vehicle table
-                        vehicleInfo.Items.Add(fillInfo["Vehicle_Type"]);
+                        VehicleDropDown.Items.Add(fillInfo["Vehicle_Type"]);
                     }
                     fillInfo.Close();
                 }
@@ -106,7 +106,7 @@ namespace Project_Genesis_Source {
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e) {
             var conn = dc.conn;
             try {
-                string vehicle = vehicleInfo.SelectedItem.ToString();
+                string vehicle = VehicleDropDown.SelectedItem.ToString();
 
                 // MessageBox.Show(vehicle);
                 string getVehicleInfo = @"SELECT * FROM  Vehicle WHERE Vehicle_Type = '" + vehicle + "'";
@@ -117,7 +117,7 @@ namespace Project_Genesis_Source {
                         SqlCommand command = new SqlCommand(getVehicleInfo, conn);
                         SqlDataReader fillInfo = command.ExecuteReader();
                         while (fillInfo.Read()) {
-                            serialNum.Text = fillInfo["Vehicle_SerialNum"].ToString();
+                            VehicleSerialNumtxt.Text = fillInfo["Vehicle_SerialNum"].ToString();
                         }
                         fillInfo.Close();
                     }
@@ -131,7 +131,7 @@ namespace Project_Genesis_Source {
             }
             catch (Exception ex) {
                 // when an error happens - just clear the text
-                serialNum.Text = "";
+                VehicleSerialNumtxt.Text = "";
             }
         }
         

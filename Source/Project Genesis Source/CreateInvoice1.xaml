@@ -10,7 +10,7 @@
       Title="CreateInvoice1" Width="1000" Height="1445">
 
     <Grid Margin="0,0,0,-2425.5" Height="3000">
-        <ScrollViewer Margin="-6.309,1,24.579,2526.5" VerticalScrollBarVisibility="Visible" RenderTransformOrigin="0.5,0.5">
+        <ScrollViewer Margin="-4,1,22,1892" VerticalScrollBarVisibility="Visible" RenderTransformOrigin="0.5,0.5">
             <ScrollViewer.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

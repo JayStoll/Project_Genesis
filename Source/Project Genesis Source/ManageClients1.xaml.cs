@@ -14,34 +14,56 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Project_Genesis_Source {
+namespace Project_Genesis_Source
+{
 
     /// <summary>
     /// Interaction logic for ManageClients1.xaml
     /// </summary>
-    public partial class ManageClients1 : Page {
+    public partial class ManageClients1 : Page
+    {
         DatabaseConnection dataConnect = new DatabaseConnection();
 
-        public ManageClients1() {
+        public ManageClients1()
+        {
             InitializeComponent();
-
-            // Debug to find what the error was
-            // MessageBox.Show(dataConnect.RetrieveFNames().Length.ToString());
 
             // Get the list of names
             string[] fnames = dataConnect.RetrieveFNames();
 
-            if (fnames.Length == 0) {
+            if (fnames.Length == 0)
+            {
                 MessageBox.Show("No first names to populate with");
             }
-            else {
+            else
+            {
                 // print all the names in the array
-                for (int i = 0; i < fnames.Length; i++) {
+                for (int i = 0; i < fnames.Length; i++)
+                {
                     // TODO - sort the clients alphabetical order
                     nameOutputBox.Items.Add(fnames[i]);
                 }
             }
 
+
+            
+
+            
+            
+            
+            
+        }
+
+        private void selectedName(object sender, SelectionChangedEventArgs e)
+        {
+
+
+            string[] names = new string[nameOutputBox.Items.Count];
+            nameOutputBox.Items.CopyTo(names, 0);
+            MessageBox.Show(names[0]);
+           
+            
+            /*
             //Get list of VehicleInfo
             string[] vehicleInfo = dataConnect.RetrieveVehicleInfo();
 
@@ -52,12 +74,12 @@ namespace Project_Genesis_Source {
             else
             {
                 //print all vehicleinfo
-                for (int i = 0; i <vehicleInfo.Length; i++)
+                for (int i = 0; i < vehicleInfo.Length; i++)
                 {
                     VehicleList.Items.Add(vehicleInfo[i]);
                 }
             }
-
+            */
         }
     }
 }
