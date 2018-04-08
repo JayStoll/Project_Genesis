@@ -60,14 +60,6 @@ namespace Project_Genesis_Source {
             }
         }
 
-        private void CreateInvoice(object sender, RoutedEventArgs e) {
-            //pc.CreateClientInfoFile(CusFNameTxt.ToString(), CusLnameTxt.ToString(), "", "Box 345", CusAddressTxt.ToString(), "T1K8A2");
-            // get the information from the text boxes
-            // send that information to the correct method in the PythonConnection class
-            // when all the functions were called
-            // create a new PDF file
-            // store the PDF in the database - maybe?
-        }
         //Client DropDowns
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             // clears the combobox when a new client is selected
@@ -138,9 +130,20 @@ namespace Project_Genesis_Source {
                 }
             }
             catch (Exception ex) {
+                // when an error happens - just clear the text
                 serialNum.Text = "";
             }
         }
+        
+        private void CreateInvoice(object sender, RoutedEventArgs e) {
+            // get the information from the text boxes
+            // send that information to the correct method in the PythonConnection class
+            // when all the functions were called
+            // create a new PDF file
+            pc.CreatePDF();
+        }
+
+
 
         //AJ Santillan March 28, 2018
         //Watermarks
@@ -173,7 +176,5 @@ namespace Project_Genesis_Source {
             gstTxt.Visibility = System.Windows.Visibility.Visible;
             gstTxt.Focus();
         }
-
-
     }
 }

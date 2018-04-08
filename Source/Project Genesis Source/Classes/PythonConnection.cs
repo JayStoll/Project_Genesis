@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using IronPython.Hosting;
 
 namespace Project_Genesis_Source.Classes {
     public class PythonConnection {
@@ -74,25 +75,21 @@ namespace Project_Genesis_Source.Classes {
         public void CreatePDF() {
             string fileName = @"python\CreatePDF.py";
 
-            Process p = new Process {
-                StartInfo = new ProcessStartInfo(@"C:\Users\Owner\AppData\Local\Programs\Python\Python36-32\python.exe", fileName) {
-                    RedirectStandardOutput = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                }
-            };
-            p.Start();
-
-            string output = p.StandardOutput.ReadToEnd();
-            p.WaitForExit();
-
-            // used to delete the files as to not clutter the file with extra documents
-            File.Delete(clientFileInfo);
-            File.Delete(invoiceFileInfo);
-            File.Delete(labourFileInfo);
-            File.Delete(partFileInfo);
-            // prints if the PDF was created or not
-            MessageBox.Show(output);
+            var py = Python.CreateEngine();
+            try {
+                py.ExecuteFile(fileName);
+            } 
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+            finally {
+                // used to delete the files as to not clutter the file with extra documents
+                File.Delete(clientFileInfo);
+                File.Delete(invoiceFileInfo);
+                File.Delete(labourFileInfo);
+                File.Delete(partFileInfo);
+            }
+            
         }
     }
 }
