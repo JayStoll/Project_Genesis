@@ -139,9 +139,14 @@ namespace Project_Genesis_Source
 
         private void aboutUs_Click(object sender, RoutedEventArgs e)
         {
-            AboutUs AU= new AboutUs();
+            AboutUs AU = new AboutUs();
             AU.Show();
 
+        }
+
+        private void CloseApp_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

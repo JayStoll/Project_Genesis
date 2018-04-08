@@ -193,5 +193,22 @@ namespace Project_Genesis_Source
             boxNumtxt.Visibility = System.Windows.Visibility.Visible;
             boxNumtxt.Focus();
         }
+
+        //Company
+        private void CompanyTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
+        {
+            CompanyTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
+            CompanyTxt.Visibility = System.Windows.Visibility.Visible;
+            CompanyTxt.Focus();
+        }
+
+        private void CompanyTxt_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(CompanyTxt.Text))
+            {
+                CompanyTxt.Visibility = System.Windows.Visibility.Collapsed;
+                CompanyTxtWatermark.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
     }
 }

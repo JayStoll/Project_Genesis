@@ -23,5 +23,10 @@ namespace Project_Genesis_Source
         {
             InitializeComponent();
         }
+
+        private void ExitOnClick_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
