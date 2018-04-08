@@ -42,6 +42,22 @@ namespace Project_Genesis_Source {
                 }
             }
 
+            //Get list of VehicleInfo
+            string[] vehicleInfo = dataConnect.RetrieveVehicleInfo();
+
+            if (vehicleInfo.Length == 0)
+            {
+                MessageBox.Show("No vehicle information to populate with");
+            }
+            else
+            {
+                //print all vehicleinfo
+                for (int i = 0; i <vehicleInfo.Length; i++)
+                {
+                    VehicleList.Items.Add(vehicleInfo[i]);
+                }
+            }
+
         }
     }
 }
