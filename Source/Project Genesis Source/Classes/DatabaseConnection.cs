@@ -172,7 +172,7 @@ namespace Project_Genesis_Source.Classes {
         ///Retrieve information for manage client
         /// </summary>
         public string[] RetrieveFNames() {
-            //select query to retrieve first and ;ast name
+            //select query to retrieve first and last name
             string selectFName = @"SELECT Cus_FName, Cus_LName FROM Customer";
 
             // Creates a list that will hold all the information in the query
@@ -203,6 +203,49 @@ namespace Project_Genesis_Source.Classes {
             // returns the list as an array
             return fNames.ToArray();
 
+        }
+
+        ///<summary>
+        ///Retrieve Vehicle Names
+        /// </summary>
+        public string[] RetrieveVehicleInfo ()
+        {
+            //select query to retrieve vehicle name, type
+            string selectVehicle = @"SELECT Vehicle_Make, Vehicle_Type FROM Vehicle";
+
+            //create list to hold results of query
+            List<string> VehicleInfo = new List<string>();
+
+            using (conn = new SqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+                    //store command then execute
+                    command = new SqlCommand(selectVehicle, conn);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    //while the reader can read, insert into list
+                    int i = 0;
+                    while (reader.Read())
+                    {
+                        VehicleInfo.Insert(i, reader["Vehicle_Make"].ToString() + " " + reader["Vehicle_Type"].ToString());
+                        i++;
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex + ":error occured (Db connection)");
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+            }
+            //convert list to array then return
+            return VehicleInfo.ToArray();
         }
     }
 }
