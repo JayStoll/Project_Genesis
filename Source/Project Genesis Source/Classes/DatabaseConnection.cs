@@ -63,8 +63,6 @@ namespace Project_Genesis_Source.Classes {
             }
         }
 
-
-
         /// <summary>
         /// Add a new vehicle to the selected client and then to the database
         /// </summary>
@@ -118,9 +116,6 @@ namespace Project_Genesis_Source.Classes {
                 }
             }
         }
-
-
-
 
         /// <summary>
         /// Add a new part to the database
@@ -252,7 +247,5 @@ namespace Project_Genesis_Source.Classes {
             //convert list to array then return
             return VehicleInfo.ToArray();
         }
-
-
     }
 }
