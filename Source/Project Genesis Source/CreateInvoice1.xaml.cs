@@ -164,17 +164,36 @@ namespace Project_Genesis_Source {
 
 
         //watermark for GST TAX
-        private void gstTxt_LostFocus(object sender, RoutedEventArgs e) {
+        private void gstTxt_LostFocus(object sender, RoutedEventArgs e)
+        {
             if (string.IsNullOrEmpty(gstTxt.Text)) {
                 gstTxt.Visibility = System.Windows.Visibility.Collapsed;
                 gstTxtWatermark.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
-        private void gstTxtWatermark_GotFocus(object sender, RoutedEventArgs e) {
+        private void gstTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
+        {
             gstTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
             gstTxt.Visibility = System.Windows.Visibility.Visible;
             gstTxt.Focus();
+        }
+
+        //C/O Box
+        private void c_oBoxTxt_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(c_oBoxTxt.Text))
+            {
+                c_oBoxTxt.Visibility = System.Windows.Visibility.Collapsed;
+                c_oBoxTxtWatermark.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
+        private void c_oBoxTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
+        {
+            c_oBoxTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
+            c_oBoxTxt.Visibility = System.Windows.Visibility.Visible;
+            c_oBoxTxt.Focus();
         }
     }
 }

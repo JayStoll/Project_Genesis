@@ -8,24 +8,10 @@
       Title="Backup1" Width="1000" Height="500">
 
     <Grid>
-        <Button x:Name="backupInv" Content="Backup" Margin="4.326,84.358,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" Height="124.498" VerticalAlignment="Top">
-            <Button.BorderBrush>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF1397F1" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.BorderBrush>
-        </Button>
-        <Button x:Name="backupData" Content="Recover" Margin="4.326,213.187,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" Height="124.498" VerticalAlignment="Top">
-            <Button.BorderBrush>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF1397F1" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.BorderBrush>
-        </Button>
-      
-        <Button x:Name="cancelBackup" Content="Cancel" Margin="4.326,476.284,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" IsEnabled="False" Height="143.716" VerticalAlignment="Top">
+        <Button x:Name="backupInv" Content="Backup" Margin="4.326,12.025,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" Height="124.498" VerticalAlignment="Top" BorderBrush="#FF0C1249" BorderThickness="10,1,1,10"/>
+        <Button x:Name="backupData" Content="Recover" Margin="4.326,140.854,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" Height="124.498" VerticalAlignment="Top" BorderBrush="#FF0C1249" BorderThickness="10,1,1,10"/>
+
+        <Button x:Name="cancelBackup" Content="Cancel" Margin="4.326,346.284,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" IsEnabled="False" Height="143.716" VerticalAlignment="Top">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1397F1" Offset="0"/>
@@ -34,8 +20,7 @@
             </Button.BorderBrush>
         </Button>
         <Grid HorizontalAlignment="Right" Width="663.581">
-            <Label Content="Archived Invoices" Height="75" Margin="16,3.382,10,0" VerticalAlignment="Top" FontFamily="Splash" FontSize="50" Background="{x:Null}" Foreground="#FF0C1249"/>
-            <ListView Margin="16,83.382,10,10" FontFamily="Palatino Linotype" FontSize="20">
+            <ListView Margin="16,10,10,10" FontFamily="Palatino Linotype" FontSize="20">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn/>
