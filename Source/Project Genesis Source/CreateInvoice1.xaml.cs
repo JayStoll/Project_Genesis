@@ -25,7 +25,7 @@ namespace Project_Genesis_Source {
     public partial class CreateInvoice1 : Page {
 
         DatabaseConnection dc = new DatabaseConnection();
-        PythonConnection pc = new PythonConnection();
+        int partsAdded = 0;  // keeps track of the amount of parts being added into the invoice
 
         public CreateInvoice1() {
             InitializeComponent();
@@ -134,16 +134,39 @@ namespace Project_Genesis_Source {
                 VehicleSerialNumtxt.Text = "";
             }
         }
-        
+
+        private void AddPart(object sender, RoutedEventArgs e) {
+            partsAdded++;
+        }
+
+        private void RemovePart(object sender, RoutedEventArgs e) {
+            if (partsAdded == 0)
+                MessageBox.Show("No parts to remove!");
+            else
+                partsAdded--;
+            // remove the part from the list box
+        }
+
         private void CreateInvoice(object sender, RoutedEventArgs e) {
             // get the information from the text boxes
             // send that information to the correct method in the PythonConnection class
             // when all the functions were called
             // create a new PDF file
-            pc.CreatePDF();
         }
 
-
+        private void GeneratePDF() {
+            string[] missingInfo = dc.ReturnMissingClientInfo(CusFNameTxt.Text, CusLnameTxt.Text);
+            ClientInfo client = new ClientInfo {
+                ClientFName = CusFNameTxt.Text,
+                ClientLName = CusLnameTxt.Text,
+                Address = CusAddressTxt.Text,
+                CO = c_oBoxTxt.Text,
+                Company = missingInfo[0],
+                PostalCode = missingInfo[1],
+                BoxNum = missingInfo[2],
+                Vehicle = VehicleDropDown.SelectedItem.ToString()
+            };
+        }
 
         //AJ Santillan March 28, 2018
         //Watermarks

@@ -335,5 +335,38 @@ namespace Project_Genesis_Source.Classes {
             return cusInfo.ToArray();
         } 
 
+        public string[] ReturnMissingClientInfo(string FName, string LName) {
+            string query = "SELECT Cus_Company, Cus_PostalCode, Cus_BoxNum " +
+                "FROM Customer " +
+                "WHERE Cus_FName='" + FName + " AND Cus_LName='" + LName + "'";
+
+            List<string> vs = new List<string>();
+
+            using (conn = new SqlConnection(connString)) {
+                try {
+                    conn.Open();
+                    //store command then execute
+                    command = new SqlCommand(query, conn);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    //while it can read, insert into list
+                    int i = 0;
+                    while (reader.Read()) {
+                        vs.Insert(i, reader["Cus_Company"] + " " + reader["Cus_BoxNum"] + " " + reader["Cus_PostalCode"]);
+                        i++;
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
+                finally {
+                    conn.Close();
+                }
+            }
+
+            return vs.ToArray();
+        }
+
     }
 }
