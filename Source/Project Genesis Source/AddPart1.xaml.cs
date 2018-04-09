@@ -36,7 +36,7 @@ namespace Project_Genesis_Source
             
 
             //DO we still need this without the relation to Vehicle_Part???
-            string partVehicleOwn = ownerVehicleTxt.Text;
+ 
 
             showText();
 
@@ -61,7 +61,7 @@ namespace Project_Genesis_Source
             partNumTxt.Text = "";
             priceTxt.Text = "";
             notesTxt.Text = "";
-            ownerVehicleTxt.Text = "";
+
 
         }
 
@@ -169,23 +169,5 @@ namespace Project_Genesis_Source
             priceTxt.Focus();
         }
 
-
-        //Watermark Owners Vehicle
-        private void ownerVehicleTxt_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(ownerVehicleTxt.Text))
-            {
-                ownerVehicleTxt.Visibility = System.Windows.Visibility.Collapsed;
-                ownerVehicleTxtWatermark.Visibility = System.Windows.Visibility.Visible;
-            }
-
-        }
-
-        private void ownerVehicleTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
-        {
-            ownerVehicleTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
-            ownerVehicleTxt.Visibility = System.Windows.Visibility.Visible;
-            ownerVehicleTxt.Focus();
-        }
     }
 }

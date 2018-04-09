@@ -84,9 +84,9 @@
         </Grid.ColumnDefinitions>
 
         <Image Height="145.594" Margin="10,14.667,0,0" VerticalAlignment="Top" Source="icon.png" Stretch="Fill" HorizontalAlignment="Left" Width="140"/>
-        <Image x:Name="Exit" Height="49" Margin="1323.477,53.323,0,0" VerticalAlignment="Top" Source="Close.png" Stretch="Fill" HorizontalAlignment="Left" Width="49"/>
+        <Image x:Name="Exit" Height="49" Margin="1330.727,53.323,0,0" VerticalAlignment="Top" Source="Close.png" Stretch="Fill" HorizontalAlignment="Left" Width="49"/>
         <Image x:Name="Minimize1" Height="49" Margin="1264.327,53.323,101.529,0" VerticalAlignment="Top" Source="Minimize.png"/>
-        <Image x:Name="AboutUs" HorizontalAlignment="Left" Height="18.247" Margin="1265.365,112.989,0,0" VerticalAlignment="Top" Width="105.722" Source="AboutUst.png"/>
+        <Image x:Name="AboutUs" HorizontalAlignment="Left" Height="18.247" Margin="1269.865,112.989,0,0" VerticalAlignment="Top" Width="105.722" Source="AboutUst.png"/>
         <Button x:Name="home1" Content="Home" Margin="15,184.162,0,0" Background="#FFC8E6FA" Foreground="#FF0C1249" FontSize="30" FontFamily="Lithos Pro Regular" Height="76.69" VerticalAlignment="Top" BorderBrush="#FF0C1249" HorizontalAlignment="Left" Width="330" Click="home1_Click" IsTabStop="False" Cursor="Hand" Padding="10,5,5,10" UseLayoutRounding="False" ScrollViewer.CanContentScroll="True" BorderThickness="10,1,1,10"/>
 
         <Button x:Name="createInv" Content="Create Invoice" Margin="15,506.227,0,0" BorderBrush="#FF0C1249" Click="createInv_Click" Background="#FFC8E6FA" Foreground="#FF0C1249" FontSize="30" FontFamily="Lithos Pro Regular" Height="76.69" VerticalAlignment="Top" HorizontalAlignment="Left" Width="330" IsTabStop="False" Cursor="Hand" ScrollViewer.CanContentScroll="True" Padding="10,5,5,10" UseLayoutRounding="False" BorderThickness="10,1,1,10"/>
@@ -95,9 +95,8 @@
         <Button x:Name="addPart" Content="Add Part" Margin="15,425.703,0,0" BorderBrush="#FF0C1249" Click="addPart_Click" Background="#FFC8E6FA" Foreground="#FF0C1249" FontSize="30" FontFamily="Lithos Pro Regular" Height="76.69" VerticalAlignment="Top" HorizontalAlignment="Left" Width="330" IsTabStop="False" Cursor="Hand" ScrollViewer.CanContentScroll="True" Padding="10,5,5,10" UseLayoutRounding="False" BorderThickness="10,1,1,10"/>
         <Button x:Name="clientManage" Content="Manage Clients" Margin="15,586.752,0,0" BorderBrush="#FF0C1249" Click="clientManage_Click" Background="#FFC8E6FA" Foreground="#FF0C1249" FontSize="30" FontFamily="Lithos Pro Regular" Height="76.689" VerticalAlignment="Top" HorizontalAlignment="Left" Width="330" IsTabStop="False" Cursor="Hand" ScrollViewer.CanContentScroll="True" Padding="10,5,5,10" UseLayoutRounding="False" BorderThickness="10,1,1,10"/>
         <Button x:Name="backupTab" Content="Backup/&#xA;Archive" Margin="15,667.997,0,0" BorderBrush="#FF0C1249" Click="backupTab_Click" Background="#FFC8E6FA" Foreground="#FF0C1249" FontSize="30" FontFamily="Lithos Pro Regular" Height="91.125" VerticalAlignment="Top" HorizontalAlignment="Left" Width="330" IsTabStop="False" Cursor="Hand" ScrollViewer.CanContentScroll="True" Padding="10,5,5,10" UseLayoutRounding="False" BorderThickness="10,1,1,10"/>
-        <Button x:Name="aboutUs" Content="Button" HorizontalAlignment="Left" Height="27.413" VerticalAlignment="Top" Width="109.15" Background="White" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Click="aboutUs_Click" IsTabStop="False" Opacity="0.1" IsCancel="True" Margin="1264.327,109.323,0,0"/>
-        <Button x:Name="Minimize" Content="" Height="51" Margin="1266.76,53.323,104.239,0" VerticalAlignment="Top" Click="Minimize_Click" BorderBrush="{x:Null}" Background="White" Opacity="0.1" Foreground="{x:Null}" Cursor="Hand" Width="51"/>
-        <Button x:Name="Exit1" Content="Button" HorizontalAlignment="Left" Height="50" Margin="1323.477,53.323,0,0" VerticalAlignment="Top" Width="50" Click="Exit1_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="White" Opacity="0.1" Cursor="Hand"/>
+        <Button x:Name="Exit1" Content="Button" HorizontalAlignment="Left" Height="60.666" Margin="1325.471,47.323,0,0" VerticalAlignment="Top" Width="58.256" Click="Exit1_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="White" Opacity="0.1" Cursor="Hand"/>
+        <Button x:Name="aboutUs" Content="Button" HorizontalAlignment="Left" Height="27.413" VerticalAlignment="Top" Width="121.512" Background="White" BorderBrush="{x:Null}" Foreground="{x:Null}" Cursor="Hand" Click="aboutUs_Click" IsTabStop="False" Opacity="0.1" IsCancel="True" Margin="1262.215,107.989,0,0"/>
         <Frame x:Name="Main" Margin="354.75,184.162,0,0" NavigationUIVisibility="Hidden" Foreground="{x:Null}" Cursor="Hand" ClipToBounds="True" SnapsToDevicePixels="True" IsTabStop="False" Height="583.378" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1057.25">
             <Frame.Content>
                 <Grid Margin="10,0.5,0,10">
@@ -172,6 +171,7 @@
                 </LinearGradientBrush>
             </Rectangle.Stroke>
         </Rectangle>
+        <Button x:Name="Minimize" Content="" Height="60.666" Margin="1262.215,47.323,0,0" VerticalAlignment="Top" Click="Minimize_Click" BorderBrush="{x:Null}" Background="White" Opacity="0.1" Foreground="{x:Null}" Cursor="Hand" Width="58.256" HorizontalAlignment="Left"/>
 
     </Grid>
 </Window>
