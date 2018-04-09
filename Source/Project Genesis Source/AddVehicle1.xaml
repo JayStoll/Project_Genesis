@@ -6,11 +6,11 @@
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
 
-      Title="AddVehicle1" Width="1000" Height="500">
+      Title="AddVehicle1" Width="1000" Height="1286.425">
 
-    <ScrollViewer Margin="10">
+    <ScrollViewer Margin="10,10,10,394">
 
-        <Grid Height="976.5" Width="980">
+        <Grid Height="1274" Width="980">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
@@ -49,6 +49,7 @@
                     </LinearGradientBrush>
                 </Button.BorderBrush>
             </Button>
+            <ComboBox x:Name="clientname" Height="75" Margin="345,460,38,0" VerticalAlignment="Top"/>
             <TextBox Height="10" Margin="641.529,32.157,37.341,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="Black" Opacity="0.5" IsTabStop="False" Width="300"/>
             <Label x:Name="TitleLabel" Content="Add Vehicle" HorizontalAlignment="Left" Height="45" Margin="343.149,14,0,0" VerticalAlignment="Top" Width="267.861" FontFamily="Lithos Pro Regular" FontSize="38" FontWeight="Bold" Background="{x:Null}" Foreground="Black"/>
             <TextBox Height="10" Margin="10,32.157,668.87,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="Black" Opacity="0.5" IsTabStop="False" Width="300"/>

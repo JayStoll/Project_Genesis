@@ -7,10 +7,10 @@
       xmlns:GenesisDBDataSetTableAdapters="clr-namespace:Project_Genesis_Source.GenesisDBDataSetTableAdapters" x:Class="Project_Genesis_Source.CreateInvoice1"
       mc:Ignorable="d"
 
-      Title="CreateInvoice1" Width="1000" Height="500">
+      Title="CreateInvoice1" Width="1000" Height="1445">
 
-    <Grid Margin="0,0,0,-2615">
-        <ScrollViewer Margin="-6.569,1,24.839,2632.5" VerticalScrollBarVisibility="Visible" RenderTransformOrigin="0.5,0.5">
+    <Grid Margin="0,0,0,-2425.5" Height="3000">
+        <ScrollViewer Margin="-4,1,22,1892" VerticalScrollBarVisibility="Visible" RenderTransformOrigin="0.5,0.5">
             <ScrollViewer.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -60,6 +60,7 @@
 
                 <Label Content="Address" HorizontalAlignment="Left" Height="75" Margin="24.524,456,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
                 <TextBox x:Name="CusAddressTxt" Height="75" Margin="375.819,456,67.951,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="30" IsEnabled="False"/>
+
 
 
                 <Label Content="Phone Number" HorizontalAlignment="Left" Height="75" Margin="24.524,546,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
