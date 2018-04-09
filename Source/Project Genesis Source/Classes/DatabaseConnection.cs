@@ -208,12 +208,12 @@ namespace Project_Genesis_Source.Classes {
         ///<summary>
         ///Get Cus_ID
         /// </summary>
-        public int GetCus_ID(string Fname, string Lname)
+        public string GetCus_ID(string Fname, string Lname)
         {
 
             int cus_ID = 0;
             //query to get cus id
-            string selectCusID = @"SELECT Cus_ID FROM Customer WHERE Cus_LName == '" + Fname + "' AND Cus_LName == '" + Lname + "'";
+            string selectCusID = @"SELECT Cus_ID FROM Customer WHERE Cus_FName = '" + Fname + "' AND Cus_LName = '" + Lname + "'";
 
             using (conn = new SqlConnection(connString))
             {
@@ -236,7 +236,7 @@ namespace Project_Genesis_Source.Classes {
                 }
             }
 
-            return cus_ID;
+            return Convert.ToString(cus_ID);
 
         }
 
@@ -248,7 +248,7 @@ namespace Project_Genesis_Source.Classes {
         public string[] RetrieveVehicleInfo (string cus_ID)
         {
             //select query to retrieve vehicle name, type
-            string selectVehicle = @"SELECT Vehicle_Make, Vehicle_Type FROM Vehicle WHERE Cus_ID == '" + cus_ID +"'";
+            string selectVehicle = @"SELECT Vehicle_Make, Vehicle_Type FROM Vehicle WHERE Cus_ID = '" + cus_ID +"'";
 
             //create list to hold results of query
             List<string> VehicleInfo = new List<string>();
@@ -284,5 +284,56 @@ namespace Project_Genesis_Source.Classes {
             //convert list to array then return
             return VehicleInfo.ToArray();
         }
+
+
+        ///<summary>
+        ///Retrieve Customer Information
+        /// </summary>
+        public string[] retrieveCusInfo(string fname, string lname)
+        {
+            //select query for customer info
+            string selectCusInfo = @"SELECT Cus_Address, Cus_Phone, Cus_Email, Cus_BoxNum, Cus_PostalCode FROM Customer
+                                        WHERE Cus_FName = '" + fname + "' AND Cus_LName = '" + lname + "'";
+
+            //list to store results
+            List<string> cusInfo = new List<string>();
+
+            using (conn = new SqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+                    //store command then execute
+                    command = new SqlCommand(selectCusInfo, conn);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    //while it can read, insert into list
+                    //can this be an array since it will have a static number of indexes??
+                    int i = 0;
+                    while (reader.Read())
+                    {
+                        cusInfo.Insert(i,
+                            "Address: " + reader["Cus_Address"] + "/n" +
+                            "Phone: " + reader["Cus_Phone"] + "/n" +
+                            "Email: " + reader["Customer_Email"] + "/n" +
+                            "Box Number: " + reader["Cus_BoxNum"] + "/n" +
+                            "Postal Code: " + reader["Cus_PostalCode"] + "/n");
+                        i++;
+                    }
+                    reader.Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+            return cusInfo.ToArray();
+        } 
+
     }
 }

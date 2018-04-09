@@ -55,17 +55,28 @@ namespace Project_Genesis_Source
         }
 
         private void selectedName(object sender, SelectionChangedEventArgs e)
+        {   
+            /*
+            
+            */
+        }
+
+        //LOGIC TO FILL LIST BOXES, it stored in the EditBtnClick event for now because
+        //we havent figured out the onclick
+        private void EditBtnClick(object sender, RoutedEventArgs e)
         {
 
+            //store selected name, then split it into first and last and store in array
+            string selectedName = nameOutputBox.SelectedItem.ToString();
+            string[] firstAndLast = selectedName.Split(null);
 
-            string[] names = new string[nameOutputBox.Items.Count];
-            nameOutputBox.Items.CopyTo(names, 0);
-            MessageBox.Show(names[0]);
-           
-            
-            /*
-            //Get list of VehicleInfo
-            string[] vehicleInfo = dataConnect.RetrieveVehicleInfo();
+            //retrieve Cus_ID for retrieve vehicle, message box for debug
+            string cus_ID = dataConnect.GetCus_ID(firstAndLast[0], firstAndLast[1]);
+            MessageBox.Show(cus_ID);
+
+
+            //Get array of VehicleInfo
+            string[] vehicleInfo = dataConnect.RetrieveVehicleInfo(cus_ID);
 
             if (vehicleInfo.Length == 0)
             {
@@ -79,7 +90,23 @@ namespace Project_Genesis_Source
                     VehicleList.Items.Add(vehicleInfo[i]);
                 }
             }
-            */
+
+            //get array of cusinfo
+            string[] cusInfo = dataConnect.retrieveCusInfo(firstAndLast[0], firstAndLast[1]);
+
+            if (cusInfo.Length == 0)
+            {
+                MessageBox.Show("No customer information to populate with");
+            }
+            else
+            {
+                //print all cusinfo
+                for (int i = 0; i < vehicleInfo.Length; i++)
+                {
+                    CusInformationListBox.Items.Add(cusInfo[i]);
+                }
+            }
+
         }
     }
 }
