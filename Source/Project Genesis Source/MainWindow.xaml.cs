@@ -144,7 +144,12 @@ namespace Project_Genesis_Source
 
         }
 
-        private void CloseApp_Click(object sender, RoutedEventArgs e)
+        private void Minimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void Exit1_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
