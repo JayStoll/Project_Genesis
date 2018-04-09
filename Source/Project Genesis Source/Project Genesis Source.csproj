@@ -275,7 +275,12 @@
     <Resource Include="icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Minimize.png" />
+    <Resource Include="Min.png" />
+    <Resource Include="Title.png" />
+    <Resource Include="Name.png" />
     <Resource Include="12.png" />
+    <Resource Include="2018.png" />
     <Content Include="cajnERD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>cajnERD.edmx</DependentUpon>
@@ -286,6 +291,10 @@
       <DependentUpon>cajnERD.edmx</DependentUpon>
       <LastGenOutput>cajnERD.cs</LastGenOutput>
     </Content>
+    <Resource Include="Exit.png" />
+    <Resource Include="Exit1.png" />
+    <Resource Include="Exit2.png" />
+    <Resource Include="Close.png" />
     <Content Include="GenesisDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -311,4 +320,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>

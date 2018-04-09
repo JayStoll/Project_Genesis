@@ -139,9 +139,19 @@ namespace Project_Genesis_Source
 
         private void aboutUs_Click(object sender, RoutedEventArgs e)
         {
-            AboutUs AU= new AboutUs();
+            AboutUs AU = new AboutUs();
             AU.Show();
 
+        }
+
+        private void Minimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void Exit1_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

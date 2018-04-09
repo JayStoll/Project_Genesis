@@ -63,8 +63,6 @@ namespace Project_Genesis_Source.Classes {
             }
         }
 
-
-
         /// <summary>
         /// Add a new vehicle to the selected client and then to the database
         /// </summary>
@@ -119,9 +117,6 @@ namespace Project_Genesis_Source.Classes {
             }
         }
 
-
-
-
         /// <summary>
         /// Add a new part to the database
         /// </summary>
@@ -162,23 +157,6 @@ namespace Project_Genesis_Source.Classes {
             }
         }
 
-        /*CURRENTLY NOT IN USE. keep here until we make a firm decision on whether we need vehicle part
-        public void AddVehiclePart(int partId, int vehicle_Id)
-        {
-            //send information to Vehicle_Part
-            
-            //insert query
-            //string insertVehiclePartData = @"INSERT INTO Vehicle_Part(Part_ID, Vehicle_ID) 
-            //                                    VALUES (@Part_ID, @Vehicle_ID)";
-            //select IDs from respective tables
-
-            //string selectVehicleInformation = @"SELECT Vehicle_ID FROM Vehicle Where Vehicle_ID = " + vehicle_Id;
-            //string selectPartInformation = @"SELECT Part_ID FROM Part Where"
-        }
-        */
-
-
-
         /// <summary>
         /// Add invoice information to the database
         /// </summary>
@@ -194,7 +172,7 @@ namespace Project_Genesis_Source.Classes {
         ///Retrieve information for manage client
         /// </summary>
         public string[] RetrieveFNames() {
-            //select query to retrieve first and ;ast name
+            //select query to retrieve first and last name
             string selectFName = @"SELECT Cus_FName, Cus_LName FROM Customer";
 
             // Creates a list that will hold all the information in the query
@@ -227,59 +205,135 @@ namespace Project_Genesis_Source.Classes {
 
         }
 
-        /* TODO - delete this if not needed
-        public string RetrieveName()
+        ///<summary>
+        ///Get Cus_ID
+        /// </summary>
+        public string GetCus_ID(string Fname, string Lname)
         {
-            //select query to get FName 
-            string selectFName = @"SELECT Cus_FName FROM Customer";
 
-            //select query to get LName
-            string selectLName = @"SELECT Cus_LName FROM Customer";
+            int cus_ID = 0;
+            //query to get cus id
+            string selectCusID = @"SELECT Cus_ID FROM Customer WHERE Cus_FName = '" + Fname + "' AND Cus_LName = '" + Lname + "'";
 
-            //command variable for LName
-            SqlCommand lNameCommand;
-            SqlCommand fNameCommand;
-            SqlConnection listconnect;
-            //store results of selects
-            string storedFName;
-            string storedLName;
-            string errorReturn = "0";
-
-            //connects to database, selects fname and lname and stores it. then returns the stored names concated together
-            using (listconnect = new SqlConnection(connString))
+            using (conn = new SqlConnection(connString))
             {
-                //open connection, retrieves & stores FName & LName, Concats them into storedFullName and  returns, then closes connection
                 try
                 {
-                    listconnect.Open();
+                    conn.Open();
 
-                    fNameCommand = new SqlCommand(selectFName, conn);
-                    lNameCommand = new SqlCommand(selectLName, conn);
+                    command = new SqlCommand(selectCusID, conn);
+                    cus_ID = Convert.ToInt32(command.ExecuteScalar());
 
-                    storedFName = command.ExecuteScalar().ToString();
-                    MessageBox.Show(storedFName);
-                    storedLName = command.ExecuteScalar().ToString();
-                    MessageBox.Show(storedLName);
-
-                    //concats stored names together, returns stored full name
-                    string storedFullName = storedFName + " " + storedLName;
-                    MessageBox.Show(storedFullName);
-                    return storedFullName;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex + ": Error occured while selecting first name");
-                    return errorReturn;
+                    MessageBox.Show(ex.Message);
                 }
                 finally
                 {
-                    listconnect.Close();
+                    conn.Close();
+                    
                 }
-                
             }
-        }*/
+
+            return Convert.ToString(cus_ID);
+
+        }
 
 
+
+        ///<summary>
+        ///Retrieve Vehicle Names
+        /// </summary>
+        public string[] RetrieveVehicleInfo (string cus_ID)
+        {
+            //select query to retrieve vehicle name, type
+            string selectVehicle = @"SELECT Vehicle_Make, Vehicle_Type FROM Vehicle WHERE Cus_ID = '" + cus_ID +"'";
+
+            //create list to hold results of query
+            List<string> VehicleInfo = new List<string>();
+
+            using (conn = new SqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+                    //store command then execute
+                    command = new SqlCommand(selectVehicle, conn);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    //while the reader can read, insert into list
+                    int i = 0;
+                    while (reader.Read())
+                    {
+                        VehicleInfo.Insert(i, reader["Vehicle_Make"].ToString() + " " + reader["Vehicle_Type"].ToString());
+                        i++;
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex + ":error occured (Db connection)");
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+            }
+            //convert list to array then return
+            return VehicleInfo.ToArray();
+        }
+
+
+        ///<summary>
+        ///Retrieve Customer Information
+        /// </summary>
+        public string[] retrieveCusInfo(string fname, string lname)
+        {
+            //select query for customer info
+            string selectCusInfo = @"SELECT Cus_Address, Cus_Phone, Cus_Email, Cus_BoxNum, Cus_PostalCode FROM Customer
+                                        WHERE Cus_FName = '" + fname + "' AND Cus_LName = '" + lname + "'";
+
+            //list to store results
+            List<string> cusInfo = new List<string>();
+
+            using (conn = new SqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+                    //store command then execute
+                    command = new SqlCommand(selectCusInfo, conn);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    //while it can read, insert into list
+                    //can this be an array since it will have a static number of indexes??
+                    int i = 0;
+                    while (reader.Read())
+                    {
+                        cusInfo.Insert(i,
+                            "Address: " + reader["Cus_Address"] + "/n" +
+                            "Phone: " + reader["Cus_Phone"] + "/n" +
+                            "Email: " + reader["Customer_Email"] + "/n" +
+                            "Box Number: " + reader["Cus_BoxNum"] + "/n" +
+                            "Postal Code: " + reader["Cus_PostalCode"] + "/n");
+                        i++;
+                    }
+                    reader.Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+            return cusInfo.ToArray();
+        } 
 
     }
 }
