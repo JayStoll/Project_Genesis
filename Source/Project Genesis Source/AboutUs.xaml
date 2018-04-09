@@ -9,8 +9,8 @@
     <Grid Background="#FF739EB8">
         <Image Margin="529.5,18.5,10,94.5" Source="12.png"/>
         <TextBlock Margin="106,405,10,10" TextWrapping="Wrap" FontSize="68" FontFamily="Ethnocentric" Text="CAJN SOFTWARE"/>
-        <TextBlock Margin="10,37.5,467.5,105" TextWrapping="Wrap" FontSize="30" FontFamily="Wide Latin"><Run Foreground="#FF360000" Text="Conner"/><Run Text=" - &#x9;Back-End "/><LineBreak/><Run Text="&#x9;&#x9;/Database"/><LineBreak/><Run Foreground="#FF00044D" Text="AJ"/><Run Text=" - &#x9;&#x9;Front-End"/><LineBreak/><Run Text="&#x9;&#x9;/UI"/><LineBreak/><Run Foreground="White" Text="Jayden "/><Run Text="- &#x9;Back-End"/><LineBreak/><Run Text="&#x9;&#x9;General"/><LineBreak/><Run Text="Neil - &#x9;Back-End"/><LineBreak/><Run Text="&#x9;&#x9;/Database"/></TextBlock>
+        <TextBlock Margin="10,37.5,445.5,105" TextWrapping="Wrap" FontSize="30" FontFamily="Wide Latin"><Run Foreground="#FF360000" Text="Conner"/><Run Text=" - &#x9;Back-End "/><LineBreak/><Run Text="&#x9;&#x9;/Database"/><LineBreak/><Run Foreground="#FF00044D" Text="AJ"/><Run Text=" - &#x9;&#x9;Front-End"/><LineBreak/><Run Text="&#x9;&#x9;/UI"/><LineBreak/><Run Foreground="White" Text="Jayden "/><Run Text="- &#x9;Back-End"/><LineBreak/><Run Text="&#x9;&#x9;General"/><LineBreak/><Run Text="Neil - &#x9;Back-End"/><LineBreak/><Run Text="&#x9;&#x9;/Database"/></TextBlock>
         <Image Source="icon.png" Margin="10,356,886,10"/>
-        <Button x:Name="ExitOnClick" Content="Button" Background="Black" BorderBrush="Black" Foreground="{x:Null}" Click="ExitOnClick_Click" Cursor="Hand" IsCancel="True" Opacity="0.1"/>
+        <Button x:Name="ExitOnClick" Content="Button" Background="Black" BorderBrush="Black" Foreground="{x:Null}" Click="ExitOnClick_Click" Cursor="Hand" IsCancel="True" Opacity="0.1" d:IsLocked="True"/>
     </Grid>
 </Window>
