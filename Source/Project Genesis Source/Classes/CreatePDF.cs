@@ -156,6 +156,8 @@ namespace Project_Genesis_Source.Classes {
                 gfx.DrawString(y, font, XBrushes.Black,
                     new XRect(leftAlign, (printDownPage += downPercent), page.Width, page.Height), XStringFormats.TopLeft);
             }
+            gfx.DrawString(client.Vehicle, font, XBrushes.Black,
+                    new XRect(leftAlign, (printDownPage += (downPercent * 2)), page.Width, page.Height), XStringFormats.TopLeft);
             #endregion
             #region Print Total Text - Hard Coded
             double newTemp = printDownPage + (downPercent * 20);
@@ -204,6 +206,7 @@ namespace Project_Genesis_Source.Classes {
         public string BoxNum { get; set; }
         public string Address { get; set; }
         public string PostalCode { get; set; }
+        public string Vehicle { get; set; }
     }
 
     /// <summary>
