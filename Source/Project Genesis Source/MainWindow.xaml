@@ -162,8 +162,8 @@
         </Frame>
         <Rectangle Fill="#FF313FBF" HorizontalAlignment="Left" Height="5" Margin="15,169.58,0,0" Stroke="#FF0C1249" VerticalAlignment="Top" Width="1397"/>
         <Rectangle Fill="#FF313FBF" HorizontalAlignment="Left" Margin="356,184.162,0,20.5" Stroke="#FF0C1249" Width="5"/>
-        <Image Height="279" Margin="115.5,-34.735,0,0" VerticalAlignment="Top" Source="Title.png" HorizontalAlignment="Left" Width="930"/>
-        <Image HorizontalAlignment="Left" Height="343.08" Margin="900.5,-1.735,0,0" VerticalAlignment="Top" Width="396.5" Source="2018.png" d:IsLocked="True"/>
+        <Image Height="279" Margin="115.5,-46.735,0,0" VerticalAlignment="Top" Source="Title.png" HorizontalAlignment="Left" Width="930"/>
+        <Image HorizontalAlignment="Left" Height="343.08" Margin="900.5,-13.735,0,0" VerticalAlignment="Top" Width="396.5" Source="2018.png"/>
         <Rectangle Height="154.58" Margin="10,10,0,0" RadiusY="69.5" RadiusX="69.5" StrokeThickness="10" VerticalAlignment="Top" d:IsLocked="True">
             <Rectangle.Stroke>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
