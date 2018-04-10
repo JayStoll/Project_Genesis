@@ -299,6 +299,8 @@
     <Resource Include="Name.png" />
     <Resource Include="12.png" />
     <Resource Include="2018.png" />
+    <Resource Include="AboutUs.png" />
+    <Resource Include="AboutUst.png" />
     <Content Include="cajnERD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>cajnERD.edmx</DependentUpon>
