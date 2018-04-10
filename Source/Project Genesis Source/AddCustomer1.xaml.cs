@@ -26,6 +26,8 @@ namespace Project_Genesis_Source
             InitializeComponent();
         }
 
+        //TODO clear feilds, check for missing, duplicate records
+
         private void Add_Customer_Click(object sender, RoutedEventArgs e)
         {
             //initialize strings from textboxes
