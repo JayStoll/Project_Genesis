@@ -10,10 +10,10 @@
 
     <ScrollViewer Height="480" Margin="10,10,10,0" VerticalAlignment="Top">
 
-        <Grid Height="1010" Width="980">
+        <Grid Height="908" Width="980">
             <Label Content="Name" HorizontalAlignment="Left" Height="75" Margin="10.521,102.5,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
             <TextBox x:Name="nameTxt" LostFocus="nameTxt_LostFocus" Height="75" Margin="315.521,102.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" IsTabStop="False"/>
-            <TextBox x:Name="nameTxtWatermark" GotFocus="nameTxtWatermark_GotFocus" Text="John Doe" Height="75" Margin="315.521,102.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" Opacity="0.5"/>
+            <TextBox x:Name="nameTxtWatermark" GotFocus="nameTxtWatermark_GotFocus" Text="Break Pads" Height="75" Margin="315.521,102.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" Opacity="0.5"/>
 
             <Label Content="Serial Number" HorizontalAlignment="Left" Height="75" Margin="10.521,190,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
             <TextBox x:Name="serialNumTxt" LostFocus="serialNumTxt_LostFocus" Height="75" Margin="315.521,190,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" IsTabStop="False"/>
@@ -27,14 +27,10 @@
             <TextBox x:Name="priceTxt" LostFocus="priceTxt_LostFocus" Height="75" Margin="315.521,365,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" IsTabStop="False"/>
             <TextBox x:Name="priceTextWatermark" GotFocus="priceTextWatermark_GotFocus" Text="$100.00" Height="75" Margin="315.521,365,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" Opacity="0.5"/>
 
-            <Label Content="Vehicle" HorizontalAlignment="Left" Height="75" Margin="10.521,452.5,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-            <TextBox x:Name="ownerVehicleTxt" LostFocus="ownerVehicleTxt_LostFocus" Height="75" Margin="315.521,452.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" IsTabStop="False"/>
-            <TextBox x:Name="ownerVehicleTxtWatermark" GotFocus="ownerVehicleTxtWatermark_GotFocus" Text="Ford Truck" Height="75" Margin="315.521,452.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" Opacity="0.5"/>
+            <Label Content="Notes" HorizontalAlignment="Left" Height="75" Margin="10.521,453,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
+            <TextBox x:Name="notesTxt" Margin="315.521,453,52,0" TextWrapping="Wrap" FontSize="36" FontFamily="Palatino Linotype" Height="200" VerticalAlignment="Top"/>
 
-            <Label Content="Notes" HorizontalAlignment="Left" Height="75" Margin="10.521,540,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-            <TextBox x:Name="notesTxt" Margin="315.521,540,52,0" TextWrapping="Wrap" FontSize="36" FontFamily="Palatino Linotype" Height="200" VerticalAlignment="Top"/>
-
-            <Button x:Name="addPartButton" Content="Add Part" Height="60" Margin="621.627,782,52,0" VerticalAlignment="Top" FontFamily="Lithos Pro Regular" FontSize="35" Background="{x:Null}" Click="AddPartButton_Click">
+            <Button x:Name="addPartButton" Content="Add Part" Height="60" Margin="621.627,695,52,0" VerticalAlignment="Top" FontFamily="Lithos Pro Regular" FontSize="35" Background="{x:Null}" Click="AddPartButton_Click">
                 <Button.BorderBrush>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF1397F1" Offset="0"/>

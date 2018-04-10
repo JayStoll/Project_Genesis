@@ -218,5 +218,24 @@ namespace Project_Genesis_Source {
             c_oBoxTxt.Visibility = System.Windows.Visibility.Visible;
             c_oBoxTxt.Focus();
         }
+
+
+        //Hours worked
+        private void hoursWorkedTxt_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(hoursWorkedTxt.Text))
+            {
+                hoursWorkedTxt.Visibility = System.Windows.Visibility.Collapsed;
+                hoursWorkedTxtWatermark.Visibility = System.Windows.Visibility.Visible;
+            }
+
+        }
+
+        private void hoursWorkedTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
+        {
+            hoursWorkedTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
+            hoursWorkedTxt.Visibility = System.Windows.Visibility.Visible;
+            hoursWorkedTxt.Focus();
+        }
     }
 }
