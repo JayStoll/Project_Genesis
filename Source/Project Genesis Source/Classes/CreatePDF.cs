@@ -184,7 +184,7 @@ namespace Project_Genesis_Source.Classes {
             #endregion
 
             // set the file to print the document
-            string filename = @"invoices\" + client.ClientFName + " " + client.ClientLName + @"\" + client.ClientFName + client.ClientLName + DateTime.Now.ToString("dd/mm/yyyy") + ".pdf";
+            string filename = @"..\invoices\" + client.ClientFName + " " + client.ClientLName + @"\" + client.ClientFName + client.ClientLName + DateTime.Now.ToString("dd/mm/yyyy") + ".pdf";
             // creates a new directory if one is not present
             System.IO.FileInfo file = new System.IO.FileInfo(filename);
             file.Directory.Create();  // Skips this if the file path is found
