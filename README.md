@@ -3,8 +3,8 @@
 CAJNVoice is a invoice generation software. The project started development Feburary 9 2018 by CAJN Software for our system design class at Lethbridge College.
 
 ## Built With
-[Visual Studio 2017](https://www.visualstudio.com/) - IDE used to create full project
-[PDFsharp](http://www.pdfsharp.net/) - creation of the PDF files
+* [Visual Studio 2017](https://www.visualstudio.com/) - IDE used to create full project
+* [PDFsharp](http://www.pdfsharp.net/) - creation of the PDF files
 
 ## Authors
 * **Conner Schissler** - *Database creation + management* - [Schiss](https://github.com/Schiiss)
