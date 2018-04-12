@@ -7,10 +7,10 @@
       xmlns:GenesisDBDataSetTableAdapters="clr-namespace:Project_Genesis_Source.GenesisDBDataSetTableAdapters" x:Class="Project_Genesis_Source.CreateInvoice1"
       mc:Ignorable="d"
 
-      Title="CreateInvoice1" Width="1000" Height="550">
+      Title="CreateInvoice1" Width="1000" Height="2515">
 
-    <Grid Margin="0,0,0,-2726">
-        <ScrollViewer Margin="-6.842,1,25.112,2743.5" VerticalScrollBarVisibility="Visible" RenderTransformOrigin="0.5,0.5">
+    <Grid Margin="0,0,0,-2756">
+        <ScrollViewer Margin="-11,1,30,4686" VerticalScrollBarVisibility="Visible" RenderTransformOrigin="0.5,0.5">
             <ScrollViewer.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -76,7 +76,10 @@
                 <Label Content="Serial Number" HorizontalAlignment="Left" Height="76" Margin="25,887,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Grid.Row="1"/>
                 <TextBox x:Name="VehicleSerialNumtxt" Height="76" Margin="376,887,68.767,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="30" IsEnabled="False" Grid.Row="1"/>
 
-
+                <Label Content="Total Cost:" HorizontalAlignment="Left" Height="75" Margin="10,2068,0,0" VerticalAlignment="Top" Width="285" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
+                <Label x:Name="totalCosttxt" Content="" HorizontalAlignment="Left" Height="75" Margin="295,2068,0,0" VerticalAlignment="Top" Width="285" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
+                
+                
                 <Label Content="Part" HorizontalAlignment="Left" Height="75" Margin="25,1186,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Grid.Row="1"/>
                 <TextBox x:Name="PartTxt" Height="75" Margin="376,1186,68.767,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" FontFamily="Palatino Linotype" IsEnabled="False" Grid.Row="1"/>
                 <Label Content="Price" HorizontalAlignment="Left" Height="76" Margin="25,1273,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Grid.Row="1"/>
@@ -99,6 +102,9 @@
                         </LinearGradientBrush>
                     </Button.BorderBrush>
                 </Button>
+
+
+
                 <Label Content="C/O Box" HorizontalAlignment="Left" Height="75" Margin="25,2216,0,0" VerticalAlignment="Top" Width="285" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Grid.Row="1"/>
                 <TextBox x:Name="c_oBoxTxt" LostFocus="c_oBoxTxt_LostFocus" HorizontalAlignment="Left" Height="75" Margin="376,2216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="549" FontSize="25" Grid.Row="1"/>
                 <TextBox x:Name="c_oBoxTxtWatermark" GotFocus="c_oBoxTxtWatermark_GotFocus" Text="Leave Blank will use selected client name" HorizontalAlignment="Left" Height="75" Margin="376,2216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="549" FontSize="25" Opacity="0.5" Grid.Row="1"/>

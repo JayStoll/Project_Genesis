@@ -181,6 +181,7 @@ namespace Project_Genesis_Source {
             // add the price of the part to the total cost
             totalCostOfParts += dc.GetPartPrice(PartDropDown.SelectedItem.ToString());
 
+            totalCosttxt.Content = totalCosttxt.ToString();
             // adds the part name to the total cost of parts
             PartsAddedList.Items.Add(PartDropDown.SelectedItem.ToString());
             PartDropDown.SelectedIndex = -1;
@@ -203,6 +204,7 @@ namespace Project_Genesis_Source {
                     // deletes the entered part from the list
                     PartsAddedList.Items.RemoveAt(PartsAddedList.SelectedIndex);
                     partsAdded--;
+                    totalCosttxt.Content = totalCosttxt.ToString();
                 }
                 catch (Exception ex) {
                     MessageBox.Show("No Item selected!");
