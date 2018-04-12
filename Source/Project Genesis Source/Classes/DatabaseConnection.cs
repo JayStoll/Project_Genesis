@@ -337,7 +337,7 @@ namespace Project_Genesis_Source.Classes {
         public string[] ReturnMissingClientInfo(string FName, string LName) {
             string query = "SELECT Cus_Company, Cus_PostalCode, Cus_BoxNum " +
                 "FROM Customer " +
-                "WHERE Cus_FName='" + FName + " AND Cus_LName='" + LName + "'";
+                "WHERE Cus_FName='" + FName + "' AND Cus_LName='" + LName + "'";
 
             List<string> vs = new List<string>();
 
@@ -351,8 +351,11 @@ namespace Project_Genesis_Source.Classes {
                     //while it can read, insert into list
                     int i = 0;
                     while (reader.Read()) {
-                        vs.Insert(i, reader["Cus_Company"] + " " + reader["Cus_BoxNum"] + " " + reader["Cus_PostalCode"]);
+                        vs.Insert(i, reader["Cus_Company"].ToString());
                         i++;
+                        vs.Insert(i, reader["Cus_PostalCode"].ToString());
+                        i++;
+                        vs.Insert(i, reader["Cus_BoxNum"].ToString());
                     }
                     reader.Close();
                 }

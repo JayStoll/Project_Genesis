@@ -181,7 +181,7 @@ namespace Project_Genesis_Source {
             // add the price of the part to the total cost
             totalCostOfParts += dc.GetPartPrice(PartDropDown.SelectedItem.ToString());
 
-            totalCosttxt.Content = totalCosttxt.ToString();
+            totalCosttxt.Content = totalCostOfParts.ToString();
             // adds the part name to the total cost of parts
             PartsAddedList.Items.Add(PartDropDown.SelectedItem.ToString());
             PartDropDown.SelectedIndex = -1;
@@ -204,7 +204,7 @@ namespace Project_Genesis_Source {
                     // deletes the entered part from the list
                     PartsAddedList.Items.RemoveAt(PartsAddedList.SelectedIndex);
                     partsAdded--;
-                    totalCosttxt.Content = totalCosttxt.ToString();
+                    totalCosttxt.Content = totalCostOfParts.ToString();
                 }
                 catch (Exception ex) {
                     MessageBox.Show("No Item selected!");
@@ -218,6 +218,7 @@ namespace Project_Genesis_Source {
 
         private void GeneratePDF() {
             string[] missingInfo = dc.ReturnMissingClientInfo(CusFNameTxt.Text, CusLnameTxt.Text);
+            MessageBox.Show(missingInfo[0] + " " + missingInfo[1] + " " + missingInfo[2]);
             ClientInfo client = new ClientInfo {
                 ClientFName = CusFNameTxt.Text,
                 ClientLName = CusLnameTxt.Text,
@@ -236,10 +237,16 @@ namespace Project_Genesis_Source {
                 Tax = gstTxt.Text
             };
 
+            string partsUsed = string.Empty;
+
+            foreach (var item in PartsAddedList.Items) {
+                partsUsed += item + " ";
+            }
+
             PartInfo part = new PartInfo {
                 AmountOfParts = partsAdded.ToString(),
-                PartsUsed = "test", // TODO finish the rest of filling this information
-                PartTotal = "100"
+                PartsUsed = partsUsed,
+                PartTotal = totalCosttxt.Content.ToString()
             };
 
             CreatePDF invoice = new CreatePDF();
