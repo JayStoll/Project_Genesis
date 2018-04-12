@@ -16,12 +16,11 @@ namespace Project_Genesis_Source.Classes {
     /// Connect and create querys to the database
     /// </summary>
     public class DatabaseConnection {
-
         //initailize 
-        public string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GenesisDB.mdf;Integrated Security=True;Connect Timeout=30";
-        // SqlDataAdapter dataAdapater;
-        // System.Data.DataTable table;
-        // SqlCommandBuilder commandBuilder;
+        // change the path where the program looks for the database
+        static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+        public string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + path + @"\CAJNData\GenesisDB.mdf;Integrated Security=True;Connect Timeout=30";
         public SqlConnection conn;
         SqlCommand command;
 
@@ -366,6 +365,23 @@ namespace Project_Genesis_Source.Classes {
             }
 
             return vs.ToArray();
+        }
+
+        public double GetPartPrice(string selectedPart) {
+            string getSelectedPartInfo = "SELECT Part_Price FROM Part WHERE Part_Name='" + selectedPart + "'";
+
+            using (conn = new SqlConnection(connString)) {
+                conn.Open();
+                SqlCommand command = new SqlCommand(getSelectedPartInfo, conn);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read()) {
+                    double pricePart = Double.Parse(reader["Part_Price"].ToString());
+                    return pricePart;
+                }
+            }
+
+            // only returns if there was an error
+            return 0.0;
         }
 
     }
