@@ -113,15 +113,9 @@
                 <TextBox x:Name="hoursWorkedTxtWatermark" GotFocus="hoursWorkedTxtWatermark_GotFocus" HorizontalAlignment="Left" Height="75" Margin="375.819,2861.343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="548.549" FontSize="35" FontFamily="285.127" Opacity="0.5"/>
 
 
-<<<<<<< HEAD
-                <Label Content="GST / HST" HorizontalAlignment="Left" Height="75" Margin="24.524,3048.843,0,0" VerticalAlignment="Top" Width="285.127" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-                <TextBox x:Name="gstTxt" LostFocus="gstTxt_LostFocus" Height="75" Margin="375.819,3051.703,69.399,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="30" IsTabStop="False"/>
-                <TextBox x:Name="gstTxtWatermark" GotFocus="gstTxtWatermark_GotFocus" Text="$##.##" Height="75" Margin="375.819,3053.203,69.399,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Opacity="0.5"/>
-=======
                 <Label Content="GST / HST" HorizontalAlignment="Left" Height="75" Margin="24.524,2951.343,0,0" VerticalAlignment="Top" Width="285.127" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
                 <TextBox x:Name="gstTxt" LostFocus="gstTxt_LostFocus" Height="75" Margin="375.819,2955.703,69.399,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="30" IsTabStop="False"/>
                 <TextBox x:Name="gstTxtWatermark" GotFocus="gstTxtWatermark_GotFocus" Text="G" Height="75" Margin="375.819,2955.703,69.399,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Opacity="0.5"/>
->>>>>>> b30be574c18c18b361f3e176677addd8c067915e
 
 
                 <TextBox Height="10" Margin="339.159,688.343,54.608,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False" Width="600"/>
