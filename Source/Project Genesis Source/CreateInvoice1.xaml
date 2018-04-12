@@ -7,10 +7,10 @@
       xmlns:GenesisDBDataSetTableAdapters="clr-namespace:Project_Genesis_Source.GenesisDBDataSetTableAdapters" x:Class="Project_Genesis_Source.CreateInvoice1"
       mc:Ignorable="d"
 
-      Title="CreateInvoice1" Width="1000" Height="1445">
+      Title="CreateInvoice1" Width="1000" Height="550">
 
-    <Grid Margin="0,0,0,-1916">
-        <ScrollViewer Margin="-6,1,25,2734" VerticalScrollBarVisibility="Visible" RenderTransformOrigin="0.5,0.5">
+    <Grid Margin="0,0,0,-2726">
+        <ScrollViewer Margin="-6.842,1,25.112,2743.5" VerticalScrollBarVisibility="Visible" RenderTransformOrigin="0.5,0.5">
             <ScrollViewer.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
