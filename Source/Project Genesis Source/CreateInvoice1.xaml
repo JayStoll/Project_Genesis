@@ -118,6 +118,7 @@
                 <TextBox x:Name="rateTxt" LostFocus="rateTxt_LostFocus" Height="75" Margin="376,2718,68.767,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="30" IsTabStop="False" Grid.Row="1"/>
                 <TextBox x:Name="rateTxtWatermark" GotFocus="rateTxtWatermark_GotFocus" Text="10" Height="75" Margin="376,2718,68.767,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="35" Opacity="0.5" Grid.Row="1"/>
 
+                
                 <Label x:Name="HoursWorked" Content="Hours Worked" HorizontalAlignment="Left" Height="75" Margin="25,2808,0,0" VerticalAlignment="Top" Width="346" FontFamily="Lithos Pro Regular" FontSize="36" Grid.Row="1"/>
                 <TextBox x:Name="hoursWorkedTxt" LostFocus="hoursWorkedTxt_LostFocus" HorizontalAlignment="Left" Height="75" Margin="376,2808,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="549" FontSize="35" FontFamily="285.127" IsTabStop="False" Grid.Row="1"/>
                 <TextBox x:Name="hoursWorkedTxtWatermark" GotFocus="hoursWorkedTxtWatermark_GotFocus" HorizontalAlignment="Left" Height="75" Margin="376,2808,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="549" FontSize="35" FontFamily="285.127" Opacity="0.5" Grid.Row="1"/>

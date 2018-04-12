@@ -53,7 +53,10 @@ namespace Project_Genesis_Source.Classes {
                     new XRect(leftAlign, (printDownPage += downPercent + 5), page.Width, page.Height), XStringFormats.TopLeft);
                 gfx.DrawString(client.Company, font, XBrushes.Black,
                     new XRect(leftAlign, (printDownPage += downPercent), page.Width, page.Height), XStringFormats.TopLeft);
-                gfx.DrawString("C/O " + client.CO != " " ? client.CO : client.ClientFName + " " + client.ClientLName, font, XBrushes.Black,
+
+                string coLine = (client.CO != " ") ? client.CO : client.ClientFName + " " + client.ClientLName;
+
+                gfx.DrawString("C/O " + coLine, font, XBrushes.Black,
                     new XRect(leftAlign, (printDownPage += downPercent), page.Width, page.Height), XStringFormats.TopLeft);
                 gfx.DrawString(client.BoxNum, font, XBrushes.Black,
                     new XRect(leftAlign, (printDownPage += downPercent), page.Width, page.Height), XStringFormats.TopLeft);
@@ -186,12 +189,12 @@ namespace Project_Genesis_Source.Classes {
                 #endregion
 
                 // set the file to print the document
-                string filename = @"invoices\" + client.ClientFName + " " + client.ClientLName + @"\" + client.ClientFName + client.ClientLName + DateTime.Now.ToString("dd/mm/yyyy") + ".pdf";
+                string filename = @"invoices\" + client.ClientFName + " " + client.ClientLName + @"\" + client.ClientFName + client.ClientLName + DateTime.Now.ToString("dd/MM/yyyy") + ".pdf";
                 // creates a new directory if one is not present
                 System.IO.FileInfo file = new System.IO.FileInfo(filename);
                 file.Directory.Create();  // Skips this if the file path is found
-                                          // save the PDF in the specified file path
-                doc.Save(filename);
+                                          
+                doc.Save(filename);       // save the PDF in the specified file path
                 // auto open the PDF - this can be optional
                 Process.Start(filename);
             }

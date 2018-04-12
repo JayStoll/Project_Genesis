@@ -218,6 +218,7 @@ namespace Project_Genesis_Source {
 
         private void GeneratePDF() {
             string[] missingInfo = dc.ReturnMissingClientInfo(CusFNameTxt.Text, CusLnameTxt.Text);
+            MessageBox.Show(c_oBoxTxt.Text);
             MessageBox.Show(missingInfo[0] + " " + missingInfo[1] + " " + missingInfo[2]);
             ClientInfo client = new ClientInfo {
                 ClientFName = CusFNameTxt.Text,
@@ -240,7 +241,7 @@ namespace Project_Genesis_Source {
             string partsUsed = string.Empty;
 
             foreach (var item in PartsAddedList.Items) {
-                partsUsed += item + " ";
+                partsUsed += item + ", ";
             }
 
             PartInfo part = new PartInfo {
