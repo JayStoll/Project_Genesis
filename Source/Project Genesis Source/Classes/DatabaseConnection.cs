@@ -11,16 +11,16 @@ using System.IO;
 
 namespace Project_Genesis_Source.Classes {
 
-    // TODO - Fill in the information into the functions
     /// <summary>
     /// Connect and create querys to the database
     /// </summary>
     public class DatabaseConnection {
         //initailize 
+
         // change the path where the program looks for the database
         static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-
         public string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + path + @"\CAJNData\GenesisDB.mdf;Integrated Security=True;Connect Timeout=30";
+
         public SqlConnection conn;
         SqlCommand command;
 
@@ -156,21 +156,10 @@ namespace Project_Genesis_Source.Classes {
             }
         }
 
-        /// <summary>
-        /// Add invoice information to the database
-        /// </summary>
-        /// <param name="labourTime"></param>
-        /// <param name="labourRate"></param>
-        /// <param name="taxRate"></param>
-        public void AddNewInvoice(int labourTime, int labourRate, int taxRate) {
-            // add the invoice information to the database
-            // TODO - Fix this function to use the proper information
-        }
-
         ///<summary>
         ///Retrieve information for manage client
         /// </summary>
-        public string[] RetrieveFNames() {
+        public string[] RetrieveNames() {
             //select query to retrieve first and last name
             string selectFName = @"SELECT Cus_FName, Cus_LName FROM Customer";
 

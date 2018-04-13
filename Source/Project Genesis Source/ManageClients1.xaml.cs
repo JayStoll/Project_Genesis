@@ -29,7 +29,7 @@ namespace Project_Genesis_Source
             InitializeComponent();
 
             // Get the list of names
-            string[] fnames = dataConnect.RetrieveFNames();
+            string[] fnames = dataConnect.RetrieveNames();
 
             if (fnames.Length == 0)
             {
@@ -43,16 +43,9 @@ namespace Project_Genesis_Source
                     // TODO - sort the clients alphabetical order
                     nameOutputBox.Items.Add(fnames[i]);
                 }
-            }
-
-
-            
-
-            
-            
-            
-            
+            }  
         }
+
 
         private void selectedName(object sender, SelectionChangedEventArgs e)
         {   
