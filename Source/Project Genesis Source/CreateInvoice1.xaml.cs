@@ -245,7 +245,7 @@ namespace Project_Genesis_Source {
 
             // creates a new invoice
             CreatePDF invoice = new CreatePDF();
-            invoice.CreateInvoice(client, labour, part, int.Parse(rateTxt.Text));
+            invoice.CreateInvoice(client, labour, part, int.Parse(rateTxt.Text)); // TODO get the right tax rate
         }
 
 
