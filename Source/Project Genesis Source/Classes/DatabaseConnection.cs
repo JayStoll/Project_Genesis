@@ -312,12 +312,9 @@ namespace Project_Genesis_Source.Classes {
                     int i = 0;
                     while (reader.Read())
                     {
-                        cusInfo.Insert(i,
-                            "Address: " + reader["Cus_Address"] + "/n" +
-                            "Phone: " + reader["Cus_Phone"] + "/n" +
-                            "Email: " + reader["Customer_Email"] + "/n" +
-                            "Box Number: " + reader["Cus_BoxNum"] + "/n" +
-                            "Postal Code: " + reader["Cus_PostalCode"] + "/n");
+                        cusInfo.Insert(i, reader["Cus_Address"].ToString() + "\n \n" + reader["Cus_Phone"].ToString() + "\n \n"
+                                        + reader["Cus_Email"].ToString() + "\n \n" + reader["Cus_BoxNum"].ToString() + "\n \n"
+                                        + reader["Cus_PostalCode"]);
                         i++;
                     }
                     reader.Close();

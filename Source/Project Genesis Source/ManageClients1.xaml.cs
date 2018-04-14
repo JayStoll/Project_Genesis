@@ -65,6 +65,9 @@ namespace Project_Genesis_Source
         //we havent figured out the onclick
         private void EditBtnClick(object sender, RoutedEventArgs e)
         {
+            //clear listboxes
+            CusInformationListBox.Items.Clear();
+            VehicleList.Items.Clear();
 
             //store selected name, then split it into first and last and store in array
             string selectedName = nameOutputBox.SelectedItem.ToString();
@@ -101,8 +104,9 @@ namespace Project_Genesis_Source
             else
             {
                 //print all cusinfo
-                for (int i = 0; i < vehicleInfo.Length; i++)
+                for (int i = 0; i < cusInfo.Length; i++)
                 {
+                    CusInformationListBox.Items.Add(firstAndLast[0] + " " + firstAndLast[1] + "\n");
                     CusInformationListBox.Items.Add(cusInfo[i]);
                 }
             }
