@@ -11,17 +11,16 @@ using System.IO;
 
 namespace Project_Genesis_Source.Classes {
 
-    // TODO - Fill in the information into the functions
     /// <summary>
     /// Connect and create querys to the database
     /// </summary>
     public class DatabaseConnection {
-
         //initailize 
-        public string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GenesisDB.mdf;Integrated Security=True;Connect Timeout=30";
-        // SqlDataAdapter dataAdapater;
-        // System.Data.DataTable table;
-        // SqlCommandBuilder commandBuilder;
+
+        // change the path where the program looks for the database
+        static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        public string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + path + @"\CAJNData\GenesisDB.mdf;Integrated Security=True;Connect Timeout=30";
+
         public SqlConnection conn;
         SqlCommand command;
 
@@ -158,21 +157,10 @@ namespace Project_Genesis_Source.Classes {
             }
         }
 
-        /// <summary>
-        /// Add invoice information to the database
-        /// </summary>
-        /// <param name="labourTime"></param>
-        /// <param name="labourRate"></param>
-        /// <param name="taxRate"></param>
-        public void AddNewInvoice(int labourTime, int labourRate, int taxRate) {
-            // add the invoice information to the database
-            // TODO - Fix this function to use the proper information
-        }
-
         ///<summary>
         ///Retrieve information for manage client
         /// </summary>
-        public string[] RetrieveFNames() {
+        public string[] RetrieveNames() {
             //select query to retrieve first and last name
             string selectFName = @"SELECT Cus_FName, Cus_LName FROM Customer";
 
@@ -336,7 +324,7 @@ namespace Project_Genesis_Source.Classes {
         public string[] ReturnMissingClientInfo(string FName, string LName) {
             string query = "SELECT Cus_Company, Cus_PostalCode, Cus_BoxNum " +
                 "FROM Customer " +
-                "WHERE Cus_FName='" + FName + " AND Cus_LName='" + LName + "'";
+                "WHERE Cus_FName='" + FName + "' AND Cus_LName='" + LName + "'";
 
             List<string> vs = new List<string>();
 
@@ -350,8 +338,11 @@ namespace Project_Genesis_Source.Classes {
                     //while it can read, insert into list
                     int i = 0;
                     while (reader.Read()) {
-                        vs.Insert(i, reader["Cus_Company"] + " " + reader["Cus_BoxNum"] + " " + reader["Cus_PostalCode"]);
+                        vs.Insert(i, reader["Cus_Company"].ToString());
                         i++;
+                        vs.Insert(i, reader["Cus_PostalCode"].ToString());
+                        i++;
+                        vs.Insert(i, reader["Cus_BoxNum"].ToString());
                     }
                     reader.Close();
                 }
@@ -434,6 +425,23 @@ namespace Project_Genesis_Source.Classes {
 
 
 
+
+        public double GetPartPrice(string selectedPart) {
+            string getSelectedPartInfo = "SELECT Part_Price FROM Part WHERE Part_Name='" + selectedPart + "'";
+
+            using (conn = new SqlConnection(connString)) {
+                conn.Open();
+                SqlCommand command = new SqlCommand(getSelectedPartInfo, conn);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read()) {
+                    double pricePart = Double.Parse(reader["Part_Price"].ToString());
+                    return pricePart;
+                }
+            }
+
+            // only returns if there was an error
+            return 0.0;
+        }
 
     }
 
