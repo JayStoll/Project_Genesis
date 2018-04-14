@@ -112,5 +112,21 @@ namespace Project_Genesis_Source
             }
 
         }
+
+        private void DeleteBtnClick(object sender, RoutedEventArgs e)
+        {
+            //get name and split and store
+            string selectedName = nameOutputBox.SelectedItem.ToString();
+            string[] firstAndLast = selectedName.Split(null);
+
+            
+            //delete all vehicles relating to the customer from db
+            dataConnect.deleteVehicleFromDb(firstAndLast[0], firstAndLast[1]);
+
+            //delete customer from db
+            dataConnect.deleteCusFromDb(firstAndLast[0], firstAndLast[1]);
+
+
+        }
     }
 }
