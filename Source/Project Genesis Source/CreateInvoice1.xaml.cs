@@ -25,12 +25,14 @@ namespace Project_Genesis_Source {
     public partial class CreateInvoice1 : Page {
 
         DatabaseConnection dc = new DatabaseConnection();
-        int partsAdded = 0;  // keeps track of the amount of parts being added into the invoice
+        int partsAdded = 0;              // keeps track of the amount of parts being added into the invoice
+        double totalCostOfParts = 0.00;  // keeps track of the total cost of parts
 
         public CreateInvoice1() {
             InitializeComponent();
 
             GetClientInfo();
+            FillPartInfo();
         }
 
         private void GetClientInfo() {
@@ -56,6 +58,20 @@ namespace Project_Genesis_Source {
                 }
                 finally {
                     conn.Close();
+                }
+            }
+        }
+
+        private void FillPartInfo() {
+            var conn = dc.conn;
+            string partQuery = "SELECT Part_Name FROM Part";
+
+            using (conn = new SqlConnection(dc.connString)) {
+                conn.Open();
+                SqlCommand command = new SqlCommand(partQuery, conn);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read()) {
+                    PartDropDown.Items.Add(reader["Part_Name"]);
                 }
             }
         }
@@ -102,8 +118,8 @@ namespace Project_Genesis_Source {
             }
         }
 
-        //Vehicle DropDown
-        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e) {
+        // vehicle dropdown
+        private void VehicleSelectionChanged(object sender, SelectionChangedEventArgs e) {
             var conn = dc.conn;
             try {
                 string vehicle = VehicleDropDown.SelectedItem.ToString();
@@ -117,6 +133,7 @@ namespace Project_Genesis_Source {
                         SqlCommand command = new SqlCommand(getVehicleInfo, conn);
                         SqlDataReader fillInfo = command.ExecuteReader();
                         while (fillInfo.Read()) {
+                            VehicleTxt.Text = fillInfo["Vehicle_Type"].ToString();
                             VehicleSerialNumtxt.Text = fillInfo["Vehicle_SerialNum"].ToString();
                         }
                         fillInfo.Close();
@@ -131,31 +148,78 @@ namespace Project_Genesis_Source {
             }
             catch (Exception ex) {
                 // when an error happens - just clear the text
+                VehicleTxt.Text = "";
                 VehicleSerialNumtxt.Text = "";
             }
         }
 
+        // part dropdown
+        private void PartSelectionChanged(object sender, SelectionChangedEventArgs e) {
+            var conn = dc.conn;
+
+            try {
+                string selectedPart = PartDropDown.SelectedItem.ToString();
+                string getSelectedPartInfo = "SELECT * FROM Part WHERE Part_Name='" + selectedPart + "'";
+
+                using (conn = new SqlConnection(dc.connString)) {
+                    conn.Open();
+                    SqlCommand command = new SqlCommand(getSelectedPartInfo, conn);
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read()) {
+                        PartTxt.Text = reader["Part_Name"].ToString();
+                        PriceTxt.Text = reader["Part_Price"].ToString();
+                    }
+                }
+            }
+            catch (Exception ex) {
+                PartTxt.Text = "";
+                PriceTxt.Text = "";
+            }   
+        }
+
         private void AddPart(object sender, RoutedEventArgs e) {
+            // add the price of the part to the total cost
+            totalCostOfParts += dc.GetPartPrice(PartDropDown.SelectedItem.ToString());
+
+            totalCosttxt.Content = totalCostOfParts.ToString();
+            // adds the part name to the total cost of parts
+            PartsAddedList.Items.Add(PartDropDown.SelectedItem.ToString());
+            PartDropDown.SelectedIndex = -1;
             partsAdded++;
         }
 
-        private void RemovePart(object sender, RoutedEventArgs e) {
+        private void RemovePart(object sender, RoutedEventArgs e) { 
+            // sends error if there are no parts to be removed
             if (partsAdded == 0)
                 MessageBox.Show("No parts to remove!");
-            else
-                partsAdded--;
-            // remove the part from the list box
+            else {
+                try {
+                    try {
+                        // deletes the price of the entered part
+                        string temp = PartsAddedList.SelectedItem.ToString();
+                        totalCostOfParts -= dc.GetPartPrice(temp);
+                    } 
+                    catch (Exception ex) { }
+
+                    // deletes the entered part from the list
+                    PartsAddedList.Items.RemoveAt(PartsAddedList.SelectedIndex);
+                    partsAdded--;
+                    totalCosttxt.Content = totalCostOfParts.ToString();
+                }
+                catch (Exception ex) {
+                    MessageBox.Show("No Item selected!");
+                }
+            }
         }
 
         private void CreateInvoice(object sender, RoutedEventArgs e) {
-            // get the information from the text boxes
-            // send that information to the correct method in the PythonConnection class
-            // when all the functions were called
-            // create a new PDF file
+            GeneratePDF();
         }
 
         private void GeneratePDF() {
             string[] missingInfo = dc.ReturnMissingClientInfo(CusFNameTxt.Text, CusLnameTxt.Text);
+            MessageBox.Show(c_oBoxTxt.Text);
+            MessageBox.Show(missingInfo[0] + " " + missingInfo[1] + " " + missingInfo[2]);
             ClientInfo client = new ClientInfo {
                 ClientFName = CusFNameTxt.Text,
                 ClientLName = CusLnameTxt.Text,
@@ -166,7 +230,31 @@ namespace Project_Genesis_Source {
                 BoxNum = missingInfo[2],
                 Vehicle = VehicleDropDown.SelectedItem.ToString()
             };
+
+            LabourInfo labour = new LabourInfo {
+                QtyAmount = hoursWorkedTxt.Text,
+                Rate = rateTxt.Text,
+                Labour = LabourTxt.Text,
+                Tax = gstTxt.Text
+            };
+
+            string partsUsed = string.Empty;
+
+            foreach (var item in PartsAddedList.Items) {
+                partsUsed += item + ", ";
+            }
+
+            PartInfo part = new PartInfo {
+                AmountOfParts = partsAdded.ToString(),
+                PartsUsed = partsUsed,
+                PartTotal = totalCosttxt.Content.ToString()
+            };
+
+            CreatePDF invoice = new CreatePDF();
+            invoice.CreateInvoice(client, labour, part, int.Parse(rateTxt.Text));
         }
+
+
 
         //AJ Santillan March 28, 2018
         //Watermarks
@@ -236,6 +324,24 @@ namespace Project_Genesis_Source {
             hoursWorkedTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
             hoursWorkedTxt.Visibility = System.Windows.Visibility.Visible;
             hoursWorkedTxt.Focus();
+        }
+
+
+        //TaxRate
+        private void taxRateTxt_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(taxRateTxt.Text))
+            {
+                taxRateTxt.Visibility = System.Windows.Visibility.Collapsed;
+                taxRateTxtWatermark.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
+        private void taxRateTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
+        {
+            taxRateTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
+            taxRateTxt.Visibility = System.Windows.Visibility.Visible;
+            taxRateTxt.Focus();
         }
     }
 }
