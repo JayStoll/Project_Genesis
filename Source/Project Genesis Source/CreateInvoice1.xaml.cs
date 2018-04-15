@@ -152,7 +152,8 @@ namespace Project_Genesis_Source {
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read()) {
                         PartTxt.Text = reader["Part_Name"].ToString();
-                        PriceTxt.Text = reader["Part_Price"].ToString();
+                        var price = reader["Part_Price"];
+                        PriceTxt.Text = string.Format("{0:F2}", price);
                     }
                 }
             }
@@ -245,7 +246,7 @@ namespace Project_Genesis_Source {
 
             // creates a new invoice
             CreatePDF invoice = new CreatePDF();
-            invoice.CreateInvoice(client, labour, part, int.Parse(rateTxt.Text)); // TODO get the right tax rate
+            invoice.CreateInvoice(client, labour, part, int.Parse(taxRateTxt.Text));
         }
 
 

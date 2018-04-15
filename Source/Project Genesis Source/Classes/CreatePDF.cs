@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
 
-// TODO fix the output so it only prints as ##.##
 
 namespace Project_Genesis_Source.Classes {
 
