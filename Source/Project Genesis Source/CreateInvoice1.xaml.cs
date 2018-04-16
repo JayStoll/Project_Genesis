@@ -48,7 +48,7 @@ namespace Project_Genesis_Source {
 
         private void FillPartInfo() {
             var conn = dataConnection.conn;
-            string partQuery = "SELECT Part_Name FROM Part";
+            string partQuery = "SELECT Part_Name FROM Part ORDER BY Part_Name ASC";
 
             using (conn = new SqlConnection(dataConnection.connString)) {
                 conn.Open();

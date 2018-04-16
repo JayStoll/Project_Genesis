@@ -161,7 +161,7 @@ namespace Project_Genesis_Source.Classes {
         /// </summary>
         public string[] RetrieveNames() {
             //select query to retrieve first and last name
-            string selectFName = @"SELECT Cus_FName, Cus_LName FROM Customer";
+            string selectFName = @"SELECT Cus_FName, Cus_LName FROM Customer ORDER BY Cus_FName ASC";
 
             // Creates a list that will hold all the information in the query
             List<string> fNames = new List<string>();
