@@ -9,7 +9,7 @@
 
     <Grid>
         <Button x:Name="backupInv" Content="Backup" Margin="4.326,12.025,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" Height="124.498" VerticalAlignment="Top" BorderBrush="#FF0C1249" BorderThickness="10,1,1,10" Click="BackupDatabase"/>
-        <Button x:Name="backupData" Content="Recover" Margin="4.326,140.854,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" Height="124.498" VerticalAlignment="Top" BorderBrush="#FF0C1249" BorderThickness="10,1,1,10"/>
+        <Button x:Name="backupData" Content="Recover" Margin="4.326,140.854,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" Height="124.498" VerticalAlignment="Top" BorderBrush="#FF0C1249" BorderThickness="10,1,1,10" Click="RecoverData"/>
 
         <Button x:Name="cancelBackup" Content="Cancel" Margin="4.326,346.284,668.581,0" FontFamily="PenultimateLightItal" FontSize="36" Background="{x:Null}" Foreground="#FF0C1249" IsEnabled="False" Height="143.716" VerticalAlignment="Top">
             <Button.BorderBrush>
