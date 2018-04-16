@@ -56,7 +56,6 @@ namespace Project_Genesis_Source {
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read()) {
                     // add all the parts to the part combobox
-                    PartDropDown.Sorted = true;
                     PartDropDown.Items.Add(reader["Part_Name"]);
                 }
             }
