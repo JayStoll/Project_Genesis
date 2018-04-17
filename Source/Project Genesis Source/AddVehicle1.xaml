@@ -6,11 +6,11 @@
       xmlns:local="clr-namespace:Project_Genesis_Source"
       mc:Ignorable="d"
 
-      Title="AddVehicle1" Width="1000" Height="1286.425">
+      Title="AddVehicle1" Width="1000" Height="890.602">
 
     <ScrollViewer Margin="10,10,10,394">
 
-        <Grid Height="1274" Width="980">
+        <Grid Height="1044" Width="980">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>

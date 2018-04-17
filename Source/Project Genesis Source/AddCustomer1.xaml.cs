@@ -38,7 +38,7 @@ namespace Project_Genesis_Source
             string phoneNum = phoneNumTxt.Text;
             string email = emailTxt.Text;
             string postalCode = postalCodeTxt.Text;
-            string company = CompanyTxtWatermark.Text;
+            string company = CompanyTxt.Text;
 
             //initialize database connection variable
             DatabaseConnection dataConnect = new DatabaseConnection();

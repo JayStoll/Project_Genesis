@@ -21,7 +21,7 @@
             <TextBox x:Name="lNameTxtWatermark" GotFocus="lNameTxtWatermark_GotFocus" Text="Doe" Margin="329.489,188.213,46,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Opacity="0.5"/>
             <Label Content="Company" Margin="0,275.713,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300" HorizontalAlignment="Left"/>
             <TextBox x:Name="CompanyTxt" LostFocus="CompanyTxt_LostFocus" Margin="329.478,275.713,46,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" IsTabStop="False"/>
-            <TextBox x:Name="CompanyTxtWatermark" GotFocus="CompanyTxtWatermark_GotFocus" Text="JohnDoe Tractors" Margin="329.489,275.713,46,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Opacity="0.5"/>
+            <TextBox x:Name="CompanyTxtWatermark" Text="JohnDoe Tractors" GotFocus="CompanyTxtWatermark_GotFocus" Margin="329.489,275.713,46,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" Opacity="0.5" />
 
 
             <Label Content="Address" Margin="10,367.01,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="290" HorizontalAlignment="Left"/>
