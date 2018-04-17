@@ -319,5 +319,23 @@ namespace Project_Genesis_Source {
             hoursWorkedTxt.Visibility = System.Windows.Visibility.Visible;
             hoursWorkedTxt.Focus();
         }
+
+
+        //TaxRate
+        private void taxRateTxt_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(taxRateTxt.Text))
+            {
+                taxRateTxt.Visibility = System.Windows.Visibility.Collapsed;
+                taxRateTxtWatermark.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
+        private void taxRateTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
+        {
+            taxRateTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
+            taxRateTxt.Visibility = System.Windows.Visibility.Visible;
+            taxRateTxt.Focus();
+        }
     }
 }

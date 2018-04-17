@@ -61,6 +61,10 @@ namespace Project_Genesis_Source
             CusInformationListBox.Items.Clear();
             VehicleList.Items.Clear();
 
+            Update upd = new Update();
+            upd.Show();
+
+
             //store selected name, then split it into first and last and store in array
             string selectedName = nameOutputBox.SelectedItem.ToString();
             string[] firstAndLast = selectedName.Split(null);
