@@ -1,12 +1,8 @@
 ﻿using PdfSharp.Drawing;
 using PdfSharp.Pdf;
-using PdfSharp.Pdf.IO;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Project_Genesis_Source.Classes {
@@ -54,6 +50,7 @@ namespace Project_Genesis_Source.Classes {
                 gfx.DrawString(client.Company, font, XBrushes.Black,
                     new XRect(leftAlign, (printDownPage += downPercent), page.Width, page.Height), XStringFormats.TopLeft);
 
+                // TODO make this work
                 string coLine = (client.CO != " ") ? client.CO : client.ClientFName + " " + client.ClientLName;
 
                 gfx.DrawString("C/O " + coLine, font, XBrushes.Black,
@@ -109,8 +106,10 @@ namespace Project_Genesis_Source.Classes {
                     new XRect(leftAlign * 16, (printDownPage += (downPercent + 5)), page.Width, page.Height), XStringFormats.TopLeft);
 
                 printDownPage += 5;
+                // sets the limit of how far the line can go
                 int limit = (int)leftAlign + 5;
                 string labourInfo = labour.Labour;
+                // gets all the labour information and splits it into a string array
                 string[] words = labourInfo.Split(new char[] { ' ' });
                 IList<string> sentenceParts = new List<string> {
                 string.Empty
@@ -118,13 +117,16 @@ namespace Project_Genesis_Source.Classes {
                 int partCounter = 0;
 
                 foreach (string word in words) {
+                    // if line length is at the limit go to the next line
                     if ((sentenceParts[partCounter] + word).Length > limit) {
                         partCounter++;
                         sentenceParts.Add(string.Empty);
                     }
+                    // add the word to the list
                     sentenceParts[partCounter] += word + " ";
                 }
 
+                // print out the list to the PDF
                 foreach (string x in sentenceParts) {
                     gfx.DrawString(x, font, XBrushes.Black,
                         new XRect(leftAlign, (printDownPage += downPercent), page.Width, page.Height), XStringFormats.TopLeft);
@@ -133,6 +135,7 @@ namespace Project_Genesis_Source.Classes {
                 #region Fill Part Information
                 printDownPage += 5;
                 string partInfo = part.PartsUsed;
+                // gets all the part information and splits it into a string array
                 string[] partWords = partInfo.Split(new char[] { ' ' });
                 IList<string> partWord = new List<string> {
                 string.Empty
@@ -140,10 +143,12 @@ namespace Project_Genesis_Source.Classes {
                 int counter = 0;
 
                 foreach (string i in partWords) {
+                    // if line length is at the limit go to the next line
                     if ((partWord[counter] + i).Length > limit) {
                         counter++;
                         partWord.Add(string.Empty);
                     }
+                    // add the word to the list
                     partWord[counter] += i + " ";
                 }
 
@@ -157,6 +162,8 @@ namespace Project_Genesis_Source.Classes {
                     new XRect(leftAlign * 13, (printDownPage + (downPercent + 5)), page.Width, page.Height), XStringFormats.TopLeft);
                 gfx.DrawString(part.PartTotal, font, XBrushes.Black,
                     new XRect(leftAlign * 16, (printDownPage += (downPercent + 5)), page.Width, page.Height), XStringFormats.TopLeft);
+
+                // print out the list to the PDF
                 foreach (string y in partWord) {
                     gfx.DrawString(y, font, XBrushes.Black,
                         new XRect(leftAlign, (printDownPage += downPercent), page.Width, page.Height), XStringFormats.TopLeft);
