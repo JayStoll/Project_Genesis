@@ -132,6 +132,7 @@
                 <TextBox Height="10" Margin="339,635,54.767,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False" Width="600" Grid.Row="1"/>
 
 
+                <TextBox Height="10" Margin="339,701,54.767,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False" Width="600"/>
 
                 <Button Content="Create Invoice" Margin="626,3007,68.767,0" FontFamily="Lithos Pro Regular" FontSize="35" Height="70" VerticalAlignment="Top" Background="{x:Null}" Grid.Row="1" Click="CreateInvoice">
                     <Button.BorderBrush>

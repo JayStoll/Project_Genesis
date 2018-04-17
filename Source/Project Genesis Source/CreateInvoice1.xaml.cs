@@ -60,6 +60,20 @@ namespace Project_Genesis_Source {
             }
         }
 
+        private void FillPartInfo() {
+            var conn = dc.conn;
+            string partQuery = "SELECT Part_Name FROM Part";
+
+            using (conn = new SqlConnection(dc.connString)) {
+                conn.Open();
+                SqlCommand command = new SqlCommand(partQuery, conn);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read()) {
+                    PartDropDown.Items.Add(reader["Part_Name"]);
+                }
+            }
+        }
+
         //Client DropDowns
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             // clears the combobox when a new client is selected
@@ -104,6 +118,7 @@ namespace Project_Genesis_Source {
         // vehicle dropdown
         private void VehicleSelectionChanged(object sender, SelectionChangedEventArgs e) {
             var conn = dataConnection.conn;
+          
             try {
                 string vehicle = VehicleDropDown.SelectedItem.ToString();
 
@@ -318,6 +333,24 @@ namespace Project_Genesis_Source {
             hoursWorkedTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
             hoursWorkedTxt.Visibility = System.Windows.Visibility.Visible;
             hoursWorkedTxt.Focus();
+        }
+
+
+        //TaxRate
+        private void taxRateTxt_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(taxRateTxt.Text))
+            {
+                taxRateTxt.Visibility = System.Windows.Visibility.Collapsed;
+                taxRateTxtWatermark.Visibility = System.Windows.Visibility.Visible;
+            }
+        }
+
+        private void taxRateTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
+        {
+            taxRateTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
+            taxRateTxt.Visibility = System.Windows.Visibility.Visible;
+            taxRateTxt.Focus();
         }
     }
 }
