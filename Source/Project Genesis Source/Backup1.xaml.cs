@@ -3,22 +3,20 @@ using Project_Genesis_Source.Classes;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Project_Genesis_Source
-{
+namespace Project_Genesis_Source {
     /// <summary>
     /// Interaction logic for Backup1.xaml
     /// </summary>
-    public partial class Backup1 : Page
-    {
+    public partial class Backup1 : Page {
         DatabaseConnection dataConn = new DatabaseConnection();
 
         // get the path of the database
         static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         string dbName = path + @"\CAJNData\GenesisDB.mdf";
-        string backupDestination = path + @"\CAJNBackup\";
 
         // SQL manipulation
         SqlConnection sql = new SqlConnection();
@@ -26,41 +24,54 @@ namespace Project_Genesis_Source
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable data = new DataTable();
 
-        public Backup1()
-        {
+        public Backup1() {
             InitializeComponent();
         }
 
+        // Backup database into a .bak file
         private void BackupDatabase(object sender, RoutedEventArgs e) {
             sql.ConnectionString = dataConn.connString;
 
-            
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Backup File | *.bak";
 
-            // create backup directory if it doesn't exsist
-            if (!System.IO.Directory.Exists(backupDestination))     System.IO.Directory.CreateDirectory(backupDestination);
+            progressReport.Items.Clear();
+
+            progressReport.Items.Add("Backing up your data please wait...");
+
 
             try {
-                sql.Open();
-                // creates the backup file
-                command = new SqlCommand("BACKUP DATABASE [" + dbName + "] TO DISK='" + backupDestination + DateTime.Now.ToString("dd-MM-yyyy") + ".bak'", sql);
-                command.ExecuteNonQuery();
-                sql.Close();
-                MessageBox.Show("Backup successful!");
+                if (save.ShowDialog() == true) {
+                    sql.Open();
+                    // creates the backup file
+                    command = new SqlCommand("BACKUP DATABASE [" + dbName + "] TO DISK='" + Path.GetFullPath(save.FileName) + "'", sql);
+                    command.ExecuteNonQuery();
+                    sql.Close();
+                    MessageBox.Show("Backup successful!");
+                }
             }
-            catch (Exception ex){
+            catch (Exception ex) {
                 MessageBox.Show(ex.Message + " " + command.CommandText);
+            }
+            finally {
+                progressReport.Items.Clear();
             }
         }
 
+        // Recover the database with a .bak file
         private void RecoverData(object sender, RoutedEventArgs e) {
             sql.ConnectionString = dataConn.connString;
+            progressReport.Items.Clear();
 
             try {
                 OpenFileDialog file = new OpenFileDialog();
                 file.Filter = "Backup File | *.bak";
+
+                progressReport.Items.Add("Recovering your data please wait...");
                 if (file.ShowDialog() == true) {
-                    // creates the backup file
+                    // sets up the database to be altered
                     string sqlCom = "ALTER DATABASE [" + dbName + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;";
+                    // restore the database with the given .bak file
                     sqlCom += "RESTORE DATABASE [" + dbName + "] FROM DISK='" + file.FileName + "' WITH REPLACE";
                     SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB; Initial Catalog=master;Integrated Security=True");
                     command = new SqlCommand(sqlCom, con);
@@ -73,6 +84,9 @@ namespace Project_Genesis_Source
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
+            }
+            finally {
+                progressReport.Items.Clear();
             }
         }
     }
