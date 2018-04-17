@@ -66,6 +66,10 @@ namespace Project_Genesis_Source
         private void EditBtnClick(object sender, RoutedEventArgs e)
         {
 
+            Update upd = new Update();
+            upd.Show();
+
+
             //store selected name, then split it into first and last and store in array
             string selectedName = nameOutputBox.SelectedItem.ToString();
             string[] firstAndLast = selectedName.Split(null);

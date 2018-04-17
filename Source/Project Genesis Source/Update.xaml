@@ -1,0 +1,36 @@
+﻿<Window x:Class="Project_Genesis_Source.Update"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Genesis_Source"
+        mc:Ignorable="d"
+        Title="Update" Height="450" Width="985" WindowStyle="None">
+    <Grid Background="#FFC8E6FA" Margin="0,0,-8,2">
+        <ScrollViewer Height="425" Margin="10,10,11,0" VerticalAlignment="Top">
+
+            <Grid Height="804" Width="980">
+                <Label Content="Name" HorizontalAlignment="Left" Height="75" Margin="10.521,102.5,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
+                <TextBox x:Name="nameTxt" LostFocus="nameTxt_LostFocus" Height="75" Margin="315.521,102.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" IsTabStop="False"/>
+
+                <Label Content="Serial Number" HorizontalAlignment="Left" Height="75" Margin="10.521,190,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
+                <TextBox x:Name="serialNumTxt" LostFocus="serialNumTxt_LostFocus" Height="75" Margin="315.521,190,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" IsTabStop="False"/>
+
+                <Label Content="Part Number" HorizontalAlignment="Left" Height="75" Margin="10.521,277.5,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
+                <TextBox x:Name="partNumTxt" LostFocus="partNumTxt_LostFocus" Height="75" Margin="315.521,277.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="36" IsTabStop="False"/>
+
+                <Label Content="Price" HorizontalAlignment="Left" Height="75" Margin="10.521,365,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
+                <TextBox x:Name="priceTxt" LostFocus="priceTxt_LostFocus" Height="75" Margin="315.521,365,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" IsTabStop="False"/>
+
+                <Label Content="Notes" HorizontalAlignment="Left" Height="75" Margin="10.521,453,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
+                <TextBox x:Name="notesTxt" Margin="315.521,453,52,0" TextWrapping="Wrap" FontSize="36" FontFamily="Palatino Linotype" Height="200" VerticalAlignment="Top"/>
+                <TextBox Height="10" Margin="631.372,32.157,52.341,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="Black" Opacity="0.5" IsTabStop="False"/>
+                <Label x:Name="TitleLabel" Content="Add Part" HorizontalAlignment="Left" Height="45" Margin="372.703,14,0,0" VerticalAlignment="Top" Width="215.688" FontFamily="Lithos Pro Regular" FontSize="38" FontWeight="Bold" Background="{x:Null}" Foreground="Black"/>
+                <TextBox Height="10" Margin="10,32.157,673.713,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="Black" Opacity="0.5" IsTabStop="False"/>
+            </Grid>
+        </ScrollViewer>
+
+        <Button x:Name="UpdateBtn" Content="Update" Margin="595.711,731.5,46,8" FontSize="35" Background="{x:Null}" BorderBrush="#FF0C1249" BorderThickness="10,1,1,10" FontFamily="Lithos Pro Regular" />
+
+    </Grid>
+</Window>
