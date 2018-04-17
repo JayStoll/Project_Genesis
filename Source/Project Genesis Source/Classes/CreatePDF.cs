@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
 
+
 namespace Project_Genesis_Source.Classes {
 
     class CreatePDF {
@@ -97,12 +98,12 @@ namespace Project_Genesis_Source.Classes {
                     new XRect(leftAlign, (printDownPage + (downPercent + 5)), page.Width, page.Height), XStringFormats.TopLeft);
                 gfx.DrawString(labour.QtyAmount, font, XBrushes.Black,
                     new XRect(leftAlign * 7, (printDownPage + (downPercent + 5)), page.Width, page.Height), XStringFormats.TopLeft);
-                gfx.DrawString(labour.Rate, font, XBrushes.Black,
+                gfx.DrawString(string.Format("{0:0.00}", labour.Rate), font, XBrushes.Black,
                     new XRect(leftAlign * 10, (printDownPage + (downPercent + 5)), page.Width, page.Height), XStringFormats.TopLeft);
                 gfx.DrawString(labour.Tax, font, XBrushes.Black,
                     new XRect(leftAlign * 13, (printDownPage + (downPercent + 5)), page.Width, page.Height), XStringFormats.TopLeft);
                 double labourTotal = (double.Parse(labour.QtyAmount) * double.Parse(labour.Rate));
-                gfx.DrawString(labourTotal.ToString(), font, XBrushes.Black,
+                gfx.DrawString(string.Format("{0:0.00}", labourTotal.ToString()), font, XBrushes.Black,
                     new XRect(leftAlign * 16, (printDownPage += (downPercent + 5)), page.Width, page.Height), XStringFormats.TopLeft);
 
                 printDownPage += 5;
@@ -156,11 +157,11 @@ namespace Project_Genesis_Source.Classes {
                         new XRect(leftAlign, (printDownPage + downPercent), page.Width, page.Height), XStringFormats.TopLeft);
                 gfx.DrawString(part.AmountOfParts, font, XBrushes.Black,
                     new XRect(leftAlign * 7, (printDownPage + (downPercent + 5)), page.Width, page.Height), XStringFormats.TopLeft);
-                gfx.DrawString(part.PartTotal, font, XBrushes.Black,
+                gfx.DrawString(string.Format("{0:0.00}", part.PartTotal), font, XBrushes.Black,
                     new XRect(leftAlign * 10, (printDownPage + (downPercent + 5)), page.Width, page.Height), XStringFormats.TopLeft);
                 gfx.DrawString(labour.Tax, font, XBrushes.Black,
                     new XRect(leftAlign * 13, (printDownPage + (downPercent + 5)), page.Width, page.Height), XStringFormats.TopLeft);
-                gfx.DrawString(part.PartTotal, font, XBrushes.Black,
+                gfx.DrawString(string.Format("{0:0.00}", part.PartTotal), font, XBrushes.Black,
                     new XRect(leftAlign * 16, (printDownPage += (downPercent + 5)), page.Width, page.Height), XStringFormats.TopLeft);
 
                 // print out the list to the PDF
@@ -184,14 +185,14 @@ namespace Project_Genesis_Source.Classes {
                 #endregion
                 #region Print Total Info
                 double subtotal = (labourTotal + double.Parse(part.PartTotal));
-                gfx.DrawString(subtotal.ToString(), font, XBrushes.Black,
+                gfx.DrawString(String.Format("{0:0.00}", subtotal.ToString()), font, XBrushes.Black,
                         new XRect(leftAlign * 17, newTemp, page.Width, page.Height), XStringFormats.TopLeft);
-                gfx.DrawString((subtotal / taxRate).ToString(), font, XBrushes.Black,
+                gfx.DrawString(String.Format("{0:0.00}", (subtotal / taxRate).ToString()), font, XBrushes.Black,
                         new XRect(leftAlign * 17, (newTemp += (downPercent + 5)), page.Width, page.Height), XStringFormats.TopLeft);
                 double total = subtotal + (subtotal / taxRate);
-                gfx.DrawString(total.ToString(), font, XBrushes.Black,
+                gfx.DrawString(String.Format("{0:0.00}", total.ToString()), font, XBrushes.Black,
                         new XRect(leftAlign * 17, newTemp += (downPercent + 5), page.Width, page.Height), XStringFormats.TopLeft);
-                gfx.DrawString(total.ToString(), titleFontBold, XBrushes.Black,
+                gfx.DrawString(String.Format("{0:0.00}", total.ToString()), titleFontBold, XBrushes.Black,
                         new XRect(leftAlign * 17, newTemp += (downPercent + 5), page.Width, page.Height), XStringFormats.TopLeft);
                 #endregion
 

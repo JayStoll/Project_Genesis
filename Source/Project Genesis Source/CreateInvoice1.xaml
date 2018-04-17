@@ -142,17 +142,21 @@
                         </LinearGradientBrush>
                     </Button.BorderBrush>
                 </Button>
-                <TextBox Height="10" Margin="289,1020,54.767,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False" Width="650" Grid.Row="1"/>
-                <TextBox Height="10" Margin="289,2141,54.767,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False" Width="650" Grid.Row="1"/>
-                <Label x:Name="SelectLabel1" Content="Select Vehicle" HorizontalAlignment="Left" Height="45" Margin="25,616,0,0" VerticalAlignment="Top" Width="300" FontFamily="Good Times" FontSize="28" Background="{x:Null}" Foreground="#FF0018FF" Grid.Row="1"/>
-                <Label x:Name="SelectLabel2" Content="Select Part" HorizontalAlignment="Left" Height="45" Margin="25,1002,0,0" VerticalAlignment="Top" Width="300" FontFamily="Good Times" FontSize="28" Background="{x:Null}" Foreground="#FF0018FF" Grid.Row="1"/>
-                <TextBox Height="10" Margin="639,32,54.767,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="Black" Opacity="0.5" IsTabStop="False" Width="300"/>
-                <Label x:Name="TitleLabel" Content="Create Invoice" HorizontalAlignment="Left" Height="45" Margin="315,14,0,0" VerticalAlignment="Top" Width="319" FontFamily="Lithos Pro Regular" FontSize="38" FontWeight="Bold" Background="{x:Null}" Foreground="Black" Grid.RowSpan="2"/>
-                <TextBox Height="10" Margin="309,63,54.767,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False" Width="630" Grid.Row="1"/>
-                <Label x:Name="SelectLabel1_Copy1" Content="Select Client" HorizontalAlignment="Left" Height="45" Margin="25,48,0,0" VerticalAlignment="Top" Width="300" FontFamily="Good Times" FontSize="28" Background="{x:Null}" Foreground="#FF0018FF" Grid.Row="1"/>
-                <TextBox Height="10" Margin="10,32,683.767,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="Black" Opacity="0.5" IsTabStop="False" Width="300"/>
-                <Label x:Name="SelectLabel3" Content="Description" HorizontalAlignment="Left" Height="45" Margin="25,2121,0,0" VerticalAlignment="Top" Width="300" FontFamily="Good Times" FontSize="28" Background="{x:Null}" Foreground="#FF0018FF" Grid.Row="1"/>
-                <TextBox Height="10" Margin="25,1501,53.767,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False" Grid.Row="1"/>
+
+                <TextBox Height="10" Margin="289.159,1088,54.608,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False" Width="650"/>
+                <TextBox Height="10" Margin="289.159,2198,54.608,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False" Width="650"/>
+                <Label x:Name="SelectLabel1" Content="Select Vehicle" HorizontalAlignment="Left" Height="45" Margin="24.524,687.186,0,0" VerticalAlignment="Top" Width="300" FontFamily="Good Times" FontSize="28" Background="{x:Null}" Foreground="#FF0018FF"/>
+                <Label x:Name="SelectLabel2" Content="Select Part" HorizontalAlignment="Left" Height="45" Margin="24.524,1069.843,0,0" VerticalAlignment="Top" Width="300" FontFamily="Good Times" FontSize="28" Background="{x:Null}" Foreground="#FF0018FF"/>
+                <TextBox Height="10" Margin="639.159,32.157,54.608,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="Black" Opacity="0.5" IsTabStop="False" Width="300"/>
+                <Label x:Name="TitleLabel" Content="Create Invoice" HorizontalAlignment="Left" Height="45" Margin="315,14,0,0" VerticalAlignment="Top" Width="319.159" FontFamily="Lithos Pro Regular" FontSize="38" FontWeight="Bold" Background="{x:Null}" Foreground="Black"/>
+                <TextBox Height="10" Margin="309.159,116.49,54.608,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False" Width="630"/>
+                <Label x:Name="SelectLabel1_Copy1" Content="Select Client" HorizontalAlignment="Left" Height="45" Margin="24.524,101,0,0" VerticalAlignment="Top" Width="300" FontFamily="Good Times" FontSize="28" Background="{x:Null}" Foreground="#FF0018FF"/>
+                <TextBox Height="10" Margin="10,32.157,683.767,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="Black" Opacity="0.5" IsTabStop="False" Width="300"/>
+                <Label x:Name="SelectLabel3" Content="Description" HorizontalAlignment="Left" Height="45" Margin="24.524,2178.343,0,0" VerticalAlignment="Top" Width="300" FontFamily="Good Times" FontSize="28" Background="{x:Null}" Foreground="#FF0018FF"/>
+                <TextBox Height="10" Margin="24.873,1566,54.608,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False"/>
+                <Label x:Name="taxRate" Content="Tax Rate" HorizontalAlignment="Left" Height="75" Margin="24.873,3058.343,0,0" VerticalAlignment="Top" Width="284.778" FontFamily="Lithos Pro Regular" FontSize="36"/>
+                <TextBox x:Name="taxRateTxt" LostFocus="taxRateTxt_LostFocus" HorizontalAlignment="Left" Height="75" Margin="375.819,3056.843,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="548.549" FontSize="35" FontFamily="285.127"/>
+                <TextBox x:Name="taxRateTxtWatermark" GotFocus="taxRateTxtWatermark_GotFocus" Text="5" HorizontalAlignment="Left" Height="75" Margin="375.819,3058.343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="548.549" FontSize="35" FontFamily="285.127" Opacity="0.5"/>
             </SelectiveScrollingGrid>
         </ScrollViewer>
     </Grid>
