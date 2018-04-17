@@ -34,9 +34,7 @@
 
 
             <Label Content="Name" HorizontalAlignment="Left" Margin="10,460,0,0" Width="330" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top"/>
-            <ComboBox Height="75" Margin="345,460,38,0" VerticalAlignment="Top"/>
-
-
+          
             <Label Content="Notes" HorizontalAlignment="Left" Margin="10,545,0,0" Width="330" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top"/>
             <TextBox x:Name="notesTxt" Margin="345,545,38,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="225" VerticalAlignment="Top"/>
 
@@ -49,7 +47,7 @@
                     </LinearGradientBrush>
                 </Button.BorderBrush>
             </Button>
-            <ComboBox x:Name="clientname" Height="75" Margin="345,460,38,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="clientname" Height="75" Margin="345,460,38,0" VerticalAlignment="Top" FontSize="35"/>
             <TextBox Height="10" Margin="641.529,32.157,37.341,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="Black" Opacity="0.5" IsTabStop="False" Width="300"/>
             <Label x:Name="TitleLabel" Content="Add Vehicle" HorizontalAlignment="Left" Height="45" Margin="343.149,14,0,0" VerticalAlignment="Top" Width="267.861" FontFamily="Lithos Pro Regular" FontSize="38" FontWeight="Bold" Background="{x:Null}" Foreground="Black"/>
             <TextBox Height="10" Margin="10,32.157,668.87,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="Black" Opacity="0.5" IsTabStop="False" Width="300"/>

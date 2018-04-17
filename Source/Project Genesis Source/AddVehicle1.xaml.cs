@@ -31,29 +31,12 @@ namespace Project_Genesis_Source
         }
 
         private void GetClientInfo() {
-            // create a variable that will store the connection string stuff
-            var conn = dc.conn;
+            // get the first and last name of the clients
+            string[] names = dc.RetrieveNames();
 
-            using (conn = new SqlConnection(dc.connString)) {
-                try {
-                    // get the first and last name of the client from the database
-                    string sqlString = "SELECT Cus_FName, Cus_LName FROM Customer";
-
-                    SqlCommand customerAdapter = new SqlCommand(sqlString, conn);
-                    conn.Open();
-                    SqlDataReader fillComboBox = customerAdapter.ExecuteReader();
-                    // fill the combobox with all the queried information
-                    while (fillComboBox.Read())
-                        // TODO - sort the information alphabetically
-                        clientname.Items.Add(fillComboBox["Cus_FName"] + " " + fillComboBox["Cus_LName"]);
-                    fillComboBox.Close();
-                }
-                catch (Exception ex) {
-                    MessageBox.Show(ex.ToString());
-                }
-                finally {
-                    conn.Close();
-                }
+            for (int i = 0; i < names.Length; i++) {
+                // add all the clients to the drop down
+                clientname.Items.Add(names[i]);
             }
         }
 
