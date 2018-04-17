@@ -151,7 +151,7 @@
                 <Label x:Name="SelectLabel3" Content="Description" HorizontalAlignment="Left" Height="45" Margin="24.524,2178.343,0,0" VerticalAlignment="Top" Width="300" FontFamily="Good Times" FontSize="28" Background="{x:Null}" Foreground="#FF0018FF"/>
                 <TextBox Height="10" Margin="24.873,1566,54.608,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False"/>
                 <Label x:Name="taxRate" Content="Tax Rate" HorizontalAlignment="Left" Height="75" Margin="24.873,3058.343,0,0" VerticalAlignment="Top" Width="284.778" FontFamily="Lithos Pro Regular" FontSize="36"/>
-                <TextBox x:Name="taxRateTxt" LostFocus="taxRateTxt_LostFocus" Text="1 or 2.5" HorizontalAlignment="Left" Height="75" Margin="375.819,3056.843,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="548.549" FontSize="35" FontFamily="285.127"/>
+                <TextBox x:Name="taxRateTxt" LostFocus="taxRateTxt_LostFocus" Text="5" HorizontalAlignment="Left" Height="75" Margin="375.819,3056.843,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="548.549" FontSize="35" FontFamily="285.127"/>
                 <TextBox x:Name="taxRateTxtWatermark" GotFocus="taxRateTxtWatermark_GotFocus" HorizontalAlignment="Left" Height="75" Margin="375.819,3058.343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="548.549" FontSize="35" FontFamily="285.127" Opacity="0.5"/>
             </SelectiveScrollingGrid>
         </ScrollViewer>
