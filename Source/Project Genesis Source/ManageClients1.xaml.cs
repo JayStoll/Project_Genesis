@@ -56,6 +56,7 @@ namespace Project_Genesis_Source
 
         private void EditBtnClick(object sender, RoutedEventArgs e)
         {
+            /*
             //clear listboxes
             CusInformationListBox.Items.Clear();
             VehicleList.Items.Clear();
@@ -100,7 +101,7 @@ namespace Project_Genesis_Source
                     CusInformationListBox.Items.Add(firstAndLast[0] + " " + firstAndLast[1] + "\n");
                     CusInformationListBox.Items.Add(cusInfo[i]);
                 }
-            }
+            }*/
 
         }
 
