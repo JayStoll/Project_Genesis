@@ -48,16 +48,18 @@ namespace Project_Genesis_Source {
 
         private void FillPartInfo() {
             var conn = dataConnection.conn;
-            string partQuery = "SELECT Part_Name FROM Part";
+            string partQuery = "SELECT Part_Name FROM Part ORDER BY Part_Name ASC";
 
             using (conn = new SqlConnection(dataConnection.connString)) {
                 conn.Open();
                 SqlCommand command = new SqlCommand(partQuery, conn);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read()) {
+                    // add all the parts to the part combobox
                     PartDropDown.Items.Add(reader["Part_Name"]);
                 }
             }
+            
         }
 
         //Client DropDowns
@@ -104,6 +106,7 @@ namespace Project_Genesis_Source {
         // vehicle dropdown
         private void VehicleSelectionChanged(object sender, SelectionChangedEventArgs e) {
             var conn = dataConnection.conn;
+
             try {
                 string vehicle = VehicleDropDown.SelectedItem.ToString();
 
@@ -152,7 +155,8 @@ namespace Project_Genesis_Source {
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read()) {
                         PartTxt.Text = reader["Part_Name"].ToString();
-                        PriceTxt.Text = reader["Part_Price"].ToString();
+                        var price = reader["Part_Price"];
+                        PriceTxt.Text = string.Format("{0:F2}", price);
                     }
                 }
             }
@@ -245,7 +249,7 @@ namespace Project_Genesis_Source {
 
             // creates a new invoice
             CreatePDF invoice = new CreatePDF();
-            invoice.CreateInvoice(client, labour, part, int.Parse(rateTxt.Text));
+            invoice.CreateInvoice(client, labour, part, int.Parse(taxRateTxt.Text));
         }
 
 
