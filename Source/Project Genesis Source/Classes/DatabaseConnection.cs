@@ -32,12 +32,12 @@ namespace Project_Genesis_Source.Classes {
         /// <param name="mailingAddress">Includes Postal Code</param>
         /// <param name="phoneNumber"></param>
         /// <param name="email"></param>
-        public void AddNewClient(string firstName, string lastName, string mailingAddress, string phoneNumber, string email, string boxNum, string postalCode) {
+        public void AddNewClient(string firstName, string lastName, string mailingAddress, string phoneNumber, string email, string boxNum, string postalCode, string company) {
             // send the information to Customer with email
 
             //insert query to send to cCustomer
-            string insertData = @"INSERT INTO Customer(Cus_FName, Cus_LName, Cus_Address, Cus_Phone, Cus_Email, Cus_BoxNum, Cus_PostalCode)
-                                VALUES(@Cus_FName, @Cus_LName, @Cus_Address, @Cus_Phone, @Cus_Email, @Cus_BoxNum, @Cus_PostalCode)";
+            string insertData = @"INSERT INTO Customer(Cus_FName, Cus_LName, Cus_Address, Cus_Phone, Cus_Email, Cus_BoxNum, Cus_PostalCode, Cus_Company)
+                                VALUES(@Cus_FName, @Cus_LName, @Cus_Address, @Cus_Phone, @Cus_Email, @Cus_BoxNum, @Cus_PostalCode, @Cus_Company)";
 
             using (conn = new SqlConnection(connString)) {
                 try {
@@ -50,6 +50,7 @@ namespace Project_Genesis_Source.Classes {
                     command.Parameters.AddWithValue(@"Cus_Email", email);
                     command.Parameters.AddWithValue(@"Cus_BoxNum", boxNum);
                     command.Parameters.AddWithValue(@"Cus_PostalCode", postalCode);
+                    command.Parameters.AddWithValue(@"Cus_Company", company);
                     command.ExecuteNonQuery();
                     MessageBox.Show(firstName + " " + lastName + " has been added");
                 }
@@ -300,12 +301,9 @@ namespace Project_Genesis_Source.Classes {
                     int i = 0;
                     while (reader.Read())
                     {
-                        cusInfo.Insert(i,
-                            "Address: " + reader["Cus_Address"] + "/n" +
-                            "Phone: " + reader["Cus_Phone"] + "/n" +
-                            "Email: " + reader["Customer_Email"] + "/n" +
-                            "Box Number: " + reader["Cus_BoxNum"] + "/n" +
-                            "Postal Code: " + reader["Cus_PostalCode"] + "/n");
+                        cusInfo.Insert(i, reader["Cus_Address"].ToString() + "\n \n" + reader["Cus_Phone"].ToString() + "\n \n"
+                                        + reader["Cus_Email"].ToString() + "\n \n" + reader["Cus_BoxNum"].ToString() + "\n \n"
+                                        + reader["Cus_PostalCode"]);
                         i++;
                     }
                     reader.Close();
@@ -358,6 +356,75 @@ namespace Project_Genesis_Source.Classes {
 
             return vs.ToArray();
         }
+        
+
+        /// <summary>
+        /// Deletes all CUSTOMER TABLE data
+        /// </summary>
+        public void deleteCusFromDb(string FName, string LName)
+        {
+
+            //query string to drop customer from table
+            string deleteCusQuery = "DELETE FROM Customer WHERE Cus_FName = '" + FName + "' AND Cus_LName = '" + LName + "'";
+
+            using (conn = new SqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    command = new SqlCommand(deleteCusQuery, conn);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show(FName + " " + LName + "has been deleted");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+   
+        ///<summary>
+        ///Deletes all vehicle data for customer to be deleted
+        /// </summary>
+        public void deleteVehicleFromDb(string FName, string LName)
+        {
+            //get customer id 
+            string cus_ID = GetCus_ID(FName, LName);
+
+            //query to delete vehicle
+            string deleteVehicleQuery = "DELETE FROM Vehicle WHERE Cus_ID = '" + cus_ID + "'";
+
+            using (conn = new SqlConnection(connString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    command = new SqlCommand(deleteVehicleQuery, conn);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Vehicles belonging to " + FName + " " + LName + " have been deleted");
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+        
+
+
+
+
 
         public double GetPartPrice(string selectedPart) {
             string getSelectedPartInfo = "SELECT Part_Price FROM Part WHERE Part_Name='" + selectedPart + "'";
@@ -377,4 +444,6 @@ namespace Project_Genesis_Source.Classes {
         }
 
     }
+
+
 }

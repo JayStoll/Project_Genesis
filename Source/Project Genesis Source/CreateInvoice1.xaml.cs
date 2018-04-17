@@ -106,6 +106,7 @@ namespace Project_Genesis_Source {
         // vehicle dropdown
         private void VehicleSelectionChanged(object sender, SelectionChangedEventArgs e) {
             var conn = dataConnection.conn;
+
             try {
                 string vehicle = VehicleDropDown.SelectedItem.ToString();
 
