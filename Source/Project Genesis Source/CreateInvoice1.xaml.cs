@@ -1,22 +1,10 @@
 ﻿using Project_Genesis_Source.Classes;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Data.Sql;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-
+using System.IO;
 
 namespace Project_Genesis_Source {
 
@@ -24,6 +12,8 @@ namespace Project_Genesis_Source {
     /// Interaction logic for CreateInvoice1.xaml
     /// </summary>
     public partial class CreateInvoice1 : Page {
+        int invoiceNum = 0;
+        string invoiceFileName = "invoiceNum.txt";
 
         DatabaseConnection dataConnection = new DatabaseConnection();
         int partsAdded = 0;              // keeps track of the amount of parts being added into the invoice
@@ -209,6 +199,8 @@ namespace Project_Genesis_Source {
 
         private void CreateInvoice(object sender, RoutedEventArgs e) {
             GeneratePDF();
+            CreateInvoice1 create = new CreateInvoice1();
+            NavigationService.Navigate(create);
         }
 
         private void GeneratePDF() {
@@ -246,13 +238,33 @@ namespace Project_Genesis_Source {
                 PartsUsed = partsUsed,
                 PartTotal = totalCosttxt.Content.ToString()
             };
-
+            
+            invoiceNum += CheckInvoiceNum();
+            if (invoiceNum == 0) invoiceNum++;
             // creates a new invoice
             CreatePDF invoice = new CreatePDF();
-            invoice.CreateInvoice(client, labour, part, int.Parse(taxRateTxt.Text));
+            invoice.CreateInvoice(client, labour, part, int.Parse(taxRateTxt.Text), invoiceNum);
+            SetInvoiceNum(invoiceNum += 1);
         }
 
+        public void SetInvoiceNum(int invoice) {
+            if (!File.Exists(invoiceFileName)) File.Create(invoiceFileName);
+            using (StreamWriter sw = new StreamWriter(invoiceFileName)) {
+               sw.Write(invoice);
+                sw.Close();
+            }
+        }
 
+        private int CheckInvoiceNum() {
+            if (!File.Exists(invoiceFileName)) File.Create(invoiceFileName);
+            int num = 0;
+            using (TextReader sr = File.OpenText(invoiceFileName)) {
+                num = int.Parse(sr.ReadLine());
+                sr.Close();
+            }
+
+            return num;
+        }
 
         //AJ Santillan March 28, 2018
         //Watermarks

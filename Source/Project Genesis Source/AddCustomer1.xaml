@@ -8,9 +8,9 @@
        
       Title="AddCustomer1" Width="1000" Height="500">
 
-    <ScrollViewer Margin="10,10,10,-542">
+    <ScrollViewer Margin="10">
 
-        <Grid Height="1143" Width="980">
+        <Grid Height="1045" Width="980">
             <Label Content="First Name" Margin="10,98.213,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="290" HorizontalAlignment="Left"/>
             <TextBox x:Name="fNametxt" LostFocus="fNametxt_LostFocus" Margin="329.478,98.213,46,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" IsTabStop="False"/>
             <TextBox x:Name="fNametxtWatermark" GotFocus="fNametxtWatermark_GotFocus" Text="John" Margin="329.489,98.213,46,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" Opacity="0.5"/>

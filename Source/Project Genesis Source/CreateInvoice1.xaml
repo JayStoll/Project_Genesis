@@ -103,7 +103,7 @@
 
                 <Label Content="C/O Box" HorizontalAlignment="Left" Height="75" Margin="25,2280.5,0,0" VerticalAlignment="Top" Width="285" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
                 <TextBox x:Name="c_oBoxTxt" LostFocus="c_oBoxTxt_LostFocus" HorizontalAlignment="Left" Height="75" Margin="376,2279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="549" FontSize="25"/>
-                <TextBox x:Name="c_oBoxTxtWatermark" GotFocus="c_oBoxTxtWatermark_GotFocus" Text="Leave Blank will use selected client name" HorizontalAlignment="Left" Height="75" Margin="376,2280.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="549" FontSize="25" Opacity="0.5"/>
+                <TextBox x:Name="c_oBoxTxtWatermark" GotFocus="c_oBoxTxtWatermark_GotFocus" Text="Leave Blank will use selected client name" HorizontalAlignment="Left" Height="75" Margin="376,2280.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="549" FontSize="25" Opacity="0.5" IsTabStop="False"/>
 
 
                 <Label Content="Labour" HorizontalAlignment="Left" Height="75" Margin="25,2373.5,0,0" VerticalAlignment="Top" Width="285" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
@@ -130,6 +130,9 @@
 
                 <TextBox Height="10" Margin="339,701,54.767,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False" Width="600"/>
 
+                <TextBox x:Name="taxRateTxtWatermark" GotFocus="taxRateTxtWatermark_GotFocus" Text="5" HorizontalAlignment="Left" Height="75" Margin="375.819,3058.343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="548.549" FontSize="35" FontFamily="285.127" Opacity="0.5" IsTabStop="False"/>
+                <TextBox x:Name="taxRateTxt" LostFocus="taxRateTxt_LostFocus" HorizontalAlignment="Left" Height="75" Margin="375.819,3056.843,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="548.549" FontSize="35" FontFamily="285.127"/>
+                
 
                 <Button Content="Create Invoice" Margin="626,3139,68.767,0" FontFamily="Lithos Pro Regular" FontSize="35" Background="{x:Null}" Click="CreateInvoice" Height="70" VerticalAlignment="Top">
                     <Button.BorderBrush>
@@ -152,8 +155,7 @@
                 <Label x:Name="SelectLabel3" Content="Description" HorizontalAlignment="Left" Height="45" Margin="24.524,2178.343,0,0" VerticalAlignment="Top" Width="300" FontFamily="Good Times" FontSize="28" Background="{x:Null}" Foreground="#FF0018FF"/>
                 <TextBox Height="10" Margin="24.873,1566,54.608,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="White" Opacity="0.5" IsTabStop="False"/>
                 <Label x:Name="taxRate" Content="Tax Rate" HorizontalAlignment="Left" Height="75" Margin="24.873,3058.343,0,0" VerticalAlignment="Top" Width="284.778" FontFamily="Lithos Pro Regular" FontSize="36"/>
-                <TextBox x:Name="taxRateTxt" LostFocus="taxRateTxt_LostFocus" HorizontalAlignment="Left" Height="75" Margin="375.819,3056.843,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="548.549" FontSize="35" FontFamily="285.127"/>
-                <TextBox x:Name="taxRateTxtWatermark" GotFocus="taxRateTxtWatermark_GotFocus" Text="5" HorizontalAlignment="Left" Height="75" Margin="375.819,3058.343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="548.549" FontSize="35" FontFamily="285.127" Opacity="0.5"/>
+                
             </SelectiveScrollingGrid>
         </ScrollViewer>
     </Grid>

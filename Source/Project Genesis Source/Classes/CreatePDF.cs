@@ -9,7 +9,8 @@ using System.Windows;
 namespace Project_Genesis_Source.Classes {
 
     class CreatePDF {
-        public void CreateInvoice(ClientInfo client, LabourInfo labour, PartInfo part, int taxRate) {
+        public void CreateInvoice(ClientInfo client, LabourInfo labour, PartInfo part, 
+                                  int taxRate, int invoiceNum) {
             try {
                 // create new PDF document
                 PdfDocument doc = new PdfDocument();
@@ -72,7 +73,7 @@ namespace Project_Genesis_Source.Classes {
                     new XRect(leftAlign * 13, tempSpacing + (downPercent * 3), page.Width, page.Height), XStringFormats.TopLeft);
                 #endregion
                 #region Fill Invoice Info - only thing to do on this one is get the invoice number
-                gfx.DrawString("1", font, XBrushes.Black,
+                gfx.DrawString(invoiceNum.ToString(), font, XBrushes.Black,
                     new XRect(leftAlign * 17, tempSpacing + 5, page.Width, page.Height), XStringFormats.TopLeft);
                 gfx.DrawString(DateTime.Now.ToString("dd/MM/yyyy"), font, XBrushes.Black,
                     new XRect(leftAlign * 17, tempSpacing + downPercent, page.Width, page.Height), XStringFormats.TopLeft);
@@ -197,7 +198,8 @@ namespace Project_Genesis_Source.Classes {
                 #endregion
 
                 // set the file to print the document
-                string filename = @"invoices\" + client.ClientFName + " " + client.ClientLName + @"\" + client.ClientFName + client.ClientLName + DateTime.Now.ToString("dd/MM/yyyy") + ".pdf";
+                string filename = @"invoices\" + client.ClientFName + " " + client.ClientLName + @"\" + client.ClientFName + 
+                                    client.ClientLName + "#" + invoiceNum + DateTime.Now.ToString("-dd/MM/yyyy") + ".pdf";
                 // creates a new directory if one is not present
                 System.IO.FileInfo file = new System.IO.FileInfo(filename);
                 file.Directory.Create();  // Skips this if the file path is found

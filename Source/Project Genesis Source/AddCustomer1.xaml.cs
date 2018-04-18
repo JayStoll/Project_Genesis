@@ -1,18 +1,7 @@
 ﻿using Project_Genesis_Source.Classes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Project_Genesis_Source
 {
@@ -45,10 +34,11 @@ namespace Project_Genesis_Source
 
             //TODO find way to catch errors in the button press if necessary
             dataConnect.AddNewClient(fName, lName, address, phoneNum, email, boxNum, postalCode, company);
-            ClearTextBox();
+            AddCustomer1 create = new AddCustomer1();
+            NavigationService.Navigate(create);
 
-            
-            
+
+
         }
 
         //Clear Text boxes function
