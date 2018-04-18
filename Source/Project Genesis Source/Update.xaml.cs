@@ -69,5 +69,18 @@ namespace Project_Genesis_Source {
                 MessageBox.Show(ex.Message + " " + command.CommandText);
             }
         }
+
+        //close button
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //drag and drop code
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
     }
 }

@@ -9,31 +9,38 @@
     <ScrollViewer Margin="10,10,2,2">
 
         <Grid Height="1143" Width="980">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="387*"/>
+                <ColumnDefinition Width="593*"/>
+            </Grid.ColumnDefinitions>
+
+
+
             <Label Content="First Name" Margin="10,98.213,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="290" HorizontalAlignment="Left"/>
-            <TextBox x:Name="fNametxt" Margin="329.478,98.213,46,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" IsTabStop="False"/>
+            <TextBox x:Name="fNametxt" Margin="329.478,98.213,46,0" TextWrapping="Wrap" FontSize="35" FontFamily="Palatino Linotype" Height="75" VerticalAlignment="Top" IsTabStop="False" Grid.ColumnSpan="2"/>
 
 
             <Label Content="Last Name" Margin="10,188.213,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="290" HorizontalAlignment="Left"/>
-            <TextBox x:Name="lNameTxt" Margin="329.478,188.213,46,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" IsTabStop="False"/>
+            <TextBox x:Name="lNameTxt" Margin="329.478,188.213,46,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" IsTabStop="False" Grid.ColumnSpan="2"/>
             <Label Content="Company" Margin="10,275.713,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300" HorizontalAlignment="Left"/>
-            <TextBox x:Name="CompanyTxt" Margin="329.478,275.713,46,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" IsTabStop="False"/>
+            <TextBox x:Name="CompanyTxt" Margin="329.478,275.713,46,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" IsTabStop="False" Grid.ColumnSpan="2"/>
 
 
             <Label Content="Address" Margin="10,367.01,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="290" HorizontalAlignment="Left"/>
-            <TextBox x:Name="addressTxt" Margin="329.148,363.213,46.33,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="150" VerticalAlignment="Top" IsTabStop="False"/>
+            <TextBox x:Name="addressTxt" Margin="329.148,363.213,46.33,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="150" VerticalAlignment="Top" IsTabStop="False" Grid.ColumnSpan="2"/>
 
 
             <Label Content="Phone Number" Margin="10,533.47,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300" HorizontalAlignment="Left"/>
-            <TextBox x:Name="phoneNumTxt" Margin="329.148,533.47,46.33,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" IsTabStop="False"/>
+            <TextBox x:Name="phoneNumTxt" Margin="329.148,533.47,46.33,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" IsTabStop="False" Grid.ColumnSpan="2"/>
 
             <Label Content="Postal Code" Margin="10,620.97,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300" HorizontalAlignment="Left"/>
-            <TextBox x:Name="postalCodeTxt" Margin="329.478,620.97,46,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" IsTabStop="False"/>
+            <TextBox x:Name="postalCodeTxt" Margin="329.478,620.97,46,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" IsTabStop="False" Grid.ColumnSpan="2"/>
 
             <Label Content="E-mail Address" Margin="10,708.47,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300" HorizontalAlignment="Left"/>
-            <TextBox x:Name="emailTxt" Margin="329.478,708.47,46,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" IsTabStop="False"/>
+            <TextBox x:Name="emailTxt" Margin="329.478,708.47,46,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" IsTabStop="False" Grid.ColumnSpan="2"/>
 
             <Label Content="Box#" Margin="10,795.97,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Height="75" VerticalAlignment="Top" Width="300" HorizontalAlignment="Left"/>
-            <TextBox x:Name="boxNumtxt" Margin="329.148,795.97,46.33,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" IsTabStop="False"/>
+            <TextBox x:Name="boxNumtxt" Margin="329.148,795.97,46.33,0" TextWrapping="Wrap" FontFamily="Palatino Linotype" FontSize="35" Height="75" VerticalAlignment="Top" IsTabStop="False" Grid.ColumnSpan="2"/>
 
             <Button x:Name="UpdateCust" Content="Update" Margin="0,928.213,46,0" FontFamily="Lithos Pro Regular" FontSize="35" HorizontalAlignment="Right" Width="298.566" Background="{x:Null}" Height="60" VerticalAlignment="Top" RenderTransformOrigin="0.637,0.7" Click="UpdateClient">
                 <Button.BorderBrush>
@@ -43,10 +50,12 @@
                     </LinearGradientBrush>
                 </Button.BorderBrush>
             </Button>
-            <TextBox Height="10" Margin="635.434,32.157,46.341,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="Black" Opacity="0.5" IsTabStop="False"/>
-            <Label x:Name="TitleLabel" Content="Add Customer" HorizontalAlignment="Left" Height="45" Margin="313.195,14,0,0" VerticalAlignment="Top" Width="317.269" FontFamily="Lithos Pro Regular" FontSize="38" FontWeight="Bold" Background="{x:Null}" Foreground="Black"/>
-            <TextBox Height="10" Margin="10,32.157,671.775,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="Black" Opacity="0.5" IsTabStop="False"/>
-            <Button x:Name="Close" Content="CLOSE" HorizontalAlignment="Left" Height="27.157" Margin="10,0,0,0" VerticalAlignment="Top" Width="65" Background="{x:Null}" BorderBrush="#FF261FBD" FontFamily="Sitka Small" FontWeight="Bold" FontSize="16" Click="CloseForm"/>
+
+            <TextBox Height="10" Margin="248.101,32.157,46.341,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="Black" Opacity="0.5" IsTabStop="False" Grid.Column="1"/>
+            <Label x:Name="TitleLabel" Content="Add Customer" HorizontalAlignment="Left" Height="45" Margin="313.195,14,0,0" VerticalAlignment="Top" Width="317.269" FontFamily="Lithos Pro Regular" FontSize="38" FontWeight="Bold" Background="{x:Null}" Foreground="Black" Grid.ColumnSpan="2"/>
+            <TextBox Height="10" Margin="10,32.157,79.108,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="20" IsEnabled="False" Background="Black" Opacity="0.5" IsTabStop="False"/>
+            <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="80.333" VerticalAlignment="Top" Width="980" Opacity="0.1" Grid.ColumnSpan="2" MouseDown="Rectangle_MouseDown"/>
+            <Button x:Name="Close" Content="CLOSE" HorizontalAlignment="Left" Height="27.158" Margin="10,24.468,0,0" VerticalAlignment="Top" Width="65" Background="{x:Null}" BorderBrush="#FF261FBD" FontFamily="Sitka Small" FontWeight="Bold" FontSize="16" Click="Close_Click"/>
 
 
 
