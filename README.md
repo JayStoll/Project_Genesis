@@ -9,7 +9,7 @@ CAJNVoice is a invoice generation software. The project started development Febu
 ## Authors
 * **Conner Schissler** - *Database creation + management* - [Schiss](https://github.com/Schiiss)
 * **AJ Santillan** - *UI Designer* - [AJSan24](https://github.com/AJSan24)
-* **Jayden Stoll** - *PDF creation + invoice creation* - [JayStoll](https://github.com/JayStoll)
+* **Jayden Stoll** - *PDF creation + invoice creation page + backup and recovery* - [JayStoll](https://github.com/JayStoll)
 * **Neil Schoeman** - *Database creation + manage client* - [NeilSchoe](https://github.com/NeilSchoe)
 
 ## Special Thanks

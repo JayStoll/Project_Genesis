@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Genesis_Source"
         mc:Ignorable="d"
-        Title="AboutUs" Height="500" Width="1000" WindowStartupLocation="CenterScreen" Icon="icon.png" WindowStyle="None">
+        Title="AboutUs" Height="500" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="icon.png" WindowStyle="None">
     <Grid Background="#FF739EB8">
         <Image Margin="529.5,18.5,10,94.5" Source="12.png"/>
         <TextBlock Margin="106,405,10,10" TextWrapping="Wrap" FontSize="68" FontFamily="Ethnocentric" Text="CAJN SOFTWARE"/>
