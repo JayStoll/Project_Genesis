@@ -29,7 +29,7 @@ namespace Project_Genesis_Source
             InitializeComponent();
 
             // Get the list of names
-            string[] fnames = dataConnect.RetrieveFNames();
+            string[] fnames = dataConnect.RetrieveNames();
 
             if (fnames.Length == 0)
             {
@@ -43,16 +43,9 @@ namespace Project_Genesis_Source
                     // TODO - sort the clients alphabetical order
                     nameOutputBox.Items.Add(fnames[i]);
                 }
-            }
-
-
-            
-
-            
-            
-            
-            
+            }  
         }
+
 
         private void selectedName(object sender, SelectionChangedEventArgs e)
         {   
@@ -61,10 +54,12 @@ namespace Project_Genesis_Source
             */
         }
 
-        //LOGIC TO FILL LIST BOXES, it stored in the EditBtnClick event for now because
-        //we havent figured out the onclick
         private void EditBtnClick(object sender, RoutedEventArgs e)
         {
+            /*
+            //clear listboxes
+            CusInformationListBox.Items.Clear();
+            VehicleList.Items.Clear();
 
             Update upd = new Update();
             upd.Show();
@@ -105,12 +100,72 @@ namespace Project_Genesis_Source
             else
             {
                 //print all cusinfo
-                for (int i = 0; i < vehicleInfo.Length; i++)
+                for (int i = 0; i < cusInfo.Length; i++)
                 {
+                    CusInformationListBox.Items.Add(firstAndLast[0] + " " + firstAndLast[1] + "\n");
                     CusInformationListBox.Items.Add(cusInfo[i]);
+                }
+            }*/
+
+        }
+
+        private void DeleteBtnClick(object sender, RoutedEventArgs e)
+        {
+            //get name and split and store
+            string selectedName = nameOutputBox.SelectedItem.ToString();
+            string[] firstAndLast = selectedName.Split(null);
+
+            
+            //delete all vehicles relating to the customer from db
+            dataConnect.deleteVehicleFromDb(firstAndLast[0], firstAndLast[1]);
+
+            //delete customer from db
+            dataConnect.deleteCusFromDb(firstAndLast[0], firstAndLast[1]);
+
+
+        }
+
+        // when a client name is selected change the information displayed to that client
+        private void ChangeClient(object sender, SelectionChangedEventArgs e) {
+            //clear listboxes
+            CusInformationListBox.Items.Clear();
+            VehicleList.Items.Clear();
+
+            //store selected name, then split it into first and last and store in array
+            string selectedName = nameOutputBox.SelectedItem.ToString();
+            string[] firstAndLast = selectedName.Split(null);
+
+            //retrieve Cus_ID for retrieve vehicle, message box for debug
+            string cus_ID = dataConnect.GetCus_ID(firstAndLast[0], firstAndLast[1]);
+            MessageBox.Show(cus_ID);
+
+
+            //Get array of VehicleInfo
+            string[] vehicleInfo = dataConnect.RetrieveVehicleInfo(cus_ID);
+
+            if (vehicleInfo.Length == 0) {
+                MessageBox.Show("No vehicle information to populate with");
+            }
+            else {
+                //print all vehicleinfo
+                for (int i = 0; i < vehicleInfo.Length; i++) {
+                    VehicleList.Items.Add(vehicleInfo[i]);
                 }
             }
 
+            //get array of cusinfo
+            string[] cusInfo = dataConnect.retrieveCusInfo(firstAndLast[0], firstAndLast[1]);
+
+            if (cusInfo.Length == 0) {
+                MessageBox.Show("No customer information to populate with");
+            }
+            else {
+                //print all cusinfo
+                for (int i = 0; i < cusInfo.Length; i++) {
+                    CusInformationListBox.Items.Add(firstAndLast[0] + " " + firstAndLast[1] + "\n");
+                    CusInformationListBox.Items.Add(cusInfo[i]);
+                }
+            }
         }
     }
 }

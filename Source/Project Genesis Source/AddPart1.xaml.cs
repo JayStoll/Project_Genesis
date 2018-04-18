@@ -33,13 +33,7 @@ namespace Project_Genesis_Source
             string partNum = partNumTxt.Text;
             string partPrice = priceTxt.Text;
             string partNotes = notesTxt.Text;
-            
-
-            //DO we still need this without the relation to Vehicle_Part???
- 
-
-            showText();
-
+     
             //initialize dataconnection variable
             DatabaseConnection dataConnect = new DatabaseConnection();
 

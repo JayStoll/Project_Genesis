@@ -26,7 +26,7 @@ namespace Project_Genesis_Source
             InitializeComponent();
         }
 
-        //TODO clear feilds, check for missing, duplicate records
+        //TODO check for missing / duplicate records
 
         private void Add_Customer_Click(object sender, RoutedEventArgs e)
         {
@@ -38,12 +38,13 @@ namespace Project_Genesis_Source
             string phoneNum = phoneNumTxt.Text;
             string email = emailTxt.Text;
             string postalCode = postalCodeTxt.Text;
+            string company = CompanyTxt.Text;
 
             //initialize database connection variable
             DatabaseConnection dataConnect = new DatabaseConnection();
 
             //TODO find way to catch errors in the button press if necessary
-            dataConnect.AddNewClient(fName, lName, address, phoneNum, email, boxNum, postalCode);
+            dataConnect.AddNewClient(fName, lName, address, phoneNum, email, boxNum, postalCode, company);
             ClearTextBox();
 
             

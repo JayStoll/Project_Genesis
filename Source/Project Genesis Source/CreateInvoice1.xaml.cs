@@ -19,12 +19,13 @@ using System.Windows.Shapes;
 
 
 namespace Project_Genesis_Source {
+
     /// <summary>
     /// Interaction logic for CreateInvoice1.xaml
     /// </summary>
     public partial class CreateInvoice1 : Page {
 
-        DatabaseConnection dc = new DatabaseConnection();
+        DatabaseConnection dataConnection = new DatabaseConnection();
         int partsAdded = 0;              // keeps track of the amount of parts being added into the invoice
         double totalCostOfParts = 0.00;  // keeps track of the total cost of parts
 
@@ -36,61 +37,45 @@ namespace Project_Genesis_Source {
         }
 
         private void GetClientInfo() {
-            // create a variable that will store the connection string stuff
-            var conn = dc.conn;
+            // get the first and last name of the clients
+            string[] names = dataConnection.RetrieveNames();
 
-            using (conn = new SqlConnection(dc.connString)) {
-                try {
-                    // get the first and last name of the client from the database
-                    string sqlString = "SELECT Cus_FName, Cus_LName FROM Customer";
-
-                    SqlCommand customerAdapter = new SqlCommand(sqlString, conn);
-                    conn.Open();
-                    SqlDataReader fillComboBox = customerAdapter.ExecuteReader();
-                    // fill the combobox with all the queried information
-                    while (fillComboBox.Read())
-                        // TODO - sort the information alphabetically
-                        ClientDropDown.Items.Add(fillComboBox["Cus_FName"] + " " + fillComboBox["Cus_LName"]);
-                    fillComboBox.Close();
-                }
-                catch (Exception ex) {
-                    MessageBox.Show(ex.ToString());
-                }
-                finally {
-                    conn.Close();
-                }
+            for (int i = 0; i < names.Length; i++) {
+                // add all the clients to the drop down
+                ClientDropDown.Items.Add(names[i]);
             }
         }
 
         private void FillPartInfo() {
-            var conn = dc.conn;
-            string partQuery = "SELECT Part_Name FROM Part";
+            var conn = dataConnection.conn;
+            string partQuery = "SELECT Part_Name FROM Part ORDER BY Part_Name ASC";
 
-            using (conn = new SqlConnection(dc.connString)) {
+            using (conn = new SqlConnection(dataConnection.connString)) {
                 conn.Open();
                 SqlCommand command = new SqlCommand(partQuery, conn);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read()) {
+                    // add all the parts to the part combobox
                     PartDropDown.Items.Add(reader["Part_Name"]);
                 }
             }
+            
         }
 
         //Client DropDowns
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             // clears the combobox when a new client is selected
             VehicleDropDown.Items.Clear();
-            var conn = dc.conn;
+            var conn = dataConnection.conn;
 
-            // Gets the first and last name of the entered client - slpits at a space
+            // Gets the first and last name of the entered client - splits at a space
             string[] names = ClientDropDown.SelectedItem.ToString().Split(null);
-            // MessageBox.Show(names[0] + " " + names[1]);
             
             string getClientInfo = @"SELECT Customer.*, Vehicle.* 
                                     FROM Customer, Vehicle 
                                     WHERE Cus_FName = '" + names[0] + "' AND Cus_LName = '" + names[1] + "' AND Vehicle.Cus_ID=Customer.Cus_ID";
 
-            using (conn = new SqlConnection(dc.connString)) {
+            using (conn = new SqlConnection(dataConnection.connString)) {
                 try {
                     conn.Open();
                     // gets the query and puts it in the database
@@ -120,14 +105,15 @@ namespace Project_Genesis_Source {
 
         // vehicle dropdown
         private void VehicleSelectionChanged(object sender, SelectionChangedEventArgs e) {
-            var conn = dc.conn;
+            var conn = dataConnection.conn;
+
             try {
                 string vehicle = VehicleDropDown.SelectedItem.ToString();
 
                 // MessageBox.Show(vehicle);
                 string getVehicleInfo = @"SELECT * FROM  Vehicle WHERE Vehicle_Type = '" + vehicle + "'";
 
-                using (conn = new SqlConnection(dc.connString)) {
+                using (conn = new SqlConnection(dataConnection.connString)) {
                     try {
                         conn.Open();
                         SqlCommand command = new SqlCommand(getVehicleInfo, conn);
@@ -146,7 +132,9 @@ namespace Project_Genesis_Source {
                     }
                 }
             }
+#pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex) {
+#pragma warning restore CS0168 // Variable is declared but never used
                 // when an error happens - just clear the text
                 VehicleTxt.Text = "";
                 VehicleSerialNumtxt.Text = "";
@@ -155,23 +143,26 @@ namespace Project_Genesis_Source {
 
         // part dropdown
         private void PartSelectionChanged(object sender, SelectionChangedEventArgs e) {
-            var conn = dc.conn;
+            var conn = dataConnection.conn;
 
             try {
                 string selectedPart = PartDropDown.SelectedItem.ToString();
                 string getSelectedPartInfo = "SELECT * FROM Part WHERE Part_Name='" + selectedPart + "'";
 
-                using (conn = new SqlConnection(dc.connString)) {
+                using (conn = new SqlConnection(dataConnection.connString)) {
                     conn.Open();
                     SqlCommand command = new SqlCommand(getSelectedPartInfo, conn);
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read()) {
                         PartTxt.Text = reader["Part_Name"].ToString();
-                        PriceTxt.Text = reader["Part_Price"].ToString();
+                        var price = reader["Part_Price"];
+                        PriceTxt.Text = string.Format("{0:F2}", price);
                     }
                 }
             }
+#pragma warning disable CS0168 // Variable is declared but never used
             catch (Exception ex) {
+#pragma warning restore CS0168 // Variable is declared but never used
                 PartTxt.Text = "";
                 PriceTxt.Text = "";
             }   
@@ -179,7 +170,7 @@ namespace Project_Genesis_Source {
 
         private void AddPart(object sender, RoutedEventArgs e) {
             // add the price of the part to the total cost
-            totalCostOfParts += dc.GetPartPrice(PartDropDown.SelectedItem.ToString());
+            totalCostOfParts += dataConnection.GetPartPrice(PartDropDown.SelectedItem.ToString());
 
             totalCosttxt.Content = totalCostOfParts.ToString();
             // adds the part name to the total cost of parts
@@ -197,16 +188,20 @@ namespace Project_Genesis_Source {
                     try {
                         // deletes the price of the entered part
                         string temp = PartsAddedList.SelectedItem.ToString();
-                        totalCostOfParts -= dc.GetPartPrice(temp);
+                        totalCostOfParts -= dataConnection.GetPartPrice(temp);
                     } 
+#pragma warning disable CS0168 // Variable is declared but never used
                     catch (Exception ex) { }
+#pragma warning restore CS0168 // Variable is declared but never used
 
                     // deletes the entered part from the list
                     PartsAddedList.Items.RemoveAt(PartsAddedList.SelectedIndex);
                     partsAdded--;
                     totalCosttxt.Content = totalCostOfParts.ToString();
                 }
+#pragma warning disable CS0168 // Variable is declared but never used
                 catch (Exception ex) {
+#pragma warning restore CS0168 // Variable is declared but never used
                     MessageBox.Show("No Item selected!");
                 }
             }
@@ -217,9 +212,9 @@ namespace Project_Genesis_Source {
         }
 
         private void GeneratePDF() {
-            string[] missingInfo = dc.ReturnMissingClientInfo(CusFNameTxt.Text, CusLnameTxt.Text);
-            MessageBox.Show(c_oBoxTxt.Text);
-            MessageBox.Show(missingInfo[0] + " " + missingInfo[1] + " " + missingInfo[2]);
+            string[] missingInfo = dataConnection.ReturnMissingClientInfo(CusFNameTxt.Text, CusLnameTxt.Text);
+
+            // fill the client info class
             ClientInfo client = new ClientInfo {
                 ClientFName = CusFNameTxt.Text,
                 ClientLName = CusLnameTxt.Text,
@@ -231,6 +226,7 @@ namespace Project_Genesis_Source {
                 Vehicle = VehicleDropDown.SelectedItem.ToString()
             };
 
+            // fill the labour info class
             LabourInfo labour = new LabourInfo {
                 QtyAmount = hoursWorkedTxt.Text,
                 Rate = rateTxt.Text,
@@ -238,20 +234,22 @@ namespace Project_Genesis_Source {
                 Tax = gstTxt.Text
             };
 
+            // get a list of the parts used
             string partsUsed = string.Empty;
-
             foreach (var item in PartsAddedList.Items) {
                 partsUsed += item + ", ";
             }
 
+            // fills in the part info class
             PartInfo part = new PartInfo {
                 AmountOfParts = partsAdded.ToString(),
                 PartsUsed = partsUsed,
                 PartTotal = totalCosttxt.Content.ToString()
             };
 
+            // creates a new invoice
             CreatePDF invoice = new CreatePDF();
-            invoice.CreateInvoice(client, labour, part, int.Parse(rateTxt.Text));
+            invoice.CreateInvoice(client, labour, part, int.Parse(taxRateTxt.Text));
         }
 
 

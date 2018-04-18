@@ -11,16 +11,16 @@
 
             <Grid Height="804" Width="980">
                 <Label Content="Name" HorizontalAlignment="Left" Height="75" Margin="10.521,102.5,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-                <TextBox x:Name="nameTxt" LostFocus="nameTxt_LostFocus" Height="75" Margin="315.521,102.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" IsTabStop="False"/>
+                <TextBox x:Name="nameTxt" Height="75" Margin="315.521,102.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" IsTabStop="False"/>
 
                 <Label Content="Serial Number" HorizontalAlignment="Left" Height="75" Margin="10.521,190,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-                <TextBox x:Name="serialNumTxt" LostFocus="serialNumTxt_LostFocus" Height="75" Margin="315.521,190,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" IsTabStop="False"/>
+                <TextBox x:Name="serialNumTxt" Height="75" Margin="315.521,190,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" IsTabStop="False"/>
 
                 <Label Content="Part Number" HorizontalAlignment="Left" Height="75" Margin="10.521,277.5,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-                <TextBox x:Name="partNumTxt" LostFocus="partNumTxt_LostFocus" Height="75" Margin="315.521,277.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="36" IsTabStop="False"/>
+                <TextBox x:Name="partNumTxt" Height="75" Margin="315.521,277.5,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Palatino Linotype" FontSize="36" IsTabStop="False"/>
 
                 <Label Content="Price" HorizontalAlignment="Left" Height="75" Margin="10.521,365,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
-                <TextBox x:Name="priceTxt" LostFocus="priceTxt_LostFocus" Height="75" Margin="315.521,365,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" IsTabStop="False"/>
+                <TextBox x:Name="priceTxt" Height="75" Margin="315.521,365,52,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontFamily="Palatino Linotype" IsTabStop="False"/>
 
                 <Label Content="Notes" HorizontalAlignment="Left" Height="75" Margin="10.521,453,0,0" VerticalAlignment="Top" Width="300" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold"/>
                 <TextBox x:Name="notesTxt" Margin="315.521,453,52,0" TextWrapping="Wrap" FontSize="36" FontFamily="Palatino Linotype" Height="200" VerticalAlignment="Top"/>
