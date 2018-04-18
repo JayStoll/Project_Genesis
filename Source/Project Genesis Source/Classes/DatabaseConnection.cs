@@ -229,7 +229,51 @@ namespace Project_Genesis_Source.Classes {
 
         }
 
+        public string[] GetAllClientInformation(string id) {
+            string query = "SELECT * FROM Customer WHERE Cus_ID='" + id + "'";
 
+            List<string> clientInfo = new List<string>();
+
+            using (conn = new SqlConnection(connString)) {
+                try {
+                    conn.Open();
+                    //store command then execute
+                    command = new SqlCommand(query, conn);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    //while the reader can read, insert into list
+                    int i = 0;
+                    while (reader.Read()) {
+                        clientInfo.Insert(i,reader["Cus_FName"].ToString());
+                        i++;
+                        clientInfo.Insert(i, reader["Cus_LName"].ToString());
+                        i++;
+                        clientInfo.Insert(i, reader["Cus_Company"].ToString());
+                        i++;
+                        clientInfo.Insert(i, reader["Cus_Address"].ToString());
+                        i++;
+                        clientInfo.Insert(i, reader["Cus_Phone"].ToString());
+                        i++;
+                        clientInfo.Insert(i, reader["Cus_PostalCode"].ToString());
+                        i++;
+                        clientInfo.Insert(i, reader["Cus_Email"].ToString());
+                        i++;
+                        clientInfo.Insert(i, reader["Cus_BoxNum"].ToString());
+                        i++;
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex + ":error occured (Db connection)");
+                }
+                finally {
+                    conn.Close();
+                }
+
+            }
+            //convert list to array then return
+            return clientInfo.ToArray();
+        }
 
         ///<summary>
         ///Retrieve Vehicle Names
@@ -281,7 +325,7 @@ namespace Project_Genesis_Source.Classes {
         public string[] retrieveCusInfo(string fname, string lname)
         {
             //select query for customer info
-            string selectCusInfo = @"SELECT Cus_Address, Cus_Phone, Cus_Email, Cus_BoxNum, Cus_PostalCode FROM Customer
+            string selectCusInfo = @"SELECT Cus_Company, Cus_Address, Cus_Phone, Cus_Email, Cus_BoxNum, Cus_PostalCode FROM Customer
                                         WHERE Cus_FName = '" + fname + "' AND Cus_LName = '" + lname + "'";
 
             //list to store results
@@ -301,7 +345,7 @@ namespace Project_Genesis_Source.Classes {
                     int i = 0;
                     while (reader.Read())
                     {
-                        cusInfo.Insert(i, reader["Cus_Address"].ToString() + "\n \n" + reader["Cus_Phone"].ToString() + "\n \n"
+                        cusInfo.Insert(i, reader["Cus_Company"].ToString() + "\n\n" + reader["Cus_Address"].ToString() + "\n \n" + reader["Cus_Phone"].ToString() + "\n \n"
                                         + reader["Cus_Email"].ToString() + "\n \n" + reader["Cus_BoxNum"].ToString() + "\n \n"
                                         + reader["Cus_PostalCode"]);
                         i++;

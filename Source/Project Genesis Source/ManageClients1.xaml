@@ -37,7 +37,7 @@
                     <GradientStop Color="#FF5795D3" Offset="0.619"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <ListBox x:Name="CusInformationListBox" Margin="9,68,7,9" FontFamily="Lithos Pro Regular" FontSize="20" SelectionChanged="selectedName"/>
+            <ListBox x:Name="CusInformationListBox" Margin="9,68,7,9" FontFamily="Lithos Pro Regular" FontSize="20"/>
         </Border>
         <Border BorderBrush="#FF95AFD4" BorderThickness="1" Margin="632.185,72,0,85.652" HorizontalAlignment="Left" Width="357.815">
             <Border.Background>
@@ -49,7 +49,7 @@
                     <GradientStop Color="#FF5795D3" Offset="0.619"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <ListBox x:Name="VehicleList" Margin="9,68,9,9" FontFamily="Lithos Pro Regular" FontSize="20" SelectionChanged="selectedName"/>
+            <ListBox x:Name="VehicleList" Margin="9,68,9,9" FontFamily="Lithos Pro Regular" FontSize="20"/>
         </Border>
         <Label Content="Name" Margin="10.661,72,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="47.762" VerticalAlignment="Top" HorizontalAlignment="Left" Width="265.082"/>
         <Label Content="Information" Margin="280.743,72,0,0" FontFamily="Lithos Pro Regular" FontSize="35" FontWeight="Bold" Background="#FF95AFD4" Foreground="#FF0C1249" Height="47.762" VerticalAlignment="Top" HorizontalAlignment="Left" Width="346.369"/>
