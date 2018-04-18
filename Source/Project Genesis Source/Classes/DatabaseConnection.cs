@@ -244,10 +244,21 @@ namespace Project_Genesis_Source.Classes {
                     //while the reader can read, insert into list
                     int i = 0;
                     while (reader.Read()) {
-                        clientInfo.Insert(i, reader["Cus_FName"].ToString() + " " + reader["Cus_LName"].ToString() +
-                            " " + reader["Cus_Company"].ToString() + reader["Cus_Address"].ToString() + " " + 
-                            reader["Cus_Phone"].ToString() + " " + reader["Cus_PostalCode"].ToString() + " " +
-                            reader["Cus_Email"].ToString() + " " + reader["Cus_BoxNum"].ToString());
+                        clientInfo.Insert(i,reader["Cus_FName"].ToString());
+                        i++;
+                        clientInfo.Insert(i, reader["Cus_LName"].ToString());
+                        i++;
+                        clientInfo.Insert(i, reader["Cus_Company"].ToString());
+                        i++;
+                        clientInfo.Insert(i, reader["Cus_Address"].ToString());
+                        i++;
+                        clientInfo.Insert(i, reader["Cus_Phone"].ToString());
+                        i++;
+                        clientInfo.Insert(i, reader["Cus_PostalCode"].ToString());
+                        i++;
+                        clientInfo.Insert(i, reader["Cus_Email"].ToString());
+                        i++;
+                        clientInfo.Insert(i, reader["Cus_BoxNum"].ToString());
                         i++;
                     }
                     reader.Close();
@@ -314,7 +325,7 @@ namespace Project_Genesis_Source.Classes {
         public string[] retrieveCusInfo(string fname, string lname)
         {
             //select query for customer info
-            string selectCusInfo = @"SELECT Cus_Address, Cus_Phone, Cus_Email, Cus_BoxNum, Cus_PostalCode FROM Customer
+            string selectCusInfo = @"SELECT Cus_Company, Cus_Address, Cus_Phone, Cus_Email, Cus_BoxNum, Cus_PostalCode FROM Customer
                                         WHERE Cus_FName = '" + fname + "' AND Cus_LName = '" + lname + "'";
 
             //list to store results
@@ -334,7 +345,7 @@ namespace Project_Genesis_Source.Classes {
                     int i = 0;
                     while (reader.Read())
                     {
-                        cusInfo.Insert(i, reader["Cus_Address"].ToString() + "\n \n" + reader["Cus_Phone"].ToString() + "\n \n"
+                        cusInfo.Insert(i, reader["Cus_Company"].ToString() + "\n\n" + reader["Cus_Address"].ToString() + "\n \n" + reader["Cus_Phone"].ToString() + "\n \n"
                                         + reader["Cus_Email"].ToString() + "\n \n" + reader["Cus_BoxNum"].ToString() + "\n \n"
                                         + reader["Cus_PostalCode"]);
                         i++;
