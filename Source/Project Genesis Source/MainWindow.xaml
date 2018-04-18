@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Genesis_Source"
         mc:Ignorable="d"
-        Title="CAJN Software" Width="1430" Height="811" Icon="icon.png" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="CAJN Software" Width="1430" Height="811" Icon="icon.png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -172,6 +172,7 @@
             </Rectangle.Stroke>
         </Rectangle>
         <Button x:Name="Minimize" Content="" Height="60.666" Margin="1262.215,47.323,0,0" VerticalAlignment="Top" Click="Minimize_Click" BorderBrush="{x:Null}" Background="White" Opacity="0.1" Foreground="{x:Null}" Cursor="Hand" Width="58.256" HorizontalAlignment="Left"/>
+        <Rectangle HorizontalAlignment="Left" Height="42.323" StrokeThickness="10" VerticalAlignment="Top" Width="1430" MouseDown="Rectangle_MouseDown" Opacity="0.1" Fill="White"/>
 
     </Grid>
 </Window>
