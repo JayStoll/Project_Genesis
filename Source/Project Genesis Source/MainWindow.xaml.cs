@@ -154,6 +154,8 @@ namespace Project_Genesis_Source
             this.Close();
         }
 
+
+        //drag and drop code
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)

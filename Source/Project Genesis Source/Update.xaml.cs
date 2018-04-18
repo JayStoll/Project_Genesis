@@ -23,5 +23,18 @@ namespace Project_Genesis_Source
         {
             InitializeComponent();
         }
+
+        //close button
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //drag and drop code
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
     }
 }
