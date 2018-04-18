@@ -19,6 +19,7 @@ namespace Project_Genesis_Source
     /// </summary>
     public partial class Update : Window
     {
+        public string cusID = "";
         public Update()
         {
             InitializeComponent();

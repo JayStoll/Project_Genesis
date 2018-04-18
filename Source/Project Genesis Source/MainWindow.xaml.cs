@@ -8,15 +8,6 @@
 //buttons arent named correctly at the moment but they basically go to where they are supposed to
 
 //Create Invoice Button -- so on and so fort
-
-
-/*
- * Edit
- * Author: Jayden Stoll
- * Date: March 11 2018
- * Reason: Errors everywhere, also please give the button click functions names dont just leave it default
- * 
- */
  
 using System;
 using System.Collections.Generic;
