@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
+using System.IO;
 
 
 namespace Project_Genesis_Source.Classes {
@@ -52,8 +53,11 @@ namespace Project_Genesis_Source.Classes {
                 gfx.DrawString(client.Company, font, XBrushes.Black,
                     new XRect(leftAlign, (printDownPage += downPercent), page.Width, page.Height), XStringFormats.TopLeft);
 
+                string coLine;
+
                 // TODO make this work
-                string coLine = (client.CO != " ") ? client.CO : client.ClientFName + " " + client.ClientLName;
+                if (client.CO != " ") coLine = client.CO;
+                else coLine = client.ClientFName + " " + client.ClientLName;
 
                 gfx.DrawString("C/O " + coLine, font, XBrushes.Black,
                     new XRect(leftAlign, (printDownPage += downPercent), page.Width, page.Height), XStringFormats.TopLeft);
@@ -201,7 +205,7 @@ namespace Project_Genesis_Source.Classes {
                 string filename = @"invoices\" + client.ClientFName + " " + client.ClientLName + @"\" + client.ClientFName + 
                                     client.ClientLName + "#" + invoiceNum + DateTime.Now.ToString("-dd/MM/yyyy") + ".pdf";
                 // creates a new directory if one is not present
-                System.IO.FileInfo file = new System.IO.FileInfo(filename);
+                FileInfo file = new FileInfo(filename);
                 file.Directory.Create();  // Skips this if the file path is found
                                           
                 doc.Save(filename);       // save the PDF in the specified file path

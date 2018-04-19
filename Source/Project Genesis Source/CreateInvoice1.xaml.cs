@@ -49,7 +49,7 @@ namespace Project_Genesis_Source {
                     PartDropDown.Items.Add(reader["Part_Name"]);
                 }
             }
-            
+
         }
 
         //Client DropDowns
@@ -60,7 +60,7 @@ namespace Project_Genesis_Source {
 
             // Gets the first and last name of the entered client - splits at a space
             string[] names = ClientDropDown.SelectedItem.ToString().Split(null);
-            
+
             string getClientInfo = @"SELECT Customer.*, Vehicle.* 
                                     FROM Customer, Vehicle 
                                     WHERE Cus_FName = '" + names[0] + "' AND Cus_LName = '" + names[1] + "' AND Vehicle.Cus_ID=Customer.Cus_ID";
@@ -155,7 +155,7 @@ namespace Project_Genesis_Source {
 #pragma warning restore CS0168 // Variable is declared but never used
                 PartTxt.Text = "";
                 PriceTxt.Text = "";
-            }   
+            }
         }
 
         private void AddPart(object sender, RoutedEventArgs e) {
@@ -169,7 +169,7 @@ namespace Project_Genesis_Source {
             partsAdded++;
         }
 
-        private void RemovePart(object sender, RoutedEventArgs e) { 
+        private void RemovePart(object sender, RoutedEventArgs e) {
             // sends error if there are no parts to be removed
             if (partsAdded == 0)
                 MessageBox.Show("No parts to remove!");
@@ -179,7 +179,7 @@ namespace Project_Genesis_Source {
                         // deletes the price of the entered part
                         string temp = PartsAddedList.SelectedItem.ToString();
                         totalCostOfParts -= dataConnection.GetPartPrice(temp);
-                    } 
+                    }
 #pragma warning disable CS0168 // Variable is declared but never used
                     catch (Exception ex) { }
 #pragma warning restore CS0168 // Variable is declared but never used
@@ -238,19 +238,19 @@ namespace Project_Genesis_Source {
                 PartsUsed = partsUsed,
                 PartTotal = totalCosttxt.Content.ToString()
             };
-            
-            invoiceNum += CheckInvoiceNum();
+
+            // invoiceNum += CheckInvoiceNum();
             if (invoiceNum == 0) invoiceNum++;
             // creates a new invoice
             CreatePDF invoice = new CreatePDF();
             invoice.CreateInvoice(client, labour, part, int.Parse(taxRateTxt.Text), invoiceNum);
-            SetInvoiceNum(invoiceNum += 1);
+            // SetInvoiceNum(invoiceNum += 1);
         }
 
         public void SetInvoiceNum(int invoice) {
             if (!File.Exists(invoiceFileName)) File.Create(invoiceFileName);
             using (StreamWriter sw = new StreamWriter(invoiceFileName)) {
-               sw.Write(invoice);
+                sw.Write(invoice);
                 sw.Close();
             }
         }
@@ -258,9 +258,18 @@ namespace Project_Genesis_Source {
         private int CheckInvoiceNum() {
             if (!File.Exists(invoiceFileName)) File.Create(invoiceFileName);
             int num = 0;
-            using (TextReader sr = File.OpenText(invoiceFileName)) {
-                num = int.Parse(sr.ReadLine());
+            try {
+                TextReader sr = File.OpenText(invoiceFileName);
+                string s = sr.Read().ToString();
+                if (s == null)
+                    num = 1;
+                else
+                    num = int.Parse(sr.ReadLine());
+                MessageBox.Show("Read the file!");
                 sr.Close();
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
             }
 
             return num;
@@ -285,33 +294,28 @@ namespace Project_Genesis_Source {
 
 
         //watermark for GST TAX
-        private void gstTxt_LostFocus(object sender, RoutedEventArgs e)
-        {
+        private void gstTxt_LostFocus(object sender, RoutedEventArgs e) {
             if (string.IsNullOrEmpty(gstTxt.Text)) {
                 gstTxt.Visibility = System.Windows.Visibility.Collapsed;
                 gstTxtWatermark.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
-        private void gstTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
-        {
+        private void gstTxtWatermark_GotFocus(object sender, RoutedEventArgs e) {
             gstTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
             gstTxt.Visibility = System.Windows.Visibility.Visible;
             gstTxt.Focus();
         }
 
         //C/O Box
-        private void c_oBoxTxt_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(c_oBoxTxt.Text))
-            {
+        private void c_oBoxTxt_LostFocus(object sender, RoutedEventArgs e) {
+            if (string.IsNullOrEmpty(c_oBoxTxt.Text)) {
                 c_oBoxTxt.Visibility = System.Windows.Visibility.Collapsed;
                 c_oBoxTxtWatermark.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
-        private void c_oBoxTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
-        {
+        private void c_oBoxTxtWatermark_GotFocus(object sender, RoutedEventArgs e) {
             c_oBoxTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
             c_oBoxTxt.Visibility = System.Windows.Visibility.Visible;
             c_oBoxTxt.Focus();
@@ -319,18 +323,15 @@ namespace Project_Genesis_Source {
 
 
         //Hours worked
-        private void hoursWorkedTxt_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(hoursWorkedTxt.Text))
-            {
+        private void hoursWorkedTxt_LostFocus(object sender, RoutedEventArgs e) {
+            if (string.IsNullOrEmpty(hoursWorkedTxt.Text)) {
                 hoursWorkedTxt.Visibility = System.Windows.Visibility.Collapsed;
                 hoursWorkedTxtWatermark.Visibility = System.Windows.Visibility.Visible;
             }
 
         }
 
-        private void hoursWorkedTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
-        {
+        private void hoursWorkedTxtWatermark_GotFocus(object sender, RoutedEventArgs e) {
             hoursWorkedTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
             hoursWorkedTxt.Visibility = System.Windows.Visibility.Visible;
             hoursWorkedTxt.Focus();
@@ -338,17 +339,14 @@ namespace Project_Genesis_Source {
 
 
         //TaxRate
-        private void taxRateTxt_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(taxRateTxt.Text))
-            {
+        private void taxRateTxt_LostFocus(object sender, RoutedEventArgs e) {
+            if (string.IsNullOrEmpty(taxRateTxt.Text)) {
                 taxRateTxt.Visibility = System.Windows.Visibility.Collapsed;
                 taxRateTxtWatermark.Visibility = System.Windows.Visibility.Visible;
             }
         }
 
-        private void taxRateTxtWatermark_GotFocus(object sender, RoutedEventArgs e)
-        {
+        private void taxRateTxtWatermark_GotFocus(object sender, RoutedEventArgs e) {
             taxRateTxtWatermark.Visibility = System.Windows.Visibility.Collapsed;
             taxRateTxt.Visibility = System.Windows.Visibility.Visible;
             taxRateTxt.Focus();

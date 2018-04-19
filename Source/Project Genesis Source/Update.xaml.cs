@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Project_Genesis_Source {
     /// <summary>
@@ -37,9 +38,10 @@ namespace Project_Genesis_Source {
             boxNumtxt.Text = fill[7];
         }
 
+        /*
         private void CloseForm(object sender, RoutedEventArgs e) {
             this.Close();
-        }
+        }*/
 
         private void UpdateClient(object sender, RoutedEventArgs e) {
             sql.ConnectionString = data.connString;
@@ -73,7 +75,7 @@ namespace Project_Genesis_Source {
         //close button
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
 
         //drag and drop code
